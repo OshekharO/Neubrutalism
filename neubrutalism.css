@@ -659,6 +659,7 @@ body {
  display: inline-flex;
  align-items: center;
  cursor: pointer;
+a gap: 12px;
  user-select: none;
  margin: 10px;
 }
@@ -889,6 +890,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
  .nb-navbar-toggle {
   display: flex;
  }
@@ -1521,7 +1523,7 @@ ul li {
 /* Section */
 .section {
  display: grid;
- grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+ grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
  gap: 10px;
 }
 .section-gap {
