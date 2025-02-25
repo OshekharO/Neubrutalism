@@ -659,7 +659,7 @@ body {
  display: inline-flex;
  align-items: center;
  cursor: pointer;
-a gap: 12px;
+ gap: 12px;
  user-select: none;
  margin: 10px;
 }
