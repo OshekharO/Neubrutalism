@@ -1546,12 +1546,3 @@ ul li {
 .section-gap {
  margin-bottom: 10px;
 }
-
- /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #fff;
-    --secondary-color: #000;
-    --border-color: #fff;
-  }
-}
