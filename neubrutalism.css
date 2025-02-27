@@ -12,11 +12,16 @@
  --form-border-color: #000;
 }
 
-* {
- box-sizing: border-box;
- margin: 0;
- padding: 0;
- font-family: "Inter", sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -1513,6 +1518,18 @@ ul li {
  user-select: none;
 }
 
+/* Accessibility Improvements */
+[aria-disabled="true"],
+:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
 /* Icon */
 .icon {
  width: 24px;
@@ -1528,4 +1545,13 @@ ul li {
 }
 .section-gap {
  margin-bottom: 10px;
+}
+
+ /* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #fff;
+    --secondary-color: #000;
+    --border-color: #fff;
+  }
 }
