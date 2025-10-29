@@ -2,15 +2,27 @@ document.addEventListener("DOMContentLoaded", function () {
  // Mobile menu toggle
  const mobileMenuButton = document.querySelector(".mobile-menu-button");
  const navbarMenu = document.querySelector(".navbar-menu");
+ 
+ // Early return if elements don't exist
+ if (!mobileMenuButton || !navbarMenu) {
+  return;
+ }
+ 
  mobileMenuButton.addEventListener("click", function () {
   navbarMenu.classList.toggle("active");
  });
 
- // Close mobile menu when clicking outside
+ // Close mobile menu when clicking outside - optimized with early returns
  document.addEventListener("click", function (event) {
+  // Early return if menu is not active
+  if (!navbarMenu.classList.contains("active")) {
+   return;
+  }
+  
   const isClickInsideMenu = navbarMenu.contains(event.target);
   const isClickOnMenuButton = mobileMenuButton.contains(event.target);
-  if (!isClickInsideMenu && !isClickOnMenuButton && navbarMenu.classList.contains("active")) {
+  
+  if (!isClickInsideMenu && !isClickOnMenuButton) {
    navbarMenu.classList.remove("active");
   }
  });
@@ -26,88 +38,98 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = document.createElement("button");
   closeBtn.classList.add("nb-toast-close");
   closeBtn.innerHTML = "&times;";
-  closeBtn.addEventListener("click", () => {
+  
+  let autoRemoveTimer = null;
+  
+  const removeToast = () => {
+   if (autoRemoveTimer) {
+    clearTimeout(autoRemoveTimer);
+    autoRemoveTimer = null;
+   }
    toast.classList.add("nb-toast-hide");
-
    setTimeout(() => {
-    toast.remove();
+    if (toast.parentNode) {
+     toast.remove();
+    }
    }, 300);
-  });
+  };
+  
+  closeBtn.addEventListener("click", removeToast);
 
   toast.appendChild(toastContent);
   toast.appendChild(closeBtn);
   document.body.appendChild(toast);
 
   // Auto-remove toast
-
-  const autoRemoveTimer = setTimeout(() => {
-   toast.classList.add("nb-toast-hide");
-   setTimeout(() => {
-    toast.remove();
-   }, 300);
-  }, duration);
+  autoRemoveTimer = setTimeout(removeToast, duration);
 
   // Expose method to clear auto-remove timer
-
-  toast.clearAutoRemove = () => clearTimeout(autoRemoveTimer);
+  toast.clearAutoRemove = () => {
+   if (autoRemoveTimer) {
+    clearTimeout(autoRemoveTimer);
+    autoRemoveTimer = null;
+   }
+  };
+  
   return toast;
  }
 
- // Function to copy HTML content to clipboard
-    function copyComponentHTML(event) {
+ // Function to copy HTML content to clipboard using modern Clipboard API
+    async function copyComponentHTML(event) {
         // Find the closest section or the clicked element
         const section = event.target.closest('section');
         
-        if (section) {
-            // Get all HTML content within the section, excluding the heading
-            const componentHTML = Array.from(section.children)
-                .filter(el => el.tagName !== 'H2')
-                .map(el => el.outerHTML)
-                .join('\n');
+        if (!section) {
+            return;
+        }
+        
+        // Get all HTML content within the section, excluding the heading
+        const componentHTML = Array.from(section.children)
+            .filter(el => el.tagName !== 'H2')
+            .map(el => el.outerHTML)
+            .join('\n');
 
+        // Use modern Clipboard API with fallback
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(componentHTML.trim());
+            } else {
+                // Fallback for older browsers
+                const tempTextArea = document.createElement('textarea');
+                tempTextArea.value = componentHTML.trim();
+                tempTextArea.style.position = 'fixed';
+                tempTextArea.style.opacity = '0';
+                document.body.appendChild(tempTextArea);
+                tempTextArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempTextArea);
+            }
 
-            // Create a temporary textarea to copy content
-            const tempTextArea = document.createElement('textarea');
-            tempTextArea.value = componentHTML.trim();
-            document.body.appendChild(tempTextArea);
-            
-            // Select and copy the text
-            tempTextArea.select();
-            document.execCommand('copy');
-            
-            // Remove the temporary textarea
-            document.body.removeChild(tempTextArea);
-
-
-            // Create a temporary toast/feedback
+            // Create a temporary toast/feedback using CSS class
             const toast = document.createElement('div');
             toast.textContent = 'Component HTML copied to clipboard!';
-            toast.style.position = 'fixed';
-            toast.style.top = '20px';
-            toast.style.right = '20px';
-            toast.style.backgroundColor = 'black';
-            toast.style.color = 'white';
-            toast.style.padding = '10px';
-            toast.style.zIndex = '1000';
-            toast.style.border = '2px solid black';
-            toast.style.boxShadow = '4px 4px 0 black';
+            toast.className = 'nb-copy-toast';
             
             document.body.appendChild(toast);
             
             // Remove toast after 2 seconds
             setTimeout(() => {
-                document.body.removeChild(toast);
+                if (toast.parentNode) {
+                    document.body.removeChild(toast);
+                }
             }, 2000);
+        } catch (err) {
+            console.error('Failed to copy:', err);
         }
     }
 
 
-    // Add click event listener to all sections
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.addEventListener('click', copyComponentHTML);
-        // Add a visual indicator that the section is copyable
-        section.style.cursor = 'pointer';
+    // Use event delegation for better performance
+    document.body.addEventListener('click', function(event) {
+        const section = event.target.closest('section');
+        if (section) {
+            copyComponentHTML(event);
+        }
     });
 
  // Expose global functions
