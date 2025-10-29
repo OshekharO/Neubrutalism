@@ -3,29 +3,27 @@ document.addEventListener("DOMContentLoaded", function () {
  const mobileMenuButton = document.querySelector(".mobile-menu-button");
  const navbarMenu = document.querySelector(".navbar-menu");
  
- // Early return if elements don't exist
- if (!mobileMenuButton || !navbarMenu) {
-  return;
- }
- 
- mobileMenuButton.addEventListener("click", function () {
-  navbarMenu.classList.toggle("active");
- });
+ // Only set up mobile menu if elements exist
+ if (mobileMenuButton && navbarMenu) {
+  mobileMenuButton.addEventListener("click", function () {
+   navbarMenu.classList.toggle("active");
+  });
 
- // Close mobile menu when clicking outside - optimized with early returns
- document.addEventListener("click", function (event) {
-  // Early return if menu is not active
-  if (!navbarMenu.classList.contains("active")) {
-   return;
-  }
-  
-  const isClickInsideMenu = navbarMenu.contains(event.target);
-  const isClickOnMenuButton = mobileMenuButton.contains(event.target);
-  
-  if (!isClickInsideMenu && !isClickOnMenuButton) {
-   navbarMenu.classList.remove("active");
-  }
- });
+  // Close mobile menu when clicking outside - optimized with early returns
+  document.addEventListener("click", function (event) {
+   // Early return if menu is not active
+   if (!navbarMenu.classList.contains("active")) {
+    return;
+   }
+   
+   const isClickInsideMenu = navbarMenu.contains(event.target);
+   const isClickOnMenuButton = mobileMenuButton.contains(event.target);
+   
+   if (!isClickInsideMenu && !isClickOnMenuButton) {
+    navbarMenu.classList.remove("active");
+   }
+  });
+ }
 
  // Toast Functionality
 
@@ -91,10 +89,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Use modern Clipboard API with fallback
         try {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
+            // Check for secure context and Clipboard API support
+            if (window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText) {
                 await navigator.clipboard.writeText(componentHTML.trim());
             } else {
-                // Fallback for older browsers
+                // Fallback for older browsers or insecure contexts
                 const tempTextArea = document.createElement('textarea');
                 tempTextArea.value = componentHTML.trim();
                 tempTextArea.style.position = 'fixed';
@@ -125,9 +124,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Use event delegation for better performance
+    // Only copy sections within the components container
     document.body.addEventListener('click', function(event) {
         const section = event.target.closest('section');
-        if (section) {
+        // Only copy if section exists and is within the main content container
+        if (section && section.closest('.nb-container')) {
             copyComponentHTML(event);
         }
     });
