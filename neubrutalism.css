@@ -1546,3 +1546,21 @@ ul li {
 .section-gap {
  margin-bottom: 10px;
 }
+
+/* Copy toast notification */
+.nb-copy-toast {
+ position: fixed;
+ top: 20px;
+ right: 20px;
+ background-color: black;
+ color: white;
+ padding: 10px;
+ z-index: 1000;
+ border: 2px solid black;
+ box-shadow: 4px 4px 0 black;
+}
+
+/* Copyable sections cursor */
+section {
+ cursor: pointer;
+}
