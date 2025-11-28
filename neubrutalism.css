@@ -104,7 +104,12 @@
  }
 }
 
-/* Manual Dark Mode Toggle Class */
+/* 
+ * Manual Dark Mode Toggle Class
+ * Note: This duplicates the media query variables intentionally to support
+ * JavaScript-based dark mode toggling independent of system preferences.
+ * Users can override system preferences by adding/removing the .nb-dark class.
+ */
 .nb-dark {
  --nb-primary: #fff;
  --nb-secondary: #1a1a1a;
@@ -945,6 +950,12 @@ body {
  display: inline-block;
  padding: var(--nb-spacing-sm);
  animation: nb-marquee 15s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+ .nb-marquee-content {
+  animation: none;
+ }
 }
 
 @keyframes nb-marquee {

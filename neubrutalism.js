@@ -186,10 +186,18 @@ document.addEventListener("DOMContentLoaded", function () {
  function toggleDarkMode(enable) {
   if (enable) {
    document.documentElement.classList.add("nb-dark");
-   localStorage.setItem("nb-dark-mode", "true");
+   try {
+    localStorage.setItem("nb-dark-mode", "true");
+   } catch (e) {
+    // LocalStorage not available (privacy mode, etc.)
+   }
   } else {
    document.documentElement.classList.remove("nb-dark");
-   localStorage.setItem("nb-dark-mode", "false");
+   try {
+    localStorage.setItem("nb-dark-mode", "false");
+   } catch (e) {
+    // LocalStorage not available (privacy mode, etc.)
+   }
   }
  }
 
@@ -202,9 +210,13 @@ document.addEventListener("DOMContentLoaded", function () {
  }
 
  // Check for saved dark mode preference
- const savedDarkMode = localStorage.getItem("nb-dark-mode");
- if (savedDarkMode === "true") {
-  document.documentElement.classList.add("nb-dark");
+ try {
+  const savedDarkMode = localStorage.getItem("nb-dark-mode");
+  if (savedDarkMode === "true") {
+   document.documentElement.classList.add("nb-dark");
+  }
+ } catch (e) {
+  // LocalStorage not available (privacy mode, etc.)
  }
 
  // ==========================================================================
