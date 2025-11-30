@@ -3980,31 +3980,22 @@ kbd, .nb-kbd {
    ========================================================================== */
 
 .nb-tabs-scrollable {
+ display: flex;
+ flex-wrap: wrap;
  width: 100%;
  border: var(--nb-border-width) solid var(--nb-primary);
  box-shadow: 6px 6px 0 var(--nb-primary);
+ position: relative;
 }
 
-.nb-tabs-scrollable .nb-tabs-nav {
- display: flex;
- overflow-x: auto;
- overflow-y: hidden;
- scrollbar-width: thin;
- scrollbar-color: var(--nb-primary) var(--nb-gray-200);
- -webkit-overflow-scrolling: touch;
+/* Create a scrollable row for labels */
+.nb-tabs-scrollable::before {
+ content: "";
+ display: block;
+ width: 100%;
+ order: 1;
+ height: 0;
  border-bottom: var(--nb-border-width) solid var(--nb-primary);
-}
-
-.nb-tabs-scrollable .nb-tabs-nav::-webkit-scrollbar {
- height: 6px;
-}
-
-.nb-tabs-scrollable .nb-tabs-nav::-webkit-scrollbar-track {
- background: var(--nb-gray-200);
-}
-
-.nb-tabs-scrollable .nb-tabs-nav::-webkit-scrollbar-thumb {
- background: var(--nb-primary);
 }
 
 .nb-tabs-scrollable .nb-tab-input {
@@ -4015,20 +4006,16 @@ kbd, .nb-kbd {
 
 .nb-tabs-scrollable .nb-tab-label {
  flex-shrink: 0;
+ order: 0;
  display: inline-flex;
  align-items: center;
  padding: var(--nb-spacing-md) var(--nb-spacing-lg);
  background-color: var(--nb-gray-200);
  border-right: var(--nb-border-width) solid var(--nb-primary);
- border-bottom: none;
  cursor: pointer;
  font-weight: bold;
  white-space: nowrap;
  transition: all var(--nb-transition-fast);
-}
-
-.nb-tabs-scrollable .nb-tab-label:last-of-type {
- border-right: none;
 }
 
 .nb-tabs-scrollable .nb-tab-label:hover {
@@ -4042,11 +4029,12 @@ kbd, .nb-kbd {
 
 .nb-tabs-scrollable .nb-tab-input:checked + .nb-tab-label {
  background-color: var(--nb-secondary);
- border-bottom-color: var(--nb-secondary);
 }
 
 .nb-tabs-scrollable .nb-tab-panel {
  display: none;
+ order: 2;
+ width: 100%;
  padding: var(--nb-spacing-lg);
  background-color: var(--nb-secondary);
 }
@@ -4193,8 +4181,8 @@ kbd, .nb-kbd {
 /* Dense table (more compact) */
 .nb-table-dense th,
 .nb-table-dense td {
- padding: 4px 8px;
- font-size: 0.8rem;
+ padding: calc(var(--nb-spacing-xs) - 1px) var(--nb-spacing-sm);
+ font-size: var(--nb-font-size-sm);
 }
 
 /* Table with row numbers */

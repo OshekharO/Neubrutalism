@@ -574,27 +574,22 @@ Pure CSS modal using the checkbox hack:
 
 ### Scrollable Tabs
 
-Perfect for scenarios with many tabs that don't fit on screen. Users can scroll horizontally.
+Perfect for scenarios with many tabs that don't fit on screen. Uses flexbox with order property to keep tab switching functionality working.
 
 ```html
 <div class="nb-tabs-scrollable">
-  <div class="nb-tabs-nav">
-    <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-1" checked>
-    <label class="nb-tab-label" for="scroll-tab-1">Overview</label>
-    
-    <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-2">
-    <label class="nb-tab-label" for="scroll-tab-2">Features</label>
-    
-    <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-3">
-    <label class="nb-tab-label" for="scroll-tab-3">Documentation</label>
-    
-    <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-4">
-    <label class="nb-tab-label" for="scroll-tab-4">API Reference</label>
-    
-    <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-5">
-    <label class="nb-tab-label" for="scroll-tab-5">Examples</label>
-  </div>
-  <div class="nb-tab-panel">Tab content here</div>
+  <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-1" checked>
+  <label class="nb-tab-label" for="scroll-tab-1">Overview</label>
+  
+  <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-2">
+  <label class="nb-tab-label" for="scroll-tab-2">Features</label>
+  
+  <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-3">
+  <label class="nb-tab-label" for="scroll-tab-3">Documentation</label>
+  
+  <div class="nb-tab-panel">Overview content</div>
+  <div class="nb-tab-panel">Features content</div>
+  <div class="nb-tab-panel">Documentation content</div>
 </div>
 ```
 
