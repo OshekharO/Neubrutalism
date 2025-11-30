@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Example - Neubrutalism CSS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.css">
+  <style>
+    .dashboard-layout {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      min-height: 100vh;
+    }
+    .dashboard-sidebar {
+      background: var(--nb-secondary);
+      border-right: 3px solid var(--nb-primary);
+      padding: 20px;
+    }
+    .dashboard-main {
+      padding: 20px;
+      background: var(--nb-gray-100);
+    }
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .stat-card {
+      background: var(--nb-secondary);
+      border: 3px solid var(--nb-primary);
+      box-shadow: 4px 4px 0 var(--nb-primary);
+      padding: 20px;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+    .stat-label {
+      color: var(--nb-gray-600);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .dashboard-layout {
+        grid-template-columns: 1fr;
+      }
+      .dashboard-sidebar {
+        border-right: none;
+        border-bottom: 3px solid var(--nb-primary);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <h2 style="margin-bottom: 30px; font-size: 1.5rem;">Dashboard</h2>
+      <ul class="nb-list">
+        <li style="background: var(--nb-primary); color: var(--nb-secondary);">Overview</li>
+        <li>Analytics</li>
+        <li>Reports</li>
+        <li>Users</li>
+        <li>Settings</li>
+      </ul>
+      
+      <div style="margin-top: 30px;">
+        <h4 style="margin-bottom: 15px;">Quick Actions</h4>
+        <button class="nb-btn nb-btn-block" style="margin-bottom: 10px;">New Report</button>
+        <button class="nb-btn nb-btn-block">Export Data</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <div>
+          <h1 style="margin-bottom: 5px;">Welcome back, Admin</h1>
+          <p class="nb-muted">Here's what's happening today</p>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="nb-btn">
+            <span>🔔</span>
+            <span class="nb-badge nb-badge-danger" style="margin-left: 5px;">3</span>
+          </button>
+          <button class="nb-btn">Toggle Dark Mode</button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-value">1,234</div>
+          <div class="stat-label">Total Users</div>
+          <div class="nb-progress nb-progress-success" style="margin-top: 15px;">
+            <div class="nb-progress-bar" style="width: 75%;"></div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">$12,345</div>
+          <div class="stat-label">Revenue</div>
+          <div class="nb-progress" style="margin-top: 15px;">
+            <div class="nb-progress-bar" style="width: 60%;"></div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">567</div>
+          <div class="stat-label">Orders</div>
+          <div class="nb-progress nb-progress-warning" style="margin-top: 15px;">
+            <div class="nb-progress-bar" style="width: 45%;"></div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">89%</div>
+          <div class="stat-label">Satisfaction</div>
+          <div class="nb-progress nb-progress-success" style="margin-top: 15px;">
+            <div class="nb-progress-bar" style="width: 89%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="nb-grid nb-grid-2">
+        <div class="nb-card">
+          <div class="nb-card-header">Recent Orders</div>
+          <div class="nb-card-body">
+            <table class="nb-table" style="box-shadow: none;">
+              <thead>
+                <tr>
+                  <th>Order</th>
+                  <th>Customer</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#001</td>
+                  <td>John Doe</td>
+                  <td><span class="nb-badge nb-badge-success">Complete</span></td>
+                </tr>
+                <tr>
+                  <td>#002</td>
+                  <td>Jane Smith</td>
+                  <td><span class="nb-badge nb-badge-warning">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>#003</td>
+                  <td>Bob Wilson</td>
+                  <td><span class="nb-badge nb-badge-success">Complete</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="nb-card">
+          <div class="nb-card-header">Recent Activity</div>
+          <div class="nb-card-body">
+            <div class="nb-timeline" style="padding-left: 25px;">
+              <div class="nb-timeline-item nb-timeline-item-success">
+                <div class="nb-timeline-date">2 hours ago</div>
+                <div class="nb-timeline-content">
+                  <div class="nb-timeline-title">New user registered</div>
+                  <p style="font-size: 0.9rem;">john@example.com signed up</p>
+                </div>
+              </div>
+              <div class="nb-timeline-item">
+                <div class="nb-timeline-date">5 hours ago</div>
+                <div class="nb-timeline-content">
+                  <div class="nb-timeline-title">Order completed</div>
+                  <p style="font-size: 0.9rem;">Order #001 was delivered</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alerts -->
+      <div style="margin-top: 30px;">
+        <div class="nb-alert nb-alert-warning">
+          ⚠️ System maintenance scheduled for tomorrow at 2:00 AM UTC
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.js"></script>
+  <script>
+    // Dark mode toggle
+    document.querySelector('button:last-of-type').addEventListener('click', function() {
+      toggleDarkMode(!isDarkMode());
+    });
+  </script>
+</body>
+</html>
