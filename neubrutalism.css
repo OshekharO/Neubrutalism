@@ -3850,3 +3850,399 @@ kbd, .nb-kbd {
   justify-content: center;
  }
 }
+
+/* ==========================================================================
+   63. Group Component
+   ========================================================================== */
+
+.nb-group {
+ display: inline-flex;
+ flex-wrap: wrap;
+ gap: 0;
+}
+
+.nb-group > * {
+ border-radius: 0;
+ margin: 0;
+}
+
+/* Remove double borders between grouped items */
+.nb-group > *:not(:first-child) {
+ margin-left: calc(-1 * var(--nb-border-width));
+}
+
+/* First and last item border radius */
+.nb-group > *:first-child {
+ border-top-left-radius: var(--nb-border-radius);
+ border-bottom-left-radius: var(--nb-border-radius);
+}
+
+.nb-group > *:last-child {
+ border-top-right-radius: var(--nb-border-radius);
+ border-bottom-right-radius: var(--nb-border-radius);
+}
+
+/* Button group specific styles */
+.nb-group > .nb-btn {
+ box-shadow: none;
+}
+
+.nb-group > .nb-btn:hover {
+ transform: none;
+ z-index: 1;
+}
+
+.nb-group > .nb-btn:focus-visible {
+ z-index: 2;
+}
+
+/* Add shadow to the entire group */
+.nb-group-shadow {
+ box-shadow: var(--nb-shadow-offset) var(--nb-shadow-offset) 0 var(--nb-primary);
+}
+
+/* Vertical group */
+.nb-group-vertical {
+ flex-direction: column;
+}
+
+.nb-group-vertical > *:not(:first-child) {
+ margin-left: 0;
+ margin-top: calc(-1 * var(--nb-border-width));
+}
+
+.nb-group-vertical > *:first-child {
+ border-radius: 0;
+ border-top-left-radius: var(--nb-border-radius);
+ border-top-right-radius: var(--nb-border-radius);
+}
+
+.nb-group-vertical > *:last-child {
+ border-radius: 0;
+ border-bottom-left-radius: var(--nb-border-radius);
+ border-bottom-right-radius: var(--nb-border-radius);
+}
+
+/* Group with gaps (spaced) */
+.nb-group-spaced {
+ gap: var(--nb-spacing-sm);
+}
+
+.nb-group-spaced > *:not(:first-child) {
+ margin-left: 0;
+}
+
+.nb-group-spaced > * {
+ border-radius: var(--nb-border-radius);
+}
+
+/* Badge group */
+.nb-group > .nb-badge {
+ box-shadow: none;
+}
+
+/* Tag group */
+.nb-group > .nb-tag {
+ box-shadow: none;
+}
+
+/* Responsive stacking on mobile */
+@media (max-width: 480px) {
+ .nb-group-responsive {
+  flex-direction: column;
+  width: 100%;
+ }
+ 
+ .nb-group-responsive > * {
+  width: 100%;
+ }
+ 
+ .nb-group-responsive > *:not(:first-child) {
+  margin-left: 0;
+  margin-top: calc(-1 * var(--nb-border-width));
+ }
+ 
+ .nb-group-responsive > *:first-child {
+  border-radius: 0;
+  border-top-left-radius: var(--nb-border-radius);
+  border-top-right-radius: var(--nb-border-radius);
+ }
+ 
+ .nb-group-responsive > *:last-child {
+  border-radius: 0;
+  border-bottom-left-radius: var(--nb-border-radius);
+  border-bottom-right-radius: var(--nb-border-radius);
+ }
+}
+
+/* ==========================================================================
+   64. Scrollable Tabs
+   ========================================================================== */
+
+.nb-tabs-scrollable {
+ width: 100%;
+ border: var(--nb-border-width) solid var(--nb-primary);
+ box-shadow: 6px 6px 0 var(--nb-primary);
+}
+
+.nb-tabs-scrollable .nb-tabs-nav {
+ display: flex;
+ overflow-x: auto;
+ overflow-y: hidden;
+ scrollbar-width: thin;
+ scrollbar-color: var(--nb-primary) var(--nb-gray-200);
+ -webkit-overflow-scrolling: touch;
+ border-bottom: var(--nb-border-width) solid var(--nb-primary);
+}
+
+.nb-tabs-scrollable .nb-tabs-nav::-webkit-scrollbar {
+ height: 6px;
+}
+
+.nb-tabs-scrollable .nb-tabs-nav::-webkit-scrollbar-track {
+ background: var(--nb-gray-200);
+}
+
+.nb-tabs-scrollable .nb-tabs-nav::-webkit-scrollbar-thumb {
+ background: var(--nb-primary);
+}
+
+.nb-tabs-scrollable .nb-tab-input {
+ position: absolute;
+ opacity: 0;
+ pointer-events: none;
+}
+
+.nb-tabs-scrollable .nb-tab-label {
+ flex-shrink: 0;
+ display: inline-flex;
+ align-items: center;
+ padding: var(--nb-spacing-md) var(--nb-spacing-lg);
+ background-color: var(--nb-gray-200);
+ border-right: var(--nb-border-width) solid var(--nb-primary);
+ border-bottom: none;
+ cursor: pointer;
+ font-weight: bold;
+ white-space: nowrap;
+ transition: all var(--nb-transition-fast);
+}
+
+.nb-tabs-scrollable .nb-tab-label:last-of-type {
+ border-right: none;
+}
+
+.nb-tabs-scrollable .nb-tab-label:hover {
+ background-color: var(--nb-gray-300);
+}
+
+.nb-tabs-scrollable .nb-tab-label:focus-visible {
+ outline: 2px solid var(--nb-accent);
+ outline-offset: -2px;
+}
+
+.nb-tabs-scrollable .nb-tab-input:checked + .nb-tab-label {
+ background-color: var(--nb-secondary);
+ border-bottom-color: var(--nb-secondary);
+}
+
+.nb-tabs-scrollable .nb-tab-panel {
+ display: none;
+ padding: var(--nb-spacing-lg);
+ background-color: var(--nb-secondary);
+}
+
+.nb-tabs-scrollable .nb-tab-input:checked + .nb-tab-label + .nb-tab-panel {
+ display: block;
+}
+
+/* Scrollable tabs with icons */
+.nb-tabs-scrollable .nb-tab-label .icon {
+ margin-right: var(--nb-spacing-xs);
+}
+
+/* Responsive scrollable tabs */
+@media (max-width: 480px) {
+ .nb-tabs-scrollable .nb-tab-label {
+  padding: var(--nb-spacing-sm) var(--nb-spacing-md);
+  font-size: var(--nb-font-size-sm);
+ }
+ 
+ .nb-tabs-scrollable .nb-tab-panel {
+  padding: var(--nb-spacing-md);
+ }
+}
+
+/* ==========================================================================
+   65. Table Variants
+   ========================================================================== */
+
+/* Scrollable table wrapper */
+.nb-table-scrollable {
+ display: block;
+ width: 100%;
+ overflow-x: auto;
+ -webkit-overflow-scrolling: touch;
+ border: var(--nb-border-width) solid var(--nb-primary);
+ box-shadow: var(--nb-shadow-offset) var(--nb-shadow-offset) 0 var(--nb-primary);
+}
+
+.nb-table-scrollable .nb-table {
+ margin-bottom: 0;
+ border: none;
+ box-shadow: none;
+ min-width: 600px;
+}
+
+.nb-table-scrollable::-webkit-scrollbar {
+ height: 8px;
+}
+
+.nb-table-scrollable::-webkit-scrollbar-track {
+ background: var(--nb-gray-200);
+}
+
+.nb-table-scrollable::-webkit-scrollbar-thumb {
+ background: var(--nb-primary);
+}
+
+/* Compact table */
+.nb-table-compact th,
+.nb-table-compact td {
+ padding: var(--nb-spacing-xs) var(--nb-spacing-sm);
+ font-size: var(--nb-font-size-sm);
+}
+
+/* Borderless table */
+.nb-table-borderless {
+ border: none;
+ box-shadow: none;
+}
+
+.nb-table-borderless th,
+.nb-table-borderless td {
+ border: none;
+ border-bottom: 1px solid var(--nb-gray-300);
+}
+
+.nb-table-borderless thead th {
+ border-bottom: var(--nb-border-width) solid var(--nb-primary);
+}
+
+.nb-table-borderless tr:last-child td {
+ border-bottom: none;
+}
+
+/* Fixed header table */
+.nb-table-fixed-header {
+ display: block;
+ max-height: 400px;
+ overflow-y: auto;
+}
+
+.nb-table-fixed-header thead {
+ position: sticky;
+ top: 0;
+ z-index: 1;
+}
+
+.nb-table-fixed-header thead th {
+ position: sticky;
+ top: 0;
+ background-color: var(--nb-primary);
+}
+
+/* Sortable column indicator (visual only) */
+.nb-table th.nb-sortable {
+ cursor: pointer;
+ user-select: none;
+}
+
+.nb-table th.nb-sortable::after {
+ content: "⇅";
+ margin-left: var(--nb-spacing-xs);
+ opacity: 0.5;
+}
+
+.nb-table th.nb-sortable:hover::after {
+ opacity: 1;
+}
+
+.nb-table th.nb-sort-asc::after {
+ content: "↑";
+ opacity: 1;
+}
+
+.nb-table th.nb-sort-desc::after {
+ content: "↓";
+ opacity: 1;
+}
+
+/* Selectable table rows */
+.nb-table-selectable tbody tr {
+ cursor: pointer;
+}
+
+.nb-table-selectable tbody tr:hover {
+ background-color: var(--nb-gray-200);
+}
+
+.nb-table-selectable tbody tr.selected {
+ background-color: var(--nb-form-highlight-primary);
+}
+
+/* Dense table (more compact) */
+.nb-table-dense th,
+.nb-table-dense td {
+ padding: 4px 8px;
+ font-size: 0.8rem;
+}
+
+/* Table with row numbers */
+.nb-table-numbered {
+ counter-reset: row-counter;
+}
+
+.nb-table-numbered tbody tr {
+ counter-increment: row-counter;
+}
+
+.nb-table-numbered tbody td:first-child::before {
+ content: counter(row-counter) ".";
+ font-weight: bold;
+ margin-right: var(--nb-spacing-xs);
+ color: var(--nb-gray-600);
+}
+
+/* Highlighted row states */
+.nb-table tr.nb-row-success {
+ background-color: rgba(46, 204, 113, 0.2);
+}
+
+.nb-table tr.nb-row-danger {
+ background-color: rgba(231, 76, 60, 0.2);
+}
+
+.nb-table tr.nb-row-warning {
+ background-color: rgba(243, 156, 18, 0.2);
+}
+
+.nb-table tr.nb-row-info {
+ background-color: rgba(52, 152, 219, 0.2);
+}
+
+/* Responsive table hint */
+.nb-table-hint {
+ display: none;
+ text-align: center;
+ padding: var(--nb-spacing-xs);
+ font-size: var(--nb-font-size-sm);
+ color: var(--nb-gray-600);
+ background-color: var(--nb-gray-100);
+ border-bottom: 1px solid var(--nb-gray-300);
+}
+
+@media (max-width: 600px) {
+ .nb-table-scrollable .nb-table-hint {
+  display: block;
+ }
+}

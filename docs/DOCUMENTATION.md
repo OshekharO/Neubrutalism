@@ -295,6 +295,48 @@ Available classes: `nb-grid-1`, `nb-grid-2`, `nb-grid-3`, `nb-grid-4`, `nb-grid-
 <button class="nb-btn-ani">Animate</button>
 ```
 
+### Group
+
+Group related elements together like buttons, badges, or tags.
+
+```html
+<!-- Button group -->
+<div class="nb-group nb-group-shadow">
+  <button class="nb-btn">Left</button>
+  <button class="nb-btn">Middle</button>
+  <button class="nb-btn">Right</button>
+</div>
+
+<!-- Vertical button group -->
+<div class="nb-group nb-group-vertical nb-group-shadow">
+  <button class="nb-btn">First</button>
+  <button class="nb-btn">Second</button>
+  <button class="nb-btn">Third</button>
+</div>
+
+<!-- Spaced group (with gaps) -->
+<div class="nb-group nb-group-spaced">
+  <button class="nb-btn">Option 1</button>
+  <button class="nb-btn">Option 2</button>
+  <button class="nb-btn">Option 3</button>
+</div>
+
+<!-- Badge group -->
+<div class="nb-group">
+  <span class="nb-badge nb-badge-primary">HTML</span>
+  <span class="nb-badge nb-badge-success">CSS</span>
+  <span class="nb-badge nb-badge-warning">JS</span>
+</div>
+
+<!-- Responsive group (stacks on mobile) -->
+<div class="nb-group nb-group-responsive">
+  <button class="nb-btn">Action 1</button>
+  <button class="nb-btn">Action 2</button>
+</div>
+```
+
+Available modifiers: `nb-group-shadow`, `nb-group-vertical`, `nb-group-spaced`, `nb-group-responsive`
+
 ### Badges
 
 ```html
@@ -374,6 +416,60 @@ Available classes: `nb-grid-1`, `nb-grid-2`, `nb-grid-3`, `nb-grid-4`, `nb-grid-
 ```
 
 Table modifiers: `nb-table-striped`, `nb-table-bordered`, `nb-table-hover`
+
+#### Scrollable Table
+
+Wrap tables in a scrollable container for wide tables on small screens:
+
+```html
+<div class="nb-table-scrollable">
+  <div class="nb-table-hint">← Scroll horizontally to see more →</div>
+  <table class="nb-table">
+    <!-- table content -->
+  </table>
+</div>
+```
+
+#### Compact Table
+
+A more condensed table variant:
+
+```html
+<table class="nb-table nb-table-compact">
+  <!-- table content -->
+</table>
+```
+
+#### Borderless Table
+
+Clean table without heavy borders:
+
+```html
+<table class="nb-table nb-table-borderless">
+  <!-- table content -->
+</table>
+```
+
+#### Dense Table
+
+Even more compact for data-heavy displays:
+
+```html
+<table class="nb-table nb-table-dense">
+  <!-- table content -->
+</table>
+```
+
+#### Row Highlights
+
+Add contextual background colors to rows:
+
+```html
+<tr class="nb-row-success">...</tr>
+<tr class="nb-row-danger">...</tr>
+<tr class="nb-row-warning">...</tr>
+<tr class="nb-row-info">...</tr>
+```
 
 ### Progress Bars
 
@@ -473,6 +569,32 @@ Pure CSS modal using the checkbox hack:
   <input class="nb-tab-input" name="tabs" type="radio" id="tab-2">
   <label class="nb-tab-label" for="tab-2">Tab 2</label>
   <div class="nb-tab-panel">Tab 2 content</div>
+</div>
+```
+
+### Scrollable Tabs
+
+Perfect for scenarios with many tabs that don't fit on screen. Users can scroll horizontally.
+
+```html
+<div class="nb-tabs-scrollable">
+  <div class="nb-tabs-nav">
+    <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-1" checked>
+    <label class="nb-tab-label" for="scroll-tab-1">Overview</label>
+    
+    <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-2">
+    <label class="nb-tab-label" for="scroll-tab-2">Features</label>
+    
+    <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-3">
+    <label class="nb-tab-label" for="scroll-tab-3">Documentation</label>
+    
+    <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-4">
+    <label class="nb-tab-label" for="scroll-tab-4">API Reference</label>
+    
+    <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-5">
+    <label class="nb-tab-label" for="scroll-tab-5">Examples</label>
+  </div>
+  <div class="nb-tab-panel">Tab content here</div>
 </div>
 ```
 

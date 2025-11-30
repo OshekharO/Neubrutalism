@@ -194,6 +194,7 @@
      
      <li class="docs-sidebar-section">Components</li>
      <li><a href="#buttons">Buttons</a></li>
+     <li><a href="#group">Group</a></li>
      <li><a href="#badges">Badges</a></li>
      <li><a href="#cards">Cards</a></li>
      <li><a href="#alerts">Alerts</a></li>
@@ -379,6 +380,42 @@
     </div>
    </section>
 
+   <!-- Group Component -->
+   <section id="group" class="component-section">
+    <h2 class="nb-section-title">Group</h2>
+    <p class="nb-section-subtitle">Group related elements together</p>
+    
+    <div class="component-demo">
+     <h4>Button Group</h4>
+     <div class="nb-group nb-group-shadow" style="margin-bottom: 20px;">
+      <button class="nb-btn">Left</button>
+      <button class="nb-btn">Middle</button>
+      <button class="nb-btn">Right</button>
+     </div>
+     
+     <h4>Badge Group</h4>
+     <div class="nb-group" style="margin-bottom: 20px;">
+      <span class="nb-badge nb-badge-primary">HTML</span>
+      <span class="nb-badge nb-badge-success">CSS</span>
+      <span class="nb-badge nb-badge-warning">JS</span>
+     </div>
+     
+     <h4>Spaced Group</h4>
+     <div class="nb-group nb-group-spaced" style="margin-bottom: 20px;">
+      <button class="nb-btn">Option 1</button>
+      <button class="nb-btn">Option 2</button>
+      <button class="nb-btn">Option 3</button>
+     </div>
+     
+     <h4>Vertical Group</h4>
+     <div class="nb-group nb-group-vertical nb-group-shadow" style="max-width: 200px;">
+      <button class="nb-btn nb-btn-block">First</button>
+      <button class="nb-btn nb-btn-block">Second</button>
+      <button class="nb-btn nb-btn-block">Third</button>
+     </div>
+    </div>
+   </section>
+
    <!-- Badges -->
    <section id="badges" class="component-section">
     <h2 class="nb-section-title">Badges</h2>
@@ -463,6 +500,7 @@
     <p class="nb-section-subtitle">Data tables with neubrutalist styling</p>
     
     <div class="component-demo">
+     <h4>Standard Table</h4>
      <table class="nb-table">
       <thead>
        <tr>
@@ -486,6 +524,131 @@
         <td>Bob Wilson</td>
         <td>Manager</td>
         <td><span class="nb-badge nb-badge-warning">Away</span></td>
+       </tr>
+      </tbody>
+     </table>
+     
+     <h4 style="margin-top: 30px;">Scrollable Table</h4>
+     <div class="nb-table-scrollable">
+      <div class="nb-table-hint">← Scroll horizontally to see more →</div>
+      <table class="nb-table">
+       <thead>
+        <tr>
+         <th>ID</th>
+         <th>Name</th>
+         <th>Email</th>
+         <th>Role</th>
+         <th>Department</th>
+         <th>Location</th>
+         <th>Status</th>
+         <th>Actions</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td>001</td>
+         <td>John Doe</td>
+         <td>john@example.com</td>
+         <td>Developer</td>
+         <td>Engineering</td>
+         <td>New York</td>
+         <td><span class="nb-badge nb-badge-success">Active</span></td>
+         <td><button class="nb-btn nb-btn-small">Edit</button></td>
+        </tr>
+        <tr>
+         <td>002</td>
+         <td>Jane Smith</td>
+         <td>jane@example.com</td>
+         <td>Designer</td>
+         <td>Creative</td>
+         <td>San Francisco</td>
+         <td><span class="nb-badge nb-badge-success">Active</span></td>
+         <td><button class="nb-btn nb-btn-small">Edit</button></td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     
+     <h4 style="margin-top: 30px;">Compact Table</h4>
+     <table class="nb-table nb-table-compact">
+      <thead>
+       <tr>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Price</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>Widget A</td>
+        <td>5</td>
+        <td>$10.00</td>
+       </tr>
+       <tr>
+        <td>Widget B</td>
+        <td>3</td>
+        <td>$15.00</td>
+       </tr>
+       <tr>
+        <td>Widget C</td>
+        <td>8</td>
+        <td>$8.00</td>
+       </tr>
+      </tbody>
+     </table>
+     
+     <h4 style="margin-top: 30px;">Borderless Table</h4>
+     <table class="nb-table nb-table-borderless">
+      <thead>
+       <tr>
+        <th>Product</th>
+        <th>Category</th>
+        <th>Price</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>Laptop</td>
+        <td>Electronics</td>
+        <td>$999</td>
+       </tr>
+       <tr>
+        <td>Desk Chair</td>
+        <td>Furniture</td>
+        <td>$250</td>
+       </tr>
+       <tr>
+        <td>Notebook</td>
+        <td>Office</td>
+        <td>$5</td>
+       </tr>
+      </tbody>
+     </table>
+     
+     <h4 style="margin-top: 30px;">Row Highlights</h4>
+     <table class="nb-table">
+      <thead>
+       <tr>
+        <th>Task</th>
+        <th>Status</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr class="nb-row-success">
+        <td>Deploy to production</td>
+        <td>Completed</td>
+       </tr>
+       <tr class="nb-row-warning">
+        <td>Code review pending</td>
+        <td>In Progress</td>
+       </tr>
+       <tr class="nb-row-danger">
+        <td>Critical bug fix</td>
+        <td>Blocked</td>
+       </tr>
+       <tr class="nb-row-info">
+        <td>Documentation update</td>
+        <td>Scheduled</td>
        </tr>
       </tbody>
      </table>
@@ -657,6 +820,7 @@
     <p class="nb-section-subtitle">Tabbed content navigation</p>
     
     <div class="component-demo">
+     <h4>Standard Tabs</h4>
      <div class="nb-tabs">
       <input class="nb-tab-input" name="demo-tabs" type="radio" id="demo-tab-1" checked="checked" />
       <label class="nb-tab-label" for="demo-tab-1">Tab 1</label>
@@ -677,6 +841,33 @@
       <div class="nb-tab-panel">
        <h3>Third Tab Content</h3>
        <p>This is the content for the third tab.</p>
+      </div>
+     </div>
+     
+     <h4 style="margin-top: 30px;">Scrollable Tabs</h4>
+     <p class="nb-muted" style="margin-bottom: 15px;">Perfect for many tabs - scroll horizontally to see more.</p>
+     <div class="nb-tabs-scrollable">
+      <div class="nb-tabs-nav">
+       <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-1" checked="checked" />
+       <label class="nb-tab-label" for="scroll-tab-1">Overview</label>
+       <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-2" />
+       <label class="nb-tab-label" for="scroll-tab-2">Features</label>
+       <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-3" />
+       <label class="nb-tab-label" for="scroll-tab-3">Documentation</label>
+       <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-4" />
+       <label class="nb-tab-label" for="scroll-tab-4">Installation</label>
+       <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-5" />
+       <label class="nb-tab-label" for="scroll-tab-5">Configuration</label>
+       <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-6" />
+       <label class="nb-tab-label" for="scroll-tab-6">API Reference</label>
+       <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-7" />
+       <label class="nb-tab-label" for="scroll-tab-7">Examples</label>
+       <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-8" />
+       <label class="nb-tab-label" for="scroll-tab-8">FAQ</label>
+      </div>
+      <div class="nb-tab-panel" style="display: block;">
+       <h3>Overview</h3>
+       <p>Scrollable tabs are perfect when you have many tabs that don't fit on one screen. Users can scroll horizontally to navigate between tabs.</p>
       </div>
      </div>
     </div>
