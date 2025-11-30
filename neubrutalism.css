@@ -159,6 +159,7 @@
 html {
  scroll-behavior: smooth;
  font-size: 16px;
+ overflow-x: hidden;
 }
 
 body {
@@ -168,6 +169,8 @@ body {
  color: var(--nb-primary);
  padding: 0;
  min-height: 100vh;
+ overflow-x: hidden;
+ width: 100%;
 }
 
 /* Selection highlight */
@@ -184,6 +187,7 @@ body {
  max-width: 1200px;
  margin: 0 auto;
  padding: var(--nb-spacing-lg);
+ width: 100%;
 }
 
 .nb-border {
@@ -200,6 +204,8 @@ body {
  padding: 0.75rem;
  margin: 1rem;
  border: 4px solid var(--nb-primary);
+ max-width: 100%;
+ overflow: hidden;
 }
 
 .container-1 {
@@ -2014,6 +2020,7 @@ ul li {
  margin: 1rem 0;
  overflow-x: auto;
  transition: all var(--nb-transition-fast);
+ max-width: 100%;
 }
 
 .nb-code-block:hover {
@@ -2026,6 +2033,8 @@ ul li {
  color: var(--nb-primary);
  font-size: 0.9rem;
  line-height: 1.6;
+ word-break: break-word;
+ white-space: pre-wrap;
 }
 
 .nb-code-line-numbers {
