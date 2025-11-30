@@ -2,8 +2,6 @@
 
 A modern, minimalist CSS library that embraces bold design principles, high-contrast aesthetics, and a no-nonsense approach to web design. Inspired by the Brutalist architecture movement, this library focuses on raw, honest, and functional design.
 
-![Neubrutalism CSS](https://github.com/user-attachments/assets/0e25e43f-12af-4f55-89ea-7545a8f27553)
-
 ## 🚀 Quick Start
 
 Get started in seconds with the CDN:
