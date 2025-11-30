@@ -2033,8 +2033,8 @@ ul li {
  color: var(--nb-primary);
  font-size: 0.9rem;
  line-height: 1.6;
- word-break: break-word;
  white-space: pre-wrap;
+ word-wrap: break-word;
 }
 
 .nb-code-line-numbers {

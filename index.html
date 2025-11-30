@@ -173,12 +173,12 @@
  </head>
  <body>
   <!-- Mobile Menu Toggle -->
-  <button class="docs-menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+  <button class="docs-menu-toggle" aria-label="Toggle navigation menu" id="mobile-menu-toggle">
    <span></span>
    <span></span>
    <span></span>
   </button>
-  <div class="docs-overlay" onclick="toggleMobileMenu()"></div>
+  <div class="docs-overlay" id="mobile-overlay"></div>
 
   <!-- Sidebar Navigation -->
   <aside class="docs-sidebar">
@@ -1316,6 +1316,10 @@
     // Prevent body scroll when menu is open
     document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
    }
+   
+   // Add event listeners for mobile menu
+   document.getElementById('mobile-menu-toggle').addEventListener('click', toggleMobileMenu);
+   document.getElementById('mobile-overlay').addEventListener('click', toggleMobileMenu);
    
    // Close menu when clicking a link
    document.querySelectorAll('.docs-sidebar-nav a').forEach(function(link) {
