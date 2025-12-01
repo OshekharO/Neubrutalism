@@ -1324,7 +1324,7 @@ body {
 
 .nb-navbar-primary .nb-navbar-logo,
 .nb-navbar-primary .nb-nav-item a {
- color: var(--nb-secondary);
+ color: #fff;
 }
 
 .nb-navbar-success {
@@ -1334,7 +1334,7 @@ body {
 
 .nb-navbar-success .nb-navbar-logo,
 .nb-navbar-success .nb-nav-item a {
- color: var(--nb-secondary);
+ color: #fff;
 }
 
 .nb-navbar-warning {
@@ -1344,7 +1344,7 @@ body {
 
 .nb-navbar-warning .nb-navbar-logo,
 .nb-navbar-warning .nb-nav-item a {
- color: var(--nb-primary);
+ color: #000;
 }
 
 .nb-navbar-danger {
@@ -1354,7 +1354,7 @@ body {
 
 .nb-navbar-danger .nb-navbar-logo,
 .nb-navbar-danger .nb-nav-item a {
- color: var(--nb-secondary);
+ color: #fff;
 }
 
 /* Fixed Navbar Positions */
@@ -1469,22 +1469,25 @@ body {
 .nb-nav-pills-primary .nb-pill-link.active {
  background-color: var(--nb-accent);
  border-color: var(--nb-accent);
+ color: #fff;
 }
 
 .nb-nav-pills-success .nb-pill-link.active {
  background-color: var(--nb-success);
  border-color: var(--nb-success);
+ color: #fff;
 }
 
 .nb-nav-pills-danger .nb-pill-link.active {
  background-color: var(--nb-danger);
  border-color: var(--nb-danger);
+ color: #fff;
 }
 
 .nb-nav-pills-warning .nb-pill-link.active {
  background-color: var(--nb-warning);
  border-color: var(--nb-warning);
- color: var(--nb-primary);
+ color: #000;
 }
 
 /* Square Pills (no border-radius) */
@@ -1564,15 +1567,15 @@ body {
  padding: 0 4px;
  margin-left: var(--nb-spacing-xs);
  background-color: var(--nb-danger);
- color: var(--nb-secondary);
+ color: #fff;
  font-size: 0.7rem;
  font-weight: bold;
  border-radius: 50%;
 }
 
 .nb-pill-link.active .nb-pill-badge {
- background-color: var(--nb-secondary);
- color: var(--nb-primary);
+ background-color: #fff;
+ color: #000;
 }
 
 /* Responsive Pills */
@@ -1662,35 +1665,35 @@ body {
 /* Colored Container Variants */
 .nb-container-primary {
  background-color: var(--nb-accent);
- color: var(--nb-secondary);
+ color: #fff;
  padding: var(--nb-spacing-lg);
  border: var(--nb-border-width) solid var(--nb-primary);
 }
 
 .nb-container-success {
  background-color: var(--nb-success);
- color: var(--nb-secondary);
+ color: #fff;
  padding: var(--nb-spacing-lg);
  border: var(--nb-border-width) solid var(--nb-primary);
 }
 
 .nb-container-warning {
  background-color: var(--nb-warning);
- color: var(--nb-primary);
+ color: #000;
  padding: var(--nb-spacing-lg);
  border: var(--nb-border-width) solid var(--nb-primary);
 }
 
 .nb-container-danger {
  background-color: var(--nb-danger);
- color: var(--nb-secondary);
+ color: #fff;
  padding: var(--nb-spacing-lg);
  border: var(--nb-border-width) solid var(--nb-primary);
 }
 
 .nb-container-info {
  background-color: var(--nb-info);
- color: var(--nb-secondary);
+ color: #fff;
  padding: var(--nb-spacing-lg);
  border: var(--nb-border-width) solid var(--nb-primary);
 }
