@@ -226,7 +226,42 @@ For larger, more impactful headings:
 <div class="container shadow">Container with shadow</div>
 <div class="container-1 shadow-1">Purple themed container</div>
 <div class="container-2 shadow-2">Yellow themed container</div>
-<div class="container-3 shadow-3">Green themed container</div>
+<div class="container-3 shadow-3">Cyan themed container</div>
+```
+
+#### Container Sizes
+
+```html
+<div class="nb-container-sm">Small container (max-width: 540px)</div>
+<div class="nb-container-md">Medium container (max-width: 720px)</div>
+<div class="nb-container-lg">Large container (max-width: 960px)</div>
+<div class="nb-container-xl">Extra large container (max-width: 1140px)</div>
+<div class="nb-container-fluid">Fluid container (100% width)</div>
+```
+
+#### Container Styles
+
+```html
+<!-- Bordered container with shadow -->
+<div class="nb-container-bordered">Bordered container</div>
+
+<!-- Card-style container -->
+<div class="nb-container-card">Card-style container with larger shadow</div>
+
+<!-- Centered content -->
+<div class="nb-container-center">Centered content</div>
+```
+
+#### Container Color Variants
+
+```html
+<div class="nb-container-primary">Primary colored container</div>
+<div class="nb-container-success">Success colored container</div>
+<div class="nb-container-warning">Warning colored container</div>
+<div class="nb-container-danger">Danger colored container</div>
+<div class="nb-container-info">Info colored container</div>
+<div class="nb-container-light">Light colored container</div>
+<div class="nb-container-dark">Dark colored container</div>
 ```
 
 ### Grid System
@@ -692,6 +727,105 @@ Perfect for scenarios with many tabs that don't fit on screen. Uses flexbox with
     <li class="nb-nav-item nb-nav-cta"><a href="#">Get Started</a></li>
   </ol>
 </nav>
+```
+
+#### Navbar Variants
+
+Color variants:
+```html
+<nav class="nb-navbar nb-navbar-dark">...</nav>
+<nav class="nb-navbar nb-navbar-primary">...</nav>
+<nav class="nb-navbar nb-navbar-success">...</nav>
+<nav class="nb-navbar nb-navbar-warning">...</nav>
+<nav class="nb-navbar nb-navbar-danger">...</nav>
+<nav class="nb-navbar nb-navbar-transparent">...</nav>
+```
+
+Position variants:
+```html
+<!-- Fixed to top of viewport -->
+<nav class="nb-navbar nb-navbar-fixed-top">...</nav>
+
+<!-- Fixed to bottom of viewport -->
+<nav class="nb-navbar nb-navbar-fixed-bottom">...</nav>
+
+<!-- Sticky positioning -->
+<nav class="nb-navbar nb-navbar-sticky">...</nav>
+
+<!-- Centered navbar -->
+<nav class="nb-navbar nb-navbar-centered">...</nav>
+```
+
+Size variants:
+```html
+<!-- Compact navbar -->
+<nav class="nb-navbar nb-navbar-compact">...</nav>
+
+<!-- Large navbar -->
+<nav class="nb-navbar nb-navbar-large">...</nav>
+```
+
+### Nav Pills
+
+Pill-style navigation tabs:
+
+```html
+<ul class="nb-nav-pills">
+  <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Home</a></li>
+  <li class="nb-pill-item"><a href="#" class="nb-pill-link">Profile</a></li>
+  <li class="nb-pill-item"><a href="#" class="nb-pill-link">Messages</a></li>
+</ul>
+```
+
+#### Pills Color Variants
+
+```html
+<ul class="nb-nav-pills nb-nav-pills-primary">...</ul>
+<ul class="nb-nav-pills nb-nav-pills-success">...</ul>
+<ul class="nb-nav-pills nb-nav-pills-danger">...</ul>
+<ul class="nb-nav-pills nb-nav-pills-warning">...</ul>
+```
+
+#### Pills Size Variants
+
+```html
+<!-- Small pills -->
+<ul class="nb-nav-pills nb-nav-pills-sm">...</ul>
+
+<!-- Large pills -->
+<ul class="nb-nav-pills nb-nav-pills-lg">...</ul>
+```
+
+#### Pills Style Variants
+
+```html
+<!-- Square pills (no border-radius) -->
+<ul class="nb-nav-pills nb-nav-pills-square">...</ul>
+
+<!-- Vertical pills -->
+<ul class="nb-nav-pills nb-nav-pills-vertical">...</ul>
+
+<!-- Justified pills (equal width) -->
+<ul class="nb-nav-pills nb-nav-pills-justified">...</ul>
+
+<!-- Scrollable pills -->
+<ul class="nb-nav-pills nb-nav-pills-scrollable">...</ul>
+
+<!-- Bordered pills container -->
+<ul class="nb-nav-pills nb-nav-pills-bordered">...</ul>
+```
+
+#### Pills with Badge
+
+```html
+<ul class="nb-nav-pills">
+  <li class="nb-pill-item">
+    <a href="#" class="nb-pill-link active">
+      Inbox <span class="nb-pill-badge">5</span>
+    </a>
+  </li>
+  <li class="nb-pill-item"><a href="#" class="nb-pill-link">Sent</a></li>
+</ul>
 ```
 
 ### Footer
