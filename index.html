@@ -229,6 +229,7 @@
      <li><a href="#containers">Containers</a></li>
      <li><a href="#grid">Grid System</a></li>
      <li><a href="#navbar">Navbar</a></li>
+     <li><a href="#pills">Nav Pills</a></li>
      <li><a href="#footer">Footer</a></li>
      
      <li class="docs-sidebar-section">Utilities</li>
@@ -1285,13 +1286,41 @@
    <!-- Containers -->
    <section id="containers" class="component-section">
     <h2 class="nb-section-title">Containers</h2>
-    <p class="nb-section-subtitle">Content containers with various shadow styles</p>
+    <p class="nb-section-subtitle">Content containers with various styles and sizes</p>
     
     <div class="component-demo">
+     <h4>Basic Containers with Shadows</h4>
      <div class="container shadow">Container with shadow</div>
-     <div class="container-1 shadow-1">Container-1 with shadow-1</div>
-     <div class="container-2 shadow-2">Container-2 with shadow-2</div>
-     <div class="container-3 shadow-3">Container-3 with shadow-3</div>
+     <div class="container-1 shadow-1">Container-1 with shadow-1 (Purple)</div>
+     <div class="container-2 shadow-2">Container-2 with shadow-2 (Yellow)</div>
+     <div class="container-3 shadow-3">Container-3 with shadow-3 (Cyan)</div>
+     
+     <h4 style="margin-top: 30px;">Sized Containers</h4>
+     <div class="nb-container-sm nb-container-bordered" style="margin-bottom: 15px;">
+      Small container (max-width: 540px)
+     </div>
+     <div class="nb-container-md nb-container-bordered" style="margin-bottom: 15px;">
+      Medium container (max-width: 720px)
+     </div>
+     <div class="nb-container-lg nb-container-bordered" style="margin-bottom: 15px;">
+      Large container (max-width: 960px)
+     </div>
+     
+     <h4 style="margin-top: 30px;">Card-style Container</h4>
+     <div class="nb-container-card" style="max-width: 400px;">
+      This container has card-like styling with a shadow offset, perfect for highlighting content.
+     </div>
+     
+     <h4 style="margin-top: 30px;">Color Variants</h4>
+     <div class="nb-container-primary" style="margin-bottom: 15px;">Primary Container</div>
+     <div class="nb-container-success" style="margin-bottom: 15px;">Success Container</div>
+     <div class="nb-container-warning" style="margin-bottom: 15px;">Warning Container</div>
+     <div class="nb-container-danger" style="margin-bottom: 15px;">Danger Container</div>
+     <div class="nb-container-info" style="margin-bottom: 15px;">Info Container</div>
+     
+     <h4 style="margin-top: 30px;">Light/Dark Containers</h4>
+     <div class="nb-container-light" style="margin-bottom: 15px;">Light Container</div>
+     <div class="nb-container-dark" style="margin-bottom: 15px;">Dark Container</div>
     </div>
    </section>
 
@@ -1328,9 +1357,10 @@
    <!-- Navbar -->
    <section id="navbar" class="component-section">
     <h2 class="nb-section-title">Navbar</h2>
-    <p class="nb-section-subtitle">Navigation bar components</p>
+    <p class="nb-section-subtitle">Navigation bar components with various styles</p>
     
     <div class="component-demo">
+     <h4>Standard Navbar</h4>
      <nav class="nb-navbar">
       <div class="nb-navbar-brand">
        <a href="#" class="nb-navbar-logo">NB</a>
@@ -1348,6 +1378,184 @@
        <li class="nb-nav-item nb-nav-cta"><a href="#">Get Started</a></li>
       </ol>
      </nav>
+     
+     <h4 style="margin-top: 30px;">Dark Navbar</h4>
+     <nav class="nb-navbar nb-navbar-dark">
+      <div class="nb-navbar-brand">
+       <a href="#" class="nb-navbar-logo" style="color: var(--nb-secondary); border-color: var(--nb-secondary);">Dark</a>
+      </div>
+      <ol class="nb-nav">
+       <li class="nb-nav-item"><a href="#" style="color: var(--nb-secondary);">Home</a></li>
+       <li class="nb-nav-item"><a href="#" style="color: var(--nb-secondary);">About</a></li>
+       <li class="nb-nav-item nb-nav-cta"><a href="#">Action</a></li>
+      </ol>
+     </nav>
+     
+     <h4 style="margin-top: 30px;">Primary Navbar</h4>
+     <nav class="nb-navbar nb-navbar-primary">
+      <div class="nb-navbar-brand">
+       <a href="#" class="nb-navbar-logo">Primary</a>
+      </div>
+      <ol class="nb-nav">
+       <li class="nb-nav-item"><a href="#">Home</a></li>
+       <li class="nb-nav-item"><a href="#">About</a></li>
+       <li class="nb-nav-item nb-nav-cta"><a href="#">Action</a></li>
+      </ol>
+     </nav>
+     
+     <h4 style="margin-top: 30px;">Success Navbar</h4>
+     <nav class="nb-navbar nb-navbar-success">
+      <div class="nb-navbar-brand">
+       <a href="#" class="nb-navbar-logo">Success</a>
+      </div>
+      <ol class="nb-nav">
+       <li class="nb-nav-item"><a href="#">Home</a></li>
+       <li class="nb-nav-item"><a href="#">About</a></li>
+       <li class="nb-nav-item nb-nav-cta"><a href="#">Action</a></li>
+      </ol>
+     </nav>
+     
+     <h4 style="margin-top: 30px;">Warning Navbar</h4>
+     <nav class="nb-navbar nb-navbar-warning">
+      <div class="nb-navbar-brand">
+       <a href="#" class="nb-navbar-logo">Warning</a>
+      </div>
+      <ol class="nb-nav">
+       <li class="nb-nav-item"><a href="#">Home</a></li>
+       <li class="nb-nav-item"><a href="#">About</a></li>
+       <li class="nb-nav-item nb-nav-cta"><a href="#">Action</a></li>
+      </ol>
+     </nav>
+     
+     <h4 style="margin-top: 30px;">Danger Navbar</h4>
+     <nav class="nb-navbar nb-navbar-danger">
+      <div class="nb-navbar-brand">
+       <a href="#" class="nb-navbar-logo">Danger</a>
+      </div>
+      <ol class="nb-nav">
+       <li class="nb-nav-item"><a href="#">Home</a></li>
+       <li class="nb-nav-item"><a href="#">About</a></li>
+       <li class="nb-nav-item nb-nav-cta"><a href="#">Action</a></li>
+      </ol>
+     </nav>
+     
+     <h4 style="margin-top: 30px;">Compact Navbar</h4>
+     <nav class="nb-navbar nb-navbar-compact">
+      <div class="nb-navbar-brand">
+       <a href="#" class="nb-navbar-logo">Compact</a>
+      </div>
+      <ol class="nb-nav">
+       <li class="nb-nav-item"><a href="#">Home</a></li>
+       <li class="nb-nav-item"><a href="#">About</a></li>
+      </ol>
+     </nav>
+     
+     <p class="nb-muted" style="margin-top: 20px;"><strong>Note:</strong> Use <code>nb-navbar-sticky</code> for sticky positioning, <code>nb-navbar-fixed-top</code> or <code>nb-navbar-fixed-bottom</code> for fixed positioning.</p>
+    </div>
+   </section>
+
+   <!-- Nav Pills -->
+   <section id="pills" class="component-section">
+    <h2 class="nb-section-title">Nav Pills</h2>
+    <p class="nb-section-subtitle">Pill-style navigation tabs</p>
+    
+    <div class="component-demo">
+     <h4>Standard Pills</h4>
+     <ul class="nb-nav-pills">
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Home</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Profile</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Messages</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Settings</a></li>
+     </ul>
+     
+     <h4 style="margin-top: 30px;">Square Pills</h4>
+     <ul class="nb-nav-pills nb-nav-pills-square">
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Dashboard</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Reports</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Analytics</a></li>
+     </ul>
+     
+     <h4 style="margin-top: 30px;">Color Variants</h4>
+     <div style="margin-bottom: 15px;">
+      <ul class="nb-nav-pills nb-nav-pills-primary">
+       <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Primary</a></li>
+       <li class="nb-pill-item"><a href="#" class="nb-pill-link">Item</a></li>
+      </ul>
+     </div>
+     <div style="margin-bottom: 15px;">
+      <ul class="nb-nav-pills nb-nav-pills-success">
+       <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Success</a></li>
+       <li class="nb-pill-item"><a href="#" class="nb-pill-link">Item</a></li>
+      </ul>
+     </div>
+     <div style="margin-bottom: 15px;">
+      <ul class="nb-nav-pills nb-nav-pills-danger">
+       <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Danger</a></li>
+       <li class="nb-pill-item"><a href="#" class="nb-pill-link">Item</a></li>
+      </ul>
+     </div>
+     <div style="margin-bottom: 15px;">
+      <ul class="nb-nav-pills nb-nav-pills-warning">
+       <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Warning</a></li>
+       <li class="nb-pill-item"><a href="#" class="nb-pill-link">Item</a></li>
+      </ul>
+     </div>
+     
+     <h4 style="margin-top: 30px;">Small Pills</h4>
+     <ul class="nb-nav-pills nb-nav-pills-sm">
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Small</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Pills</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Example</a></li>
+     </ul>
+     
+     <h4 style="margin-top: 30px;">Large Pills</h4>
+     <ul class="nb-nav-pills nb-nav-pills-lg">
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Large</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Pills</a></li>
+     </ul>
+     
+     <h4 style="margin-top: 30px;">Pills with Badge</h4>
+     <ul class="nb-nav-pills">
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Inbox <span class="nb-pill-badge">5</span></a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Sent</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Drafts <span class="nb-pill-badge">2</span></a></li>
+     </ul>
+     
+     <h4 style="margin-top: 30px;">Justified Pills</h4>
+     <ul class="nb-nav-pills nb-nav-pills-justified" style="max-width: 500px;">
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Left</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Center</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Right</a></li>
+     </ul>
+     
+     <h4 style="margin-top: 30px;">Vertical Pills</h4>
+     <ul class="nb-nav-pills nb-nav-pills-vertical" style="max-width: 200px;">
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Dashboard</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Profile</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Settings</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Logout</a></li>
+     </ul>
+     
+     <h4 style="margin-top: 30px;">Scrollable Pills</h4>
+     <p class="nb-muted" style="margin-bottom: 15px;">Scroll horizontally to see more pills.</p>
+     <ul class="nb-nav-pills nb-nav-pills-scrollable">
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Overview</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Features</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Documentation</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Installation</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Configuration</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">API Reference</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Examples</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">FAQ</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Support</a></li>
+     </ul>
+     
+     <h4 style="margin-top: 30px;">Bordered Pills Container</h4>
+     <ul class="nb-nav-pills nb-nav-pills-bordered">
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Active</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Link</a></li>
+      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Link</a></li>
+     </ul>
     </div>
    </section>
 

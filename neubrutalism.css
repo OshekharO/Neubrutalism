@@ -1316,6 +1316,404 @@ body {
  box-shadow: none;
 }
 
+/* Navbar Color Variants */
+.nb-navbar-primary {
+ background-color: var(--nb-accent);
+ border-color: var(--nb-primary);
+}
+
+.nb-navbar-primary .nb-navbar-logo,
+.nb-navbar-primary .nb-nav-item a {
+ color: var(--nb-secondary);
+}
+
+.nb-navbar-success {
+ background-color: var(--nb-success);
+ border-color: var(--nb-primary);
+}
+
+.nb-navbar-success .nb-navbar-logo,
+.nb-navbar-success .nb-nav-item a {
+ color: var(--nb-secondary);
+}
+
+.nb-navbar-warning {
+ background-color: var(--nb-warning);
+ border-color: var(--nb-primary);
+}
+
+.nb-navbar-warning .nb-navbar-logo,
+.nb-navbar-warning .nb-nav-item a {
+ color: var(--nb-primary);
+}
+
+.nb-navbar-danger {
+ background-color: var(--nb-danger);
+ border-color: var(--nb-primary);
+}
+
+.nb-navbar-danger .nb-navbar-logo,
+.nb-navbar-danger .nb-nav-item a {
+ color: var(--nb-secondary);
+}
+
+/* Fixed Navbar Positions */
+.nb-navbar-fixed-top {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ z-index: 1030;
+}
+
+.nb-navbar-fixed-bottom {
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ z-index: 1030;
+}
+
+/* Sticky Navbar */
+.nb-navbar-sticky {
+ position: sticky;
+ top: 0;
+ z-index: 1020;
+}
+
+/* Centered Navbar */
+.nb-navbar-centered {
+ justify-content: center;
+}
+
+.nb-navbar-centered .nb-navbar-brand {
+ position: absolute;
+ left: var(--nb-spacing-md);
+}
+
+.nb-navbar-centered .nb-nav {
+ justify-content: center;
+}
+
+/* Compact Navbar */
+.nb-navbar-compact {
+ padding: var(--nb-spacing-xs);
+}
+
+.nb-navbar-compact .nb-navbar-logo {
+ font-size: var(--nb-font-size-base);
+ padding: var(--nb-spacing-xs);
+}
+
+/* Large Navbar */
+.nb-navbar-large {
+ padding: var(--nb-spacing-lg);
+}
+
+.nb-navbar-large .nb-navbar-logo {
+ font-size: 2rem;
+ padding: var(--nb-spacing-sm) var(--nb-spacing-md);
+}
+
+/* ==========================================================================
+   17b. Nav Pills
+   ========================================================================== */
+
+.nb-nav-pills {
+ display: flex;
+ flex-wrap: wrap;
+ gap: var(--nb-spacing-sm);
+ list-style: none;
+ padding: 0;
+ margin: 0 0 var(--nb-spacing-md) 0;
+}
+
+.nb-nav-pills .nb-pill-item {
+ background: none;
+ border: none;
+ margin: 0;
+ padding: 0;
+}
+
+.nb-nav-pills .nb-pill-link {
+ display: inline-block;
+ padding: var(--nb-spacing-sm) var(--nb-spacing-md);
+ text-decoration: none;
+ color: var(--nb-primary);
+ background-color: var(--nb-secondary);
+ border: var(--nb-border-width) solid var(--nb-primary);
+ box-shadow: 3px 3px 0 var(--nb-primary);
+ border-radius: 25px;
+ font-weight: 600;
+ transition: all var(--nb-transition-fast);
+ cursor: pointer;
+}
+
+.nb-nav-pills .nb-pill-link:hover {
+ transform: translate(2px, 2px);
+ box-shadow: 1px 1px 0 var(--nb-primary);
+}
+
+.nb-nav-pills .nb-pill-link:focus-visible {
+ outline: 2px solid var(--nb-accent);
+ outline-offset: 2px;
+}
+
+.nb-nav-pills .nb-pill-link.active,
+.nb-nav-pills .nb-pill-item.active .nb-pill-link {
+ background-color: var(--nb-primary);
+ color: var(--nb-secondary);
+}
+
+/* Nav Pills Color Variants */
+.nb-nav-pills-primary .nb-pill-link.active {
+ background-color: var(--nb-accent);
+ border-color: var(--nb-accent);
+}
+
+.nb-nav-pills-success .nb-pill-link.active {
+ background-color: var(--nb-success);
+ border-color: var(--nb-success);
+}
+
+.nb-nav-pills-danger .nb-pill-link.active {
+ background-color: var(--nb-danger);
+ border-color: var(--nb-danger);
+}
+
+.nb-nav-pills-warning .nb-pill-link.active {
+ background-color: var(--nb-warning);
+ border-color: var(--nb-warning);
+ color: var(--nb-primary);
+}
+
+/* Square Pills (no border-radius) */
+.nb-nav-pills-square .nb-pill-link {
+ border-radius: 0;
+}
+
+/* Small Pills */
+.nb-nav-pills-sm .nb-pill-link {
+ padding: var(--nb-spacing-xs) var(--nb-spacing-sm);
+ font-size: var(--nb-font-size-sm);
+}
+
+/* Large Pills */
+.nb-nav-pills-lg .nb-pill-link {
+ padding: var(--nb-spacing-md) var(--nb-spacing-lg);
+ font-size: var(--nb-font-size-lg);
+}
+
+/* Vertical Pills */
+.nb-nav-pills-vertical {
+ flex-direction: column;
+}
+
+.nb-nav-pills-vertical .nb-pill-link {
+ width: 100%;
+ text-align: left;
+}
+
+/* Justified Pills (equal width) */
+.nb-nav-pills-justified {
+ width: 100%;
+}
+
+.nb-nav-pills-justified .nb-pill-item {
+ flex: 1;
+}
+
+.nb-nav-pills-justified .nb-pill-link {
+ width: 100%;
+ text-align: center;
+}
+
+/* Scrollable Nav Pills */
+.nb-nav-pills-scrollable {
+ flex-wrap: nowrap;
+ overflow-x: auto;
+ -webkit-overflow-scrolling: touch;
+ scrollbar-width: none;
+ -ms-overflow-style: none;
+ padding-bottom: var(--nb-spacing-xs);
+}
+
+.nb-nav-pills-scrollable::-webkit-scrollbar {
+ display: none;
+}
+
+.nb-nav-pills-scrollable .nb-pill-item {
+ flex-shrink: 0;
+}
+
+/* Bordered Pills Container */
+.nb-nav-pills-bordered {
+ border: var(--nb-border-width) solid var(--nb-primary);
+ box-shadow: var(--nb-shadow-offset) var(--nb-shadow-offset) 0 var(--nb-primary);
+ padding: var(--nb-spacing-sm);
+ background-color: var(--nb-gray-100);
+}
+
+/* Pill Badge (count) */
+.nb-pill-badge {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ min-width: 18px;
+ height: 18px;
+ padding: 0 4px;
+ margin-left: var(--nb-spacing-xs);
+ background-color: var(--nb-danger);
+ color: var(--nb-secondary);
+ font-size: 0.7rem;
+ font-weight: bold;
+ border-radius: 50%;
+}
+
+.nb-pill-link.active .nb-pill-badge {
+ background-color: var(--nb-secondary);
+ color: var(--nb-primary);
+}
+
+/* Responsive Pills */
+@media (max-width: 768px) {
+ .nb-nav-pills {
+  gap: var(--nb-spacing-xs);
+ }
+ 
+ .nb-nav-pills .nb-pill-link {
+  padding: var(--nb-spacing-xs) var(--nb-spacing-sm);
+  font-size: var(--nb-font-size-sm);
+ }
+ 
+ .nb-nav-pills-responsive {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+ }
+ 
+ .nb-nav-pills-responsive::-webkit-scrollbar {
+  display: none;
+ }
+ 
+ .nb-nav-pills-responsive .nb-pill-item {
+  flex-shrink: 0;
+ }
+}
+
+/* ==========================================================================
+   17c. Additional Container Variants
+   ========================================================================== */
+
+/* Fluid Container (full width) */
+.nb-container-fluid {
+ width: 100%;
+ padding: var(--nb-spacing-lg);
+}
+
+/* Small Container */
+.nb-container-sm {
+ max-width: 540px;
+ margin: 0 auto;
+ padding: var(--nb-spacing-lg);
+ width: 100%;
+}
+
+/* Medium Container */
+.nb-container-md {
+ max-width: 720px;
+ margin: 0 auto;
+ padding: var(--nb-spacing-lg);
+ width: 100%;
+}
+
+/* Large Container */
+.nb-container-lg {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: var(--nb-spacing-lg);
+ width: 100%;
+}
+
+/* Extra Large Container */
+.nb-container-xl {
+ max-width: 1140px;
+ margin: 0 auto;
+ padding: var(--nb-spacing-lg);
+ width: 100%;
+}
+
+/* Bordered Container */
+.nb-container-bordered {
+ border: var(--nb-border-width) solid var(--nb-primary);
+ box-shadow: var(--nb-shadow-offset) var(--nb-shadow-offset) 0 var(--nb-primary);
+}
+
+/* Card-style Container */
+.nb-container-card {
+ background-color: var(--nb-secondary);
+ border: var(--nb-border-width) solid var(--nb-primary);
+ box-shadow: 6px 6px 0 var(--nb-primary);
+ padding: var(--nb-spacing-xl);
+ margin-bottom: var(--nb-spacing-lg);
+}
+
+/* Colored Container Variants */
+.nb-container-primary {
+ background-color: var(--nb-accent);
+ color: var(--nb-secondary);
+ padding: var(--nb-spacing-lg);
+ border: var(--nb-border-width) solid var(--nb-primary);
+}
+
+.nb-container-success {
+ background-color: var(--nb-success);
+ color: var(--nb-secondary);
+ padding: var(--nb-spacing-lg);
+ border: var(--nb-border-width) solid var(--nb-primary);
+}
+
+.nb-container-warning {
+ background-color: var(--nb-warning);
+ color: var(--nb-primary);
+ padding: var(--nb-spacing-lg);
+ border: var(--nb-border-width) solid var(--nb-primary);
+}
+
+.nb-container-danger {
+ background-color: var(--nb-danger);
+ color: var(--nb-secondary);
+ padding: var(--nb-spacing-lg);
+ border: var(--nb-border-width) solid var(--nb-primary);
+}
+
+.nb-container-info {
+ background-color: var(--nb-info);
+ color: var(--nb-secondary);
+ padding: var(--nb-spacing-lg);
+ border: var(--nb-border-width) solid var(--nb-primary);
+}
+
+/* Light/Dark Container */
+.nb-container-light {
+ background-color: var(--nb-gray-100);
+ padding: var(--nb-spacing-lg);
+ border: var(--nb-border-width) solid var(--nb-primary);
+}
+
+.nb-container-dark {
+ background-color: var(--nb-primary);
+ color: var(--nb-secondary);
+ padding: var(--nb-spacing-lg);
+ border: var(--nb-border-width) solid var(--nb-primary);
+}
+
+/* Centered Container Content */
+.nb-container-center {
+ text-align: center;
+}
+
 /* ==========================================================================
    18. Grid System
    ========================================================================== */
