@@ -539,16 +539,44 @@
    const toggle = document.getElementById('mobile-menu-toggle');
    const sidebar = document.getElementById('docs-sidebar');
    const overlay = document.getElementById('mobile-overlay');
-   function toggleMenu() {
-    sidebar.classList.toggle('active');
-    overlay.classList.toggle('active');
-    document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+   let previousBodyOverflow = null;
+
+   function openMenu() {
+    if (!sidebar.classList.contains('active')) {
+     previousBodyOverflow = document.body.style.overflow;
+    }
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
    }
+
+   function closeMenu() {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = previousBodyOverflow !== null ? previousBodyOverflow : '';
+    previousBodyOverflow = null;
+   }
+
+   function toggleMenu() {
+    if (sidebar.classList.contains('active')) {
+     closeMenu();
+    } else {
+     openMenu();
+    }
+   }
+
+   function handleDesktopBreakpoint() {
+    if (window.innerWidth > 900) {
+     closeMenu();
+    }
+   }
+
    toggle.addEventListener('click', toggleMenu);
-   overlay.addEventListener('click', toggleMenu);
+   overlay.addEventListener('click', closeMenu);
+   window.addEventListener('resize', handleDesktopBreakpoint);
    document.querySelectorAll('.docs-sidebar nav a').forEach(function(a) {
     a.addEventListener('click', function() {
-     if (window.innerWidth <= 900) toggleMenu();
+     if (window.innerWidth <= 900) closeMenu();
     });
    });
   </script>
