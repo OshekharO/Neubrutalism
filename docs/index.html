@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Neubrutalism CSS Documentation - A minimalist, high-contrast CSS library." />
+  <title>Neubrutalism CSS — Documentation</title>
+  <link rel="icon" href="../icon/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="stylesheet" href="../neubrutalism.css" />
+  <script defer src="../neubrutalism.js"></script>
+  <style>
+   .docs-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    background: var(--nb-secondary);
+    border-right: 3px solid var(--nb-primary);
+    overflow-y: auto;
+    padding: 20px;
+    z-index: 100;
+    transition: transform 0.3s ease;
+   }
+   .docs-sidebar-header {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--nb-primary);
+   }
+   .docs-sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+   }
+   .docs-sidebar nav ul li {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+   }
+   .docs-sidebar nav ul li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--nb-primary);
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+   }
+   .docs-sidebar nav ul li a:hover {
+    background: var(--nb-gray-100);
+    border-left-color: var(--nb-primary);
+   }
+   .docs-sidebar-section {
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding: 0 12px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--nb-gray-600);
+   }
+   .docs-content {
+    margin-left: 280px;
+    padding: 40px;
+    max-width: 900px;
+    flex: 1;
+   }
+   .docs-section {
+    margin-bottom: 60px;
+    padding-top: 20px;
+   }
+   .docs-section h2 {
+    font-size: 1.75rem;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--nb-primary);
+    display: inline-block;
+    margin-bottom: 20px;
+   }
+   .docs-section h3 {
+    font-size: 1.25rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+   }
+   .docs-code {
+    background: var(--nb-secondary);
+    border: 2px solid var(--nb-primary);
+    box-shadow: 4px 4px 0 var(--nb-primary);
+    padding: 16px;
+    margin: 16px 0;
+    overflow-x: auto;
+   }
+   .docs-code code {
+    font-family: "Courier New", Consolas, monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    white-space: pre;
+   }
+   .docs-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    width: 44px;
+    height: 44px;
+    background: var(--nb-secondary);
+    border: 3px solid var(--nb-primary);
+    box-shadow: 3px 3px 0 var(--nb-primary);
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+   }
+   .docs-menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: var(--nb-primary);
+   }
+   .docs-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+   }
+   .docs-overlay.active { display: block; }
+   @media (max-width: 900px) {
+    .docs-menu-toggle { display: flex; }
+    .docs-sidebar { transform: translateX(-100%); }
+    .docs-sidebar.active { transform: translateX(0); }
+    .docs-content { margin-left: 0; padding: 80px 20px 20px; max-width: 100%; }
+   }
+  </style>
+ </head>
+ <body>
+  <button class="docs-menu-toggle" aria-label="Toggle navigation" id="mobile-menu-toggle">
+   <span></span><span></span><span></span>
+  </button>
+  <div class="docs-overlay" id="mobile-overlay"></div>
+
+  <aside class="docs-sidebar" id="docs-sidebar">
+   <div class="docs-sidebar-header">📚 Docs</div>
+   <nav aria-label="Documentation navigation">
+    <ul>
+     <li><a href="#getting-started">Getting Started</a></li>
+     <li><a href="#installation">Installation</a></li>
+     <li><a href="#custom-properties">CSS Custom Properties</a></li>
+     <div class="docs-sidebar-section">Typography</div>
+     <li><a href="#typography">Typography</a></li>
+     <div class="docs-sidebar-section">Layout</div>
+     <li><a href="#layout">Layout &amp; Grid</a></li>
+     <li><a href="#containers">Containers</a></li>
+     <div class="docs-sidebar-section">Components</div>
+     <li><a href="#buttons">Buttons</a></li>
+     <li><a href="#badges">Badges &amp; Tags</a></li>
+     <li><a href="#cards">Cards</a></li>
+     <li><a href="#alerts">Alerts</a></li>
+     <li><a href="#modals">Modals</a></li>
+     <li><a href="#accordion">Accordion</a></li>
+     <li><a href="#tabs">Tabs</a></li>
+     <li><a href="#dropdown">Dropdown</a></li>
+     <li><a href="#navbar">Navbar</a></li>
+     <li><a href="#tables">Tables</a></li>
+     <li><a href="#forms">Forms</a></li>
+     <div class="docs-sidebar-section">Utilities</div>
+     <li><a href="#colors">Colors</a></li>
+     <li><a href="#dark-mode">Dark Mode</a></li>
+     <li><a href="#accessibility">Accessibility</a></li>
+     <div class="docs-sidebar-section">Reference</div>
+     <li><a href="../index.html">← Live Demo</a></li>
+     <li><a href="https://github.com/OshekharO/Neubrutalism" target="_blank" rel="noopener">GitHub ↗</a></li>
+    </ul>
+   </nav>
+  </aside>
+
+  <main class="docs-content">
+   <h1 style="font-size:2.5rem; font-weight:800; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Neubrutalism CSS</h1>
+   <p class="nb-lead" style="margin-bottom:40px;">A minimalist, high-contrast CSS library inspired by Brutalist design principles. Bold, clean, and unapologetically simple.</p>
+   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;">
+    <a href="../index.html" class="nb-btn nb-btn-large">Live Demo</a>
+    <a href="https://github.com/OshekharO/Neubrutalism" class="nb-btn nb-btn-large" target="_blank" rel="noopener">GitHub</a>
+   </div>
+
+   <!-- Getting Started -->
+   <section id="getting-started" class="docs-section" style="cursor:default;">
+    <h2>Getting Started</h2>
+    <p>Neubrutalism CSS is a lightweight, dependency-free CSS library that provides bold, high-contrast components perfect for modern web applications.</p>
+    <h3>Key Features</h3>
+    <ul style="list-style:disc;padding-left:24px;margin-bottom:16px;">
+     <li style="background:none;border:none;margin:0;padding:4px 0;">🎨 High-contrast black and white design</li>
+     <li style="background:none;border:none;margin:0;padding:4px 0;">⚡ Lightweight (~70KB unminified)</li>
+     <li style="background:none;border:none;margin:0;padding:4px 0;">🌙 Built-in dark mode support</li>
+     <li style="background:none;border:none;margin:0;padding:4px 0;">♿ Accessibility-first approach</li>
+     <li style="background:none;border:none;margin:0;padding:4px 0;">📱 Responsive components</li>
+     <li style="background:none;border:none;margin:0;padding:4px 0;">🔧 Customizable with CSS custom properties</li>
+     <li style="background:none;border:none;margin:0;padding:4px 0;">🎯 No JavaScript dependencies for styling</li>
+    </ul>
+   </section>
+
+   <!-- Installation -->
+   <section id="installation" class="docs-section" style="cursor:default;">
+    <h2>Installation</h2>
+    <h3>CDN (Recommended)</h3>
+    <p>Add the following to your HTML <code>&lt;head&gt;</code>:</p>
+    <div class="docs-code"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.css"&gt;</code></div>
+    <h3>Optional JavaScript</h3>
+    <p>For interactive components like toasts and dark mode toggle:</p>
+    <div class="docs-code"><code>&lt;script src="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.js"&gt;&lt;/script&gt;</code></div>
+    <h3>Download</h3>
+    <p>Download the files from <a href="https://github.com/OshekharO/Neubrutalism">GitHub</a> and include them in your project.</p>
+   </section>
+
+   <!-- CSS Custom Properties -->
+   <section id="custom-properties" class="docs-section" style="cursor:default;">
+    <h2>CSS Custom Properties</h2>
+    <p>Customize Neubrutalism by overriding CSS custom properties:</p>
+    <h3>Core Colors</h3>
+    <div class="docs-code"><code>:root {
+  --nb-primary: #000;        /* Primary color (black) */
+  --nb-secondary: #fff;      /* Secondary color (white) */
+  --nb-accent: #3498db;      /* Accent color for focus states */
+  --nb-success: #2ecc71;
+  --nb-danger: #e74c3c;
+  --nb-warning: #f39c12;
+  --nb-info: #3498db;
+}</code></div>
+    <h3>Shadow &amp; Border</h3>
+    <div class="docs-code"><code>:root {
+  --nb-border-width: 2px;
+  --nb-border-radius: 4px;
+  --nb-shadow-offset: 4px;
+  --nb-shadow-color: var(--nb-primary);
+}</code></div>
+   </section>
+
+   <!-- Typography -->
+   <section id="typography" class="docs-section" style="cursor:default;">
+    <h2>Typography</h2>
+    <p>Headings <code>h1</code>–<code>h6</code> are styled automatically. Additional classes:</p>
+    <div class="docs-code"><code>&lt;p class="nb-lead"&gt;Lead paragraph text&lt;/p&gt;
+&lt;p class="nb-small"&gt;Small text&lt;/p&gt;
+&lt;p class="nb-muted"&gt;Muted text&lt;/p&gt;
+&lt;span class="nb-mark"&gt;Highlighted text&lt;/span&gt;
+
+&lt;!-- Display headings --&gt;
+&lt;p class="nb-display-1"&gt;Display 1&lt;/p&gt;
+&lt;p class="nb-display-2"&gt;Display 2&lt;/p&gt;
+
+&lt;!-- Blockquote --&gt;
+&lt;blockquote class="nb-blockquote"&gt;
+  Quote text
+  &lt;span class="nb-blockquote-author"&gt;- Author&lt;/span&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- Code block --&gt;
+&lt;pre class="nb-code-block"&gt;&lt;code&gt;your code here&lt;/code&gt;&lt;/pre&gt;</code></div>
+   </section>
+
+   <!-- Layout -->
+   <section id="layout" class="docs-section" style="cursor:default;">
+    <h2>Layout &amp; Grid</h2>
+    <div class="docs-code"><code>&lt;!-- Responsive grid --&gt;
+&lt;div class="nb-grid nb-grid-3"&gt;
+  &lt;div&gt;Column 1&lt;/div&gt;
+  &lt;div&gt;Column 2&lt;/div&gt;
+  &lt;div&gt;Column 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Available: nb-grid-1 through nb-grid-6 --&gt;
+&lt;!-- Bordered grid --&gt;
+&lt;div class="nb-grid-bordered nb-grid-3"&gt;...&lt;/div&gt;</code></div>
+   </section>
+
+   <!-- Containers -->
+   <section id="containers" class="docs-section" style="cursor:default;">
+    <h2>Containers</h2>
+    <div class="docs-code"><code>&lt;div class="nb-container"&gt;Max 1200px centered&lt;/div&gt;
+&lt;div class="nb-container-sm"&gt;Max 540px&lt;/div&gt;
+&lt;div class="nb-container-md"&gt;Max 720px&lt;/div&gt;
+&lt;div class="nb-container-lg"&gt;Max 960px&lt;/div&gt;
+&lt;div class="nb-container-card"&gt;Card-style&lt;/div&gt;
+&lt;div class="nb-container-bordered"&gt;With border &amp; shadow&lt;/div&gt;
+
+&lt;!-- Color variants --&gt;
+&lt;div class="nb-container-primary"&gt;Primary&lt;/div&gt;
+&lt;div class="nb-container-success"&gt;Success&lt;/div&gt;
+&lt;div class="nb-container-warning"&gt;Warning&lt;/div&gt;
+&lt;div class="nb-container-danger"&gt;Danger&lt;/div&gt;</code></div>
+   </section>
+
+   <!-- Buttons -->
+   <section id="buttons" class="docs-section" style="cursor:default;">
+    <h2>Buttons</h2>
+    <div class="docs-code"><code>&lt;button class="nb-btn"&gt;Default&lt;/button&gt;
+&lt;button class="nb-btn nb-btn-small"&gt;Small&lt;/button&gt;
+&lt;button class="nb-btn nb-btn-large"&gt;Large&lt;/button&gt;
+&lt;button class="nb-btn nb-btn-rounded"&gt;Rounded&lt;/button&gt;
+&lt;button class="nb-btn nb-btn-block"&gt;Block&lt;/button&gt;
+&lt;button class="nb-btn nb-btn-disabled" disabled&gt;Disabled&lt;/button&gt;
+
+&lt;!-- Animated --&gt;
+&lt;button class="nb-btn-ani"&gt;Animated&lt;/button&gt;
+
+&lt;!-- Button Group --&gt;
+&lt;div class="nb-group nb-group-shadow"&gt;
+  &lt;button class="nb-btn"&gt;Left&lt;/button&gt;
+  &lt;button class="nb-btn"&gt;Middle&lt;/button&gt;
+  &lt;button class="nb-btn"&gt;Right&lt;/button&gt;
+&lt;/div&gt;</code></div>
+   </section>
+
+   <!-- Badges & Tags -->
+   <section id="badges" class="docs-section" style="cursor:default;">
+    <h2>Badges &amp; Tags</h2>
+    <div class="docs-code"><code>&lt;!-- Badges --&gt;
+&lt;span class="nb-badge"&gt;Default&lt;/span&gt;
+&lt;span class="nb-badge nb-badge-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="nb-badge nb-badge-success"&gt;Success&lt;/span&gt;
+&lt;span class="nb-badge nb-badge-danger"&gt;Danger&lt;/span&gt;
+&lt;span class="nb-badge nb-badge-warning"&gt;Warning&lt;/span&gt;
+&lt;span class="nb-badge nb-badge-pill"&gt;Pill&lt;/span&gt;
+
+&lt;!-- Tags --&gt;
+&lt;span class="nb-tag"&gt;Default&lt;/span&gt;
+&lt;span class="nb-tag nb-tag-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="nb-tag"&gt;Removable &lt;span class="nb-tag-close"&gt;&amp;times;&lt;/span&gt;&lt;/span&gt;</code></div>
+   </section>
+
+   <!-- Cards -->
+   <section id="cards" class="docs-section" style="cursor:default;">
+    <h2>Cards</h2>
+    <div class="docs-code"><code>&lt;div class="nb-card"&gt;
+  &lt;div class="nb-card-header"&gt;Header&lt;/div&gt;
+  &lt;div class="nb-card-body"&gt;
+    &lt;h3&gt;Card Title&lt;/h3&gt;
+    &lt;p&gt;Card content goes here.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-card-footer"&gt;
+    &lt;button class="nb-btn nb-btn-small"&gt;Action&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></div>
+   </section>
+
+   <!-- Alerts -->
+   <section id="alerts" class="docs-section" style="cursor:default;">
+    <h2>Alerts</h2>
+    <div class="docs-code"><code>&lt;div class="nb-alert nb-alert-success"&gt;Success alert&lt;/div&gt;
+&lt;div class="nb-alert nb-alert-danger"&gt;Danger alert&lt;/div&gt;
+&lt;div class="nb-alert nb-alert-warning"&gt;Warning alert&lt;/div&gt;
+&lt;div class="nb-alert nb-alert-info"&gt;Info alert&lt;/div&gt;</code></div>
+   </section>
+
+   <!-- Modals -->
+   <section id="modals" class="docs-section" style="cursor:default;">
+    <h2>Modals</h2>
+    <div class="docs-code"><code>&lt;input class="nb-modal-state" id="my-modal" type="checkbox" /&gt;
+&lt;div class="nb-modal"&gt;
+  &lt;label class="nb-modal-overlay" for="my-modal"&gt;&lt;/label&gt;
+  &lt;div class="nb-modal-container"&gt;
+    &lt;label class="nb-modal-close" for="my-modal"&gt;...&lt;/label&gt;
+    &lt;div class="nb-modal-content"&gt;
+      &lt;h2 class="nb-modal-title"&gt;Title&lt;/h2&gt;
+      &lt;div class="nb-modal-body"&gt;Content&lt;/div&gt;
+      &lt;div class="nb-modal-footer"&gt;
+        &lt;label class="nb-btn" for="my-modal"&gt;Close&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;label class="nb-btn" for="my-modal"&gt;Open Modal&lt;/label&gt;</code></div>
+   </section>
+
+   <!-- Accordion -->
+   <section id="accordion" class="docs-section" style="cursor:default;">
+    <h2>Accordion</h2>
+    <div class="docs-code"><code>&lt;div class="nb-accordion"&gt;
+  &lt;div class="nb-accordion-item"&gt;
+    &lt;input type="checkbox" id="acc-1" class="nb-accordion-state" /&gt;
+    &lt;label for="acc-1" class="nb-accordion-header"&gt;
+      Question &lt;span class="nb-accordion-icon"&gt;+&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;div class="nb-accordion-content"&gt;
+      &lt;p&gt;Answer goes here.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></div>
+   </section>
+
+   <!-- Tabs -->
+   <section id="tabs" class="docs-section" style="cursor:default;">
+    <h2>Tabs</h2>
+    <div class="docs-code"><code>&lt;div class="nb-tabs"&gt;
+  &lt;input class="nb-tab-input" name="tabs" type="radio" id="tab-1" checked /&gt;
+  &lt;label class="nb-tab-label" for="tab-1"&gt;Tab 1&lt;/label&gt;
+  &lt;div class="nb-tab-panel"&gt;&lt;p&gt;Tab 1 content&lt;/p&gt;&lt;/div&gt;
+
+  &lt;input class="nb-tab-input" name="tabs" type="radio" id="tab-2" /&gt;
+  &lt;label class="nb-tab-label" for="tab-2"&gt;Tab 2&lt;/label&gt;
+  &lt;div class="nb-tab-panel"&gt;&lt;p&gt;Tab 2 content&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Scrollable tabs: same pattern, use class="nb-tabs-scrollable" --&gt;</code></div>
+   </section>
+
+   <!-- Dropdown -->
+   <section id="dropdown" class="docs-section" style="cursor:default;">
+    <h2>Dropdown</h2>
+    <div class="docs-code"><code>&lt;div class="nb-dropdown nb-dropdown-primary"&gt;
+  &lt;button class="nb-dropdown-toggle"&gt;Select Option&lt;/button&gt;
+  &lt;div class="nb-dropdown-menu"&gt;
+    &lt;a href="#" class="nb-dropdown-menu-item"&gt;Option 1&lt;/a&gt;
+    &lt;a href="#" class="nb-dropdown-menu-item"&gt;Option 2&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></div>
+   </section>
+
+   <!-- Navbar -->
+   <section id="navbar" class="docs-section" style="cursor:default;">
+    <h2>Navbar</h2>
+    <div class="docs-code"><code>&lt;nav class="nb-navbar"&gt;
+  &lt;div class="nb-navbar-brand"&gt;
+    &lt;a href="#" class="nb-navbar-logo"&gt;Brand&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;ol class="nb-nav"&gt;
+    &lt;li class="nb-nav-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="nb-nav-item"&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="nb-nav-item nb-nav-cta"&gt;&lt;a href="#"&gt;CTA&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+
+&lt;!-- Variants: nb-navbar-dark, nb-navbar-primary, nb-navbar-success,
+     nb-navbar-warning, nb-navbar-danger, nb-navbar-compact,
+     nb-navbar-sticky, nb-navbar-fixed-top --&gt;</code></div>
+   </section>
+
+   <!-- Tables -->
+   <section id="tables" class="docs-section" style="cursor:default;">
+    <h2>Tables</h2>
+    <div class="docs-code"><code>&lt;table class="nb-table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Alice&lt;/td&gt;&lt;td&gt;Active&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;!-- Modifiers: nb-table-compact, nb-table-borderless --&gt;
+&lt;!-- Row highlights: nb-row-success, nb-row-warning, nb-row-danger, nb-row-info --&gt;
+&lt;!-- Scrollable: wrap in &lt;div class="nb-table-scrollable"&gt; --&gt;</code></div>
+   </section>
+
+   <!-- Forms -->
+   <section id="forms" class="docs-section" style="cursor:default;">
+    <h2>Forms</h2>
+    <div class="docs-code"><code>&lt;div class="nb-pre-form"&gt;
+  &lt;form class="nb-form"&gt;
+    &lt;div class="nb-form-group"&gt;
+      &lt;input type="text" placeholder="Name" class="nb-form-input" /&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-form-group"&gt;
+      &lt;input type="email" placeholder="Email" class="nb-form-input" /&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="nb-form-btn"&gt;Submit&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;!-- Checkbox --&gt;
+&lt;label class="nb-checkbox"&gt;
+  Label &lt;input type="checkbox" /&gt;
+  &lt;span class="nb-checkbox-mark"&gt;&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;!-- Switch --&gt;
+&lt;label class="nb-switch"&gt;
+  &lt;input type="checkbox" /&gt;
+  &lt;span class="nb-switch-slider"&gt;&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;!-- Range --&gt;
+&lt;input type="range" class="nb-range" min="0" max="100" value="50" /&gt;</code></div>
+   </section>
+
+   <!-- Colors -->
+   <section id="colors" class="docs-section" style="cursor:default;">
+    <h2>Colors</h2>
+    <div class="docs-code"><code>&lt;!-- Background --&gt;
+&lt;div class="nb-bg-primary"&gt;Primary&lt;/div&gt;
+&lt;div class="nb-bg-success"&gt;Success&lt;/div&gt;
+&lt;div class="nb-bg-danger"&gt;Danger&lt;/div&gt;
+&lt;div class="nb-bg-warning"&gt;Warning&lt;/div&gt;
+&lt;div class="nb-bg-info"&gt;Info&lt;/div&gt;
+
+&lt;!-- Text --&gt;
+&lt;p class="nb-text-primary"&gt;Primary&lt;/p&gt;
+&lt;p class="nb-text-success"&gt;Success&lt;/p&gt;
+&lt;p class="nb-text-danger"&gt;Danger&lt;/p&gt;
+&lt;p class="nb-text-muted"&gt;Muted&lt;/p&gt;</code></div>
+   </section>
+
+   <!-- Dark Mode -->
+   <section id="dark-mode" class="docs-section" style="cursor:default;">
+    <h2>Dark Mode</h2>
+    <p>Neubrutalism supports both system-preference dark mode (via <code>prefers-color-scheme</code>) and a manual class toggle.</p>
+    <div class="docs-code"><code>&lt;!-- Toggle via JS --&gt;
+&lt;button onclick="toggleDarkMode(!isDarkMode())"&gt;Toggle Dark Mode&lt;/button&gt;
+
+&lt;!-- Or add the class manually --&gt;
+&lt;html class="nb-dark"&gt;</code></div>
+   </section>
+
+   <!-- Accessibility -->
+   <section id="accessibility" class="docs-section" style="cursor:default;">
+    <h2>Accessibility</h2>
+    <ul style="list-style:disc;padding-left:24px;">
+     <li style="background:none;border:none;margin:0;padding:4px 0;">All interactive components support <code>:focus-visible</code> outlines</li>
+     <li style="background:none;border:none;margin:0;padding:4px 0;">Respects <code>prefers-reduced-motion</code></li>
+     <li style="background:none;border:none;margin:0;padding:4px 0;">Use <code>.nb-skip-link</code> for skip-navigation links</li>
+     <li style="background:none;border:none;margin:0;padding:4px 0;">Use <code>.nb-sr-only</code> for screen-reader-only text</li>
+     <li style="background:none;border:none;margin:0;padding:4px 0;"><code>aria-*</code> attributes are used throughout JS utilities</li>
+    </ul>
+   </section>
+
+   <footer style="margin-top:80px;padding-top:20px;border-top:2px solid var(--nb-primary);text-align:center;color:var(--nb-gray-600);font-size:0.875rem;">
+    © 2025 Neubrutalism CSS Library | <a href="https://github.com/OshekharO/Neubrutalism">GitHub</a>
+   </footer>
+  </main>
+
+  <script>
+   const toggle = document.getElementById('mobile-menu-toggle');
+   const sidebar = document.getElementById('docs-sidebar');
+   const overlay = document.getElementById('mobile-overlay');
+   let previousBodyOverflow = null;
+
+   function openMenu() {
+    if (!sidebar.classList.contains('active')) {
+     previousBodyOverflow = document.body.style.overflow;
+    }
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+   }
+
+   function closeMenu() {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = previousBodyOverflow !== null ? previousBodyOverflow : '';
+    previousBodyOverflow = null;
+   }
+
+   function toggleMenu() {
+    if (sidebar.classList.contains('active')) {
+     closeMenu();
+    } else {
+     openMenu();
+    }
+   }
+
+   function handleDesktopBreakpoint() {
+    if (window.innerWidth > 900) {
+     closeMenu();
+    }
+   }
+
+   toggle.addEventListener('click', toggleMenu);
+   overlay.addEventListener('click', closeMenu);
+   window.addEventListener('resize', handleDesktopBreakpoint);
+   document.querySelectorAll('.docs-sidebar nav a').forEach(function(a) {
+    a.addEventListener('click', function() {
+     if (window.innerWidth <= 900) closeMenu();
+    });
+   });
+  </script>
+ </body>
+</html>
