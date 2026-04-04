@@ -2192,12 +2192,13 @@ body {
    26. List Group
    ========================================================================== */
 
-ul {
+/* Legacy bare list styling — scoped to avoid polluting component lists */
+.nb-legacy-list {
  list-style-type: none;
  padding: 0;
 }
 
-ul li {
+.nb-legacy-list li {
  background-color: var(--nb-list-item-bg);
  margin-bottom: var(--nb-spacing-sm);
  padding: var(--nb-spacing-sm);
