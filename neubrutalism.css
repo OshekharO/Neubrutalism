@@ -124,17 +124,16 @@
     --nb-form-shadow: #cc8466;
 
     /* alert buttons variables */
-    --alert-success: hsl(134.4, 40.98%, 12%);
-    --nb-alert-danger: hsl(354.55, 70.21%, 9.22%);
-    --nb-alert-warning: hsl(45.6, 100%, 10%);
-    --nb-alert-info: hsl(210.59, 100%, 10%);
+    --alert-success: #122b18;
+    --nb-alert-danger: #28070a;
+    --nb-alert-warning: #332700;
+    --nb-alert-info: #001933;
 
-    --alert-simple-success: hsl(129.06, 94.64%, 22%);
-    --alert-simple-success-border: hsl(157.55, 62.55%, 47%);
+    --alert-simple-success: #036d13;
+    --alert-simple-success-border: #2dc38b;
 
-    --alert-simple-error: hsl(356.9, 100%, 12%);
-    --alert-simple-error-border: hsl(6.95, 76%, 51%);
-
+    --alert-simple-error: #3d0003;
+    --alert-simple-error-border: #e13923;
     /* container */
     --container-1-background: #a78bfa;
     --container-2-background: #d6af13;
@@ -173,18 +172,18 @@
   --nb-form-bg: #2a2622;
   --nb-form-shadow: #cc8466;
 
+
   /* alert buttons variables */
-  --alert-success: hsl(134.4, 40.98%, 12%);
-  --nb-alert-danger: hsl(354.55, 70.21%, 9.22%);
-  --nb-alert-warning: hsl(45.6, 100%, 10%);
-  --nb-alert-info: hsl(210.59, 100%, 10%);
+  --alert-success: #122b18;
+  --nb-alert-danger: #28070a;
+  --nb-alert-warning: #332700;
+  --nb-alert-info: #001933;
 
-  --alert-simple-success: hsl(129.06, 94.64%, 22%);
-  --alert-simple-success-border: hsl(157.55, 62.55%, 47%);
+  --alert-simple-success: #036d13;
+  --alert-simple-success-border: #2dc38b;
 
-  --alert-simple-error: hsl(356.9, 100%, 12%);
-  --alert-simple-error-border: hsl(6.95, 76%, 51%);
-
+  --alert-simple-error: #3d0003;
+  --alert-simple-error-border: #e13923;
   /* container */
   --container-1-background: #a78bfa;
   --container-2-background: #d6af13;
