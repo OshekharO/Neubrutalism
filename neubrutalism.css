@@ -1,23 +1,23 @@
 /* ==========================================================================
-Neubrutalism CSS - A minimalist, high-contrast CSS library
-========================================================================== */
+   Neubrutalism CSS - A minimalist, high-contrast CSS library
+   ========================================================================== */
 
 /* ==========================================================================
-1. CSS Custom Properties (Variables)
-========================================================================== */
+   1. CSS Custom Properties (Variables)
+   ========================================================================== */
 
 :root {
  /* Core Colors */
  --nb-primary: #000;
  --nb-secondary: #fff;
  --nb-accent: #3498db;
-
+ 
  /* Status Colors */
  --nb-success: #2ecc71;
  --nb-danger: #e74c3c;
  --nb-warning: #f39c12;
  --nb-info: #3498db;
-
+ 
  /* Neutral Colors */
  --nb-gray-100: #f8f9fa;
  --nb-gray-200: #e9ecef;
@@ -28,43 +28,43 @@ Neubrutalism CSS - A minimalist, high-contrast CSS library
  --nb-gray-700: #495057;
  --nb-gray-800: #343a40;
  --nb-gray-900: #212529;
-
+ 
  /* Component Colors */
  --nb-navbar-bg: #4ecdc4;
  --nb-navbar-hover: #ff6b6b;
  --nb-stat-bg: #ffe66d;
  --nb-list-item-bg: #4ecdc4;
-
+ 
  /* Border & Shadow */
  --nb-border-width: 2px;
  --nb-border-radius: 4px;
  --nb-shadow-offset: 4px;
  --nb-shadow-color: var(--nb-primary);
-
+ 
  /* Spacing */
  --nb-spacing-xs: 5px;
  --nb-spacing-sm: 10px;
  --nb-spacing-md: 15px;
  --nb-spacing-lg: 20px;
  --nb-spacing-xl: 30px;
-
+ 
  /* Typography */
  --nb-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
  --nb-font-size-sm: 0.8rem;
  --nb-font-size-base: 1rem;
  --nb-font-size-lg: 1.2rem;
  --nb-font-size-xl: 1.5rem;
-
+ 
  /* Form specific */
  --nb-form-bg: #f8f4e5;
  --nb-form-shadow: #ffa580;
  --nb-form-highlight-primary: #95a4ff;
  --nb-form-highlight-secondary: #ffc8ff;
-
+ 
  /* Transitions */
  --nb-transition-fast: 0.2s ease;
  --nb-transition-base: 0.3s ease;
-
+ 
  /* Legacy variable mappings for backwards compatibility */
  --primary-color: var(--nb-primary);
  --secondary-color: var(--nb-secondary);
@@ -106,7 +106,7 @@ Neubrutalism CSS - A minimalist, high-contrast CSS library
   --nb-primary: #fff;
   --nb-secondary: #1a1a1a;
   --nb-accent: #5dade2;
-
+  
   --nb-gray-100: #212529;
   --nb-gray-200: #343a40;
   --nb-gray-300: #495057;
@@ -116,7 +116,7 @@ Neubrutalism CSS - A minimalist, high-contrast CSS library
   --nb-gray-700: #dee2e6;
   --nb-gray-800: #e9ecef;
   --nb-gray-900: #f8f9fa;
-
+  
   --nb-navbar-bg: #2d8a84;
   --nb-stat-bg: #b8a94d;
   --nb-list-item-bg: #2d8a84;
@@ -146,16 +146,16 @@ Neubrutalism CSS - A minimalist, high-contrast CSS library
 }
 
 /* 
-* Manual Dark Mode Toggle Class
-* Note: This duplicates the media query variables intentionally to support
-* JavaScript-based dark mode toggling independent of system preferences.
-* Users can override system preferences by adding/removing the .nb-dark class.
-*/
+ * Manual Dark Mode Toggle Class
+ * Note: This duplicates the media query variables intentionally to support
+ * JavaScript-based dark mode toggling independent of system preferences.
+ * Users can override system preferences by adding/removing the .nb-dark class.
+ */
 .nb-dark {
  --nb-primary: #fff;
  --nb-secondary: #1a1a1a;
  --nb-accent: #5dade2;
-
+ 
  --nb-gray-100: #212529;
  --nb-gray-200: #343a40;
  --nb-gray-300: #495057;
@@ -165,13 +165,12 @@ Neubrutalism CSS - A minimalist, high-contrast CSS library
  --nb-gray-700: #dee2e6;
  --nb-gray-800: #e9ecef;
  --nb-gray-900: #f8f9fa;
-
+ 
  --nb-navbar-bg: #2d8a84;
  --nb-stat-bg: #b8a94d;
  --nb-list-item-bg: #2d8a84;
  --nb-form-bg: #2a2622;
  --nb-form-shadow: #cc8466;
-
 
  /* alert buttons variables */
  --alert-success: #122b18;
@@ -196,7 +195,6 @@ Neubrutalism CSS - A minimalist, high-contrast CSS library
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
-
  *,
  *::before,
  *::after {
@@ -208,8 +206,8 @@ Neubrutalism CSS - A minimalist, high-contrast CSS library
 }
 
 /* ==========================================================================
-2. CSS Reset & Base Styles
-========================================================================== */
+   2. CSS Reset & Base Styles
+   ========================================================================== */
 
 *,
 *::before,
@@ -243,8 +241,8 @@ body {
 }
 
 /* ==========================================================================
-3. Layout & Container
-========================================================================== */
+   3. Layout & Container
+   ========================================================================== */
 
 .nb-container {
  max-width: 1200px;
@@ -272,15 +270,15 @@ body {
 }
 
 .container-1 {
- background-color: var(--container-1-background);
+ background-color: #ddd6fe;
 }
 
 .container-2 {
- background-color: var(--container-2-background)
+ background-color: #fef08a;
 }
 
 .container-3 {
- background-color: var(--container-3-background)
+ background-color: #bbf7d0;
 }
 
 .shadow {
@@ -288,20 +286,20 @@ body {
 }
 
 .shadow-1 {
- box-shadow: 12px 6px 0px var(--container-1-box-shadow);
+ box-shadow: 12px 6px 0px #a78bfa;
 }
 
 .shadow-2 {
- box-shadow: 12px 6px 0px var(--container-2-box-shadow);
+ box-shadow: 12px 6px 0px #facc15;
 }
 
 .shadow-3 {
- box-shadow: 12px 6px 0px var(--container-3-box-shadow);
+ box-shadow: 12px 6px 0px #22d3ee;
 }
 
 /* ==========================================================================
-4. Forms
-========================================================================== */
+   4. Forms
+   ========================================================================== */
 
 .nb-pre-form {
  width: 100%;
@@ -383,7 +381,6 @@ body {
 }
 
 @media (max-width: 600px) {
-
  .nb-pre-form,
  .nb-contact-form {
   padding: var(--nb-spacing-xl) var(--nb-spacing-lg);
@@ -391,8 +388,8 @@ body {
 }
 
 /* ==========================================================================
-5. Tabs
-========================================================================== */
+   5. Tabs
+   ========================================================================== */
 
 .nb-tabs {
  width: 100%;
@@ -426,7 +423,7 @@ body {
  outline-offset: -2px;
 }
 
-.nb-tab-input:checked+.nb-tab-label {
+.nb-tab-input:checked + .nb-tab-label {
  background-color: var(--nb-secondary);
  border-bottom: var(--nb-border-width) solid transparent;
 }
@@ -438,7 +435,7 @@ body {
  border-top: var(--nb-border-width) solid var(--nb-primary);
 }
 
-.nb-tab-input:checked+.nb-tab-label+.nb-tab-panel {
+.nb-tab-input:checked + .nb-tab-label + .nb-tab-panel {
  display: block;
 }
 
@@ -454,11 +451,9 @@ body {
   display: flex;
   flex-wrap: wrap;
  }
-
  .nb-tab-label {
   width: auto;
  }
-
  .nb-tab-panel {
   width: 100%;
   order: 99;
@@ -471,8 +466,8 @@ body {
 }
 
 /* ==========================================================================
-6. Navigation
-========================================================================== */
+   6. Navigation
+   ========================================================================== */
 
 /* Simple Navbar */
 .navbar {
@@ -571,8 +566,8 @@ body {
 }
 
 /* ==========================================================================
-7. Buttons
-========================================================================== */
+   7. Buttons
+   ========================================================================== */
 
 .nb-button {
  font-family: var(--nb-font-family);
@@ -590,7 +585,6 @@ body {
  justify-content: center;
  gap: 0.5rem;
  transition: all var(--nb-transition-base);
- color: inherit;
 }
 
 .nb-button:hover {
@@ -656,7 +650,6 @@ body {
  cursor: pointer;
  transition: all var(--nb-transition-fast);
  font-weight: bold;
- color: inherit;
 }
 
 .nb-btn:hover {
@@ -694,8 +687,8 @@ body {
 }
 
 /* ==========================================================================
-8. Badges
-========================================================================== */
+   8. Badges
+   ========================================================================== */
 
 .nb-badge {
  display: inline-block;
@@ -732,8 +725,8 @@ body {
 }
 
 /* ==========================================================================
-9. Cards
-========================================================================== */
+   9. Cards
+   ========================================================================== */
 
 .nb-card {
  border: var(--nb-border-width) solid var(--nb-primary);
@@ -769,8 +762,8 @@ body {
 }
 
 /* ==========================================================================
-10. Accordion
-========================================================================== */
+   10. Accordion
+   ========================================================================== */
 
 .nb-accordion {
  width: 100%;
@@ -821,16 +814,16 @@ body {
  transition: max-height var(--nb-transition-base), opacity var(--nb-transition-base), padding var(--nb-transition-base);
 }
 
-.nb-accordion-state:checked+.nb-accordion-header {
+.nb-accordion-state:checked + .nb-accordion-header {
  background-color: var(--nb-primary);
  color: var(--nb-secondary);
 }
 
-.nb-accordion-state:checked+.nb-accordion-header .nb-accordion-icon {
+.nb-accordion-state:checked + .nb-accordion-header .nb-accordion-icon {
  transform: rotate(45deg);
 }
 
-.nb-accordion-state:checked~.nb-accordion-content {
+.nb-accordion-state:checked ~ .nb-accordion-content {
  max-height: 1000px;
  opacity: 1;
  padding: var(--nb-spacing-md);
@@ -863,8 +856,8 @@ body {
 }
 
 /* ==========================================================================
-11. Toast Notifications
-========================================================================== */
+   11. Toast Notifications
+   ========================================================================== */
 
 .nb-toast {
  position: fixed;
@@ -927,8 +920,8 @@ body {
 }
 
 /* ==========================================================================
-12. Dropdown
-========================================================================== */
+   12. Dropdown
+   ========================================================================== */
 
 .nb-dropdown {
  position: relative;
@@ -948,7 +941,6 @@ body {
  align-items: center;
  justify-content: space-between;
  transition: all var(--nb-transition-fast);
- color: inherit;
 }
 
 .nb-dropdown-toggle::after {
@@ -1006,8 +998,8 @@ body {
 }
 
 /* ==========================================================================
-13. Marquee
-========================================================================== */
+   13. Marquee
+   ========================================================================== */
 
 .nb-marquee {
  overflow: hidden;
@@ -1034,18 +1026,13 @@ body {
 }
 
 @keyframes nb-marquee {
- 0% {
-  transform: translateX(100%);
- }
-
- 100% {
-  transform: translateX(-100%);
- }
+ 0% { transform: translateX(100%); }
+ 100% { transform: translateX(-100%); }
 }
 
 /* ==========================================================================
-14. Avatar
-========================================================================== */
+   14. Avatar
+   ========================================================================== */
 
 .nb-avatar {
  width: 100px;
@@ -1063,8 +1050,8 @@ body {
 }
 
 /* ==========================================================================
-15. Checkbox
-========================================================================== */
+   15. Checkbox
+   ========================================================================== */
 
 .nb-checkbox {
  position: relative;
@@ -1094,12 +1081,12 @@ body {
  transition: all var(--nb-transition-fast);
 }
 
-.nb-checkbox input:focus-visible~.nb-checkbox-mark {
+.nb-checkbox input:focus-visible ~ .nb-checkbox-mark {
  outline: 2px solid var(--nb-accent);
  outline-offset: 2px;
 }
 
-.nb-checkbox input:checked~.nb-checkbox-mark {
+.nb-checkbox input:checked ~ .nb-checkbox-mark {
  background-color: var(--nb-primary);
 }
 
@@ -1109,7 +1096,7 @@ body {
  display: none;
 }
 
-.nb-checkbox input:checked~.nb-checkbox-mark:after {
+.nb-checkbox input:checked ~ .nb-checkbox-mark:after {
  display: block;
 }
 
@@ -1137,7 +1124,7 @@ body {
  border-style: dashed;
 }
 
-.nb-checkbox-outline input:checked~.nb-checkbox-mark {
+.nb-checkbox-outline input:checked ~ .nb-checkbox-mark {
  background-color: transparent;
  border-style: solid;
 }
@@ -1160,29 +1147,28 @@ body {
  left: 2px;
  transition: var(--nb-transition-base);
 }
-
-.nb-checkbox-switch input:checked~.nb-checkbox-mark {
+.nb-checkbox-switch input:checked ~ .nb-checkbox-mark {
  background-color: var(--nb-primary);
 }
 
-.nb-checkbox-switch input:checked~.nb-checkbox-mark:before {
+.nb-checkbox-switch input:checked ~ .nb-checkbox-mark:before {
  transform: translateX(20px);
  background-color: var(--nb-secondary);
 }
 
-.nb-checkbox-primary input:checked~.nb-checkbox-mark {
+.nb-checkbox-primary input:checked ~ .nb-checkbox-mark {
  background-color: var(--nb-primary);
 }
 
-.nb-checkbox-success input:checked~.nb-checkbox-mark {
+.nb-checkbox-success input:checked ~ .nb-checkbox-mark {
  background-color: var(--nb-success);
 }
 
-.nb-checkbox-danger input:checked~.nb-checkbox-mark {
+.nb-checkbox-danger input:checked ~ .nb-checkbox-mark {
  background-color: var(--nb-danger);
 }
 
-.nb-checkbox-warning input:checked~.nb-checkbox-mark {
+.nb-checkbox-warning input:checked ~ .nb-checkbox-mark {
  background-color: var(--nb-warning);
 }
 
@@ -1196,8 +1182,8 @@ body {
 }
 
 /* ==========================================================================
-16. Alerts
-========================================================================== */
+   16. Alerts
+   ========================================================================== */
 
 .nb-alert {
  padding: var(--nb-spacing-md);
@@ -1213,19 +1199,19 @@ body {
 }
 
 .nb-alert-success {
- background-color: var(--alert-success);
+ background-color: #d4edda;
 }
 
 .nb-alert-danger {
- background-color: var(--nb-alert-danger);
+ background-color: #f8d7da;
 }
 
 .nb-alert-warning {
- background-color: var(--nb-alert-warning);
+ background-color: #fff3cd;
 }
 
 .nb-alert-info {
- background-color: var(--nb-alert-info);
+ background-color: #cce5ff;
 }
 
 .alert-simple {
@@ -1239,18 +1225,18 @@ body {
 }
 
 .alert-simple.success {
- background-color: var(--alert-simple-success);
- border: 1px solid var(--alert-simple-success-border);
+ background-color: #92fca2;
+ border: 1px solid #40d39c;
 }
 
 .alert-simple.error {
- background-color: var(--alert-simple-error);
- border: 1px solid var(--alert-simple-error-border);
+ background-color: #ffc5c8;
+ border: 1px solid #dc341e;
 }
 
 /* ==========================================================================
-17. NB Navbar (Advanced)
-========================================================================== */
+   17. NB Navbar (Advanced)
+   ========================================================================== */
 
 .nb-navbar {
  display: flex;
@@ -1363,19 +1349,19 @@ body {
   padding: var(--nb-spacing-lg);
  }
 
- .nb-navbar-toggle-input:checked~.nb-nav {
+ .nb-navbar-toggle-input:checked ~ .nb-nav {
   display: flex;
  }
 
- .nb-navbar-toggle-input:checked~.nb-navbar-toggle span:nth-child(1) {
+ .nb-navbar-toggle-input:checked ~ .nb-navbar-toggle span:nth-child(1) {
   transform: rotate(-45deg) translate(-5px, 6px);
  }
 
- .nb-navbar-toggle-input:checked~.nb-navbar-toggle span:nth-child(2) {
+ .nb-navbar-toggle-input:checked ~ .nb-navbar-toggle span:nth-child(2) {
   opacity: 0;
  }
 
- .nb-navbar-toggle-input:checked~.nb-navbar-toggle span:nth-child(3) {
+ .nb-navbar-toggle-input:checked ~ .nb-navbar-toggle span:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -6px);
  }
 }
@@ -1491,8 +1477,8 @@ body {
 }
 
 /* ==========================================================================
-17b. Nav Pills
-========================================================================== */
+   17b. Nav Pills
+   ========================================================================== */
 
 .nb-nav-pills {
  display: flex;
@@ -1658,31 +1644,31 @@ body {
  .nb-nav-pills {
   gap: var(--nb-spacing-xs);
  }
-
+ 
  .nb-nav-pills .nb-pill-link {
   padding: var(--nb-spacing-xs) var(--nb-spacing-sm);
   font-size: var(--nb-font-size-sm);
  }
-
+ 
  .nb-nav-pills-responsive {
   flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
  }
-
+ 
  .nb-nav-pills-responsive::-webkit-scrollbar {
   display: none;
  }
-
+ 
  .nb-nav-pills-responsive .nb-pill-item {
   flex-shrink: 0;
  }
 }
 
 /* ==========================================================================
-17c. Additional Container Variants
-========================================================================== */
+   17c. Additional Container Variants
+   ========================================================================== */
 
 /* Fluid Container (full width) */
 .nb-container-fluid {
@@ -1793,8 +1779,8 @@ body {
 }
 
 /* ==========================================================================
-18. Grid System
-========================================================================== */
+   18. Grid System
+   ========================================================================== */
 
 .nb-grid {
  display: grid;
@@ -1831,11 +1817,9 @@ body {
  .nb-grid-4 {
   grid-template-columns: repeat(3, 1fr);
  }
-
  .nb-grid-5 {
   grid-template-columns: repeat(3, 1fr);
  }
-
  .nb-grid-6 {
   grid-template-columns: repeat(4, 1fr);
  }
@@ -1845,26 +1829,21 @@ body {
  .nb-grid-2 {
   grid-template-columns: repeat(1, 1fr);
  }
-
  .nb-grid-3 {
   grid-template-columns: repeat(2, 1fr);
  }
-
  .nb-grid-4 {
   grid-template-columns: repeat(2, 1fr);
  }
-
  .nb-grid-5 {
   grid-template-columns: repeat(2, 1fr);
  }
-
  .nb-grid-6 {
   grid-template-columns: repeat(3, 1fr);
  }
 }
 
 @media (max-width: 480px) {
-
  .nb-grid-3,
  .nb-grid-4,
  .nb-grid-5,
@@ -1882,7 +1861,7 @@ body {
  padding: var(--nb-spacing-lg);
 }
 
-.nb-grid-bordered>* {
+.nb-grid-bordered > * {
  border: var(--nb-border-width) solid var(--nb-primary);
  box-shadow: var(--nb-shadow-offset) var(--nb-shadow-offset) 0 var(--nb-primary);
  padding: var(--nb-spacing-md);
@@ -1915,8 +1894,8 @@ body {
 }
 
 /* ==========================================================================
-19. Carousel / Slider
-========================================================================== */
+   19. Carousel / Slider
+   ========================================================================== */
 
 .nb-slider {
  width: 100%;
@@ -1973,15 +1952,14 @@ body {
  .nb-slider {
   max-width: 100%;
  }
-
  .nb-slider-slide img {
   height: 100%;
  }
 }
 
 /* ==========================================================================
-20. Pagination
-========================================================================== */
+   20. Pagination
+   ========================================================================== */
 
 .nb-pagination {
  display: flex;
@@ -2038,7 +2016,6 @@ body {
  .nb-pagination {
   gap: var(--nb-spacing-xs);
  }
-
  .nb-page-item {
   padding: 6px 10px;
   min-width: 30px;
@@ -2047,8 +2024,8 @@ body {
 }
 
 /* ==========================================================================
-21. Thumbnails
-========================================================================== */
+   21. Thumbnails
+   ========================================================================== */
 
 .nb-thumbnail {
  border: var(--nb-border-width) solid var(--nb-primary);
@@ -2070,8 +2047,8 @@ body {
 }
 
 /* ==========================================================================
-22. Footer
-========================================================================== */
+   22. Footer
+   ========================================================================== */
 
 .nb-footer-social-compact,
 .nb-footer-centered {
@@ -2084,7 +2061,6 @@ body {
  align-items: center;
  gap: 1rem;
 }
-
 .nb-footer-social-icons,
 .nb-footer-socials {
  display: flex;
@@ -2123,8 +2099,8 @@ body {
 }
 
 /* ==========================================================================
-23. Newsletter
-========================================================================== */
+   23. Newsletter
+   ========================================================================== */
 
 .nb-newsletter-card {
  width: 100%;
@@ -2221,8 +2197,8 @@ body {
 }
 
 /* ==========================================================================
-24. Testimonials
-========================================================================== */
+   24. Testimonials
+   ========================================================================== */
 
 .nb-testimonial {
  border: var(--nb-border-width) solid var(--nb-primary);
@@ -2238,8 +2214,8 @@ body {
 }
 
 /* ==========================================================================
-25. Neu Box & Stats
-========================================================================== */
+   25. Neu Box & Stats
+   ========================================================================== */
 
 .neu-box {
  background-color: var(--nb-secondary);
@@ -2274,8 +2250,8 @@ body {
 }
 
 /* ==========================================================================
-26. List Group
-========================================================================== */
+   26. List Group
+   ========================================================================== */
 
 /* Legacy bare list styling — scoped to avoid polluting component lists */
 .nb-legacy-list {
@@ -2291,8 +2267,8 @@ body {
 }
 
 /* ==========================================================================
-27. GitHub Corner
-========================================================================== */
+   27. GitHub Corner
+   ========================================================================== */
 
 .github-corner:hover .octo-arm {
  animation: octocat-wave 0.56s ease-in-out;
@@ -2302,33 +2278,20 @@ body {
  .github-corner:hover .octo-arm {
   animation: none;
  }
-
  .github-corner .octo-arm {
   animation: octocat-wave 0.56s ease-in-out;
  }
 }
 
 @keyframes octocat-wave {
-
- 0%,
- to {
-  transform: rotate(0);
- }
-
- 20%,
- 60% {
-  transform: rotate(-25deg);
- }
-
- 40%,
- 80% {
-  transform: rotate(10deg);
- }
+ 0%, to { transform: rotate(0); }
+ 20%, 60% { transform: rotate(-25deg); }
+ 40%, 80% { transform: rotate(10deg); }
 }
 
 /* ==========================================================================
-28. Modal
-========================================================================== */
+   28. Modal
+   ========================================================================== */
 
 .nb-modal-state {
  display: none;
@@ -2370,12 +2333,12 @@ body {
  transition: all var(--nb-transition-base);
 }
 
-.nb-modal-state:checked+.nb-modal {
+.nb-modal-state:checked + .nb-modal {
  opacity: 1;
  visibility: visible;
 }
 
-.nb-modal-state:checked+.nb-modal .nb-modal-container {
+.nb-modal-state:checked + .nb-modal .nb-modal-container {
  transform: translate(-50%, -50%) scale(1);
  opacity: 1;
 }
@@ -2432,129 +2395,48 @@ body {
 }
 
 /* ==========================================================================
-29. Utility Classes
-========================================================================== */
+   29. Utility Classes
+   ========================================================================== */
 
 /* Display */
-.nb-flex {
- display: flex;
-}
-
-.nb-flex-column {
- flex-direction: column;
-}
-
-.nb-flex-center {
- justify-content: center;
- align-items: center;
-}
-
-.nb-flex-wrap {
- flex-wrap: wrap;
-}
-
-.nb-inline-flex {
- display: inline-flex;
-}
-
-.nb-block {
- display: block;
-}
-
-.nb-inline-block {
- display: inline-block;
-}
-
-.nb-hidden {
- display: none;
-}
+.nb-flex { display: flex; }
+.nb-flex-column { flex-direction: column; }
+.nb-flex-center { justify-content: center; align-items: center; }
+.nb-flex-wrap { flex-wrap: wrap; }
+.nb-inline-flex { display: inline-flex; }
+.nb-block { display: block; }
+.nb-inline-block { display: inline-block; }
+.nb-hidden { display: none; }
 
 /* Text */
-.nb-text-left {
- text-align: left;
-}
-
-.nb-text-center {
- text-align: center;
-}
-
-.nb-text-right {
- text-align: right;
-}
-
-.nb-text-uppercase {
- text-transform: uppercase;
-}
-
-.nb-text-lowercase {
- text-transform: lowercase;
-}
-
-.nb-text-capitalize {
- text-transform: capitalize;
-}
-
-.nb-font-bold {
- font-weight: bold;
-}
-
-.nb-font-normal {
- font-weight: normal;
-}
+.nb-text-left { text-align: left; }
+.nb-text-center { text-align: center; }
+.nb-text-right { text-align: right; }
+.nb-text-uppercase { text-transform: uppercase; }
+.nb-text-lowercase { text-transform: lowercase; }
+.nb-text-capitalize { text-transform: capitalize; }
+.nb-font-bold { font-weight: bold; }
+.nb-font-normal { font-weight: normal; }
 
 /* Spacing */
-.nb-m-0 {
- margin: 0;
-}
-
-.nb-m-1 {
- margin: var(--nb-spacing-xs);
-}
-
-.nb-m-2 {
- margin: var(--nb-spacing-sm);
-}
-
-.nb-m-3 {
- margin: var(--nb-spacing-md);
-}
-
-.nb-m-4 {
- margin: var(--nb-spacing-lg);
-}
-
-.nb-p-0 {
- padding: 0;
-}
-
-.nb-p-1 {
- padding: var(--nb-spacing-xs);
-}
-
-.nb-p-2 {
- padding: var(--nb-spacing-sm);
-}
-
-.nb-p-3 {
- padding: var(--nb-spacing-md);
-}
-
-.nb-p-4 {
- padding: var(--nb-spacing-lg);
-}
+.nb-m-0 { margin: 0; }
+.nb-m-1 { margin: var(--nb-spacing-xs); }
+.nb-m-2 { margin: var(--nb-spacing-sm); }
+.nb-m-3 { margin: var(--nb-spacing-md); }
+.nb-m-4 { margin: var(--nb-spacing-lg); }
+.nb-p-0 { padding: 0; }
+.nb-p-1 { padding: var(--nb-spacing-xs); }
+.nb-p-2 { padding: var(--nb-spacing-sm); }
+.nb-p-3 { padding: var(--nb-spacing-md); }
+.nb-p-4 { padding: var(--nb-spacing-lg); }
 
 /* Width */
-.nb-w-full {
- width: 100%;
-}
-
-.nb-w-auto {
- width: auto;
-}
+.nb-w-full { width: 100%; }
+.nb-w-auto { width: auto; }
 
 /* ==========================================================================
-30. Blockquote
-========================================================================== */
+   30. Blockquote
+   ========================================================================== */
 
 .nb-blockquote {
  border-left: 4px solid var(--nb-primary);
@@ -2590,8 +2472,8 @@ body {
 }
 
 /* ==========================================================================
-31. Code Block
-========================================================================== */
+   31. Code Block
+   ========================================================================== */
 
 .nb-code-block {
  background-color: var(--nb-secondary);
@@ -2626,8 +2508,8 @@ body {
 }
 
 /* ==========================================================================
-32. Accessibility
-========================================================================== */
+   32. Accessibility
+   ========================================================================== */
 
 [aria-disabled="true"],
 :disabled {
@@ -2670,8 +2552,8 @@ body {
 }
 
 /* ==========================================================================
-33. Icons
-========================================================================== */
+   33. Icons
+   ========================================================================== */
 
 .icon {
  width: 24px;
@@ -2680,8 +2562,8 @@ body {
 }
 
 /* ==========================================================================
-34. Sections & Layout Helpers
-========================================================================== */
+   34. Sections & Layout Helpers
+   ========================================================================== */
 
 .section {
  display: grid;
@@ -2694,8 +2576,8 @@ body {
 }
 
 /* ==========================================================================
-35. Copy Toast Notification
-========================================================================== */
+   35. Copy Toast Notification
+   ========================================================================== */
 
 .nb-copy-toast {
  position: fixed;
@@ -2715,15 +2597,10 @@ section {
 }
 
 /* ==========================================================================
-36. Typography
-========================================================================== */
+   36. Typography
+   ========================================================================== */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
  font-family: var(--nb-font-family);
  font-weight: 700;
  line-height: 1.2;
@@ -2731,49 +2608,17 @@ h6 {
  color: var(--nb-primary);
 }
 
-h1 {
- font-size: 2.5rem;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
 
-h2 {
- font-size: 2rem;
-}
-
-h3 {
- font-size: 1.75rem;
-}
-
-h4 {
- font-size: 1.5rem;
-}
-
-h5 {
- font-size: 1.25rem;
-}
-
-h6 {
- font-size: 1rem;
-}
-
-.nb-display-1 {
- font-size: 4rem;
- font-weight: 800;
-}
-
-.nb-display-2 {
- font-size: 3.5rem;
- font-weight: 800;
-}
-
-.nb-display-3 {
- font-size: 3rem;
- font-weight: 800;
-}
-
-.nb-display-4 {
- font-size: 2.5rem;
- font-weight: 800;
-}
+.nb-display-1 { font-size: 4rem; font-weight: 800; }
+.nb-display-2 { font-size: 3.5rem; font-weight: 800; }
+.nb-display-3 { font-size: 3rem; font-weight: 800; }
+.nb-display-4 { font-size: 2.5rem; font-weight: 800; }
 
 .nb-lead {
  font-size: 1.25rem;
@@ -2781,14 +2626,8 @@ h6 {
  line-height: 1.6;
 }
 
-.nb-small {
- font-size: 0.875rem;
-}
-
-.nb-muted {
- color: var(--nb-gray-600);
-}
-
+.nb-small { font-size: 0.875rem; }
+.nb-muted { color: var(--nb-gray-600); }
 .nb-mark {
  background-color: var(--nb-warning);
  padding: 0.1rem 0.3rem;
@@ -2830,8 +2669,8 @@ hr {
 }
 
 /* ==========================================================================
-37. Tables
-========================================================================== */
+   37. Tables
+   ========================================================================== */
 
 .nb-table {
  width: 100%;
@@ -2877,8 +2716,8 @@ hr {
 }
 
 /* ==========================================================================
-38. Progress Bar
-========================================================================== */
+   38. Progress Bar
+   ========================================================================== */
 
 .nb-progress {
  width: 100%;
@@ -2916,14 +2755,16 @@ hr {
 }
 
 .nb-progress-striped .nb-progress-bar {
- background-image: linear-gradient(45deg,
-   rgba(255, 255, 255, 0.15) 25%,
-   transparent 25%,
-   transparent 50%,
-   rgba(255, 255, 255, 0.15) 50%,
-   rgba(255, 255, 255, 0.15) 75%,
-   transparent 75%,
-   transparent);
+ background-image: linear-gradient(
+  45deg,
+  rgba(255, 255, 255, 0.15) 25%,
+  transparent 25%,
+  transparent 50%,
+  rgba(255, 255, 255, 0.15) 50%,
+  rgba(255, 255, 255, 0.15) 75%,
+  transparent 75%,
+  transparent
+ );
  background-size: 1rem 1rem;
 }
 
@@ -2932,18 +2773,13 @@ hr {
 }
 
 @keyframes nb-progress-stripes {
- 0% {
-  background-position: 1rem 0;
- }
-
- 100% {
-  background-position: 0 0;
- }
+ 0% { background-position: 1rem 0; }
+ 100% { background-position: 0 0; }
 }
 
 /* ==========================================================================
-39. Breadcrumb
-========================================================================== */
+   39. Breadcrumb
+   ========================================================================== */
 
 .nb-breadcrumb {
  display: flex;
@@ -2961,7 +2797,7 @@ hr {
  align-items: center;
 }
 
-.nb-breadcrumb-item+.nb-breadcrumb-item::before {
+.nb-breadcrumb-item + .nb-breadcrumb-item::before {
  content: "/";
  padding: 0 var(--nb-spacing-sm);
  color: var(--nb-gray-600);
@@ -2983,8 +2819,8 @@ hr {
 }
 
 /* ==========================================================================
-40. Spinner/Loader
-========================================================================== */
+   40. Spinner/Loader
+   ========================================================================== */
 
 .nb-spinner {
  display: inline-block;
@@ -3008,26 +2844,13 @@ hr {
  border-width: 5px;
 }
 
-.nb-spinner-primary {
- border-top-color: var(--nb-primary);
-}
-
-.nb-spinner-success {
- border-top-color: var(--nb-success);
-}
-
-.nb-spinner-danger {
- border-top-color: var(--nb-danger);
-}
-
-.nb-spinner-warning {
- border-top-color: var(--nb-warning);
-}
+.nb-spinner-primary { border-top-color: var(--nb-primary); }
+.nb-spinner-success { border-top-color: var(--nb-success); }
+.nb-spinner-danger { border-top-color: var(--nb-danger); }
+.nb-spinner-warning { border-top-color: var(--nb-warning); }
 
 @keyframes nb-spin {
- to {
-  transform: rotate(360deg);
- }
+ to { transform: rotate(360deg); }
 }
 
 /* Square Spinner */
@@ -3039,17 +2862,9 @@ hr {
 }
 
 @keyframes nb-spin-square {
- 0% {
-  transform: perspective(120px) rotateX(0deg) rotateY(0deg);
- }
-
- 50% {
-  transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
- }
-
- 100% {
-  transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
- }
+ 0% { transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+ 50% { transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); }
+ 100% { transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); }
 }
 
 /* Dots Loader */
@@ -3066,30 +2881,17 @@ hr {
  animation: nb-bounce 1.4s infinite ease-in-out both;
 }
 
-.nb-loader-dots span:nth-child(1) {
- animation-delay: -0.32s;
-}
-
-.nb-loader-dots span:nth-child(2) {
- animation-delay: -0.16s;
-}
+.nb-loader-dots span:nth-child(1) { animation-delay: -0.32s; }
+.nb-loader-dots span:nth-child(2) { animation-delay: -0.16s; }
 
 @keyframes nb-bounce {
-
- 0%,
- 80%,
- 100% {
-  transform: scale(0);
- }
-
- 40% {
-  transform: scale(1);
- }
+ 0%, 80%, 100% { transform: scale(0); }
+ 40% { transform: scale(1); }
 }
 
 /* ==========================================================================
-41. Tooltip
-========================================================================== */
+   41. Tooltip
+   ========================================================================== */
 
 .nb-tooltip {
  position: relative;
@@ -3150,8 +2952,8 @@ hr {
 }
 
 /* ==========================================================================
-42. Radio Buttons
-========================================================================== */
+   42. Radio Buttons
+   ========================================================================== */
 
 .nb-radio {
  position: relative;
@@ -3182,12 +2984,12 @@ hr {
  transition: all var(--nb-transition-fast);
 }
 
-.nb-radio input:focus-visible~.nb-radio-mark {
+.nb-radio input:focus-visible ~ .nb-radio-mark {
  outline: 2px solid var(--nb-accent);
  outline-offset: 2px;
 }
 
-.nb-radio input:checked~.nb-radio-mark {
+.nb-radio input:checked ~ .nb-radio-mark {
  background-color: var(--nb-primary);
 }
 
@@ -3204,25 +3006,17 @@ hr {
  border-radius: 50%;
 }
 
-.nb-radio input:checked~.nb-radio-mark::after {
+.nb-radio input:checked ~ .nb-radio-mark::after {
  display: block;
 }
 
-.nb-radio-success input:checked~.nb-radio-mark {
- background-color: var(--nb-success);
-}
-
-.nb-radio-danger input:checked~.nb-radio-mark {
- background-color: var(--nb-danger);
-}
-
-.nb-radio-warning input:checked~.nb-radio-mark {
- background-color: var(--nb-warning);
-}
+.nb-radio-success input:checked ~ .nb-radio-mark { background-color: var(--nb-success); }
+.nb-radio-danger input:checked ~ .nb-radio-mark { background-color: var(--nb-danger); }
+.nb-radio-warning input:checked ~ .nb-radio-mark { background-color: var(--nb-warning); }
 
 /* ==========================================================================
-43. Range/Slider Input
-========================================================================== */
+   43. Range/Slider Input
+   ========================================================================== */
 
 .nb-range {
  width: 100%;
@@ -3269,8 +3063,8 @@ hr {
 }
 
 /* ==========================================================================
-44. Lists
-========================================================================== */
+   44. Lists
+   ========================================================================== */
 
 .nb-list {
  list-style: none;
@@ -3332,8 +3126,8 @@ hr {
 }
 
 /* ==========================================================================
-45. Divider
-========================================================================== */
+   45. Divider
+   ========================================================================== */
 
 .nb-divider {
  display: flex;
@@ -3358,8 +3152,8 @@ hr {
 }
 
 /* ==========================================================================
-46. Image Utilities
-========================================================================== */
+   46. Image Utilities
+   ========================================================================== */
 
 .nb-img {
  max-width: 100%;
@@ -3383,8 +3177,8 @@ hr {
 }
 
 /* ==========================================================================
-47. Tag/Chip
-========================================================================== */
+   47. Tag/Chip
+   ========================================================================== */
 
 .nb-tag {
  display: inline-flex;
@@ -3432,8 +3226,8 @@ hr {
 }
 
 /* ==========================================================================
-48. Input Group
-========================================================================== */
+   48. Input Group
+   ========================================================================== */
 
 .nb-input-group {
  display: flex;
@@ -3471,70 +3265,27 @@ hr {
 }
 
 /* ==========================================================================
-49. Color Utilities
-========================================================================== */
+   49. Color Utilities
+   ========================================================================== */
 
-.nb-bg-primary {
- background-color: var(--nb-primary);
- color: var(--nb-secondary);
-}
+.nb-bg-primary { background-color: var(--nb-primary); color: var(--nb-secondary); }
+.nb-bg-secondary { background-color: var(--nb-secondary); color: var(--nb-primary); }
+.nb-bg-success { background-color: var(--nb-success); color: var(--nb-secondary); }
+.nb-bg-danger { background-color: var(--nb-danger); color: var(--nb-secondary); }
+.nb-bg-warning { background-color: var(--nb-warning); color: var(--nb-primary); }
+.nb-bg-info { background-color: var(--nb-info); color: var(--nb-secondary); }
 
-.nb-bg-secondary {
- background-color: var(--nb-secondary);
- color: var(--nb-primary);
-}
-
-.nb-bg-success {
- background-color: var(--nb-success);
- color: var(--nb-secondary);
-}
-
-.nb-bg-danger {
- background-color: var(--nb-danger);
- color: var(--nb-secondary);
-}
-
-.nb-bg-warning {
- background-color: var(--nb-warning);
- color: var(--nb-primary);
-}
-
-.nb-bg-info {
- background-color: var(--nb-info);
- color: var(--nb-secondary);
-}
-
-.nb-text-primary {
- color: var(--nb-primary);
-}
-
-.nb-text-secondary {
- color: var(--nb-secondary);
-}
-
-.nb-text-success {
- color: var(--nb-success);
-}
-
-.nb-text-danger {
- color: var(--nb-danger);
-}
-
-.nb-text-warning {
- color: var(--nb-warning);
-}
-
-.nb-text-info {
- color: var(--nb-info);
-}
-
-.nb-text-muted {
- color: var(--nb-gray-600);
-}
+.nb-text-primary { color: var(--nb-primary); }
+.nb-text-secondary { color: var(--nb-secondary); }
+.nb-text-success { color: var(--nb-success); }
+.nb-text-danger { color: var(--nb-danger); }
+.nb-text-warning { color: var(--nb-warning); }
+.nb-text-info { color: var(--nb-info); }
+.nb-text-muted { color: var(--nb-gray-600); }
 
 /* ==========================================================================
-50. Hero Section
-========================================================================== */
+   50. Hero Section
+   ========================================================================== */
 
 .nb-hero {
  padding: var(--nb-spacing-xl) var(--nb-spacing-lg);
@@ -3573,15 +3324,14 @@ hr {
  .nb-hero-title {
   font-size: 2rem;
  }
-
  .nb-hero-subtitle {
   font-size: 1rem;
  }
 }
 
 /* ==========================================================================
-51. Feature Box
-========================================================================== */
+   51. Feature Box
+   ========================================================================== */
 
 .nb-feature {
  padding: var(--nb-spacing-lg);
@@ -3621,8 +3371,8 @@ hr {
 }
 
 /* ==========================================================================
-52. Section Title
-========================================================================== */
+   52. Section Title
+   ========================================================================== */
 
 .nb-section-title {
  font-size: 1.75rem;
@@ -3640,11 +3390,10 @@ hr {
 }
 
 /* ==========================================================================
-53. Kbd (Keyboard) Element
-========================================================================== */
+   53. Kbd (Keyboard) Element
+   ========================================================================== */
 
-kbd,
-.nb-kbd {
+kbd, .nb-kbd {
  display: inline-block;
  padding: 2px 6px;
  font-family: "Courier New", Consolas, monospace;
@@ -3655,8 +3404,8 @@ kbd,
 }
 
 /* ==========================================================================
-54. Switch (Alternative Toggle)
-========================================================================== */
+   54. Switch (Alternative Toggle)
+   ========================================================================== */
 
 .nb-switch {
  position: relative;
@@ -3695,29 +3444,31 @@ kbd,
  transition: var(--nb-transition-base);
 }
 
-.nb-switch input:checked+.nb-switch-slider {
+.nb-switch input:checked + .nb-switch-slider {
  background-color: var(--nb-success);
 }
 
-.nb-switch input:checked+.nb-switch-slider::before {
+.nb-switch input:checked + .nb-switch-slider::before {
  transform: translateX(24px);
  background-color: var(--nb-secondary);
 }
 
-.nb-switch input:focus+.nb-switch-slider {
+.nb-switch input:focus + .nb-switch-slider {
  outline: 2px solid var(--nb-accent);
  outline-offset: 2px;
 }
 
 /* ==========================================================================
-55. Skeleton Loader
-========================================================================== */
+   55. Skeleton Loader
+   ========================================================================== */
 
 .nb-skeleton {
- background: linear-gradient(90deg,
-   var(--nb-gray-200) 25%,
-   var(--nb-gray-300) 50%,
-   var(--nb-gray-200) 75%);
+ background: linear-gradient(
+  90deg,
+  var(--nb-gray-200) 25%,
+  var(--nb-gray-300) 50%,
+  var(--nb-gray-200) 75%
+ );
  background-size: 200% 100%;
  animation: nb-skeleton-loading 1.5s infinite;
  border: var(--nb-border-width) solid var(--nb-primary);
@@ -3761,13 +3512,8 @@ kbd,
 }
 
 @keyframes nb-skeleton-loading {
- 0% {
-  background-position: 200% 0;
- }
-
- 100% {
-  background-position: -200% 0;
- }
+ 0% { background-position: 200% 0; }
+ 100% { background-position: -200% 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3778,8 +3524,8 @@ kbd,
 }
 
 /* ==========================================================================
-56. Timeline
-========================================================================== */
+   56. Timeline
+   ========================================================================== */
 
 .nb-timeline {
  position: relative;
@@ -3893,23 +3639,23 @@ kbd,
  .nb-timeline {
   padding-left: 20px;
  }
-
+ 
  .nb-timeline-item {
   padding-left: var(--nb-spacing-sm);
  }
-
+ 
  .nb-timeline-item::before {
   left: -18px;
   width: 12px;
   height: 12px;
  }
-
+ 
  .nb-timeline-horizontal {
   flex-direction: column;
   padding-top: 0;
   padding-left: 30px;
  }
-
+ 
  .nb-timeline-horizontal::before {
   left: 10px;
   right: auto;
@@ -3918,14 +3664,14 @@ kbd,
   height: 100%;
   width: 3px;
  }
-
+ 
  .nb-timeline-horizontal .nb-timeline-item {
   flex: none;
   padding-top: 0;
   padding-bottom: var(--nb-spacing-xl);
   padding-left: var(--nb-spacing-lg);
  }
-
+ 
  .nb-timeline-horizontal .nb-timeline-item::before {
   left: -24px;
   top: 0;
@@ -3934,8 +3680,8 @@ kbd,
 }
 
 /* ==========================================================================
-57. Steps / Stepper
-========================================================================== */
+   57. Steps / Stepper
+   ========================================================================== */
 
 .nb-steps {
  display: flex;
@@ -4079,7 +3825,7 @@ kbd,
   flex-direction: column;
   align-items: flex-start;
  }
-
+ 
  .nb-step {
   display: flex;
   align-items: flex-start;
@@ -4087,7 +3833,7 @@ kbd,
   padding-bottom: var(--nb-spacing-lg);
   width: 100%;
  }
-
+ 
  .nb-step::before {
   top: 44px;
   left: 21px;
@@ -4096,16 +3842,16 @@ kbd,
   width: 3px;
   height: auto;
  }
-
+ 
  .nb-step:last-child::before {
   display: none;
  }
-
+ 
  .nb-step-indicator {
   margin: 0 var(--nb-spacing-md) 0 0;
   flex-shrink: 0;
  }
-
+ 
  .nb-step-content {
   flex: 1;
   padding-top: var(--nb-spacing-xs);
@@ -4113,8 +3859,8 @@ kbd,
 }
 
 /* ==========================================================================
-58. Rating
-========================================================================== */
+   58. Rating
+   ========================================================================== */
 
 .nb-rating {
  display: inline-flex;
@@ -4139,8 +3885,8 @@ kbd,
 }
 
 .nb-rating label:hover,
-.nb-rating label:hover~label,
-.nb-rating input:checked~label {
+.nb-rating label:hover ~ label,
+.nb-rating input:checked ~ label {
  color: var(--nb-warning);
  transform: scale(1.1);
 }
@@ -4182,8 +3928,8 @@ kbd,
 }
 
 /* ==========================================================================
-59. Empty State
-========================================================================== */
+   59. Empty State
+   ========================================================================== */
 
 .nb-empty-state {
  text-align: center;
@@ -4211,8 +3957,8 @@ kbd,
 }
 
 /* ==========================================================================
-60. Notification Badge
-========================================================================== */
+   60. Notification Badge
+   ========================================================================== */
 
 .nb-notification {
  position: relative;
@@ -4248,82 +3994,53 @@ kbd,
 }
 
 /* ==========================================================================
-61. Enhanced Responsive Utilities
-========================================================================== */
+   61. Enhanced Responsive Utilities
+   ========================================================================== */
 
 /* Hide/Show based on breakpoints */
 @media (max-width: 480px) {
- .nb-hide-xs {
-  display: none !important;
- }
+ .nb-hide-xs { display: none !important; }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
- .nb-hide-sm {
-  display: none !important;
- }
+ .nb-hide-sm { display: none !important; }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
- .nb-hide-md {
-  display: none !important;
- }
+ .nb-hide-md { display: none !important; }
 }
 
 @media (min-width: 1025px) {
- .nb-hide-lg {
-  display: none !important;
- }
+ .nb-hide-lg { display: none !important; }
 }
 
 @media (max-width: 480px) {
- .nb-show-xs {
-  display: block !important;
- }
+ .nb-show-xs { display: block !important; }
 }
 
 @media (min-width: 481px) {
- .nb-show-xs {
-  display: none !important;
- }
+ .nb-show-xs { display: none !important; }
 }
 
 @media (max-width: 768px) {
- .nb-show-sm {
-  display: block !important;
- }
+ .nb-show-sm { display: block !important; }
 }
 
 @media (min-width: 769px) {
- .nb-show-sm {
-  display: none !important;
- }
+ .nb-show-sm { display: none !important; }
 }
 
 /* Responsive text alignment */
 @media (max-width: 768px) {
- .nb-text-center-sm {
-  text-align: center !important;
- }
-
- .nb-text-left-sm {
-  text-align: left !important;
- }
+ .nb-text-center-sm { text-align: center !important; }
+ .nb-text-left-sm { text-align: left !important; }
 }
 
 /* Responsive spacing */
 @media (max-width: 768px) {
- .nb-m-0-sm {
-  margin: 0 !important;
- }
-
- .nb-p-0-sm {
-  padding: 0 !important;
- }
-
- .nb-p-2-sm {
-  padding: var(--nb-spacing-sm) !important;
- }
+ .nb-m-0-sm { margin: 0 !important; }
+ .nb-p-0-sm { padding: 0 !important; }
+ .nb-p-2-sm { padding: var(--nb-spacing-sm) !important; }
 }
 
 /* Stack elements on mobile */
@@ -4339,29 +4056,29 @@ kbd,
 }
 
 /* ==========================================================================
-62. Improved Mobile Responsiveness
-========================================================================== */
+   62. Improved Mobile Responsiveness
+   ========================================================================== */
 
 /* Better mobile hero */
 @media (max-width: 480px) {
  .nb-hero {
   padding: var(--nb-spacing-lg) var(--nb-spacing-sm);
  }
-
+ 
  .nb-hero-title {
   font-size: 1.5rem;
   letter-spacing: 1px;
  }
-
+ 
  .nb-hero-subtitle {
   font-size: 0.9rem;
  }
-
+ 
  .nb-hero-actions {
   flex-direction: column;
   gap: var(--nb-spacing-sm);
  }
-
+ 
  .nb-hero-actions .nb-btn {
   width: 100%;
  }
@@ -4373,20 +4090,20 @@ kbd,
   padding: var(--nb-spacing-md);
   box-shadow: 8px 8px 0 var(--nb-form-shadow), 8px 8px 0 2px var(--nb-primary);
  }
-
+ 
  .nb-form {
   gap: var(--nb-spacing-md);
  }
-
+ 
  .nb-input-group {
   flex-direction: column;
  }
-
+ 
  .nb-input-group .nb-input {
   border-right: var(--nb-border-width) solid var(--nb-primary);
   border-bottom: none;
  }
-
+ 
  .nb-input-group-append {
   width: 100%;
  }
@@ -4397,7 +4114,7 @@ kbd,
  .nb-card {
   box-shadow: 3px 3px 0 var(--nb-primary);
  }
-
+ 
  .nb-card-header,
  .nb-card-body,
  .nb-card-footer {
@@ -4412,42 +4129,42 @@ kbd,
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
  }
-
+ 
  .nb-table-stack {
   display: block;
  }
-
+ 
  .nb-table-stack thead {
   display: none;
  }
-
+ 
  .nb-table-stack tbody,
  .nb-table-stack tr,
  .nb-table-stack td {
   display: block;
   width: 100%;
  }
-
+ 
  .nb-table-stack tr {
   margin-bottom: var(--nb-spacing-md);
   border: var(--nb-border-width) solid var(--nb-primary);
   box-shadow: var(--nb-shadow-offset) var(--nb-shadow-offset) 0 var(--nb-primary);
  }
-
+ 
  .nb-table-stack td {
   text-align: left;
   padding: var(--nb-spacing-sm);
   border: none;
   border-bottom: 1px solid var(--nb-gray-300);
  }
-
+ 
  .nb-table-stack td::before {
   content: attr(data-label);
   font-weight: bold;
   display: block;
   margin-bottom: var(--nb-spacing-xs);
  }
-
+ 
  .nb-table-stack td:last-child {
   border-bottom: none;
  }
@@ -4460,16 +4177,16 @@ kbd,
   max-height: 90vh;
   overflow-y: auto;
  }
-
+ 
  .nb-modal-content {
   padding: var(--nb-spacing-md);
  }
-
+ 
  .nb-modal-footer {
   flex-direction: column;
   gap: var(--nb-spacing-sm);
  }
-
+ 
  .nb-modal-footer .nb-btn {
   width: 100%;
  }
@@ -4480,12 +4197,12 @@ kbd,
  .nb-tabs {
   box-shadow: 3px 3px 0 var(--nb-primary);
  }
-
+ 
  .nb-tab-label {
   padding: var(--nb-spacing-sm);
   font-size: var(--nb-font-size-sm);
  }
-
+ 
  .nb-tab-panel {
   padding: var(--nb-spacing-md);
  }
@@ -4504,12 +4221,12 @@ kbd,
   padding: var(--nb-spacing-md);
   box-shadow: 3px 3px 0 var(--nb-primary);
  }
-
+ 
  .nb-newsletter-icon {
   width: 50px;
   height: 50px;
  }
-
+ 
  .nb-newsletter-icon svg {
   width: 24px;
   height: 24px;
@@ -4522,7 +4239,7 @@ kbd,
   padding: var(--nb-spacing-md);
   box-shadow: 3px 3px 0 var(--nb-primary);
  }
-
+ 
  .nb-feature-icon {
   width: 50px;
   height: 50px;
@@ -4535,15 +4252,15 @@ kbd,
  .nb-slider {
   box-shadow: 3px 3px 0 var(--nb-primary);
  }
-
+ 
  .nb-slider-slide img {
   height: 200px;
  }
-
+ 
  .nb-slider-caption {
   padding: var(--nb-spacing-xs);
  }
-
+ 
  .nb-slider-caption h3 {
   font-size: var(--nb-font-size-base);
  }
@@ -4551,39 +4268,17 @@ kbd,
 
 /* Better mobile display headings */
 @media (max-width: 768px) {
- .nb-display-1 {
-  font-size: 2.5rem;
- }
-
- .nb-display-2 {
-  font-size: 2rem;
- }
-
- .nb-display-3 {
-  font-size: 1.75rem;
- }
-
- .nb-display-4 {
-  font-size: 1.5rem;
- }
+ .nb-display-1 { font-size: 2.5rem; }
+ .nb-display-2 { font-size: 2rem; }
+ .nb-display-3 { font-size: 1.75rem; }
+ .nb-display-4 { font-size: 1.5rem; }
 }
 
 @media (max-width: 480px) {
- .nb-display-1 {
-  font-size: 2rem;
- }
-
- .nb-display-2 {
-  font-size: 1.75rem;
- }
-
- .nb-display-3 {
-  font-size: 1.5rem;
- }
-
- .nb-display-4 {
-  font-size: 1.25rem;
- }
+ .nb-display-1 { font-size: 2rem; }
+ .nb-display-2 { font-size: 1.75rem; }
+ .nb-display-3 { font-size: 1.5rem; }
+ .nb-display-4 { font-size: 1.25rem; }
 }
 
 /* Better mobile section titles */
@@ -4591,7 +4286,7 @@ kbd,
  .nb-section-title {
   font-size: 1.25rem;
  }
-
+ 
  .nb-section-subtitle {
   font-size: 0.9rem;
  }
@@ -4607,7 +4302,6 @@ kbd,
 
 /* Touch-friendly tap targets */
 @media (max-width: 768px) {
-
  .nb-btn,
  .nb-dropdown-toggle,
  .nb-tab-label,
@@ -4621,8 +4315,8 @@ kbd,
 }
 
 /* ==========================================================================
-63. Group Component
-========================================================================== */
+   63. Group Component
+   ========================================================================== */
 
 .nb-group {
  display: inline-flex;
@@ -4630,38 +4324,38 @@ kbd,
  gap: 0;
 }
 
-.nb-group>* {
+.nb-group > * {
  border-radius: 0;
  margin: 0;
 }
 
 /* Remove double borders between grouped items */
-.nb-group>*:not(:first-child) {
+.nb-group > *:not(:first-child) {
  margin-left: calc(-1 * var(--nb-border-width));
 }
 
 /* First and last item border radius */
-.nb-group>*:first-child {
+.nb-group > *:first-child {
  border-top-left-radius: var(--nb-border-radius);
  border-bottom-left-radius: var(--nb-border-radius);
 }
 
-.nb-group>*:last-child {
+.nb-group > *:last-child {
  border-top-right-radius: var(--nb-border-radius);
  border-bottom-right-radius: var(--nb-border-radius);
 }
 
 /* Button group specific styles */
-.nb-group>.nb-btn {
+.nb-group > .nb-btn {
  box-shadow: none;
 }
 
-.nb-group>.nb-btn:hover {
+.nb-group > .nb-btn:hover {
  transform: none;
  z-index: 1;
 }
 
-.nb-group>.nb-btn:focus-visible {
+.nb-group > .nb-btn:focus-visible {
  z-index: 2;
 }
 
@@ -4675,18 +4369,18 @@ kbd,
  flex-direction: column;
 }
 
-.nb-group-vertical>*:not(:first-child) {
+.nb-group-vertical > *:not(:first-child) {
  margin-left: 0;
  margin-top: calc(-1 * var(--nb-border-width));
 }
 
-.nb-group-vertical>*:first-child {
+.nb-group-vertical > *:first-child {
  border-radius: 0;
  border-top-left-radius: var(--nb-border-radius);
  border-top-right-radius: var(--nb-border-radius);
 }
 
-.nb-group-vertical>*:last-child {
+.nb-group-vertical > *:last-child {
  border-radius: 0;
  border-bottom-left-radius: var(--nb-border-radius);
  border-bottom-right-radius: var(--nb-border-radius);
@@ -4697,21 +4391,21 @@ kbd,
  gap: var(--nb-spacing-sm);
 }
 
-.nb-group-spaced>*:not(:first-child) {
+.nb-group-spaced > *:not(:first-child) {
  margin-left: 0;
 }
 
-.nb-group-spaced>* {
+.nb-group-spaced > * {
  border-radius: var(--nb-border-radius);
 }
 
 /* Badge group */
-.nb-group>.nb-badge {
+.nb-group > .nb-badge {
  box-shadow: none;
 }
 
 /* Tag group */
-.nb-group>.nb-tag {
+.nb-group > .nb-tag {
  box-shadow: none;
 }
 
@@ -4721,23 +4415,23 @@ kbd,
   flex-direction: column;
   width: 100%;
  }
-
- .nb-group-responsive>* {
+ 
+ .nb-group-responsive > * {
   width: 100%;
  }
-
- .nb-group-responsive>*:not(:first-child) {
+ 
+ .nb-group-responsive > *:not(:first-child) {
   margin-left: 0;
   margin-top: calc(-1 * var(--nb-border-width));
  }
-
- .nb-group-responsive>*:first-child {
+ 
+ .nb-group-responsive > *:first-child {
   border-radius: 0;
   border-top-left-radius: var(--nb-border-radius);
   border-top-right-radius: var(--nb-border-radius);
  }
-
- .nb-group-responsive>*:last-child {
+ 
+ .nb-group-responsive > *:last-child {
   border-radius: 0;
   border-bottom-left-radius: var(--nb-border-radius);
   border-bottom-right-radius: var(--nb-border-radius);
@@ -4745,8 +4439,8 @@ kbd,
 }
 
 /* ==========================================================================
-64. Scrollable Tabs
-========================================================================== */
+   64. Scrollable Tabs
+   ========================================================================== */
 
 .nb-tabs-scrollable {
  display: flex;
@@ -4796,7 +4490,7 @@ kbd,
  outline-offset: -2px;
 }
 
-.nb-tabs-scrollable .nb-tab-input:checked+.nb-tab-label {
+.nb-tabs-scrollable .nb-tab-input:checked + .nb-tab-label {
  background-color: var(--nb-secondary);
 }
 
@@ -4808,7 +4502,7 @@ kbd,
  background-color: var(--nb-secondary);
 }
 
-.nb-tabs-scrollable .nb-tab-input:checked+.nb-tab-label+.nb-tab-panel {
+.nb-tabs-scrollable .nb-tab-input:checked + .nb-tab-label + .nb-tab-panel {
  display: block;
 }
 
@@ -4823,15 +4517,15 @@ kbd,
   padding: var(--nb-spacing-sm) var(--nb-spacing-md);
   font-size: var(--nb-font-size-sm);
  }
-
+ 
  .nb-tabs-scrollable .nb-tab-panel {
   padding: var(--nb-spacing-md);
  }
 }
 
 /* ==========================================================================
-65. Table Variants
-========================================================================== */
+   65. Table Variants
+   ========================================================================== */
 
 /* Scrollable table wrapper */
 .nb-table-scrollable {
