@@ -1,16 +1,10 @@
 # Neubrutalism CSS
 
-A minimal CSS framework inspired by [Milligram](https://github.com/milligram/milligram), [Pico.css](https://github.com/picocss/pico), [Skeleton](https://github.com/dhg/Skeleton), [Chota](https://github.com/jenil/chota), [Water.css](https://github.com/kognise/water.css), and other minimal CSS libraries.
+A **classless-first** CSS framework. Just write HTML — it automatically looks great.
 
-## Features
+## Philosophy
 
-- **Lightweight**: ~12KB minified, ~45KB unminified
-- **No dependencies**: Pure CSS, no JavaScript required
-- **Responsive**: Mobile-first design with responsive tables, navbar, and grid
-- **Dark mode**: Manual toggle via CSS class
-- **Customizable**: CSS custom properties for easy theming
-- **Accessible**: Focus-visible states, reduced motion support, screen reader utilities
-- **Semantic**: Works with plain HTML elements, optional utility classes
+**No classes needed for basic styling.** Write standard semantic HTML and everything is automatically styled. Classes are only for optional variations.
 
 ## Quick Start
 
@@ -20,64 +14,73 @@ A minimal CSS framework inspired by [Milligram](https://github.com/milligram/mil
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neubrutalism CSS</title>
+  <title>My Website</title>
   <link rel="stylesheet" href="neubrutalism.min.css">
 </head>
 <body>
-  <div class="nb-container">
-    <h1>Hello, World!</h1>
-    <p>This is a minimal CSS framework.</p>
-    <button class="nb-btn">Click Me</button>
-  </div>
+  <header>
+    <nav>
+      <strong>My Brand</strong>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+  
+  <main>
+    <h1>Welcome</h1>
+    <p>Your content here.</p>
+    <button>Click Me</button>
+  </main>
+  
+  <footer>
+    <p>© 2024 My Website</p>
+  </footer>
 </body>
 </html>
 ```
 
+## What's Automatically Styled (No Classes Needed)
+
+| Element | Description |
+|---------|-------------|
+| `h1`-`h6` | Headings with proper hierarchy |
+| `p` | Paragraphs with max-width for readability |
+| `a` | Links with hover states |
+| `ul`, `ol`, `li` | Lists with proper spacing |
+| `blockquote` | Styled blockquotes with border |
+| `code`, `kbd`, `pre` | Code blocks and inline code |
+| `button` | All button types styled |
+| `input`, `textarea`, `select` | All form elements styled |
+| `table` | Responsive tables (scroll on mobile) |
+| `img`, `video` | Responsive media |
+| `header`, `nav`, `main`, `footer` | Layout elements |
+| `article`, `section`, `aside` | Content sections |
+| `details`, `summary` | Accordion styling |
+| `fieldset`, `legend` | Form grouping |
+| `figure`, `figcaption` | Image captions |
+| `hr` | Horizontal rules |
+
 ## Dark Mode
 
-### Toggle
-```javascript
-document.documentElement.classList.toggle('nb-dark');
-```
+Add a single class to enable dark mode:
 
-Or add the class directly:
 ```html
 <html class="nb-dark">
-<!-- or -->
+```
+
+Or with data attribute:
+
+```html
 <html data-theme="dark">
 ```
 
-## Components
+## Optional Classes
 
-| Category | Components |
-|----------|------------|
-| **Typography** | Headings, paragraphs, links, blockquotes, code, text utilities |
-| **Layout** | Container, 12-column grid, flex utilities, spacing utilities, responsive tables |
-| **Buttons** | Primary, outline, secondary, success, danger, link, sizes, groups |
-| **Forms** | Inputs, textarea, select, checkboxes, radios, range, input groups |
-| **Navigation** | Navbar (responsive), breadcrumb, pagination |
-| **Content** | Cards, tables, badges, alerts, lists, accordion |
-| **Feedback** | Progress bars, spinners, tooltips, modals |
-| **Components** | Avatars, empty states, skeleton loading, aspect ratios, dividers |
-| **Utilities** | Display, spacing, width, borders, backgrounds, shadows, position, animations |
+While the library works without classes, these are available for variations:
 
-## Customization
-
-Override CSS custom properties to customize the theme:
-
-```css
-:root {
-  --nb-color-primary: #6200ea;
-  --nb-color-primary-hover: #3700b3;
-  --nb-border-radius: 0.5rem;
-  --nb-font-family: 'Inter', sans-serif;
-}
-```
-
-## Documentation
-
-- **[Full Documentation](docs/MINI-DOCUMENTATION.md)** - Comprehensive guide with all components and utilities
-- **[Live Example](examples/neubrutalism-mini-example.html)** - Demo page showcasing all components
+| Class | Use Case |
+|-------|----------|
+| `.nb-dark` or `[data-theme="dark"]` | Dark mode |
 
 ## Browser Support
 
