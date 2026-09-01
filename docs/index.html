@@ -503,17 +503,6 @@
         <div class="docs-callout">
           <p><strong>Note:</strong> This setting is applied globally to all elements, making it easier to manage spacing and layouts.</p>
         </div>
-        
-        <h3>Dark Mode</h3>
-        <p>For dark mode, add the <code>nb-dark</code> class or <code>data-theme="dark"</code> attribute to the <code>&lt;html&gt;</code> element:</p>
-        
-        <div class="docs-example">
-          <div class="docs-example-code">
-            <pre><code>&lt;html class="nb-dark"&gt;
-&lt;!-- or --&gt;
-&lt;html data-theme="dark"&gt;</code></pre>
-          </div>
-        </div>
       </section>
       
       <!-- Dark Mode -->
@@ -836,7 +825,382 @@
         </div>
       </section>
       
-      <!-- Variables -->
+      <!-- Flex Utilities -->
+      <section id="flex">
+        <h2>Flex Utilities</h2>
+        <p>Quick flexbox utilities for common layouts.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-flex</code></td><td>display: flex</td></tr>
+            <tr><td><code>.nb-flex-wrap</code></td><td>flex-wrap: wrap</td></tr>
+            <tr><td><code>.nb-flex-column</code></td><td>flex-direction: column</td></tr>
+            <tr><td><code>.nb-justify-between</code></td><td>justify-content: space-between</td></tr>
+            <tr><td><code>.nb-justify-center</code></td><td>justify-content: center</td></tr>
+            <tr><td><code>.nb-justify-end</code></td><td>justify-content: flex-end</td></tr>
+            <tr><td><code>.nb-align-center</code></td><td>align-items: center</td></tr>
+            <tr><td><code>.nb-align-start</code></td><td>align-items: flex-start</td></tr>
+            <tr><td><code>.nb-align-end</code></td><td>align-items: flex-end</td></tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Images -->
+      <section id="images">
+        <h2>Images</h2>
+        <p>Images are responsive by default and can be styled with utility classes.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <img src="https://picsum.photos/600/300" alt="Sample image" style="max-width:300px">
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;img src="image.jpg" alt="Description"&gt;</code></pre>
+          </div>
+        </div>
+        
+        <h3>Figure with Caption</h3>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <figure>
+              <img src="https://picsum.photos/600/300?random=2" alt="Sample">
+              <figcaption>Image caption text</figcaption>
+            </figure>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;figure&gt;
+  &lt;img src="image.jpg" alt="Description"&gt;
+  &lt;figcaption&gt;Image caption text&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+          </div>
+        </div>
+        
+        <h3>Image Shapes</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-rounded</code></td><td>Rounded corners</td></tr>
+            <tr><td><code>.nb-rounded-circle</code></td><td>Circular image</td></tr>
+            <tr><td><code>.nb-rounded-pill</code></td><td>Pill shape</td></tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Tables -->
+      <section id="tables">
+        <h2>Tables</h2>
+        <p>Tables are automatically styled and responsive. Use <code>.nb-table-responsive</code> for horizontal scrolling on mobile.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Admin</td>
+                  <td><span class="nb-badge nb-badge-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Jane Smith</td>
+                  <td>Editor</td>
+                  <td><span class="nb-badge nb-badge-warning">Pending</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Role&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;John Doe&lt;/td&gt;
+      &lt;td&gt;Admin&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+          </div>
+        </div>
+        
+        <h3>Table Variants</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-table-striped</code></td><td>Zebra stripes</td></tr>
+            <tr><td><code>.nb-table-bordered</code></td><td>Borders on all cells</td></tr>
+            <tr><td><code>.nb-table-sm</code></td><td>Compact padding</td></tr>
+            <tr><td><code>.nb-table-responsive</code></td><td>Horizontal scroll wrapper</td></tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Code -->
+      <section id="code">
+        <h2>Code</h2>
+        <p>Inline code and code blocks are automatically styled.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <p>Use the <code>console.log()</code> function to print to the console. Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</p>
+            <pre><code>function greet(name) {
+  return `Hello, ${name}!`;
+}</code></pre>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;p&gt;Use the &lt;code&gt;console.log()&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function greet(name) {
+  return `Hello, ${name}!`;
+}&lt;/code&gt;&lt;/pre&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Breadcrumb -->
+      <section id="breadcrumb">
+        <h2>Breadcrumb</h2>
+        <p>Indicate the current page's location within a navigational hierarchy.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <ol class="nb-breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Category</a></li>
+              <li>Current Item</li>
+            </ol>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;ol class="nb-breadcrumb"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Current Item&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Pagination -->
+      <section id="pagination">
+        <h2>Pagination</h2>
+        <p>Navigate between pages of content.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <ul class="nb-pagination">
+              <li class="nb-disabled"><span>&laquo;</span></li>
+              <li class="nb-active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;ul class="nb-pagination"&gt;
+  &lt;li class="nb-disabled"&gt;&lt;span&gt;&laquo;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="nb-active"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;&raquo;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Accordion -->
+      <section id="accordion">
+        <h2>Accordion</h2>
+        <p>Build collapsible content using <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code>.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <details open>
+              <summary>Click to expand</summary>
+              <p>This content is collapsible. Click the summary to toggle visibility.</p>
+            </details>
+            <details>
+              <summary>Another item</summary>
+              <p>More collapsible content here.</p>
+            </details>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;details open&gt;
+  &lt;summary&gt;Click to expand&lt;/summary&gt;
+  &lt;p&gt;This content is collapsible.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Spacing -->
+      <section id="spacing">
+        <h2>Spacing</h2>
+        <p>Control padding and margin with utility classes.</p>
+        
+        <h3>Padding</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-p-1</code></td><td>0.5rem</td></tr>
+            <tr><td><code>.nb-p-2</code></td><td>1rem</td></tr>
+            <tr><td><code>.nb-p-3</code></td><td>1.5rem</td></tr>
+            <tr><td><code>.nb-p-4</code></td><td>2rem</td></tr>
+            <tr><td><code>.nb-py-1</code></td><td>padding-top/bottom: 0.5rem</td></tr>
+            <tr><td><code>.nb-py-2</code></td><td>padding-top/bottom: 1rem</td></tr>
+            <tr><td><code>.nb-py-3</code></td><td>padding-top/bottom: 1.5rem</td></tr>
+          </tbody>
+        </table>
+        
+        <h3>Margin</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-m-0</code></td><td>margin: 0</td></tr>
+            <tr><td><code>.nb-mt-1</code></td><td>margin-top: 0.5rem</td></tr>
+            <tr><td><code>.nb-mt-2</code></td><td>margin-top: 1rem</td></tr>
+            <tr><td><code>.nb-mt-3</code></td><td>margin-top: 1.5rem</td></tr>
+            <tr><td><code>.nb-mt-4</code></td><td>margin-top: 2rem</td></tr>
+            <tr><td><code>.nb-mb-1</code></td><td>margin-bottom: 0.5rem</td></tr>
+            <tr><td><code>.nb-mb-2</code></td><td>margin-bottom: 1rem</td></tr>
+            <tr><td><code>.nb-mb-3</code></td><td>margin-bottom: 1.5rem</td></tr>
+            <tr><td><code>.nb-mb-4</code></td><td>margin-bottom: 2rem</td></tr>
+            <tr><td><code>.nb-mx-auto</code></td><td>margin-left/right: auto</td></tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Borders -->
+      <section id="borders">
+        <h2>Borders</h2>
+        <p>Add or remove borders with utility classes.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-border</code></td><td>All sides</td></tr>
+            <tr><td><code>.nb-border-top</code></td><td>Top only</td></tr>
+            <tr><td><code>.nb-border-bottom</code></td><td>Bottom only</td></tr>
+            <tr><td><code>.nb-border-0</code></td><td>Remove all borders</td></tr>
+            <tr><td><code>.nb-rounded</code></td><td>Border radius: 0.375rem</td></tr>
+            <tr><td><code>.nb-rounded-circle</code></td><td>Fully rounded (50%)</td></tr>
+            <tr><td><code>.nb-rounded-pill</code></td><td>Pill shape</td></tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Shadows -->
+      <section id="shadows">
+        <h2>Shadows</h2>
+        <p>Add depth with shadow utilities.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex nb-flex-wrap" style="gap:1rem">
+              <div class="nb-p-3 nb-shadow-sm nb-rounded" style="background:var(--nb-color-bg);width:120px;text-align:center">Small</div>
+              <div class="nb-p-3 nb-shadow nb-rounded" style="background:var(--nb-color-bg);width:120px;text-align:center">Medium</div>
+              <div class="nb-p-3 nb-shadow-lg nb-rounded" style="background:var(--nb-color-bg);width:120px;text-align:center">Large</div>
+            </div>
+          </div>
+        </div>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-shadow-sm</code></td><td>Small shadow</td></tr>
+            <tr><td><code>.nb-shadow</code></td><td>Medium shadow</td></tr>
+            <tr><td><code>.nb-shadow-lg</code></td><td>Large shadow</td></tr>
+            <tr><td><code>.nb-shadow-none</code></td><td>Remove shadow</td></tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Colors -->
+      <section id="colors">
+        <h2>Colors</h2>
+        <p>Apply colors to text and backgrounds.</p>
+        
+        <h3>Text Colors</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Preview</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.text-muted</code></td><td><span class="text-muted">Muted text</span></td></tr>
+            <tr><td><code>.text-primary</code></td><td><span class="text-primary">Primary text</span></td></tr>
+            <tr><td><code>.text-success</code></td><td><span class="text-success">Success text</span></td></tr>
+            <tr><td><code>.text-danger</code></td><td><span class="text-danger">Danger text</span></td></tr>
+            <tr><td><code>.text-warning</code></td><td><span class="text-warning">Warning text</span></td></tr>
+          </tbody>
+        </table>
+        
+        <h3>Background Colors</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Preview</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-bg-primary</code></td><td><span class="nb-p-2 nb-bg-primary nb-rounded" style="color:white;display:inline-block">Primary</span></td></tr>
+            <tr><td><code>.nb-bg-success</code></td><td><span class="nb-p-2 nb-bg-success nb-rounded" style="color:white;display:inline-block">Success</span></td></tr>
+            <tr><td><code>.nb-bg-danger</code></td><td><span class="nb-p-2 nb-bg-danger nb-rounded" style="color:white;display:inline-block">Danger</span></td></tr>
+            <tr><td><code>.nb-bg-warning</code></td><td><span class="nb-p-2 nb-bg-warning nb-rounded" style="display:inline-block">Warning</span></td></tr>
+            <tr><td><code>.nb-bg-light</code></td><td><span class="nb-p-2 nb-bg-light nb-rounded" style="display:inline-block">Light</span></td></tr>
+            <tr><td><code>.nb-bg-dark</code></td><td><span class="nb-p-2 nb-bg-dark nb-rounded" style="color:white;display:inline-block">Dark</span></td></tr>
+          </tbody>
+        </table>
+      </section>
       <section id="variables">
         <h2>CSS Variables</h2>
         <p>Customize the theme by overriding CSS variables:</p>
