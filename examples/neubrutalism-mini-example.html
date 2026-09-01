@@ -3,12 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neubrutalism CSS - Example</title>
+  <title>Neubrutalism CSS - Complete Component Demo</title>
   <link rel="stylesheet" href="../neubrutalism.min.css">
   <style>
-    .example-section { margin-bottom: 3rem; padding: 2rem; border: 1px dashed var(--nb-color-border); border-radius: var(--nb-border-radius); }
-    .example-section h2 { margin-top: 0; }
-    .color-box { display: inline-block; width: 2rem; height: 2rem; border-radius: var(--nb-border-radius); border: 1px solid var(--nb-color-border); vertical-align: middle; margin-right: 0.5rem; }
+    .demo-section { 
+      margin-bottom: 3rem; 
+      padding: 2rem; 
+      border: 1px solid var(--nb-color-border); 
+      border-radius: var(--nb-border-radius);
+      background: var(--nb-color-bg);
+    }
+    .demo-section h2 { 
+      margin-top: 0; 
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--nb-color-border);
+    }
+    .demo-subsection {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--nb-color-bg-alt);
+      border-radius: var(--nb-border-radius);
+    }
+    .demo-subsection h3 {
+      margin-top: 0;
+    }
+    .color-box { 
+      display: inline-block; 
+      width: 1.5rem; 
+      height: 1.5rem; 
+      border-radius: var(--nb-border-radius); 
+      border: 1px solid var(--nb-color-border); 
+      vertical-align: middle; 
+      margin-right: 0.5rem; 
+    }
   </style>
 </head>
 <body>
@@ -27,101 +54,176 @@
         <li><a href="#typography">Typography</a></li>
         <li><a href="#buttons">Buttons</a></li>
         <li><a href="#forms">Forms</a></li>
+        <li><a href="#cards">Cards</a></li>
+        <li><a href="#tables">Tables</a></li>
         <li><a href="#components">Components</a></li>
+        <li><a href="#utilities">Utilities</a></li>
       </ul>
-      <button class="nb-btn nb-btn-sm" onclick="toggleTheme()">Toggle Dark</button>
+      <button class="nb-btn nb-btn-sm" onclick="toggleTheme()">🌓 Toggle Dark</button>
     </div>
   </nav>
 
   <div class="nb-container" style="padding-top: 2rem;">
 
     <!-- Hero -->
-    <div class="text-center" style="padding: 3rem 0;">
+    <div class="text-center" style="padding: 4rem 0;">
       <h1>Neubrutalism CSS</h1>
-      <p class="text-large text-muted">A minimal CSS framework for building beautiful, responsive websites.</p>
+      <p class="text-large text-muted">A complete CSS framework with 35+ components. All styled automatically with semantic HTML.</p>
       <div class="nb-flex nb-justify-center" style="gap: 1rem; margin-top: 2rem;">
-        <a href="#get-started" class="nb-btn nb-btn-lg">Get Started</a>
-        <a href="#documentation" class="nb-btn nb-btn-outline nb-btn-lg">Documentation</a>
+        <a href="#typography" class="nb-btn nb-btn-lg">Explore Components</a>
+        <a href="../docs/index.html" class="nb-btn nb-btn-outline nb-btn-lg">Documentation</a>
       </div>
     </div>
 
     <!-- Typography Section -->
-    <div class="example-section" id="typography">
+    <div class="demo-section" id="typography">
       <h2>Typography</h2>
       
-      <h1>Heading 1</h1>
-      <h2>Heading 2</h2>
-      <h3>Heading 3</h3>
-      <h4>Heading 4</h4>
-      <h5>Heading 5</h5>
-      <h6>Heading 6</h6>
-      
-      <p>This is a <strong>paragraph</strong> with <a href="#">a link</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      
-      <p class="text-muted">This is muted text using <code>.text-muted</code></p>
-      <p class="text-small">This is small text using <code>.text-small</code></p>
-      <p class="text-bold">This is bold text using <code>.text-bold</code></p>
-      <p class="text-uppercase">This is uppercase text using <code>.text-uppercase</code></p>
-      
-      <blockquote>
-        <p>Design is not just what it looks like and feels like. Design is how it works.</p>
-        <footer>— Steve Jobs</footer>
-      </blockquote>
-      
-      <p>Use the <code>console.log()</code> function to print to the console. Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</p>
-      
-      <pre><code>function greet(name) {
+      <div class="demo-subsection">
+        <h3>Headings</h3>
+        <h1>Heading 1 <small>With small text</small></h1>
+        <h2>Heading 2 <small>With small text</small></h2>
+        <h3>Heading 3 <small>With small text</small></h3>
+        <h4>Heading 4 <small>With small text</small></h4>
+        <h5>Heading 5 <small>With small text</small></h5>
+        <h6>Heading 6 <small>With small text</small></h6>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Paragraphs & Inline Elements</h3>
+        <p>This is a <strong>paragraph</strong> with <a href="#">a link</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>You can use <em>italic text</em>, <strong>bold text</strong>, <small>small text</small>, and <mark>highlighted text</mark>.</p>
+        <p>Use the <code>console.log()</code> function to print to the console. Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</p>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Text Utilities</h3>
+        <p class="text-muted">This is muted text using <code>.text-muted</code></p>
+        <p class="text-primary">This is primary text using <code>.text-primary</code></p>
+        <p class="text-success">This is success text using <code>.text-success</code></p>
+        <p class="text-danger">This is danger text using <code>.text-danger</code></p>
+        <p class="text-warning">This is warning text using <code>.text-warning</code></p>
+        <p class="text-small">This is small text using <code>.text-small</code></p>
+        <p class="text-large">This is large text using <code>.text-large</code></p>
+        <p class="text-bold">This is bold text using <code>.text-bold</code></p>
+        <p class="text-uppercase">This is uppercase text using <code>.text-uppercase</code></p>
+        <p class="text-center">This is centered text using <code>.text-center</code></p>
+        <p class="text-right">This is right-aligned text using <code>.text-right</code></p>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Blockquote</h3>
+        <blockquote>
+          <p>Design is not just what it looks like and feels like. Design is how it works.</p>
+          <footer>— Steve Jobs</footer>
+        </blockquote>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Code Block</h3>
+        <pre><code>function greet(name) {
   console.log(`Hello, ${name}!`);
   return true;
 }
 
 greet("World");</code></pre>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Lists</h3>
+        <div class="nb-row">
+          <div class="nb-col-4">
+            <h6>Unordered List</h6>
+            <ul>
+              <li>Item one</li>
+              <li>Item two
+                <ul>
+                  <li>Nested item</li>
+                  <li>Nested item</li>
+                </ul>
+              </li>
+              <li>Item three</li>
+            </ul>
+          </div>
+          <div class="nb-col-4">
+            <h6>Ordered List</h6>
+            <ol>
+              <li>First step</li>
+              <li>Second step</li>
+              <li>Third step</li>
+            </ol>
+          </div>
+          <div class="nb-col-4">
+            <h6>Description List</h6>
+            <dl>
+              <dt>Name</dt>
+              <dd>John Doe</dd>
+              <dt>Email</dt>
+              <dd>john@example.com</dd>
+              <dt>Role</dt>
+              <dd>Administrator</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Buttons Section -->
-    <div class="example-section" id="buttons">
+    <div class="demo-section" id="buttons">
       <h2>Buttons</h2>
       
-      <h4>Default Buttons</h4>
-      <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
-        <button>Default</button>
-        <button class="nb-btn nb-btn-outline">Outline</button>
-        <button class="nb-btn nb-btn-secondary">Secondary</button>
-        <button class="nb-btn nb-btn-link">Link</button>
+      <div class="demo-subsection">
+        <h3>Default Buttons</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
+          <button>Default</button>
+          <button class="nb-btn-outline">Outline</button>
+          <button class="nb-btn-secondary">Secondary</button>
+          <button class="nb-btn-link">Link</button>
+        </div>
       </div>
-      
-      <h4>Colored Buttons</h4>
-      <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
-        <button class="nb-btn nb-btn-success">Success</button>
-        <button class="nb-btn nb-btn-danger">Danger</button>
+
+      <div class="demo-subsection">
+        <h3>Colored Buttons</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
+          <button class="nb-btn-success">Success</button>
+          <button class="nb-btn-danger">Danger</button>
+        </div>
       </div>
-      
-      <h4>Button Sizes</h4>
-      <div class="nb-flex nb-align-center nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
-        <button class="nb-btn nb-btn-sm">Small</button>
-        <button class="nb-btn">Default</button>
-        <button class="nb-btn nb-btn-lg">Large</button>
+
+      <div class="demo-subsection">
+        <h3>Button Sizes</h3>
+        <div class="nb-flex nb-align-center nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
+          <button class="nb-btn-sm">Small</button>
+          <button>Default</button>
+          <button class="nb-btn-lg">Large</button>
+        </div>
       </div>
-      
-      <h4>Disabled Buttons</h4>
-      <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
-        <button disabled>Disabled</button>
-        <button class="nb-btn nb-btn-outline" disabled>Disabled Outline</button>
+
+      <div class="demo-subsection">
+        <h3>Disabled Buttons</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
+          <button disabled>Disabled</button>
+          <button class="nb-btn-outline" disabled>Disabled Outline</button>
+        </div>
       </div>
-      
-      <h4>Block Button</h4>
-      <button class="nb-btn nb-btn-block" style="margin-bottom: 1rem;">Block Button</button>
-      
-      <h4>Button Group</h4>
-      <div class="nb-btn-group">
-        <button class="nb-btn">Left</button>
-        <button class="nb-btn">Middle</button>
-        <button class="nb-btn">Right</button>
+
+      <div class="demo-subsection">
+        <h3>Block Button</h3>
+        <button class="nb-btn-block" style="margin-bottom: 1rem;">Block Button</button>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Button Group</h3>
+        <div class="nb-btn-group">
+          <button>Left</button>
+          <button>Middle</button>
+          <button>Right</button>
+        </div>
       </div>
     </div>
 
     <!-- Forms Section -->
-    <div class="example-section" id="forms">
+    <div class="demo-section" id="forms">
       <h2>Forms</h2>
       
       <div class="nb-row">
@@ -195,38 +297,47 @@ greet("World");</code></pre>
     </div>
 
     <!-- Grid Section -->
-    <div class="example-section" id="grid">
+    <div class="demo-section" id="grid">
       <h2>Grid System</h2>
       
-      <h4>Equal Columns</h4>
-      <div class="nb-row" style="margin-bottom: 1rem;">
-        <div class="nb-col"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">Col 1</div></div>
-        <div class="nb-col"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">Col 2</div></div>
-        <div class="nb-col"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">Col 3</div></div>
+      <div class="demo-subsection">
+        <h3>Equal Columns</h3>
+        <div class="nb-row" style="margin-bottom: 1rem;">
+          <div class="nb-col"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">Col 1</div></div>
+          <div class="nb-col"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">Col 2</div></div>
+          <div class="nb-col"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">Col 3</div></div>
+        </div>
       </div>
-      
-      <h4>Mixed Columns</h4>
-      <div class="nb-row" style="margin-bottom: 1rem;">
-        <div class="nb-col-4"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">4 cols</div></div>
-        <div class="nb-col-8"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">8 cols</div></div>
+
+      <div class="demo-subsection">
+        <h3>Mixed Columns</h3>
+        <div class="nb-row" style="margin-bottom: 1rem;">
+          <div class="nb-col-4"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">4 cols</div></div>
+          <div class="nb-col-8"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">8 cols</div></div>
+        </div>
       </div>
-      
-      <h4>12 Column Grid</h4>
-      <div class="nb-row" style="margin-bottom: 1rem;">
-        <div class="nb-col-6"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">6</div></div>
-        <div class="nb-col-3"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">3</div></div>
-        <div class="nb-col-3"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">3</div></div>
+
+      <div class="demo-subsection">
+        <h3>12 Column Grid</h3>
+        <div class="nb-row" style="margin-bottom: 1rem;">
+          <div class="nb-col-6"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">6</div></div>
+          <div class="nb-col-3"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">3</div></div>
+          <div class="nb-col-3"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">3</div></div>
+        </div>
       </div>
-      
-      <div class="nb-row">
-        <div class="nb-col-4"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">4</div></div>
-        <div class="nb-col-4"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">4</div></div>
-        <div class="nb-col-4"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">4</div></div>
+
+      <div class="demo-subsection">
+        <h3>Flex Utilities</h3>
+        <div class="nb-flex nb-justify-between nb-align-center" style="padding:1rem;background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);">
+          <span>Left</span>
+          <span>Center</span>
+          <span>Right</span>
+        </div>
       </div>
     </div>
 
     <!-- Cards Section -->
-    <div class="example-section" id="cards">
+    <div class="demo-section" id="cards">
       <h2>Cards</h2>
       
       <div class="nb-row">
@@ -235,7 +346,7 @@ greet("World");</code></pre>
             <div class="nb-card-body">
               <h3 class="nb-card-title">Basic Card</h3>
               <p class="nb-card-text">A simple card with body content.</p>
-              <button class="nb-btn nb-btn-sm">Learn More</button>
+              <button class="nb-btn-sm">Learn More</button>
             </div>
           </div>
         </div>
@@ -246,7 +357,7 @@ greet("World");</code></pre>
             <div class="nb-card-body">
               <h3 class="nb-card-title">Card with Header</h3>
               <p class="nb-card-text">This card has a header section.</p>
-              <button class="nb-btn nb-btn-sm">Learn More</button>
+              <button class="nb-btn-sm">Learn More</button>
             </div>
             <div class="nb-card-footer">Last updated 5 min ago</div>
           </div>
@@ -258,7 +369,7 @@ greet("World");</code></pre>
               <h5 class="nb-card-subtitle">Category</h5>
               <h3 class="nb-card-title">Card with Subtitle</h3>
               <p class="nb-card-text">This card has a subtitle section.</p>
-              <a href="#" class="nb-btn nb-btn-sm nb-btn-outline">View Details</a>
+              <a href="#" class="nb-btn-sm nb-btn-outline">View Details</a>
             </div>
           </div>
         </div>
@@ -266,193 +377,344 @@ greet("World");</code></pre>
     </div>
 
     <!-- Tables Section -->
-    <div class="example-section" id="tables">
+    <div class="demo-section" id="tables">
       <h2>Tables</h2>
       
-      <table>
-        <caption>User List</caption>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>John Doe</td>
-            <td>john@example.com</td>
-            <td>Admin</td>
-            <td><span class="nb-badge nb-badge-success">Active</span></td>
-          </tr>
-          <tr>
-            <td>Jane Smith</td>
-            <td>jane@example.com</td>
-            <td>Editor</td>
-            <td><span class="nb-badge nb-badge-success">Active</span></td>
-          </tr>
-          <tr>
-            <td>Bob Johnson</td>
-            <td>bob@example.com</td>
-            <td>User</td>
-            <td><span class="nb-badge nb-badge-warning">Pending</span></td>
-          </tr>
-          <tr>
-            <td>Alice Brown</td>
-            <td>alice@example.com</td>
-            <td>User</td>
-            <td><span class="nb-badge nb-badge-danger">Inactive</span></td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <h4>Striped Table</h4>
-      <table class="nb-table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Item</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>Widget A</td><td>$10.00</td></tr>
-          <tr><td>2</td><td>Widget B</td><td>$20.00</td></tr>
-          <tr><td>3</td><td>Widget C</td><td>$30.00</td></tr>
-          <tr><td>4</td><td>Widget D</td><td>$40.00</td></tr>
-        </tbody>
-      </table>
+      <div class="demo-subsection">
+        <h3>Basic Table</h3>
+        <table>
+          <caption>User List</caption>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>john@example.com</td>
+              <td>Admin</td>
+              <td><span class="nb-badge nb-badge-success">Active</span></td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>jane@example.com</td>
+              <td>Editor</td>
+              <td><span class="nb-badge nb-badge-success">Active</span></td>
+            </tr>
+            <tr>
+              <td>Bob Johnson</td>
+              <td>bob@example.com</td>
+              <td>User</td>
+              <td><span class="nb-badge nb-badge-warning">Pending</span></td>
+            </tr>
+            <tr>
+              <td>Alice Brown</td>
+              <td>alice@example.com</td>
+              <td>User</td>
+              <td><span class="nb-badge nb-badge-danger">Inactive</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Striped Table</h3>
+        <table class="nb-table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Item</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Widget A</td><td>$10.00</td></tr>
+            <tr><td>2</td><td>Widget B</td><td>$20.00</td></tr>
+            <tr><td>3</td><td>Widget C</td><td>$30.00</td></tr>
+            <tr><td>4</td><td>Widget D</td><td>$40.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Bordered Table</h3>
+        <table class="nb-table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Alice</td><td>95</td></tr>
+            <tr><td>Bob</td><td>87</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Responsive Table (scrolls on mobile)</h3>
+        <div class="nb-table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Joined</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>001</td><td>Alice Johnson</td><td>alice@company.com</td><td>Engineering</td><td>Lead</td><td>Active</td><td>2022-01-15</td><td>New York</td></tr>
+              <tr><td>002</td><td>Bob Smith</td><td>bob@company.com</td><td>Design</td><td>Senior</td><td>Active</td><td>2022-03-22</td><td>London</td></tr>
+              <tr><td>003</td><td>Carol White</td><td>carol@company.com</td><td>Product</td><td>Manager</td><td>On Leave</td><td>2022-06-10</td><td>Berlin</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <!-- Components Section -->
-    <div class="example-section" id="components">
+    <div class="demo-section" id="components">
       <h2>Components</h2>
-      
-      <h4>Badges</h4>
-      <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1.5rem;">
-        <span class="nb-badge">Default</span>
-        <span class="nb-badge nb-badge-primary">Primary</span>
-        <span class="nb-badge nb-badge-success">Success</span>
-        <span class="nb-badge nb-badge-danger">Danger</span>
-        <span class="nb-badge nb-badge-warning">Warning</span>
-        <span class="nb-badge nb-badge-info">Info</span>
+
+      <div class="demo-subsection">
+        <h3>Badges</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem;">
+          <span class="nb-badge">Default</span>
+          <span class="nb-badge nb-badge-primary">Primary</span>
+          <span class="nb-badge nb-badge-success">Success</span>
+          <span class="nb-badge nb-badge-danger">Danger</span>
+          <span class="nb-badge nb-badge-warning">Warning</span>
+          <span class="nb-badge nb-badge-info">Info</span>
+        </div>
       </div>
-      
-      <h4>Alerts</h4>
-      <div class="nb-alert nb-alert-info"><p><strong>Info:</strong> This is an informational alert.</p></div>
-      <div class="nb-alert nb-alert-success"><p><strong>Success:</strong> Your action was completed successfully.</p></div>
-      <div class="nb-alert nb-alert-warning"><p><strong>Warning:</strong> Please review this important notice.</p></div>
-      <div class="nb-alert nb-alert-danger"><p><strong>Error:</strong> Something went wrong. Please try again.</p></div>
-      
-      <h4>Breadcrumb</h4>
-      <ol class="nb-breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Category</a></li>
-        <li>Current Item</li>
-      </ol>
-      
-      <h4>Pagination</h4>
-      <ul class="nb-pagination">
-        <li class="nb-disabled"><span>&laquo;</span></li>
-        <li class="nb-active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
-      </ul>
-      
-      <h4>Accordion</h4>
-      <details open>
-        <summary>What is Neubrutalism CSS?</summary>
-        <p>Neubrutalism CSS is a minimal, lightweight CSS framework designed for building beautiful, responsive websites without the bloat.</p>
-      </details>
-      <details>
-        <summary>How do I use it?</summary>
-        <p>Simply include the CSS file in your HTML and start using the classes. Check the documentation for examples.</p>
-      </details>
-      <details>
-        <summary>Is it compatible with other frameworks?</summary>
-        <p>Yes! Neubrutalism CSS is designed to be lightweight and non-intrusive, making it compatible with most other frameworks.</p>
-      </details>
-      
-      <h4>Progress Bars</h4>
-      <div class="nb-progress"><div class="nb-progress-bar" style="width: 25%"></div></div>
-      <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-success" style="width: 50%"></div></div>
-      <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-danger" style="width: 75%"></div></div>
-      
-      <h4>Spinners</h4>
-      <div class="nb-flex" style="gap: 1rem; align-items: center;">
-        <div class="nb-spinner nb-spinner-sm"></div>
-        <div class="nb-spinner"></div>
-        <div class="nb-spinner nb-spinner-lg"></div>
+
+      <div class="demo-subsection">
+        <h3>Alerts</h3>
+        <div class="nb-alert nb-alert-info"><p><strong>Info:</strong> This is an informational alert.</p></div>
+        <div class="nb-alert nb-alert-success"><p><strong>Success:</strong> Your action was completed successfully.</p></div>
+        <div class="nb-alert nb-alert-warning"><p><strong>Warning:</strong> Please review this important notice.</p></div>
+        <div class="nb-alert nb-alert-danger"><p><strong>Error:</strong> Something went wrong. Please try again.</p></div>
       </div>
-      
-      <h4>Tooltip</h4>
-      <p>Hover over <span data-tooltip="This is a tooltip!">this text</span> to see a CSS-only tooltip.</p>
-      
-      <h4>Modal</h4>
-      <a href="#exampleModal" class="nb-btn">Open Modal</a>
-      
-      <div id="exampleModal" class="nb-modal">
-        <div class="nb-modal-dialog">
-          <div class="nb-modal-header">
-            <h3 class="nb-modal-title">Example Modal</h3>
-            <a href="#" class="nb-modal-close">&times;</a>
-          </div>
-          <div class="nb-modal-body">
-            <p>This is a CSS-only modal using the <code>:target</code> pseudo-class.</p>
-            <p>Click the X or press Escape to close.</p>
-          </div>
-          <div class="nb-modal-footer">
-            <a href="#" class="nb-btn nb-btn-secondary">Cancel</a>
-            <button class="nb-btn">Confirm</button>
+
+      <div class="demo-subsection">
+        <h3>Breadcrumb</h3>
+        <ol class="nb-breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Category</a></li>
+          <li>Current Item</li>
+        </ol>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Pagination</h3>
+        <ul class="nb-pagination">
+          <li class="nb-disabled"><span>&laquo;</span></li>
+          <li class="nb-active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">&raquo;</a></li>
+        </ul>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Accordion</h3>
+        <details open>
+          <summary>What is Neubrutalism CSS?</summary>
+          <p>Neubrutalism CSS is a minimal, lightweight CSS framework designed for building beautiful, responsive websites without the bloat.</p>
+        </details>
+        <details>
+          <summary>How do I use it?</summary>
+          <p>Simply include the CSS file in your HTML and start using the classes. Check the documentation for examples.</p>
+        </details>
+        <details>
+          <summary>Is it compatible with other frameworks?</summary>
+          <p>Yes! Neubrutalism CSS is designed to be lightweight and non-intrusive, making it compatible with most other frameworks.</p>
+        </details>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Progress Bars</h3>
+        <div class="nb-progress"><div class="nb-progress-bar" style="width: 25%"></div></div>
+        <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-success" style="width: 50%"></div></div>
+        <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-danger" style="width: 75%"></div></div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Spinners</h3>
+        <div class="nb-flex" style="gap: 1rem; align-items: center;">
+          <div class="nb-spinner nb-spinner-sm"></div>
+          <div class="nb-spinner"></div>
+          <div class="nb-spinner nb-spinner-lg"></div>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Tooltip</h3>
+        <p>Hover over <span data-tooltip="This is a tooltip!">this text</span> to see a CSS-only tooltip.</p>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Modal</h3>
+        <a href="#exampleModal" class="nb-btn">Open Modal</a>
+        
+        <div id="exampleModal" class="nb-modal">
+          <div class="nb-modal-dialog">
+            <div class="nb-modal-header">
+              <h3 class="nb-modal-title">Example Modal</h3>
+              <a href="#" class="nb-modal-close">&times;</a>
+            </div>
+            <div class="nb-modal-body">
+              <p>This is a CSS-only modal using the <code>:target</code> pseudo-class.</p>
+              <p>Click the X or press Escape to close.</p>
+            </div>
+            <div class="nb-modal-footer">
+              <a href="#" class="nb-btn-secondary">Cancel</a>
+              <button>Confirm</button>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Avatars</h3>
+        <div class="nb-flex" style="gap: 1rem; align-items: center;">
+          <div class="nb-avatar nb-avatar-sm">SM</div>
+          <div class="nb-avatar">JD</div>
+          <div class="nb-avatar nb-avatar-lg">LG</div>
+          <div class="nb-avatar nb-avatar-xl">XL</div>
+        </div>
+        <p style="margin-top:1rem">Avatar Group:</p>
+        <div class="nb-avatar-group">
+          <div class="nb-avatar">A</div>
+          <div class="nb-avatar">B</div>
+          <div class="nb-avatar">C</div>
+          <div class="nb-avatar">+5</div>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Empty State</h3>
+        <div class="nb-empty-state">
+          <div class="nb-empty-state-icon">📭</div>
+          <h3 class="nb-empty-state-title">No items found</h3>
+          <p class="nb-empty-state-text">Get started by creating your first item.</p>
+          <button class="nb-btn">Create Item</button>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Skeleton Loading</h3>
+        <div style="max-width:300px">
+          <div class="nb-skeleton nb-skeleton-avatar" style="margin-bottom:1rem"></div>
+          <div class="nb-skeleton nb-skeleton-title"></div>
+          <div class="nb-skeleton nb-skeleton-text"></div>
+          <div class="nb-skeleton nb-skeleton-text"></div>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Aspect Ratios</h3>
+        <div class="nb-row">
+          <div class="nb-col-4">
+            <div class="nb-ratio nb-ratio-1x1">
+              <img src="https://picsum.photos/300/300?random=1" alt="1:1">
+            </div>
+            <p class="text-center text-small">1:1</p>
+          </div>
+          <div class="nb-col-4">
+            <div class="nb-ratio nb-ratio-4x3">
+              <img src="https://picsum.photos/300/225?random=2" alt="4:3">
+            </div>
+            <p class="text-center text-small">4:3</p>
+          </div>
+          <div class="nb-col-4">
+            <div class="nb-ratio nb-ratio-16x9">
+              <img src="https://picsum.photos/300/169?random=3" alt="16:9">
+            </div>
+            <p class="text-center text-small">16:9</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Divider with Text</h3>
+        <div class="nb-divider">OR</div>
       </div>
     </div>
 
-    <!-- Lists Section -->
-    <div class="example-section" id="lists">
-      <h2>Lists</h2>
-      
-      <div class="nb-row">
-        <div class="nb-col-4">
-          <h4>Unordered List</h4>
-          <ul>
-            <li>Item one</li>
-            <li>Item two
-              <ul>
-                <li>Nested item</li>
-                <li>Nested item</li>
-              </ul>
-            </li>
-            <li>Item three</li>
-          </ul>
+    <!-- Utilities Section -->
+    <div class="demo-section" id="utilities">
+      <h2>Utilities</h2>
+
+      <div class="demo-subsection">
+        <h3>Spacing</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem;">
+          <div class="nb-p-1" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius)">.nb-p-1</div>
+          <div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius)">.nb-p-2</div>
+          <div class="nb-p-3" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius)">.nb-p-3</div>
+          <div class="nb-p-4" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius)">.nb-p-4</div>
         </div>
-        
-        <div class="nb-col-4">
-          <h4>Ordered List</h4>
-          <ol>
-            <li>First step</li>
-            <li>Second step</li>
-            <li>Third step</li>
-          </ol>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Backgrounds</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem;">
+          <div class="nb-p-2 nb-bg-primary nb-rounded" style="color:white">.nb-bg-primary</div>
+          <div class="nb-p-2 nb-bg-success nb-rounded" style="color:white">.nb-bg-success</div>
+          <div class="nb-p-2 nb-bg-danger nb-rounded" style="color:white">.nb-bg-danger</div>
+          <div class="nb-p-2 nb-bg-warning nb-rounded">.nb-bg-warning</div>
+          <div class="nb-p-2 nb-bg-light nb-rounded">.nb-bg-light</div>
+          <div class="nb-p-2 nb-bg-dark nb-rounded" style="color:white">.nb-bg-dark</div>
         </div>
-        
-        <div class="nb-col-4">
-          <h4>Description List</h4>
-          <dl class="nb-dl-inline">
-            <dt>Name</dt>
-            <dd>John Doe</dd>
-            <dt>Email</dt>
-            <dd>john@example.com</dd>
-            <dt>Role</dt>
-            <dd>Administrator</dd>
-          </dl>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Borders</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem;">
+          <div class="nb-p-2 nb-border nb-rounded">.nb-border</div>
+          <div class="nb-p-2 nb-border-top" style="border-top-width:3px!important">.nb-border-top</div>
+          <div class="nb-p-2 nb-border nb-rounded-circle">.nb-rounded-circle</div>
+          <div class="nb-p-2 nb-border nb-rounded-pill">.nb-rounded-pill</div>
         </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Shadows</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem;">
+          <div class="nb-p-3 nb-shadow-sm nb-rounded" style="background:var(--nb-color-bg)">.nb-shadow-sm</div>
+          <div class="nb-p-3 nb-shadow nb-rounded" style="background:var(--nb-color-bg)">.nb-shadow</div>
+          <div class="nb-p-3 nb-shadow-lg nb-rounded" style="background:var(--nb-color-bg)">.nb-shadow-lg</div>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Display</h3>
+        <p>
+          <span class="nb-d-inline nb-p-1" style="background:var(--nb-color-bg-alt)">.nb-d-inline</span>
+          <span class="nb-d-inline-block nb-p-1" style="background:var(--nb-color-bg-alt)">.nb-d-inline-block</span>
+          <span class="nb-d-block nb-p-1" style="background:var(--nb-color-bg-alt)">.nb-d-block</span>
+        </p>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Width</h3>
+        <div class="nb-w-25 nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt);margin-bottom:0.5rem">.nb-w-25</div>
+        <div class="nb-w-50 nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt);margin-bottom:0.5rem">.nb-w-50</div>
+        <div class="nb-w-75 nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt);margin-bottom:0.5rem">.nb-w-75</div>
+        <div class="nb-w-100 nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">.nb-w-100</div>
       </div>
     </div>
 

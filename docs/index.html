@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation - Neubrutalism CSS</title>
+  <link rel="stylesheet" href="../neubrutalism.min.css">
+  <style>
+    :root {
+      --docs-sidebar-width: 260px;
+      --docs-header-height: 64px;
+    }
+    
+    * {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    /* Header */
+    .docs-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--docs-header-height);
+      background: var(--nb-color-bg);
+      border-bottom: 1px solid var(--nb-color-border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+    
+    .docs-header-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--nb-color-text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .docs-header-brand:hover {
+      text-decoration: none;
+      color: var(--nb-color-primary);
+    }
+    
+    .docs-header-version {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--nb-color-text-muted);
+      background: var(--nb-color-bg-alt);
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      margin-left: 0.5rem;
+    }
+    
+    .docs-header-links {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .docs-header-links a {
+      color: var(--nb-color-text-muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    
+    .docs-header-links a:hover {
+      color: var(--nb-color-text);
+    }
+    
+    /* Sidebar */
+    .docs-sidebar {
+      position: fixed;
+      top: var(--docs-header-height);
+      left: 0;
+      bottom: 0;
+      width: var(--docs-sidebar-width);
+      background: var(--nb-color-bg);
+      border-right: 1px solid var(--nb-color-border);
+      overflow-y: auto;
+      padding: 1.5rem 0;
+    }
+    
+    .docs-sidebar-section {
+      margin-bottom: 1.5rem;
+    }
+    
+    .docs-sidebar-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--nb-color-text-muted);
+      padding: 0 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .docs-sidebar-link {
+      display: block;
+      padding: 0.375rem 1.5rem;
+      font-size: 0.875rem;
+      color: var(--nb-color-text);
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      transition: all 0.15s ease;
+    }
+    
+    .docs-sidebar-link:hover {
+      color: var(--nb-color-primary);
+      background: var(--nb-color-bg-alt);
+      text-decoration: none;
+    }
+    
+    .docs-sidebar-link.active {
+      color: var(--nb-color-primary);
+      border-left-color: var(--nb-color-primary);
+      background: var(--nb-color-bg-alt);
+      font-weight: 500;
+    }
+    
+    /* Main Content */
+    .docs-main {
+      margin-left: var(--docs-sidebar-width);
+      margin-top: var(--docs-header-height);
+      flex: 1;
+    }
+    
+    .docs-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    
+    .docs-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .docs-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--nb-color-border);
+    }
+    
+    .docs-content h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .docs-content p {
+      max-width: none;
+      color: var(--nb-color-text);
+    }
+    
+    .docs-lead {
+      font-size: 1.25rem;
+      color: var(--nb-color-text-muted);
+      margin-bottom: 2rem;
+    }
+    
+    /* Code Examples */
+    .docs-example {
+      border: 1px solid var(--nb-color-border);
+      border-radius: var(--nb-border-radius);
+      margin: 1.5rem 0;
+      overflow: hidden;
+    }
+    
+    .docs-example-preview {
+      padding: 2rem;
+      background: var(--nb-color-bg);
+    }
+    
+    .docs-example-code {
+      background: var(--nb-color-bg-alt);
+      border-top: 1px solid var(--nb-color-border);
+      padding: 1rem 1.5rem;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      overflow-x: auto;
+    }
+    
+    .docs-example-code code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--nb-color-text);
+    }
+    
+    /* Callouts */
+    .docs-callout {
+      padding: 1rem 1.5rem;
+      border-radius: var(--nb-border-radius);
+      border-left: 4px solid var(--nb-color-primary);
+      background: var(--nb-color-bg-alt);
+      margin: 1.5rem 0;
+    }
+    
+    .docs-callout-warning {
+      border-left-color: var(--nb-color-warning);
+    }
+    
+    .docs-callout p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Tables */
+    .docs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.875rem;
+    }
+    
+    .docs-table th,
+    .docs-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--nb-color-border);
+    }
+    
+    .docs-table th {
+      font-weight: 600;
+      background: var(--nb-color-bg-alt);
+    }
+    
+    /* Footer */
+    .docs-footer {
+      margin-left: var(--docs-sidebar-width);
+      padding: 2rem;
+      border-top: 1px solid var(--nb-color-border);
+      text-align: center;
+      color: var(--nb-color-text-muted);
+      font-size: 0.875rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .docs-sidebar {
+        display: none;
+      }
+      .docs-main,
+      .docs-footer {
+        margin-left: 0;
+      }
+    }
+    
+    /* Mobile menu toggle */
+    .docs-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--nb-color-text);
+    }
+    
+    @media (max-width: 992px) {
+      .docs-mobile-toggle {
+        display: block;
+      }
+      .docs-header-links {
+        display: none;
+      }
+    }
+    
+    /* Theme toggle */
+    .docs-theme-toggle {
+      background: none;
+      border: 1px solid var(--nb-color-border);
+      border-radius: var(--nb-border-radius);
+      padding: 0.375rem 0.75rem;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--nb-color-text);
+      transition: all 0.15s ease;
+    }
+    
+    .docs-theme-toggle:hover {
+      background: var(--nb-color-bg-alt);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="docs-header">
+    <button class="docs-mobile-toggle" onclick="document.querySelector('.docs-sidebar').style.display = this.classList.toggle('active') ? 'block' : 'none'">☰</button>
+    <a href="../index.html" class="docs-header-brand">
+      <span>Neubrutalism CSS</span>
+      <span class="docs-header-version">v2.0</span>
+    </a>
+    <div class="docs-header-links">
+      <a href="../index.html">Home</a>
+      <a href="../examples/neubrutalism-mini-example.html">Demo</a>
+      <button class="docs-theme-toggle" onclick="toggleTheme()">🌓</button>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="docs-sidebar">
+    <nav>
+      <div class="docs-sidebar-section">
+        <div class="docs-sidebar-title">Getting Started</div>
+        <a href="#introduction" class="docs-sidebar-link active">Introduction</a>
+        <a href="#quickstart" class="docs-sidebar-link">Quick Start</a>
+        <a href="#dark-mode" class="docs-sidebar-link">Dark Mode</a>
+      </div>
+      
+      <div class="docs-sidebar-section">
+        <div class="docs-sidebar-title">Layout</div>
+        <a href="#container" class="docs-sidebar-link">Container</a>
+        <a href="#grid" class="docs-sidebar-link">Grid System</a>
+        <a href="#flex" class="docs-sidebar-link">Flex Utilities</a>
+      </div>
+      
+      <div class="docs-sidebar-section">
+        <div class="docs-sidebar-title">Content</div>
+        <a href="#typography" class="docs-sidebar-link">Typography</a>
+        <a href="#images" class="docs-sidebar-link">Images</a>
+        <a href="#tables" class="docs-sidebar-link">Tables</a>
+        <a href="#code" class="docs-sidebar-link">Code</a>
+      </div>
+      
+      <div class="docs-sidebar-section">
+        <div class="docs-sidebar-title">Components</div>
+        <a href="#buttons" class="docs-sidebar-link">Buttons</a>
+        <a href="#forms" class="docs-sidebar-link">Forms</a>
+        <a href="#cards" class="docs-sidebar-link">Cards</a>
+        <a href="#badges" class="docs-sidebar-link">Badges</a>
+        <a href="#alerts" class="docs-sidebar-link">Alerts</a>
+        <a href="#navbar" class="docs-sidebar-link">Navbar</a>
+        <a href="#breadcrumb" class="docs-sidebar-link">Breadcrumb</a>
+        <a href="#pagination" class="docs-sidebar-link">Pagination</a>
+        <a href="#accordion" class="docs-sidebar-link">Accordion</a>
+        <a href="#progress" class="docs-sidebar-link">Progress</a>
+        <a href="#modals" class="docs-sidebar-link">Modals</a>
+        <a href="#avatars" class="docs-sidebar-link">Avatars</a>
+      </div>
+      
+      <div class="docs-sidebar-section">
+        <div class="docs-sidebar-title">Utilities</div>
+        <a href="#spacing" class="docs-sidebar-link">Spacing</a>
+        <a href="#borders" class="docs-sidebar-link">Borders</a>
+        <a href="#shadows" class="docs-sidebar-link">Shadows</a>
+        <a href="#colors" class="docs-sidebar-link">Colors</a>
+      </div>
+      
+      <div class="docs-sidebar-section">
+        <div class="docs-sidebar-title">Customization</div>
+        <a href="#variables" class="docs-sidebar-link">CSS Variables</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="docs-main">
+    <div class="docs-content">
+      
+      <!-- Introduction -->
+      <section id="introduction">
+        <h1>Introduction</h1>
+        <p class="docs-lead">
+          Neubrutalism CSS is a lightweight, classless-first CSS framework that makes your HTML look beautiful without any classes.
+        </p>
+        
+        <div class="docs-callout">
+          <p><strong>Philosophy:</strong> Write standard semantic HTML. It automatically looks great. No classes needed for basic styling.</p>
+        </div>
+        
+        <h2 id="quickstart">Quick Start</h2>
+        <p>Include the CSS file in your HTML and start writing:</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-code">
+            <code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Website&lt;/title&gt;
+  &lt;link rel="stylesheet" href="neubrutalism.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;nav&gt;
+      &lt;strong&gt;My Brand&lt;/strong&gt;
+      &lt;a href="#"&gt;Home&lt;/a&gt;
+      &lt;a href="#"&gt;About&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+    &lt;p&gt;Your content here.&lt;/p&gt;
+    &lt;button&gt;Click Me&lt;/button&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+          </div>
+        </div>
+        
+        <h2 id="dark-mode">Dark Mode</h2>
+        <p>Enable dark mode by adding a single class:</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-code">
+            <code>&lt;html class="nb-dark"&gt;
+&lt;!-- or --&gt;
+&lt;html data-theme="dark"&gt;</code>
+          </div>
+        </div>
+        
+        <p>Toggle dynamically with JavaScript:</p>
+        <div class="docs-example">
+          <div class="docs-example-code">
+            <code>document.documentElement.classList.toggle('nb-dark');</code>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Layout -->
+      <section id="container">
+        <h2>Container</h2>
+        <p>Use <code>.nb-container</code> for a centered, max-width container:</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-container" style="background:var(--nb-color-bg-alt);padding:1rem;text-align:center;border-radius:var(--nb-border-radius)">
+              Centered container with max-width
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <code>&lt;div class="nb-container"&gt;
+  Your content here
+&lt;/div&gt;</code>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Grid -->
+      <section id="grid">
+        <h2>Grid System</h2>
+        <p>A 12-column responsive grid. Columns stack automatically on mobile.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-row">
+              <div class="nb-col-6"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">6 columns</div></div>
+              <div class="nb-col-6"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">6 columns</div></div>
+            </div>
+            <div class="nb-row" style="margin-top:0.5rem">
+              <div class="nb-col-4"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">4 cols</div></div>
+              <div class="nb-col-4"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">4 cols</div></div>
+              <div class="nb-col-4"><div class="nb-p-2" style="background:var(--nb-color-bg-alt);border-radius:var(--nb-border-radius);text-align:center">4 cols</div></div>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <code>&lt;div class="nb-row"&gt;
+  &lt;div class="nb-col-6"&gt;...&lt;/div&gt;
+  &lt;div class="nb-col-6"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Typography -->
+      <section id="typography">
+        <h2>Typography</h2>
+        <p>All headings, paragraphs, and inline elements are automatically styled.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <p>A paragraph with <strong>bold</strong>, <em>italic</em>, and <a href="#">a link</a>.</p>
+            <p>Use <code>code</code> inline and <kbd>Ctrl</kbd>+<kbd>S</kbd> for keyboard.</p>
+            <blockquote>A styled blockquote with a left border.</blockquote>
+          </div>
+        </div>
+        
+        <h3>Text Utilities</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.text-muted</code></td><td>Muted gray text</td></tr>
+            <tr><td><code>.text-primary</code></td><td>Primary color text</td></tr>
+            <tr><td><code>.text-success</code></td><td>Success green text</td></tr>
+            <tr><td><code>.text-danger</code></td><td>Danger red text</td></tr>
+            <tr><td><code>.text-small</code></td><td>Smaller text</td></tr>
+            <tr><td><code>.text-large</code></td><td>Larger text</td></tr>
+            <tr><td><code>.text-bold</code></td><td>Bold text</td></tr>
+            <tr><td><code>.text-center</code></td><td>Centered text</td></tr>
+            <tr><td><code>.text-right</code></td><td>Right-aligned text</td></tr>
+            <tr><td><code>.text-uppercase</code></td><td>Uppercase text</td></tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Buttons -->
+      <section id="buttons">
+        <h2>Buttons</h2>
+        <p>All button types are styled automatically. Use classes for variations.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex nb-flex-wrap" style="gap:0.5rem">
+              <button>Default</button>
+              <button class="nb-btn-outline">Outline</button>
+              <button class="nb-btn-secondary">Secondary</button>
+              <button class="nb-btn-success">Success</button>
+              <button class="nb-btn-danger">Danger</button>
+              <button class="nb-btn-link">Link</button>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <code>&lt;button&gt;Default&lt;/button&gt;
+&lt;button class="nb-btn-outline"&gt;Outline&lt;/button&gt;
+&lt;button class="nb-btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="nb-btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="nb-btn-danger"&gt;Danger&lt;/button&gt;</code>
+          </div>
+        </div>
+        
+        <h3>Sizes</h3>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex nb-align-center nb-flex-wrap" style="gap:0.5rem">
+              <button class="nb-btn-sm">Small</button>
+              <button>Default</button>
+              <button class="nb-btn-lg">Large</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Forms -->
+      <section id="forms">
+        <h2>Forms</h2>
+        <p>All form elements are styled automatically. Wrap in <code>.nb-form-group</code> for spacing.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-form-group">
+              <label for="example-name">Name</label>
+              <input type="text" id="example-name" placeholder="Your name">
+            </div>
+            <div class="nb-form-group">
+              <label for="example-email">Email</label>
+              <input type="email" id="example-email" placeholder="your@email.com">
+            </div>
+            <div class="nb-form-group">
+              <label for="example-select">Select</label>
+              <select id="example-select">
+                <option>Option 1</option>
+                <option>Option 2</option>
+              </select>
+            </div>
+            <div class="nb-form-group">
+              <label for="example-textarea">Message</label>
+              <textarea id="example-textarea" placeholder="Your message..."></textarea>
+            </div>
+            <div class="nb-form-group">
+              <div class="nb-check-wrapper">
+                <input type="checkbox" id="example-check">
+                <label for="example-check">I agree</label>
+              </div>
+            </div>
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Cards -->
+      <section id="cards">
+        <h2>Cards</h2>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-card">
+              <div class="nb-card-header">Card Header</div>
+              <div class="nb-card-body">
+                <h3 class="nb-card-title">Card Title</h3>
+                <p class="nb-card-text">Card content goes here.</p>
+                <button class="nb-btn-sm">Action</button>
+              </div>
+              <div class="nb-card-footer">Card Footer</div>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <code>&lt;div class="nb-card"&gt;
+  &lt;div class="nb-card-header"&gt;Header&lt;/div&gt;
+  &lt;div class="nb-card-body"&gt;
+    &lt;h3 class="nb-card-title"&gt;Title&lt;/h3&gt;
+    &lt;p class="nb-card-text"&gt;Content&lt;/p&gt;
+    &lt;button&gt;Action&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="nb-card-footer"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;</code>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Badges -->
+      <section id="badges">
+        <h2>Badges</h2>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex nb-flex-wrap" style="gap:0.5rem">
+              <span class="nb-badge">Default</span>
+              <span class="nb-badge nb-badge-primary">Primary</span>
+              <span class="nb-badge nb-badge-success">Success</span>
+              <span class="nb-badge nb-badge-danger">Danger</span>
+              <span class="nb-badge nb-badge-warning">Warning</span>
+              <span class="nb-badge nb-badge-info">Info</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Alerts -->
+      <section id="alerts">
+        <h2>Alerts</h2>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-alert nb-alert-info"><strong>Info:</strong> Informational message</div>
+            <div class="nb-alert nb-alert-success"><strong>Success:</strong> Action completed</div>
+            <div class="nb-alert nb-alert-warning"><strong>Warning:</strong> Please review</div>
+            <div class="nb-alert nb-alert-danger"><strong>Error:</strong> Something went wrong</div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Navbar -->
+      <section id="navbar">
+        <h2>Navbar</h2>
+        <p>A responsive navbar that collapses to hamburger menu on mobile.</p>
+        <div class="docs-example">
+          <div class="docs-example-code">
+            <code>&lt;nav class="nb-navbar"&gt;
+  &lt;a href="#" class="nb-navbar-brand"&gt;Brand&lt;/a&gt;
+  &lt;button class="nb-navbar-toggle" onclick="toggleNav()"&gt;
+    &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class="nb-navbar-menu"&gt;
+    &lt;ul class="nb-navbar-nav"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Avatars -->
+      <section id="avatars">
+        <h2>Avatars</h2>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex" style="gap:1rem;align-items:center">
+              <div class="nb-avatar nb-avatar-sm">SM</div>
+              <div class="nb-avatar">JD</div>
+              <div class="nb-avatar nb-avatar-lg">LG</div>
+              <div class="nb-avatar nb-avatar-xl">XL</div>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <code>&lt;div class="nb-avatar nb-avatar-sm"&gt;SM&lt;/div&gt;
+&lt;div class="nb-avatar"&gt;JD&lt;/div&gt;
+&lt;div class="nb-avatar nb-avatar-lg"&gt;LG&lt;/div&gt;
+&lt;div class="nb-avatar nb-avatar-xl"&gt;XL&lt;/div&gt;</code>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Progress -->
+      <section id="progress">
+        <h2>Progress Bars</h2>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-progress"><div class="nb-progress-bar" style="width:25%"></div></div>
+            <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-success" style="width:50%"></div></div>
+            <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-danger" style="width:75%"></div></div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Modals -->
+      <section id="modals">
+        <h2>Modals</h2>
+        <p>CSS-only modals using the <code>:target</code> pseudo-class.</p>
+        <div class="docs-example">
+          <div class="docs-example-code">
+            &lt;a href="#myModal" class="nb-btn"&gt;Open Modal&lt;/a&gt;
+
+&lt;div id="myModal" class="nb-modal"&gt;
+  &lt;div class="nb-modal-dialog"&gt;
+    &lt;div class="nb-modal-header"&gt;
+      &lt;h3 class="nb-modal-title"&gt;Title&lt;/h3&gt;
+      &lt;a href="#" class="nb-modal-close"&gt;&times;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-modal-body"&gt;
+      &lt;p&gt;Modal content&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="nb-modal-footer"&gt;
+      &lt;a href="#" class="nb-btn-secondary"&gt;Cancel&lt;/a&gt;
+      &lt;button&gt;Confirm&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </div>
+      </section>
+      
+      <!-- Variables -->
+      <section id="variables">
+        <h2>CSS Variables</h2>
+        <p>Customize the theme by overriding CSS variables:</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-code">
+            <code>:root {
+  --nb-color-primary: #6200ea;
+  --nb-color-bg: #fafafa;
+  --nb-color-text: #1a1a1a;
+  --nb-border-radius: 0.75rem;
+  --nb-font-family: 'Inter', sans-serif;
+}</code>
+          </div>
+        </div>
+        
+        <h3>All Variables</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>--nb-color-primary</code></td><td><code>#1a73e8</code></td><td>Primary color</td></tr>
+            <tr><td><code>--nb-color-bg</code></td><td><code>#ffffff</code></td><td>Background color</td></tr>
+            <tr><td><code>--nb-color-text</code></td><td><code>#202124</code></td><td>Text color</td></tr>
+            <tr><td><code>--nb-border-radius</code></td><td><code>0.375rem</code></td><td>Border radius</td></tr>
+            <tr><td><code>--nb-font-family</code></td><td>system-ui</td><td>Font family</td></tr>
+            <tr><td><code>--nb-shadow-md</code></td><td>...</td><td>Medium shadow</td></tr>
+          </tbody>
+        </table>
+      </section>
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="docs-footer">
+    <p>Built with ❤️ by the Neubrutalism CSS team</p>
+    <p>MIT License · Version 2.0.0</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('nb-dark');
+    }
+    
+    // Active sidebar link
+    const links = document.querySelectorAll('.docs-sidebar-link');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

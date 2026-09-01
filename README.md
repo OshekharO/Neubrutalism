@@ -27,7 +27,7 @@ A minimal CSS framework inspired by [Milligram](https://github.com/milligram/mil
   <div class="nb-container">
     <h1>Hello, World!</h1>
     <p>This is a minimal CSS framework.</p>
-    <button class="nb-btn">Click Me</button>
+    <button>Click Me</button>
   </div>
 </body>
 </html>
@@ -76,8 +76,8 @@ Override CSS custom properties to customize the theme:
 
 ## Documentation
 
-- **[Full Documentation](docs/MINI-DOCUMENTATION.md)** - Comprehensive guide with all components and utilities
-- **[Live Example](examples/neubrutalism-mini-example.html)** - Demo page showcasing all components
+- **[Full Documentation](docs/index.html)** - Comprehensive guide with examples
+- **[Live Demo](examples/neubrutalism-mini-example.html)** - See all components in action
 
 ## Browser Support
 
