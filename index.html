@@ -1,1766 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Neubrutalism is a modern, minimalist CSS library that embraces bold design principles, high-contrast aesthetics, and a no-nonsense approach to web design." />
-  <meta name="keywords" content="Neubrutalism, css library, framework, brutalist, minimalist, design system" />
-  <meta name="author" content="Saksham Shekher" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://neubrutalism.us.kg/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@neubrutalism" />
-  <meta name="twitter:creator" content="@neubrutalism" />
-  <meta name="twitter:title" content="Neubrutalism" />
-  <meta name="twitter:description" content="Neubrutalism is a modern, minimalist CSS library that embraces bold design principles, high-contrast aesthetics, and a no-nonsense approach to web design." />
-  <meta name="twitter:image" content="/icon/logo.png" />
-  <meta property="og:url" content="https://neubrutalism.us.kg/" />
-  <meta property="og:title" content="Neubrutalism" />
-  <meta property="og:description" content="Neubrutalism is a modern, minimalist CSS library that embraces bold design principles, high-contrast aesthetics, and a no-nonsense approach to web design." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/icon/logo.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="2000" />
-  <meta property="og:image:height" content="1000" />
-  <link rel="apple-touch-icon" href="/icon/apple-touch-icon.png" sizes="180x180" />
-  <link rel="icon" href="/icon/favicon-32x32.png" sizes="32x32" type="image/png" />
-  <link rel="icon" href="/icon/favicon-16x16.png" sizes="16x16" type="image/png" />
-  <link rel="icon" href="/icon/favicon.ico" />
-  <meta name="google-site-verification" content="duJ_nbjAyMmfeDjrKrt09BEJmSBOq4SMuzwj8Y4lDaQ" />
-  <title>Neubrutalism CSS: A minimalist, high-contrast CSS library.</title>
-  <link rel="stylesheet" href="neubrutalism.css" />
-  <script defer src="neubrutalism.js"></script>
+<html lang="en" class="nb-auto-dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neubrutalism CSS - Minimal CSS Framework</title>
+  <meta name="description" content="A minimal CSS framework inspired by Milligram, Pico.css, Skeleton, Chota, and Water.css">
+  <link rel="stylesheet" href="neubrutalism-mini.min.css">
   <style>
-   .docs-sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 250px;
-    height: 100vh;
-    background: var(--nb-secondary);
-    border-right: 3px solid var(--nb-primary);
-    overflow-y: auto;
-    padding: 20px;
-    z-index: 100;
-    transition: transform 0.3s ease;
-   }
-   .docs-sidebar-header {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--nb-primary);
-   }
-   .docs-sidebar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-   }
-   .docs-sidebar-nav li {
-    margin: 0;
-    padding: 0;
-    border: none;
-    background: none;
-   }
-   .docs-sidebar-nav a {
-    display: block;
-    padding: 8px 12px;
-    text-decoration: none;
-    color: var(--nb-primary);
-    border-left: 3px solid transparent;
-    transition: all 0.2s ease;
-   }
-   .docs-sidebar-nav a:hover {
-    background: var(--nb-gray-100);
-    border-left-color: var(--nb-primary);
-   }
-   .docs-sidebar-section {
-    font-weight: bold;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    color: var(--nb-gray-600);
-   }
-   .docs-content {
-    margin-left: 270px;
-    padding: 20px;
-    max-width: 1000px;
-   }
-   .component-demo {
-    background: var(--nb-gray-100);
-    padding: 20px;
-    border: 2px solid var(--nb-primary);
-    margin-bottom: 15px;
-   }
-   .component-section {
-    margin-bottom: 60px;
-    padding-top: 20px;
-   }
-   /* Mobile menu toggle */
-   .docs-menu-toggle {
-    display: none;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 200;
-    width: 44px;
-    height: 44px;
-    background: var(--nb-secondary);
-    border: 3px solid var(--nb-primary);
-    box-shadow: 3px 3px 0 var(--nb-primary);
-    cursor: pointer;
-    padding: 8px;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-   }
-   .docs-menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 3px;
-    background: var(--nb-primary);
-    transition: all 0.3s ease;
-   }
-   .docs-menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-   }
-   .docs-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-   }
-   .docs-menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-   }
-   .docs-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 99;
-   }
-   .docs-overlay.active {
-    display: block;
-   }
-   @media (max-width: 900px) {
-    .docs-menu-toggle {
-     display: flex;
-    }
-    .docs-sidebar {
-     transform: translateX(-100%);
-    }
-    .docs-sidebar.active {
-     transform: translateX(0);
-    }
-    .docs-content {
-     margin-left: 0;
-     max-width: 100%;
-     padding-top: 80px;
-    }
-   }
-   @media (max-width: 480px) {
-    .docs-content {
-     padding: 10px;
-     padding-top: 80px;
-    }
-    .component-demo {
-     padding: 15px;
-    }
-   }
+    .hero { padding: 4rem 0; text-align: center; }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.25rem; color: var(--nb-color-text-muted); max-width: 600px; margin: 0 auto 2rem; }
+    .section { padding: 3rem 0; border-top: 1px solid var(--nb-color-border); }
+    .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .code-block { background: var(--nb-color-bg-alt); padding: 1rem; border-radius: var(--nb-border-radius); overflow-x: auto; }
+    .badge-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .color-swatch { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0.25rem; }
+    .color-box { width: 1.5rem; height: 1.5rem; border-radius: 4px; border: 1px solid var(--nb-color-border); }
   </style>
- </head>
- <body>
-  <!-- Mobile Menu Toggle -->
-  <button class="docs-menu-toggle" aria-label="Toggle navigation menu" id="mobile-menu-toggle">
-   <span></span>
-   <span></span>
-   <span></span>
-  </button>
-  <div class="docs-overlay" id="mobile-overlay"></div>
+</head>
+<body>
 
-  <!-- Sidebar Navigation -->
-  <aside class="docs-sidebar">
-   <div class="docs-sidebar-header">Neubrutalism</div>
-   <nav>
-    <ul class="docs-sidebar-nav">
-     <li><a href="#getting-started">Getting Started</a></li>
-     <li><a href="#installation">Installation</a></li>
-     
-     <li class="docs-sidebar-section">Typography</li>
-     <li><a href="#headings">Headings</a></li>
-     <li><a href="#text-utilities">Text Utilities</a></li>
-     
-     <li class="docs-sidebar-section">Components</li>
-     <li><a href="#buttons">Buttons</a></li>
-     <li><a href="#group">Group</a></li>
-     <li><a href="#badges">Badges</a></li>
-     <li><a href="#cards">Cards</a></li>
-     <li><a href="#alerts">Alerts</a></li>
-     <li><a href="#forms">Forms</a></li>
-     <li><a href="#tables">Tables</a></li>
-     <li><a href="#progress">Progress Bars</a></li>
-     <li><a href="#spinners">Spinners</a></li>
-     <li><a href="#modals">Modals</a></li>
-     <li><a href="#accordion">Accordion</a></li>
-     <li><a href="#tabs">Tabs</a></li>
-     <li><a href="#dropdown">Dropdown</a></li>
-     <li><a href="#tooltips">Tooltips</a></li>
-     <li><a href="#breadcrumb">Breadcrumb</a></li>
-     <li><a href="#pagination">Pagination</a></li>
-     <li><a href="#tags">Tags</a></li>
-     <li><a href="#lists">Lists</a></li>
-     <li><a href="#avatars">Avatars</a></li>
-     <li><a href="#skeleton">Skeleton Loaders</a></li>
-     <li><a href="#timeline">Timeline</a></li>
-     <li><a href="#steps">Steps/Stepper</a></li>
-     <li><a href="#rating">Rating</a></li>
-     <li><a href="#empty-state">Empty State</a></li>
-     
-     <li class="docs-sidebar-section">Form Elements</li>
-     <li><a href="#checkboxes">Checkboxes</a></li>
-     <li><a href="#radio">Radio Buttons</a></li>
-     <li><a href="#range">Range Slider</a></li>
-     <li><a href="#switch">Switch</a></li>
-     <li><a href="#input-group">Input Group</a></li>
-     
-     <li class="docs-sidebar-section">Layout</li>
-     <li><a href="#containers">Containers</a></li>
-     <li><a href="#grid">Grid System</a></li>
-     <li><a href="#navbar">Navbar</a></li>
-     <li><a href="#pills">Nav Pills</a></li>
-     <li><a href="#footer">Footer</a></li>
-     
-     <li class="docs-sidebar-section">Utilities</li>
-     <li><a href="#colors">Colors</a></li>
-     <li><a href="#dark-mode">Dark Mode</a></li>
+  <!-- Navbar -->
+  <nav class="nb-navbar">
+    <a href="#" class="nb-navbar-brand">Neubrutalism CSS</a>
+    <ul class="nb-navbar-nav">
+      <li><a href="#" class="nb-nav-active">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#docs">Docs</a></li>
     </ul>
-   </nav>
-  </aside>
+    <button class="nb-btn nb-btn-sm" onclick="document.documentElement.classList.toggle('nb-dark')">
+      🌓 Toggle Dark
+    </button>
+  </nav>
 
-  <!-- Main Content -->
-  <main class="docs-content">
-   <!-- Hero Section -->
-   <section id="getting-started" class="nb-hero" style="cursor: default;">
-    <h1 class="nb-hero-title">Neubrutalism CSS</h1>
-    <p class="nb-hero-subtitle">A minimalist, high-contrast CSS library inspired by Brutalist design principles. Bold, clean, and unapologetically simple.</p>
-    <div class="nb-hero-actions">
-     <a href="#installation" class="nb-btn nb-btn-large">Get Started</a>
-     <a href="https://github.com/OshekharO/Neubrutalism" class="nb-btn nb-btn-large">GitHub</a>
-    </div>
-    <div class="stats" style="margin-top: 30px;">
-     <div class="stat-item">35 Stars</div>
-     <div class="stat-item">4 Forks</div>
-     <div class="stat-item">4 Contributors</div>
-    </div>
-   </section>
-
-   <!-- Features -->
-   <section class="section-gap" style="cursor: default;">
-    <div class="nb-grid nb-grid-3" style="gap: 20px;">
-     <div class="nb-feature">
-      <div class="nb-feature-icon">🎨</div>
-      <h3 class="nb-feature-title">High Contrast</h3>
-      <p class="nb-feature-text">Bold black and white design with striking shadows</p>
-     </div>
-     <div class="nb-feature">
-      <div class="nb-feature-icon">⚡</div>
-      <h3 class="nb-feature-title">Lightweight</h3>
-      <p class="nb-feature-text">No dependencies, pure CSS with minimal footprint</p>
-     </div>
-     <div class="nb-feature">
-      <div class="nb-feature-icon">🌙</div>
-      <h3 class="nb-feature-title">Dark Mode</h3>
-      <p class="nb-feature-text">Built-in dark mode support with easy toggle</p>
-     </div>
-    </div>
-   </section>
-
-   <!-- Installation -->
-   <section id="installation" class="component-section">
-    <h2 class="nb-section-title">Installation</h2>
-    <p class="nb-section-subtitle">Get started with Neubrutalism CSS in seconds</p>
-    
-    <h3>CDN</h3>
-    <p>Add this to your HTML head:</p>
-    <pre class="nb-code-block"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.css"&gt;</code></pre>
-    
-    <h3>Optional: JavaScript</h3>
-    <p>For interactive components (toast, dark mode toggle):</p>
-    <pre class="nb-code-block"><code>&lt;script src="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.js"&gt;&lt;/script&gt;</code></pre>
-   </section>
-
-   <!-- Typography: Headings -->
-   <section id="headings" class="component-section">
-    <h2 class="nb-section-title">Headings</h2>
-    <p class="nb-section-subtitle">Typography scale for all heading levels</p>
-    
-    <div class="component-demo">
-     <h1>Heading 1</h1>
-     <h2>Heading 2</h2>
-     <h3>Heading 3</h3>
-     <h4>Heading 4</h4>
-     <h5>Heading 5</h5>
-     <h6>Heading 6</h6>
-    </div>
-    
-    <h3>Display Headings</h3>
-    <div class="component-demo">
-     <p class="nb-display-1">Display 1</p>
-     <p class="nb-display-2">Display 2</p>
-     <p class="nb-display-3">Display 3</p>
-     <p class="nb-display-4">Display 4</p>
-    </div>
-   </section>
-
-   <!-- Typography: Text Utilities -->
-   <section id="text-utilities" class="component-section">
-    <h2 class="nb-section-title">Text Utilities</h2>
-    <p class="nb-section-subtitle">Common text styling utilities</p>
-    
-    <div class="component-demo">
-     <p class="nb-lead">This is a lead paragraph - larger and emphasized text for introductions.</p>
-     <p>This is a regular paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">links</a>.</p>
-     <p class="nb-small">This is small text for fine print.</p>
-     <p class="nb-muted">This is muted text for less important content.</p>
-     <p>Highlight text with <span class="nb-mark">marked</span> styling.</p>
-     <p>Use <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.</p>
-    </div>
-    
-    <h3>Blockquote</h3>
-    <div class="component-demo">
-     <blockquote class="nb-blockquote">
-      Design is not just what it looks like and feels like. Design is how it works.
-      <span class="nb-blockquote-author">- Steve Jobs</span>
-     </blockquote>
-    </div>
-    
-    <h3>Code Block</h3>
-    <div class="component-demo">
-     <pre class="nb-code-block"><code>function example() {
-    return "Neubrutalism";
-}</code></pre>
-    </div>
-    
-    <h3>Dividers</h3>
-    <div class="component-demo">
-     <p>Content above</p>
-     <hr>
-     <p>Content below</p>
-     <div class="nb-divider">OR</div>
-     <p>Alternative divider with text</p>
-    </div>
-   </section>
-
-   <!-- Buttons -->
-   <section id="buttons" class="component-section">
-    <h2 class="nb-section-title">Buttons</h2>
-    <p class="nb-section-subtitle">Various button styles and sizes</p>
-    
-    <div class="component-demo">
-     <h4>Standard Buttons</h4>
-     <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-      <button class="nb-btn">Default</button>
-      <button class="nb-btn nb-btn-small">Small</button>
-      <button class="nb-btn nb-btn-large">Large</button>
-      <button class="nb-btn nb-btn-rounded">Rounded</button>
-      <button class="nb-btn nb-btn-disabled" disabled>Disabled</button>
-     </div>
-     
-     <h4>Button with Icon</h4>
-     <button class="nb-button">
-      Check!
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-       <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
-      </svg>
-     </button>
-     
-     <h4 style="margin-top: 20px;">Animated Button</h4>
-     <button class="nb-btn-ani" style="max-width: 200px;">Animate</button>
-    </div>
-   </section>
-
-   <!-- Group Component -->
-   <section id="group" class="component-section">
-    <h2 class="nb-section-title">Group</h2>
-    <p class="nb-section-subtitle">Group related elements together</p>
-    
-    <div class="component-demo">
-     <h4>Button Group</h4>
-     <div class="nb-group nb-group-shadow" style="margin-bottom: 20px;">
-      <button class="nb-btn">Left</button>
-      <button class="nb-btn">Middle</button>
-      <button class="nb-btn">Right</button>
-     </div>
-     
-     <h4>Badge Group</h4>
-     <div class="nb-group" style="margin-bottom: 20px;">
-      <span class="nb-badge nb-badge-primary">HTML</span>
-      <span class="nb-badge nb-badge-success">CSS</span>
-      <span class="nb-badge nb-badge-warning">JS</span>
-     </div>
-     
-     <h4>Spaced Group</h4>
-     <div class="nb-group nb-group-spaced" style="margin-bottom: 20px;">
-      <button class="nb-btn">Option 1</button>
-      <button class="nb-btn">Option 2</button>
-      <button class="nb-btn">Option 3</button>
-     </div>
-     
-     <h4>Vertical Group</h4>
-     <div class="nb-group nb-group-vertical nb-group-shadow" style="max-width: 200px;">
-      <button class="nb-btn nb-btn-block">First</button>
-      <button class="nb-btn nb-btn-block">Second</button>
-      <button class="nb-btn nb-btn-block">Third</button>
-     </div>
-    </div>
-   </section>
-
-   <!-- Badges -->
-   <section id="badges" class="component-section">
-    <h2 class="nb-section-title">Badges</h2>
-    <p class="nb-section-subtitle">Labels and status indicators</p>
-    
-    <div class="component-demo">
-     <span class="nb-badge">Default</span>
-     <span class="nb-badge nb-badge-primary">Primary</span>
-     <span class="nb-badge nb-badge-success">Success</span>
-     <span class="nb-badge nb-badge-danger">Danger</span>
-     <span class="nb-badge nb-badge-warning">Warning</span>
-     <span class="nb-badge nb-badge-pill">Pill Badge</span>
-    </div>
-   </section>
-
-   <!-- Tags -->
-   <section id="tags" class="component-section">
-    <h2 class="nb-section-title">Tags</h2>
-    <p class="nb-section-subtitle">Chips and removable tags</p>
-    
-    <div class="component-demo">
-     <span class="nb-tag">Default Tag</span>
-     <span class="nb-tag nb-tag-primary">Primary</span>
-     <span class="nb-tag nb-tag-success">Success</span>
-     <span class="nb-tag nb-tag-danger">Danger</span>
-     <span class="nb-tag nb-tag-warning">Warning</span>
-     <span class="nb-tag">Removable <span class="nb-tag-close">&times;</span></span>
-    </div>
-   </section>
-
-   <!-- Cards -->
-   <section id="cards" class="component-section">
-    <h2 class="nb-section-title">Cards</h2>
-    <p class="nb-section-subtitle">Content containers with various layouts</p>
-    
-    <div class="component-demo">
-     <div class="nb-grid nb-grid-2" style="gap: 20px;">
-      <div class="nb-card">
-       <div class="nb-card-header">Card Header</div>
-       <div class="nb-card-body">
-        <h3>Card Title</h3>
-        <p>This is a simple card with header and body content.</p>
-       </div>
-       <div class="nb-card-footer">
-        <button class="nb-btn nb-btn-small">Action</button>
-       </div>
+  <!-- Hero Section -->
+  <div class="nb-container">
+    <section class="hero">
+      <h1>Neubrutalism CSS</h1>
+      <p>A minimal CSS framework for building beautiful, responsive websites. No bloat, no dependencies — just clean, semantic styling.</p>
+      <div class="nb-flex nb-justify-center" style="gap: 1rem;">
+        <a href="#docs" class="nb-btn nb-btn-lg">Get Started</a>
+        <a href="examples/neubrutalism-mini-example.html" class="nb-btn nb-btn-outline nb-btn-lg">View Demo</a>
       </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features">
+      <h2 class="text-center">Features</h2>
+      <div class="showcase-grid">
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">⚡ Lightweight</h3>
+            <p class="nb-card-text">Only ~8KB minified. No JavaScript required.</p>
+          </div>
+        </div>
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">🌙 Dark Mode</h3>
+            <p class="nb-card-text">Automatic system preference detection or manual toggle.</p>
+          </div>
+        </div>
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">📱 Responsive</h3>
+            <p class="nb-card-text">Mobile-first design with a flexible 12-column grid.</p>
+          </div>
+        </div>
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">🎨 Customizable</h3>
+            <p class="nb-card-text">Easy theming with CSS custom properties.</p>
+          </div>
+        </div>
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">♿ Accessible</h3>
+            <p class="nb-card-text">Focus states, reduced motion support, screen reader friendly.</p>
+          </div>
+        </div>
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">🧩 Components</h3>
+            <p class="nb-card-text">25+ components and utilities ready to use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Preview -->
+    <section class="section" id="components">
+      <h2 class="text-center">Components</h2>
       
-      <div class="nb-card">
-       <img src="https://picsum.photos/300/150" class="nb-card-image" alt="Card Image" />
-       <div class="nb-card-body">
-        <h3>Card with Image</h3>
-        <p>Cards can contain images and rich content.</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Alerts -->
-   <section id="alerts" class="component-section">
-    <h2 class="nb-section-title">Alerts</h2>
-    <p class="nb-section-subtitle">Contextual feedback messages</p>
-    
-    <div class="component-demo">
-     <div class="nb-alert nb-alert-success">This is a success alert!</div>
-     <div class="nb-alert nb-alert-danger">This is a danger alert!</div>
-     <div class="nb-alert nb-alert-warning">This is a warning alert!</div>
-     <div class="nb-alert nb-alert-info">This is an info alert!</div>
-    </div>
-    
-    <h3>Simple Alerts</h3>
-    <div class="component-demo">
-     <div class="alert-simple success">Simple success alert!</div>
-     <div class="alert-simple error">Simple error alert!</div>
-    </div>
-   </section>
-
-   <!-- Tables -->
-   <section id="tables" class="component-section">
-    <h2 class="nb-section-title">Tables</h2>
-    <p class="nb-section-subtitle">Data tables with neubrutalist styling</p>
-    
-    <div class="component-demo">
-     <h4>Standard Table</h4>
-     <table class="nb-table">
-      <thead>
-       <tr>
-        <th>Name</th>
-        <th>Role</th>
-        <th>Status</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>John Doe</td>
-        <td>Developer</td>
-        <td><span class="nb-badge nb-badge-success">Active</span></td>
-       </tr>
-       <tr>
-        <td>Jane Smith</td>
-        <td>Designer</td>
-        <td><span class="nb-badge nb-badge-success">Active</span></td>
-       </tr>
-       <tr>
-        <td>Bob Wilson</td>
-        <td>Manager</td>
-        <td><span class="nb-badge nb-badge-warning">Away</span></td>
-       </tr>
-      </tbody>
-     </table>
-     
-     <h4 style="margin-top: 30px;">Scrollable Table</h4>
-     <div class="nb-table-scrollable">
-      <div class="nb-table-hint">← Scroll horizontally to see more →</div>
-      <table class="nb-table">
-       <thead>
-        <tr>
-         <th>ID</th>
-         <th>Name</th>
-         <th>Email</th>
-         <th>Role</th>
-         <th>Department</th>
-         <th>Location</th>
-         <th>Status</th>
-         <th>Actions</th>
-        </tr>
-       </thead>
-       <tbody>
-        <tr>
-         <td>001</td>
-         <td>John Doe</td>
-         <td>john@example.com</td>
-         <td>Developer</td>
-         <td>Engineering</td>
-         <td>New York</td>
-         <td><span class="nb-badge nb-badge-success">Active</span></td>
-         <td><button class="nb-btn nb-btn-small">Edit</button></td>
-        </tr>
-        <tr>
-         <td>002</td>
-         <td>Jane Smith</td>
-         <td>jane@example.com</td>
-         <td>Designer</td>
-         <td>Creative</td>
-         <td>San Francisco</td>
-         <td><span class="nb-badge nb-badge-success">Active</span></td>
-         <td><button class="nb-btn nb-btn-small">Edit</button></td>
-        </tr>
-       </tbody>
-      </table>
-     </div>
-     
-     <h4 style="margin-top: 30px;">Compact Table</h4>
-     <table class="nb-table nb-table-compact">
-      <thead>
-       <tr>
-        <th>Item</th>
-        <th>Qty</th>
-        <th>Price</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>Widget A</td>
-        <td>5</td>
-        <td>$10.00</td>
-       </tr>
-       <tr>
-        <td>Widget B</td>
-        <td>3</td>
-        <td>$15.00</td>
-       </tr>
-       <tr>
-        <td>Widget C</td>
-        <td>8</td>
-        <td>$8.00</td>
-       </tr>
-      </tbody>
-     </table>
-     
-     <h4 style="margin-top: 30px;">Borderless Table</h4>
-     <table class="nb-table nb-table-borderless">
-      <thead>
-       <tr>
-        <th>Product</th>
-        <th>Category</th>
-        <th>Price</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>Laptop</td>
-        <td>Electronics</td>
-        <td>$999</td>
-       </tr>
-       <tr>
-        <td>Desk Chair</td>
-        <td>Furniture</td>
-        <td>$250</td>
-       </tr>
-       <tr>
-        <td>Notebook</td>
-        <td>Office</td>
-        <td>$5</td>
-       </tr>
-      </tbody>
-     </table>
-     
-     <h4 style="margin-top: 30px;">Row Highlights</h4>
-     <table class="nb-table">
-      <thead>
-       <tr>
-        <th>Task</th>
-        <th>Status</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr class="nb-row-success">
-        <td>Deploy to production</td>
-        <td>Completed</td>
-       </tr>
-       <tr class="nb-row-warning">
-        <td>Code review pending</td>
-        <td>In Progress</td>
-       </tr>
-       <tr class="nb-row-danger">
-        <td>Critical bug fix</td>
-        <td>Blocked</td>
-       </tr>
-       <tr class="nb-row-info">
-        <td>Documentation update</td>
-        <td>Scheduled</td>
-       </tr>
-      </tbody>
-     </table>
-    </div>
-   </section>
-
-   <!-- Progress Bars -->
-   <section id="progress" class="component-section">
-    <h2 class="nb-section-title">Progress Bars</h2>
-    <p class="nb-section-subtitle">Visual progress indicators</p>
-    
-    <div class="component-demo">
-     <div class="nb-progress">
-      <div class="nb-progress-bar" style="width: 25%">25%</div>
-     </div>
-     <div class="nb-progress nb-progress-success">
-      <div class="nb-progress-bar" style="width: 50%">50%</div>
-     </div>
-     <div class="nb-progress nb-progress-warning">
-      <div class="nb-progress-bar" style="width: 75%">75%</div>
-     </div>
-     <div class="nb-progress nb-progress-danger">
-      <div class="nb-progress-bar" style="width: 100%">100%</div>
-     </div>
-     
-     <h4 style="margin-top: 20px;">Striped &amp; Animated</h4>
-     <div class="nb-progress nb-progress-striped nb-progress-animated">
-      <div class="nb-progress-bar" style="width: 60%">Loading...</div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Spinners -->
-   <section id="spinners" class="component-section">
-    <h2 class="nb-section-title">Spinners &amp; Loaders</h2>
-    <p class="nb-section-subtitle">Loading indicators</p>
-    
-    <div class="component-demo">
-     <h4>Circle Spinners</h4>
-     <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
-      <div class="nb-spinner nb-spinner-sm"></div>
-      <div class="nb-spinner"></div>
-      <div class="nb-spinner nb-spinner-lg"></div>
-     </div>
-     
-     <h4>Color Variants</h4>
-     <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
-      <div class="nb-spinner nb-spinner-primary"></div>
-      <div class="nb-spinner nb-spinner-success"></div>
-      <div class="nb-spinner nb-spinner-danger"></div>
-      <div class="nb-spinner nb-spinner-warning"></div>
-     </div>
-     
-     <h4>Square Spinner</h4>
-     <div class="nb-spinner-square"></div>
-     
-     <h4 style="margin-top: 20px;">Dots Loader</h4>
-     <div class="nb-loader-dots">
-      <span></span>
-      <span></span>
-      <span></span>
-     </div>
-    </div>
-   </section>
-
-   <!-- Tooltips -->
-   <section id="tooltips" class="component-section">
-    <h2 class="nb-section-title">Tooltips</h2>
-    <p class="nb-section-subtitle">Contextual information on hover</p>
-    
-    <div class="component-demo">
-     <p>
-      Hover over these elements: 
-      <span class="nb-tooltip" data-tooltip="This is a tooltip!" tabindex="0">Hover me (top)</span> | 
-      <span class="nb-tooltip nb-tooltip-bottom" data-tooltip="Bottom tooltip!" tabindex="0">Hover me (bottom)</span>
-     </p>
-    </div>
-   </section>
-
-   <!-- Breadcrumb -->
-   <section id="breadcrumb" class="component-section">
-    <h2 class="nb-section-title">Breadcrumb</h2>
-    <p class="nb-section-subtitle">Navigation path indicator</p>
-    
-    <div class="component-demo">
-     <ul class="nb-breadcrumb">
-      <li class="nb-breadcrumb-item"><a href="#">Home</a></li>
-      <li class="nb-breadcrumb-item"><a href="#">Components</a></li>
-      <li class="nb-breadcrumb-item active">Breadcrumb</li>
-     </ul>
-    </div>
-   </section>
-
-   <!-- Modals -->
-   <section id="modals" class="component-section">
-    <h2 class="nb-section-title">Modals</h2>
-    <p class="nb-section-subtitle">Dialog windows for user interaction</p>
-    
-    <input class="nb-modal-state" id="modal-demo" type="checkbox" />
-    <div class="nb-modal">
-     <label class="nb-modal-overlay" for="modal-demo"></label>
-     <div class="nb-modal-container">
-      <label class="nb-modal-close" for="modal-demo">
-       <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-       </svg>
-      </label>
-      <div class="nb-modal-content">
-       <h2 class="nb-modal-title">Modal Title</h2>
-       <div class="nb-modal-body">
-        <p>This is a neubrutalist modal dialog. It can contain any content including forms, text, or other components.</p>
-       </div>
-       <div class="nb-modal-footer">
-        <label class="nb-btn" for="modal-demo">Close</label>
-       </div>
-      </div>
-     </div>
-    </div>
-    
-    <div class="component-demo">
-     <label class="nb-btn" for="modal-demo">Open Modal</label>
-    </div>
-   </section>
-
-   <!-- Accordion -->
-   <section id="accordion" class="component-section">
-    <h2 class="nb-section-title">Accordion</h2>
-    <p class="nb-section-subtitle">Collapsible content sections</p>
-    
-    <div class="component-demo">
-     <div class="nb-accordion">
-      <div class="nb-accordion-item">
-       <input type="checkbox" id="acc-demo-1" class="nb-accordion-state" />
-       <label for="acc-demo-1" class="nb-accordion-header">
-        What is Neubrutalism?
-        <span class="nb-accordion-icon">+</span>
-       </label>
-       <div class="nb-accordion-content">
-        <p>Neubrutalism is a modern CSS design approach that focuses on minimalist, high-contrast, and bold design principles.</p>
-       </div>
-      </div>
-      <div class="nb-accordion-item">
-       <input type="checkbox" id="acc-demo-2" class="nb-accordion-state" />
-       <label for="acc-demo-2" class="nb-accordion-header">
-        Is it free to use?
-        <span class="nb-accordion-icon">+</span>
-       </label>
-       <div class="nb-accordion-content">
-        <p>Yes! Neubrutalism CSS is completely free and open source under the MIT license.</p>
-       </div>
-      </div>
-      <div class="nb-accordion-item">
-       <input type="checkbox" id="acc-demo-3" class="nb-accordion-state" />
-       <label for="acc-demo-3" class="nb-accordion-header">
-        Browser support?
-        <span class="nb-accordion-icon">+</span>
-       </label>
-       <div class="nb-accordion-content">
-        <p>Neubrutalism CSS supports all modern browsers including Chrome, Firefox, Safari, and Edge.</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Tabs -->
-   <section id="tabs" class="component-section">
-    <h2 class="nb-section-title">Tabs</h2>
-    <p class="nb-section-subtitle">Tabbed content navigation</p>
-    
-    <div class="component-demo">
-     <h4>Standard Tabs</h4>
-     <div class="nb-tabs">
-      <input class="nb-tab-input" name="demo-tabs" type="radio" id="demo-tab-1" checked="checked" />
-      <label class="nb-tab-label" for="demo-tab-1">Tab 1</label>
-      <div class="nb-tab-panel">
-       <h3>First Tab Content</h3>
-       <p>This is the content for the first tab.</p>
+      <h4>Buttons</h4>
+      <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1.5rem;">
+        <button>Primary</button>
+        <button class="nb-btn nb-btn-outline">Outline</button>
+        <button class="nb-btn nb-btn-success">Success</button>
+        <button class="nb-btn nb-btn-danger">Danger</button>
+        <button class="nb-btn nb-btn-link">Link</button>
       </div>
 
-      <input class="nb-tab-input" name="demo-tabs" type="radio" id="demo-tab-2" />
-      <label class="nb-tab-label" for="demo-tab-2">Tab 2</label>
-      <div class="nb-tab-panel">
-       <h3>Second Tab Content</h3>
-       <p>This is the content for the second tab.</p>
+      <h4>Badges</h4>
+      <div class="badge-list" style="margin-bottom: 1.5rem;">
+        <span class="nb-badge">Default</span>
+        <span class="nb-badge nb-badge-primary">Primary</span>
+        <span class="nb-badge nb-badge-success">Success</span>
+        <span class="nb-badge nb-badge-danger">Danger</span>
+        <span class="nb-badge nb-badge-warning">Warning</span>
+        <span class="nb-badge nb-badge-info">Info</span>
       </div>
 
-      <input class="nb-tab-input" name="demo-tabs" type="radio" id="demo-tab-3" />
-      <label class="nb-tab-label" for="demo-tab-3">Tab 3</label>
-      <div class="nb-tab-panel">
-       <h3>Third Tab Content</h3>
-       <p>This is the content for the third tab.</p>
-      </div>
-     </div>
-     
-     <h4 style="margin-top: 30px;">Scrollable Tabs</h4>
-     <p class="nb-muted" style="margin-bottom: 15px;">Perfect for many tabs - scroll horizontally to see more.</p>
-     <div class="nb-tabs-scrollable">
-      <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-1" checked="checked" />
-      <label class="nb-tab-label" for="scroll-tab-1">Overview</label>
-      <div class="nb-tab-panel">
-       <h3>Overview</h3>
-       <p>Scrollable tabs are perfect when you have many tabs that don't fit on one screen. Users can scroll horizontally to navigate between tabs.</p>
-      </div>
+      <h4>Alerts</h4>
+      <div class="nb-alert nb-alert-info" style="margin-bottom: 0.5rem;"><p><strong>Info:</strong> This is an informational alert.</p></div>
+      <div class="nb-alert nb-alert-success" style="margin-bottom: 0.5rem;"><p><strong>Success:</strong> Your action was completed.</p></div>
+      <div class="nb-alert nb-alert-warning" style="margin-bottom: 0.5rem;"><p><strong>Warning:</strong> Please review this notice.</p></div>
+      <div class="nb-alert nb-alert-danger" style="margin-bottom: 1.5rem;"><p><strong>Error:</strong> Something went wrong.</p></div>
 
-      <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-2" />
-      <label class="nb-tab-label" for="scroll-tab-2">Features</label>
-      <div class="nb-tab-panel">
-       <h3>Features</h3>
-       <p>Neubrutalism CSS provides a clean, high-contrast design system with multiple components.</p>
+      <h4>Form Elements</h4>
+      <div class="nb-row" style="margin-bottom: 1.5rem;">
+        <div class="nb-col-6">
+          <div class="nb-form-group">
+            <label for="demo-name">Name</label>
+            <input type="text" id="demo-name" placeholder="Enter your name">
+          </div>
+        </div>
+        <div class="nb-col-6">
+          <div class="nb-form-group">
+            <label for="demo-email">Email</label>
+            <input type="email" id="demo-email" placeholder="Enter your email">
+          </div>
+        </div>
       </div>
 
-      <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-3" />
-      <label class="nb-tab-label" for="scroll-tab-3">Documentation</label>
-      <div class="nb-tab-panel">
-       <h3>Documentation</h3>
-       <p>Full documentation is available on the <a href="/docs">docs page</a>.</p>
+      <h4>Cards</h4>
+      <div class="nb-row" style="margin-bottom: 1.5rem;">
+        <div class="nb-col-4">
+          <div class="nb-card">
+            <div class="nb-card-body">
+              <h3 class="nb-card-title">Card Title</h3>
+              <p class="nb-card-text">A simple card component.</p>
+              <button class="nb-btn nb-btn-sm">Action</button>
+            </div>
+          </div>
+        </div>
+        <div class="nb-col-4">
+          <div class="nb-card">
+            <div class="nb-card-header">Header</div>
+            <div class="nb-card-body">
+              <h3 class="nb-card-title">With Header</h3>
+              <p class="nb-card-text">Card with header section.</p>
+            </div>
+            <div class="nb-card-footer">Footer</div>
+          </div>
+        </div>
+        <div class="nb-col-4">
+          <div class="nb-card">
+            <div class="nb-card-body">
+              <h5 class="nb-card-subtitle">Featured</h5>
+              <h3 class="nb-card-title">Card Subtitle</h3>
+              <p class="nb-card-text">Card with subtitle.</p>
+              <a href="#" class="nb-btn nb-btn-sm nb-btn-outline">View</a>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-4" />
-      <label class="nb-tab-label" for="scroll-tab-4">Installation</label>
-      <div class="nb-tab-panel">
-       <h3>Installation</h3>
-       <p>Include the CSS file via CDN or download directly.</p>
+    <!-- Documentation -->
+    <section class="section" id="docs">
+      <h2 class="text-center">Documentation</h2>
+      
+      <h4>Quick Start</h4>
+      <pre class="code-block"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My App&lt;/title&gt;
+  &lt;link rel="stylesheet" href="neubrutalism-mini.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="nb-container"&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;button class="nb-btn"&gt;Click Me&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h4 style="margin-top: 2rem;">Customization</h4>
+      <pre class="code-block"><code>:root {
+  --nb-color-primary: #6200ea;
+  --nb-color-primary-hover: #3700b3;
+  --nb-border-radius: 0.5rem;
+  --nb-font-family: 'Inter', sans-serif;
+}</code></pre>
+
+      <div class="text-center" style="margin-top: 2rem;">
+        <a href="docs/MINI-DOCUMENTATION.md" class="nb-btn">Full Documentation</a>
+        <a href="examples/neubrutalism-mini-example.html" class="nb-btn nb-btn-outline">Live Demo</a>
       </div>
+    </section>
 
-      <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-5" />
-      <label class="nb-tab-label" for="scroll-tab-5">Configuration</label>
-      <div class="nb-tab-panel">
-       <h3>Configuration</h3>
-       <p>Customize using CSS custom properties.</p>
-      </div>
+    <!-- Footer -->
+    <footer class="text-center" style="padding: 3rem 0; border-top: 1px solid var(--nb-color-border); margin-top: 2rem;">
+      <p class="text-muted">Neubrutalism CSS — A minimal CSS framework</p>
+      <p class="text-small">MIT License</p>
+    </footer>
+  </div>
 
-      <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-6" />
-      <label class="nb-tab-label" for="scroll-tab-6">API Reference</label>
-      <div class="nb-tab-panel">
-       <h3>API Reference</h3>
-       <p>All classes and utilities are documented.</p>
-      </div>
-
-      <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-7" />
-      <label class="nb-tab-label" for="scroll-tab-7">Examples</label>
-      <div class="nb-tab-panel">
-       <h3>Examples</h3>
-       <p>Check the examples folder for starter templates.</p>
-      </div>
-
-      <input class="nb-tab-input" name="scroll-tabs" type="radio" id="scroll-tab-8" />
-      <label class="nb-tab-label" for="scroll-tab-8">FAQ</label>
-      <div class="nb-tab-panel">
-       <h3>FAQ</h3>
-       <p>Frequently asked questions and answers.</p>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Dropdown -->
-   <section id="dropdown" class="component-section">
-    <h2 class="nb-section-title">Dropdown</h2>
-    <p class="nb-section-subtitle">Dropdown menus</p>
-    
-    <div class="component-demo">
-     <div class="nb-dropdown nb-dropdown-primary">
-      <button class="nb-dropdown-toggle">Select Option</button>
-      <div class="nb-dropdown-menu">
-       <a href="#" class="nb-dropdown-menu-item">Option 1</a>
-       <a href="#" class="nb-dropdown-menu-item">Option 2</a>
-       <a href="#" class="nb-dropdown-menu-item">Option 3</a>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Pagination -->
-   <section id="pagination" class="component-section">
-    <h2 class="nb-section-title">Pagination</h2>
-    <p class="nb-section-subtitle">Page navigation controls</p>
-    
-    <div class="component-demo">
-     <ul class="nb-pagination">
-      <li class="nb-page-item nb-page-prev">
-       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" /></svg>
-      </li>
-      <li class="nb-page-item active">1</li>
-      <li class="nb-page-item">2</li>
-      <li class="nb-page-item">3</li>
-      <li class="nb-page-item">4</li>
-      <li class="nb-page-item">5</li>
-      <li class="nb-page-item nb-page-next">
-       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" /></svg>
-      </li>
-     </ul>
-    </div>
-   </section>
-
-   <!-- Lists -->
-   <section id="lists" class="component-section">
-    <h2 class="nb-section-title">Lists</h2>
-    <p class="nb-section-subtitle">Styled list components</p>
-    
-    <div class="component-demo">
-     <h4>Basic List</h4>
-     <ul class="nb-list">
-      <li>List item one</li>
-      <li>List item two</li>
-      <li>List item three</li>
-     </ul>
-     
-     <h4>Ordered List</h4>
-     <ul class="nb-list nb-list-ordered">
-      <li>First item</li>
-      <li>Second item</li>
-      <li>Third item</li>
-     </ul>
-     
-     <h4>Bullet List</h4>
-     <ul class="nb-list nb-list-bullet">
-      <li>Bullet item one</li>
-      <li>Bullet item two</li>
-      <li>Bullet item three</li>
-     </ul>
-    </div>
-   </section>
-
-   <!-- Avatars -->
-   <section id="avatars" class="component-section">
-    <h2 class="nb-section-title">Avatars</h2>
-    <p class="nb-section-subtitle">User profile images</p>
-    
-    <div class="component-demo">
-     <img class="nb-avatar" src="https://i.pravatar.cc/100?img=1" alt="Avatar" />
-     <img class="nb-avatar" src="https://i.pravatar.cc/100?img=2" alt="Avatar" />
-     <img class="nb-avatar" src="https://i.pravatar.cc/100?img=3" alt="Avatar" />
-    </div>
-   </section>
-
-   <!-- Skeleton Loaders -->
-   <section id="skeleton" class="component-section">
-    <h2 class="nb-section-title">Skeleton Loaders</h2>
-    <p class="nb-section-subtitle">Loading placeholders for content</p>
-    
-    <div class="component-demo">
-     <h4>Card Skeleton</h4>
-     <div class="nb-skeleton nb-skeleton-card" style="max-width: 300px; margin-bottom: 20px;">
-      <div class="nb-skeleton nb-skeleton-thumbnail" style="margin-bottom: 15px;"></div>
-      <div class="nb-skeleton nb-skeleton-title"></div>
-      <div class="nb-skeleton nb-skeleton-text"></div>
-      <div class="nb-skeleton nb-skeleton-text"></div>
-      <div class="nb-skeleton nb-skeleton-text" style="width: 60%;"></div>
-     </div>
-     
-     <h4>Avatar + Text Skeleton</h4>
-     <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
-      <div class="nb-skeleton nb-skeleton-avatar"></div>
-      <div style="flex: 1;">
-       <div class="nb-skeleton nb-skeleton-text" style="width: 40%; margin-bottom: 8px;"></div>
-       <div class="nb-skeleton nb-skeleton-text" style="width: 70%;"></div>
-      </div>
-     </div>
-     
-     <h4>Button Skeleton</h4>
-     <div class="nb-skeleton nb-skeleton-button"></div>
-    </div>
-   </section>
-
-   <!-- Timeline -->
-   <section id="timeline" class="component-section">
-    <h2 class="nb-section-title">Timeline</h2>
-    <p class="nb-section-subtitle">Chronological display of events</p>
-    
-    <div class="component-demo">
-     <div class="nb-timeline">
-      <div class="nb-timeline-item nb-timeline-item-success">
-       <div class="nb-timeline-date">Jan 2024</div>
-       <div class="nb-timeline-content">
-        <div class="nb-timeline-title">Project Started</div>
-        <p>Initial development phase began with core features.</p>
-       </div>
-      </div>
-      <div class="nb-timeline-item nb-timeline-item-success">
-       <div class="nb-timeline-date">Mar 2024</div>
-       <div class="nb-timeline-content">
-        <div class="nb-timeline-title">Beta Release</div>
-        <p>First public beta released for testing.</p>
-       </div>
-      </div>
-      <div class="nb-timeline-item nb-timeline-item-active">
-       <div class="nb-timeline-date">Jun 2024</div>
-       <div class="nb-timeline-content">
-        <div class="nb-timeline-title">Version 1.0</div>
-        <p>Official stable release with full documentation.</p>
-       </div>
-      </div>
-      <div class="nb-timeline-item">
-       <div class="nb-timeline-date">Dec 2024</div>
-       <div class="nb-timeline-content">
-        <div class="nb-timeline-title">Future Plans</div>
-        <p>Upcoming features and improvements.</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Steps/Stepper -->
-   <section id="steps" class="component-section">
-    <h2 class="nb-section-title">Steps / Stepper</h2>
-    <p class="nb-section-subtitle">Multi-step process indicators</p>
-    
-    <div class="component-demo">
-     <h4>Horizontal Steps</h4>
-     <div class="nb-steps" style="margin-bottom: 30px;">
-      <div class="nb-step nb-step-completed">
-       <div class="nb-step-indicator"></div>
-       <div class="nb-step-content">
-        <div class="nb-step-title">Account</div>
-        <div class="nb-step-description">Create account</div>
-       </div>
-      </div>
-      <div class="nb-step nb-step-active">
-       <div class="nb-step-indicator"></div>
-       <div class="nb-step-content">
-        <div class="nb-step-title">Profile</div>
-        <div class="nb-step-description">Setup profile</div>
-       </div>
-      </div>
-      <div class="nb-step">
-       <div class="nb-step-indicator"></div>
-       <div class="nb-step-content">
-        <div class="nb-step-title">Settings</div>
-        <div class="nb-step-description">Configure settings</div>
-       </div>
-      </div>
-      <div class="nb-step">
-       <div class="nb-step-indicator"></div>
-       <div class="nb-step-content">
-        <div class="nb-step-title">Done</div>
-        <div class="nb-step-description">Complete setup</div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Rating -->
-   <section id="rating" class="component-section">
-    <h2 class="nb-section-title">Rating</h2>
-    <p class="nb-section-subtitle">Star rating components</p>
-    
-    <div class="component-demo">
-     <h4>Interactive Rating</h4>
-     <div class="nb-rating" style="margin-bottom: 20px;">
-      <input type="radio" name="rating1" id="star5" value="5">
-      <label for="star5"></label>
-      <input type="radio" name="rating1" id="star4" value="4">
-      <label for="star4"></label>
-      <input type="radio" name="rating1" id="star3" value="3" checked>
-      <label for="star3"></label>
-      <input type="radio" name="rating1" id="star2" value="2">
-      <label for="star2"></label>
-      <input type="radio" name="rating1" id="star1" value="1">
-      <label for="star1"></label>
-     </div>
-     
-     <h4>Large Rating</h4>
-     <div class="nb-rating nb-rating-lg" style="margin-bottom: 20px;">
-      <input type="radio" name="rating2" id="star5-lg" value="5">
-      <label for="star5-lg"></label>
-      <input type="radio" name="rating2" id="star4-lg" value="4" checked>
-      <label for="star4-lg"></label>
-      <input type="radio" name="rating2" id="star3-lg" value="3">
-      <label for="star3-lg"></label>
-      <input type="radio" name="rating2" id="star2-lg" value="2">
-      <label for="star2-lg"></label>
-      <input type="radio" name="rating2" id="star1-lg" value="1">
-      <label for="star1-lg"></label>
-     </div>
-     
-     <h4>Static Rating (Read-only)</h4>
-     <div class="nb-rating-static">
-      <span class="filled">★</span>
-      <span class="filled">★</span>
-      <span class="filled">★</span>
-      <span class="filled">★</span>
-      <span>★</span>
-     </div>
-    </div>
-   </section>
-
-   <!-- Empty State -->
-   <section id="empty-state" class="component-section">
-    <h2 class="nb-section-title">Empty State</h2>
-    <p class="nb-section-subtitle">Placeholder for empty content areas</p>
-    
-    <div class="component-demo">
-     <div class="nb-empty-state" style="max-width: 400px;">
-      <div class="nb-empty-state-icon">📭</div>
-      <div class="nb-empty-state-title">No messages yet</div>
-      <p class="nb-empty-state-text">When you receive messages, they will appear here.</p>
-      <button class="nb-btn">Send a message</button>
-     </div>
-    </div>
-   </section>
-
-   <!-- Forms -->
-   <section id="forms" class="component-section">
-    <h2 class="nb-section-title">Forms</h2>
-    <p class="nb-section-subtitle">Form layouts and inputs</p>
-    
-    <div class="component-demo">
-     <div class="nb-pre-form">
-      <form class="nb-form">
-       <div class="nb-form-group">
-        <input type="text" placeholder="Your Name" required class="nb-form-input" />
-       </div>
-       <div class="nb-form-group">
-        <input type="email" placeholder="Email Address" required class="nb-form-input" />
-       </div>
-       <div class="nb-form-group">
-        <input type="password" placeholder="Password" required class="nb-form-input" />
-       </div>
-       <button type="submit" class="nb-form-btn">Submit</button>
-      </form>
-     </div>
-    </div>
-   </section>
-
-   <!-- Checkboxes -->
-   <section id="checkboxes" class="component-section">
-    <h2 class="nb-section-title">Checkboxes</h2>
-    <p class="nb-section-subtitle">Checkbox styles and variants</p>
-    
-    <div class="component-demo">
-     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-      <label class="nb-checkbox">
-       Default
-       <input type="checkbox" />
-       <span class="nb-checkbox-mark"></span>
-      </label>
-      <label class="nb-checkbox nb-checkbox-rounded">
-       Rounded
-       <input type="checkbox" />
-       <span class="nb-checkbox-mark"></span>
-      </label>
-      <label class="nb-checkbox nb-checkbox-outline">
-       Outline
-       <input type="checkbox" />
-       <span class="nb-checkbox-mark"></span>
-      </label>
-      <label class="nb-checkbox nb-checkbox-switch">
-       Switch
-       <input type="checkbox" />
-       <span class="nb-checkbox-mark"></span>
-      </label>
-      <label class="nb-checkbox nb-checkbox-success">
-       Success
-       <input type="checkbox" />
-       <span class="nb-checkbox-mark"></span>
-      </label>
-      <label class="nb-checkbox nb-checkbox-danger">
-       Danger
-       <input type="checkbox" />
-       <span class="nb-checkbox-mark"></span>
-      </label>
-     </div>
-    </div>
-   </section>
-
-   <!-- Radio Buttons -->
-   <section id="radio" class="component-section">
-    <h2 class="nb-section-title">Radio Buttons</h2>
-    <p class="nb-section-subtitle">Radio button styles</p>
-    
-    <div class="component-demo">
-     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-      <label class="nb-radio">
-       <input type="radio" name="radio-demo" checked />
-       <span class="nb-radio-mark"></span>
-       Option 1
-      </label>
-      <label class="nb-radio">
-       <input type="radio" name="radio-demo" />
-       <span class="nb-radio-mark"></span>
-       Option 2
-      </label>
-      <label class="nb-radio nb-radio-success">
-       <input type="radio" name="radio-demo-2" checked />
-       <span class="nb-radio-mark"></span>
-       Success
-      </label>
-      <label class="nb-radio nb-radio-danger">
-       <input type="radio" name="radio-demo-3" checked />
-       <span class="nb-radio-mark"></span>
-       Danger
-      </label>
-     </div>
-    </div>
-   </section>
-
-   <!-- Range Slider -->
-   <section id="range" class="component-section">
-    <h2 class="nb-section-title">Range Slider</h2>
-    <p class="nb-section-subtitle">Slider input control</p>
-    
-    <div class="component-demo">
-     <input type="range" class="nb-range" min="0" max="100" value="50" />
-    </div>
-   </section>
-
-   <!-- Switch -->
-   <section id="switch" class="component-section">
-    <h2 class="nb-section-title">Switch Toggle</h2>
-    <p class="nb-section-subtitle">On/off toggle switches</p>
-    
-    <div class="component-demo">
-     <label class="nb-switch">
-      <input type="checkbox" />
-      <span class="nb-switch-slider"></span>
-     </label>
-     <label class="nb-switch" style="margin-left: 20px;">
-      <input type="checkbox" checked />
-      <span class="nb-switch-slider"></span>
-     </label>
-    </div>
-   </section>
-
-   <!-- Input Group -->
-   <section id="input-group" class="component-section">
-    <h2 class="nb-section-title">Input Group</h2>
-    <p class="nb-section-subtitle">Input with attached buttons</p>
-    
-    <div class="component-demo">
-     <div class="nb-input-group">
-      <input type="text" class="nb-input" placeholder="Search..." />
-      <button class="nb-input-group-append">Search</button>
-     </div>
-    </div>
-   </section>
-
-   <!-- Containers -->
-   <section id="containers" class="component-section">
-    <h2 class="nb-section-title">Containers</h2>
-    <p class="nb-section-subtitle">Content containers with various styles and sizes</p>
-    
-    <div class="component-demo">
-     <h4>Basic Containers with Shadows</h4>
-     <div class="container shadow">Container with shadow</div>
-     <div class="container-1 shadow-1">Container-1 with shadow-1 (Purple)</div>
-     <div class="container-2 shadow-2">Container-2 with shadow-2 (Yellow)</div>
-     <div class="container-3 shadow-3">Container-3 with shadow-3 (Cyan)</div>
-     
-     <h4 style="margin-top: 30px;">Sized Containers</h4>
-     <div class="nb-container-sm nb-container-bordered" style="margin-bottom: 15px;">
-      Small container (max-width: 540px)
-     </div>
-     <div class="nb-container-md nb-container-bordered" style="margin-bottom: 15px;">
-      Medium container (max-width: 720px)
-     </div>
-     <div class="nb-container-lg nb-container-bordered" style="margin-bottom: 15px;">
-      Large container (max-width: 960px)
-     </div>
-     
-     <h4 style="margin-top: 30px;">Card-style Container</h4>
-     <div class="nb-container-card" style="max-width: 400px;">
-      This container has card-like styling with a shadow offset, perfect for highlighting content.
-     </div>
-     
-     <h4 style="margin-top: 30px;">Color Variants</h4>
-     <div class="nb-container-primary" style="margin-bottom: 15px;">Primary Container</div>
-     <div class="nb-container-success" style="margin-bottom: 15px;">Success Container</div>
-     <div class="nb-container-warning" style="margin-bottom: 15px;">Warning Container</div>
-     <div class="nb-container-danger" style="margin-bottom: 15px;">Danger Container</div>
-     <div class="nb-container-info" style="margin-bottom: 15px;">Info Container</div>
-     
-     <h4 style="margin-top: 30px;">Light/Dark Containers</h4>
-     <div class="nb-container-light" style="margin-bottom: 15px;">Light Container</div>
-     <div class="nb-container-dark" style="margin-bottom: 15px;">Dark Container</div>
-    </div>
-   </section>
-
-   <!-- Grid System -->
-   <section id="grid" class="component-section">
-    <h2 class="nb-section-title">Grid System</h2>
-    <p class="nb-section-subtitle">Responsive grid layouts</p>
-    
-    <div class="component-demo">
-     <h4>3 Column Grid</h4>
-     <div class="nb-grid nb-grid-3" style="margin-bottom: 20px;">
-      <div class="neu-box" style="margin: 0;">Column 1</div>
-      <div class="neu-box" style="margin: 0;">Column 2</div>
-      <div class="neu-box" style="margin: 0;">Column 3</div>
-     </div>
-     
-     <h4>Bordered Grid</h4>
-     <div class="nb-grid-bordered nb-grid-3">
-      <div>Item 1</div>
-      <div>Item 2</div>
-      <div>Item 3</div>
-     </div>
-     
-     <h4 style="margin-top: 20px;">Masonry Grid</h4>
-     <div class="nb-grid-masonry">
-      <div class="nb-grid-masonry-item">Item 1</div>
-      <div class="nb-grid-masonry-item">Item 2</div>
-      <div class="nb-grid-masonry-item">Item 3</div>
-      <div class="nb-grid-masonry-item">Item 4</div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Navbar -->
-   <section id="navbar" class="component-section">
-    <h2 class="nb-section-title">Navbar</h2>
-    <p class="nb-section-subtitle">Navigation bar components with various styles</p>
-    
-    <div class="component-demo">
-     <h4>Standard Navbar</h4>
-     <nav class="nb-navbar">
-      <div class="nb-navbar-brand">
-       <a href="#" class="nb-navbar-logo">NB</a>
-      </div>
-      <input type="checkbox" id="demo-navbar-toggle" class="nb-navbar-toggle-input" />
-      <label for="demo-navbar-toggle" class="nb-navbar-toggle">
-       <span></span>
-       <span></span>
-       <span></span>
-      </label>
-      <ol class="nb-nav">
-       <li class="nb-nav-item"><a href="#">Home</a></li>
-       <li class="nb-nav-item"><a href="#">About</a></li>
-       <li class="nb-nav-item"><a href="#">Contact</a></li>
-       <li class="nb-nav-item nb-nav-cta"><a href="#">Get Started</a></li>
-      </ol>
-     </nav>
-     
-     <h4 style="margin-top: 30px;">Dark Navbar</h4>
-     <nav class="nb-navbar nb-navbar-dark">
-      <div class="nb-navbar-brand">
-       <a href="#" class="nb-navbar-logo" style="color: var(--nb-secondary); border-color: var(--nb-secondary);">Dark</a>
-      </div>
-      <ol class="nb-nav">
-       <li class="nb-nav-item"><a href="#" style="color: var(--nb-secondary);">Home</a></li>
-       <li class="nb-nav-item"><a href="#" style="color: var(--nb-secondary);">About</a></li>
-       <li class="nb-nav-item nb-nav-cta"><a href="#">Action</a></li>
-      </ol>
-     </nav>
-     
-     <h4 style="margin-top: 30px;">Primary Navbar</h4>
-     <nav class="nb-navbar nb-navbar-primary">
-      <div class="nb-navbar-brand">
-       <a href="#" class="nb-navbar-logo">Primary</a>
-      </div>
-      <ol class="nb-nav">
-       <li class="nb-nav-item"><a href="#">Home</a></li>
-       <li class="nb-nav-item"><a href="#">About</a></li>
-       <li class="nb-nav-item nb-nav-cta"><a href="#">Action</a></li>
-      </ol>
-     </nav>
-     
-     <h4 style="margin-top: 30px;">Success Navbar</h4>
-     <nav class="nb-navbar nb-navbar-success">
-      <div class="nb-navbar-brand">
-       <a href="#" class="nb-navbar-logo">Success</a>
-      </div>
-      <ol class="nb-nav">
-       <li class="nb-nav-item"><a href="#">Home</a></li>
-       <li class="nb-nav-item"><a href="#">About</a></li>
-       <li class="nb-nav-item nb-nav-cta"><a href="#">Action</a></li>
-      </ol>
-     </nav>
-     
-     <h4 style="margin-top: 30px;">Warning Navbar</h4>
-     <nav class="nb-navbar nb-navbar-warning">
-      <div class="nb-navbar-brand">
-       <a href="#" class="nb-navbar-logo">Warning</a>
-      </div>
-      <ol class="nb-nav">
-       <li class="nb-nav-item"><a href="#">Home</a></li>
-       <li class="nb-nav-item"><a href="#">About</a></li>
-       <li class="nb-nav-item nb-nav-cta"><a href="#">Action</a></li>
-      </ol>
-     </nav>
-     
-     <h4 style="margin-top: 30px;">Danger Navbar</h4>
-     <nav class="nb-navbar nb-navbar-danger">
-      <div class="nb-navbar-brand">
-       <a href="#" class="nb-navbar-logo">Danger</a>
-      </div>
-      <ol class="nb-nav">
-       <li class="nb-nav-item"><a href="#">Home</a></li>
-       <li class="nb-nav-item"><a href="#">About</a></li>
-       <li class="nb-nav-item nb-nav-cta"><a href="#">Action</a></li>
-      </ol>
-     </nav>
-     
-     <h4 style="margin-top: 30px;">Compact Navbar</h4>
-     <nav class="nb-navbar nb-navbar-compact">
-      <div class="nb-navbar-brand">
-       <a href="#" class="nb-navbar-logo">Compact</a>
-      </div>
-      <ol class="nb-nav">
-       <li class="nb-nav-item"><a href="#">Home</a></li>
-       <li class="nb-nav-item"><a href="#">About</a></li>
-      </ol>
-     </nav>
-     
-     <p class="nb-muted" style="margin-top: 20px;"><strong>Note:</strong> Use <code>nb-navbar-sticky</code> for sticky positioning, <code>nb-navbar-fixed-top</code> or <code>nb-navbar-fixed-bottom</code> for fixed positioning.</p>
-    </div>
-   </section>
-
-   <!-- Nav Pills -->
-   <section id="pills" class="component-section">
-    <h2 class="nb-section-title">Nav Pills</h2>
-    <p class="nb-section-subtitle">Pill-style navigation tabs</p>
-    
-    <div class="component-demo">
-     <h4>Standard Pills</h4>
-     <ul class="nb-nav-pills">
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Home</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Profile</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Messages</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Settings</a></li>
-     </ul>
-     
-     <h4 style="margin-top: 30px;">Square Pills</h4>
-     <ul class="nb-nav-pills nb-nav-pills-square">
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Dashboard</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Reports</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Analytics</a></li>
-     </ul>
-     
-     <h4 style="margin-top: 30px;">Color Variants</h4>
-     <div style="margin-bottom: 15px;">
-      <ul class="nb-nav-pills nb-nav-pills-primary">
-       <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Primary</a></li>
-       <li class="nb-pill-item"><a href="#" class="nb-pill-link">Item</a></li>
-      </ul>
-     </div>
-     <div style="margin-bottom: 15px;">
-      <ul class="nb-nav-pills nb-nav-pills-success">
-       <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Success</a></li>
-       <li class="nb-pill-item"><a href="#" class="nb-pill-link">Item</a></li>
-      </ul>
-     </div>
-     <div style="margin-bottom: 15px;">
-      <ul class="nb-nav-pills nb-nav-pills-danger">
-       <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Danger</a></li>
-       <li class="nb-pill-item"><a href="#" class="nb-pill-link">Item</a></li>
-      </ul>
-     </div>
-     <div style="margin-bottom: 15px;">
-      <ul class="nb-nav-pills nb-nav-pills-warning">
-       <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Warning</a></li>
-       <li class="nb-pill-item"><a href="#" class="nb-pill-link">Item</a></li>
-      </ul>
-     </div>
-     
-     <h4 style="margin-top: 30px;">Small Pills</h4>
-     <ul class="nb-nav-pills nb-nav-pills-sm">
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Small</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Pills</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Example</a></li>
-     </ul>
-     
-     <h4 style="margin-top: 30px;">Large Pills</h4>
-     <ul class="nb-nav-pills nb-nav-pills-lg">
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Large</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Pills</a></li>
-     </ul>
-     
-     <h4 style="margin-top: 30px;">Pills with Badge</h4>
-     <ul class="nb-nav-pills">
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Inbox <span class="nb-pill-badge">5</span></a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Sent</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Drafts <span class="nb-pill-badge">2</span></a></li>
-     </ul>
-     
-     <h4 style="margin-top: 30px;">Justified Pills</h4>
-     <ul class="nb-nav-pills nb-nav-pills-justified" style="max-width: 500px;">
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Left</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Center</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Right</a></li>
-     </ul>
-     
-     <h4 style="margin-top: 30px;">Vertical Pills</h4>
-     <ul class="nb-nav-pills nb-nav-pills-vertical" style="max-width: 200px;">
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Dashboard</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Profile</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Settings</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Logout</a></li>
-     </ul>
-     
-     <h4 style="margin-top: 30px;">Scrollable Pills</h4>
-     <p class="nb-muted" style="margin-bottom: 15px;">Scroll horizontally to see more pills.</p>
-     <ul class="nb-nav-pills nb-nav-pills-scrollable">
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Overview</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Features</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Documentation</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Installation</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Configuration</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">API Reference</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Examples</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">FAQ</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Support</a></li>
-     </ul>
-     
-     <h4 style="margin-top: 30px;">Bordered Pills Container</h4>
-     <ul class="nb-nav-pills nb-nav-pills-bordered">
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link active">Active</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Link</a></li>
-      <li class="nb-pill-item"><a href="#" class="nb-pill-link">Link</a></li>
-     </ul>
-    </div>
-   </section>
-
-   <!-- Footer -->
-   <section id="footer" class="component-section">
-    <h2 class="nb-section-title">Footer</h2>
-    <p class="nb-section-subtitle">Page footer styles</p>
-    
-    <div class="component-demo">
-     <footer class="nb-footer-centered">
-      <div class="nb-footer-logo">NB</div>
-      <div class="nb-footer-text">© 2025 Neubrutalism CSS Library</div>
-      <div class="nb-footer-socials">
-       <a href="#" class="nb-social-icon" title="GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" /></svg>
-       </a>
-       <a href="#" class="nb-social-icon" title="Twitter">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.367 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z" /></svg>
-       </a>
-      </div>
-     </footer>
-    </div>
-   </section>
-
-   <!-- Colors -->
-   <section id="colors" class="component-section">
-    <h2 class="nb-section-title">Colors</h2>
-    <p class="nb-section-subtitle">Color utility classes</p>
-    
-    <div class="component-demo">
-     <h4>Background Colors</h4>
-     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 20px;">
-      <div class="nb-bg-primary" style="padding: 20px; text-align: center;">Primary</div>
-      <div class="nb-bg-success" style="padding: 20px; text-align: center;">Success</div>
-      <div class="nb-bg-danger" style="padding: 20px; text-align: center;">Danger</div>
-      <div class="nb-bg-warning" style="padding: 20px; text-align: center;">Warning</div>
-      <div class="nb-bg-info" style="padding: 20px; text-align: center;">Info</div>
-     </div>
-     
-     <h4>Text Colors</h4>
-     <p class="nb-text-primary">Primary text color</p>
-     <p class="nb-text-success">Success text color</p>
-     <p class="nb-text-danger">Danger text color</p>
-     <p class="nb-text-warning">Warning text color</p>
-     <p class="nb-text-muted">Muted text color</p>
-    </div>
-   </section>
-
-   <!-- Dark Mode -->
-   <section id="dark-mode" class="component-section">
-    <h2 class="nb-section-title">Dark Mode</h2>
-    <p class="nb-section-subtitle">Toggle between light and dark themes</p>
-    
-    <div class="component-demo">
-     <button class="nb-btn" onclick="toggleDarkMode(!isDarkMode())">Toggle Dark Mode</button>
-     <p style="margin-top: 15px;">Click the button to switch between light and dark mode. Your preference is saved automatically.</p>
-    </div>
-   </section>
-
-   <!-- Toast Demo -->
-   <section class="component-section">
-    <h2 class="nb-section-title">Toast Notifications</h2>
-    <p class="nb-section-subtitle">Temporary notification messages</p>
-    
-    <div class="component-demo">
-     <button class="nb-btn" onclick="createToast('This is a default toast!')">Default Toast</button>
-     <button class="nb-btn" onclick="createToast('Success!', 'success')">Success Toast</button>
-     <button class="nb-btn" onclick="createToast('Error occurred!', 'danger')">Danger Toast</button>
-     <button class="nb-btn" onclick="createToast('Warning!', 'warning')">Warning Toast</button>
-    </div>
-   </section>
-
-   <!-- Marquee -->
-   <section class="component-section">
-    <h2 class="nb-section-title">Marquee</h2>
-    <p class="nb-section-subtitle">Scrolling text animation</p>
-    
-    <div class="component-demo">
-     <div class="nb-marquee">
-      <div class="nb-marquee-content">Neubrutalism CSS: Minimalist Design • High Contrast • Bold Aesthetics • Clean Typography • Open Source</div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Carousel -->
-   <section class="component-section">
-    <h2 class="nb-section-title">Carousel</h2>
-    <p class="nb-section-subtitle">Image slider component</p>
-    
-    <div class="component-demo">
-     <div class="nb-slider">
-      <div class="nb-slider-slides">
-       <div class="nb-slider-slide">
-        <img src="https://picsum.photos/300/200?random=1" alt="Slide 1" />
-        <div class="nb-slider-caption"><h3>Slide 1</h3></div>
-       </div>
-       <div class="nb-slider-slide">
-        <img src="https://picsum.photos/300/200?random=2" alt="Slide 2" />
-        <div class="nb-slider-caption"><h3>Slide 2</h3></div>
-       </div>
-       <div class="nb-slider-slide">
-        <img src="https://picsum.photos/300/200?random=3" alt="Slide 3" />
-        <div class="nb-slider-caption"><h3>Slide 3</h3></div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Newsletter -->
-   <section class="component-section">
-    <h2 class="nb-section-title">Newsletter</h2>
-    <p class="nb-section-subtitle">Email subscription form</p>
-    
-    <div class="component-demo">
-     <div class="nb-newsletter-card">
-      <div class="nb-newsletter-card-content">
-       <div class="nb-newsletter-icon">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
-       </div>
-       <h2 class="nb-newsletter-title">Subscribe</h2>
-       <p class="nb-newsletter-subtitle">Stay updated with our latest news</p>
-       <form class="nb-newsletter-form">
-        <input type="email" placeholder="Enter your email" class="nb-newsletter-input" required />
-        <button type="submit" class="nb-newsletter-btn">Subscribe</button>
-       </form>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <!-- Thumbnails -->
-   <section class="component-section">
-    <h2 class="nb-section-title">Thumbnails &amp; Images</h2>
-    <p class="nb-section-subtitle">Image styling utilities</p>
-    
-    <div class="component-demo">
-     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-      <div class="nb-thumbnail" style="width: 200px;">
-       <img src="https://picsum.photos/200/150" alt="Thumbnail" />
-      </div>
-      <img class="nb-img" src="https://picsum.photos/150/150" alt="Styled Image" style="width: 150px; height: 150px;" />
-      <img class="nb-img nb-img-circle" src="https://i.pravatar.cc/100" alt="Circle Image" style="width: 100px; height: 100px;" />
-     </div>
-    </div>
-   </section>
-
-   <!-- Testimonial -->
-   <section class="component-section">
-    <h2 class="nb-section-title">Testimonials</h2>
-    <p class="nb-section-subtitle">Customer quotes and reviews</p>
-    
-    <div class="component-demo">
-     <div class="nb-testimonial">
-      <p>"Neubrutalism CSS has transformed how I approach web design. The bold, high-contrast aesthetic is exactly what I was looking for!" - Happy Developer</p>
-     </div>
-    </div>
-   </section>
-
-   <!-- Final Footer -->
-   <footer class="nb-footer-social-compact" style="margin-top: 60px; cursor: default;">
-    <div class="nb-footer-social-icons">
-     <a href="https://github.com/OshekharO/Neubrutalism" class="nb-social-icon" title="GitHub">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" /></svg>
-     </a>
-    </div>
-    <div class="nb-footer-text">
-     © 2025 Neubrutalism CSS Library | Made with ❤️ by <a href="https://github.com/OshekharO">Saksham Shekher</a>
-    </div>
-   </footer>
-  </main>
-  <script>
-   // Mobile menu toggle
-   function toggleMobileMenu() {
-    const toggle = document.querySelector('.docs-menu-toggle');
-    const sidebar = document.querySelector('.docs-sidebar');
-    const overlay = document.querySelector('.docs-overlay');
-    
-    toggle.classList.toggle('active');
-    sidebar.classList.toggle('active');
-    overlay.classList.toggle('active');
-    
-    // Prevent body scroll when menu is open
-    document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
-   }
-   
-   // Add event listeners for mobile menu
-   document.getElementById('mobile-menu-toggle').addEventListener('click', toggleMobileMenu);
-   document.getElementById('mobile-overlay').addEventListener('click', toggleMobileMenu);
-   
-   // Close menu when clicking a link
-   document.querySelectorAll('.docs-sidebar-nav a').forEach(function(link) {
-    link.addEventListener('click', function() {
-     if (window.innerWidth <= 900) {
-      toggleMobileMenu();
-     }
-    });
-   });
-  </script>
- </body>
+</body>
 </html>

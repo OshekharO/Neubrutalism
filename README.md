@@ -1,111 +1,95 @@
 # Neubrutalism CSS
 
-A modern, minimalist CSS library that embraces bold design principles, high-contrast aesthetics, and a no-nonsense approach to web design. Inspired by the Brutalist architecture movement, this library focuses on raw, honest, and functional design.
+A minimal CSS framework inspired by [Milligram](https://github.com/milligram/milligram), [Pico.css](https://github.com/picocss/pico), [Skeleton](https://github.com/dhg/Skeleton), [Chota](https://github.com/jenil/chota), [Water.css](https://github.com/kognise/water.css), and other minimal CSS libraries.
 
-## 🚀 Quick Start
+## Features
 
-Get started in seconds with the CDN:
+- **Lightweight**: ~8KB minified, ~32KB unminified
+- **No dependencies**: Pure CSS, no JavaScript required
+- **Responsive**: Mobile-first design with flexible 12-column grid
+- **Dark mode**: Automatic (system preference) or manual toggle
+- **Customizable**: CSS custom properties for easy theming
+- **Accessible**: Focus-visible states, reduced motion support, screen reader utilities
+- **Semantic**: Works with plain HTML elements, optional utility classes
+
+## Quick Start
 
 ```html
-<!-- Add to your HTML head -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.css">
-
-<!-- Optional: For interactive components (toasts, dark mode toggle) -->
-<script src="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neubrutalism CSS</title>
+  <link rel="stylesheet" href="neubrutalism-mini.min.css">
+</head>
+<body>
+  <div class="nb-container">
+    <h1>Hello, World!</h1>
+    <p>This is a minimal CSS framework.</p>
+    <button class="nb-btn">Click Me</button>
+  </div>
+</body>
+</html>
 ```
 
-## 📚 Documentation & Examples
+## Dark Mode
 
-- **[Full Documentation](docs/DOCUMENTATION.md)** - Comprehensive guide with all components and utilities
-- **[Starter Template](examples/starter-template.html)** - Ready-to-use landing page template
-- **[Dashboard Example](examples/dashboard.html)** - Admin dashboard layout example
+### Automatic (System Preference)
+```html
+<html class="nb-auto-dark">
+```
 
-## ✨ Key Features
+### Manual Toggle
+```html
+<html class="nb-dark">
+<!-- or -->
+<html data-theme="dark">
+```
 
-- 🎨 **High-contrast design** - Bold black and white with striking shadows
-- ⚡ **Lightweight** - ~70KB unminified, no dependencies
-- 🌙 **Dark mode** - Automatic (system preference) or manual toggle
-- ♿ **Accessible** - Focus-visible states, reduced motion support, screen reader friendly
-- 📱 **Responsive** - Mobile-first design with flexible components
-- 🔧 **Customizable** - Easy theming with CSS custom properties
-- 🧩 **40+ Components** - Everything you need to build modern UIs
+### JavaScript Toggle
+```javascript
+document.documentElement.classList.toggle('nb-dark');
+```
 
-## 🧩 Components
+## Components
 
 | Category | Components |
 |----------|------------|
-| **Typography** | Headings, Display text, Blockquotes, Code blocks |
-| **Buttons** | Standard, Animated, Icon buttons, Button groups |
-| **Cards** | Content cards, Headers, Footers, Images |
-| **Forms** | Inputs, Checkboxes, Radio, Switches, Range sliders, Input groups |
-| **Navigation** | Navbar, Breadcrumbs, Pagination, Tabs |
-| **Feedback** | Alerts, Toasts, Badges, Progress bars, Spinners |
-| **Data Display** | Tables, Lists, Avatars, Tags, Timeline, Rating |
-| **Overlays** | Modals, Dropdowns, Tooltips, Accordion |
-| **Layout** | Grid system (1-6 columns), Containers, Masonry |
-| **Utilities** | Colors, Spacing, Display, Text alignment |
+| **Typography** | Headings, paragraphs, links, blockquotes, code, text utilities |
+| **Layout** | Container, 12-column grid, flex utilities, spacing utilities |
+| **Buttons** | Primary, outline, secondary, success, danger, link, sizes, groups |
+| **Forms** | Inputs, textarea, select, checkboxes, radios, range, input groups |
+| **Navigation** | Navbar, breadcrumb, pagination |
+| **Content** | Cards, tables, badges, alerts, lists, accordion |
+| **Feedback** | Progress bars, spinners, tooltips, modals |
+| **Utilities** | Display, spacing, width, borders, backgrounds, shadows, position |
 
-## 🌙 Dark Mode
+## Customization
 
-```javascript
-// Toggle dark mode
-toggleDarkMode(true);  // Enable
-toggleDarkMode(false); // Disable
-
-// Check current state
-if (isDarkMode()) {
-  console.log("Dark mode is active");
-}
-```
-
-Or add the class manually:
-```html
-<html class="nb-dark">
-```
-
-## 🎨 Customization
-
-Override CSS custom properties to match your brand:
+Override CSS custom properties to customize the theme:
 
 ```css
 :root {
-  --nb-primary: #000;
-  --nb-secondary: #fff;
-  --nb-accent: #3498db;
-  --nb-success: #2ecc71;
-  --nb-danger: #e74c3c;
-  --nb-warning: #f39c12;
-  --nb-border-width: 2px;
-  --nb-shadow-offset: 4px;
+  --nb-color-primary: #6200ea;
+  --nb-color-primary-hover: #3700b3;
+  --nb-border-radius: 0.5rem;
+  --nb-font-family: 'Inter', sans-serif;
 }
 ```
 
-## 📱 Browser Support
+## Documentation
 
-- ✅ Chrome (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
+- **[Full Documentation](docs/MINI-DOCUMENTATION.md)** - Comprehensive guide with all components and utilities
+- **[Live Example](examples/neubrutalism-mini-example.html)** - Demo page showcasing all components
 
-## 📋 Changelog
+## Browser Support
 
-- ✅ Comprehensive documentation
-- ✅ 5 new components (Skeleton, Timeline, Stepper, Rating, Empty State)
-- ✅ Improved responsive design across all screen sizes
-- ✅ Mobile navigation with slide-out menu
-- ✅ Dark mode support
-- ✅ Example templates
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-## 🤝 Contributing
-
-Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting a pull request.
-
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) for details.
-
-## 🌟 Credits
-
-Created by [Saksham Shekher](https://github.com/OshekharO)
-
-### Give a ⭐ if you like the project!
