@@ -2,277 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Neubrutalism CSS - Beautiful & Responsive</title>
-  <meta name="description" content="A classless-first CSS framework. Just write HTML, it looks beautiful and works everywhere.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neubrutalism CSS - Plug & Play</title>
   <link rel="stylesheet" href="neubrutalism.min.css">
 </head>
 <body>
 
   <header>
     <nav>
-      <strong>Neubrutalism</strong>
+      <strong>Neubrutalism CSS</strong>
       <div style="flex:1"></div>
       <a href="#">Home</a>
-      <a href="#demo">Demo</a>
       <a href="#features">Features</a>
-      <button onclick="document.documentElement.classList.toggle('nb-dark')" style="padding:0.5rem 1rem;font-size:0.875rem">🌓 Theme</button>
+      <a href="#demo">Demo</a>
+      <button onclick="document.documentElement.classList.toggle('nb-dark')">🌓</button>
     </nav>
   </header>
 
   <main>
 
     <!-- Hero -->
-    <section style="text-align:center;padding:var(--nb-space-3xl) 0">
-      <h1 style="max-width:none;margin-bottom:var(--nb-space-lg)">Beautiful. Responsive. Classless.</h1>
-      <p style="max-width:500px;margin:0 auto var(--nb-space-xl);font-size:1.125rem;color:var(--nb-text-muted)">
-        Write standard HTML. It looks stunning on every device. No classes to learn, no complex layouts to memorize.
-      </p>
-      <p style="max-width:none">
-        <button onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">See Demo</button>
-        <a href="docs/MINI-DOCUMENTATION.md" style="margin-left:var(--nb-space-md)">Read Docs</a>
+    <section>
+      <h1>Neubrutalism CSS</h1>
+      <p>A classless-first CSS framework. Just write HTML — it automatically looks great. No classes to memorize, no complex layouts to learn.</p>
+      <p>
+        <a href="#demo"><button>See Demo</button></a>
+        <a href="docs/MINI-DOCUMENTATION.md"><button>Documentation</button></a>
       </p>
     </section>
 
     <!-- Features -->
     <section id="features">
-      <h2 style="text-align:center;max-width:none">Why Developers Love It</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--nb-space-xl)">
-        <article>
-          <h3>🎨 Beautiful Design</h3>
-          <p>Crafted with attention to typography, spacing, and visual hierarchy. Your content deserves to look great.</p>
-        </article>
-        <article>
-          <h3>📱 Fully Responsive</h3>
-          <p>From mobile to desktop, everything adapts beautifully. Tables scroll, images scale, layouts reflow.</p>
-        </article>
-        <article>
-          <h3>🚀 Zero Classes</h3>
-          <p>Write semantic HTML. It's automatically styled. No <code>class="btn btn-primary"</code> nonsense.</p>
-        </article>
-        <article>
-          <h3>🌙 Dark Mode</h3>
-          <p>One class to enable dark mode. Or toggle it dynamically with JavaScript.</p>
-        </article>
-        <article>
-          <h3>⚡ Lightweight</h3>
-          <p>Only 16KB minified. No dependencies, no bloat. Just pure CSS.</p>
-        </article>
-        <article>
-          <h3>♿ Accessible</h3>
-          <p>Focus states, reduced motion support, proper contrast ratios. Built for everyone.</p>
-        </article>
-      </div>
+      <h2>Why Neubrutalism CSS?</h2>
+      
+      <article>
+        <h3>100% Classless</h3>
+        <p>Write standard HTML elements — headings, paragraphs, tables, forms — and they're automatically styled. No <code>class="btn btn-primary"</code> needed.</p>
+      </article>
+
+      <article>
+        <h3>Responsive by Default</h3>
+        <p>Tables scroll horizontally on mobile. Images scale automatically. Everything just works.</p>
+      </article>
+
+      <article>
+        <h3>Dark Mode</h3>
+        <p>Add a single class <code>nb-dark</code> or use <code>data-theme="dark"</code> to enable dark mode.</p>
+      </article>
+
+      <article>
+        <h3>Tiny Size</h3>
+        <p>Only ~11KB minified. No bloat, no dependencies, no JavaScript required.</p>
+      </article>
     </section>
 
     <!-- Demo -->
     <section id="demo">
-      <h2 style="text-align:center;max-width:none">Pure HTML Demo</h2>
-      <p style="text-align:center;max-width:none;color:var(--nb-text-muted)">No classes used below — just standard HTML elements</p>
+      <h2>Demo — Pure HTML, No Classes</h2>
 
       <h3>Typography</h3>
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
       <h3>Heading 3</h3>
-      <h4>Heading 4</h4>
-      <p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-      <p>Use <code>code snippets</code> inline or press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</p>
+      <p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>. Lorem ipsum dolor sit amet.</p>
+      <p>Here's a <code>code snippet</code> and a keyboard shortcut: <kbd>Ctrl</kbd> + <kbd>S</kbd></p>
 
+      <h3>Blockquote</h3>
       <blockquote>
-        <p>Design is not just what it looks like and feels like. Design is how it works.</p>
-        <cite>— Steve Jobs</cite>
+        <p>Good design is as little design as possible.</p>
+        <cite>— Dieter Rams</cite>
       </blockquote>
 
-      <pre><code>function fibonacci(n) {
-  if (n <= 1) return n;
-  return fibonacci(n - 1) + fibonacci(n - 2);
+      <h3>Code Block</h3>
+      <pre><code>function hello() {
+  console.log("Hello, World!");
+  return true;
 }
 
-console.log(fibonacci(10)); // 55</code></pre>
+hello();</code></pre>
 
       <h3>Buttons</h3>
       <p>
         <button>Primary Button</button>
-        <input type="submit" value="Submit">
-        <input type="button" value="Input Btn">
-        <input type="reset" value="Reset">
+        <input type="submit" value="Submit Input">
+        <input type="button" value="Input Button">
       </p>
-      <p><button disabled>Disabled</button></p>
 
-      <h3>Form</h3>
+      <h3>Form Elements</h3>
       <form>
         <fieldset>
-          <legend>Contact Form</legend>
-          
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--nb-space-lg)">
-            <div>
-              <label for="name">Name</label>
-              <input type="text" id="name" placeholder="Your name">
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="your@email.com">
-            </div>
-          </div>
+          <legend>Sample Form</legend>
           
           <p>
-            <label for="role">Role</label>
-            <select id="role">
-              <option>Select a role...</option>
-              <option>Developer</option>
-              <option>Designer</option>
-              <option>Manager</option>
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+          </p>
+          
+          <p>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+          </p>
+          
+          <p>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••">
+          </p>
+          
+          <p>
+            <label for="country">Country</label>
+            <select id="country">
+              <option>United States</option>
+              <option>Canada</option>
+              <option>United Kingdom</option>
+              <option>Germany</option>
+              <option>France</option>
             </select>
           </p>
           
           <p>
             <label for="message">Message</label>
-            <textarea id="message" placeholder="Tell us about your project..."></textarea>
+            <textarea id="message" placeholder="Write your message..."></textarea>
           </p>
           
           <p>
-            <label for="budget">Budget: $50,000</label>
-            <input type="range" id="budget" min="0" max="100000" value="50000">
+            <label for="volume">Volume</label>
+            <input type="range" id="volume" min="0" max="100" value="50">
           </p>
           
           <p>
-            <label><input type="checkbox" checked> I agree to the terms</label>
+            <label>
+              <input type="checkbox" checked> I agree to the terms
+            </label>
           </p>
           
           <p>
-            <label>Priority:</label><br>
-            <label><input type="radio" name="priority" checked> Normal</label><br>
-            <label><input type="radio" name="priority"> High</label><br>
-            <label><input type="radio" name="priority"> Urgent</label>
+            <label>Preferred contact:</label><br>
+            <label><input type="radio" name="contact" checked> Email</label>
+            <label><input type="radio" name="contact"> Phone</label>
           </p>
           
           <p>
-            <button type="submit">Send Message</button>
-            <button type="reset">Clear</button>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
           </p>
         </fieldset>
       </form>
 
       <h3>Table</h3>
       <table>
-        <caption>Team Members</caption>
+        <caption>User List</caption>
         <thead>
           <tr>
             <th>Name</th>
+            <th>Email</th>
             <th>Role</th>
-            <th>Department</th>
             <th>Status</th>
             <th>Joined</th>
-            <th>Rating</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Alice Johnson</td>
-            <td>Lead Developer</td>
-            <td>Engineering</td>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>Admin</td>
             <td>Active</td>
-            <td>Jan 2022</td>
-            <td>⭐⭐⭐⭐⭐</td>
+            <td>Jan 15, 2024</td>
           </tr>
           <tr>
-            <td>Bob Smith</td>
-            <td>UI Designer</td>
-            <td>Design</td>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>Editor</td>
             <td>Active</td>
-            <td>Mar 2022</td>
-            <td>⭐⭐⭐⭐</td>
+            <td>Feb 22, 2024</td>
           </tr>
           <tr>
-            <td>Carol White</td>
-            <td>PM</td>
-            <td>Product</td>
-            <td>On Leave</td>
-            <td>Jun 2022</td>
-            <td>⭐⭐⭐⭐⭐</td>
+            <td>Bob Johnson</td>
+            <td>bob@example.com</td>
+            <td>User</td>
+            <td>Pending</td>
+            <td>Mar 10, 2024</td>
           </tr>
           <tr>
-            <td>David Brown</td>
-            <td>Backend Dev</td>
-            <td>Engineering</td>
-            <td>Active</td>
-            <td>Sep 2023</td>
-            <td>⭐⭐⭐⭐</td>
+            <td>Alice Brown</td>
+            <td>alice@example.com</td>
+            <td>User</td>
+            <td>Inactive</td>
+            <td>Apr 5, 2024</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="6">4 members total • 3 active</td>
+            <td colspan="5">Showing 4 of 12 users</td>
           </tr>
         </tfoot>
       </table>
 
       <h3>Lists</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--nb-space-xl)">
-        <div>
-          <h4>Unordered</h4>
+      <ul>
+        <li>Unordered list item</li>
+        <li>Another item
           <ul>
-            <li>Clean design</li>
-            <li>Easy to use</li>
-            <li>Responsive
-              <ul>
-                <li>Mobile</li>
-                <li>Desktop</li>
-              </ul>
-            </li>
-            <li>Accessible</li>
+            <li>Nested item</li>
+            <li>Another nested item</li>
           </ul>
-        </div>
-        <div>
-          <h4>Ordered</h4>
-          <ol>
-            <li>Include CSS</li>
-            <li>Write HTML</li>
-            <li>Deploy</li>
-          </ol>
-        </div>
-        <div>
-          <h4>Description</h4>
-          <dl>
-            <dt>Classless</dt>
-            <dd>No classes needed for styling</dd>
-            <dt>Responsive</dt>
-            <dd>Works on all screen sizes</dd>
-          </dl>
-        </div>
-      </div>
+        </li>
+        <li>Last item</li>
+      </ul>
+
+      <ol>
+        <li>First step</li>
+        <li>Second step</li>
+        <li>Third step</li>
+      </ol>
+
+      <h3>Description List</h3>
+      <dl>
+        <dt>Term 1</dt>
+        <dd>Description for term 1</dd>
+        <dt>Term 2</dt>
+        <dd>Description for term 2</dd>
+        <dt>Term 3</dt>
+        <dd>Description for term 3</dd>
+      </dl>
 
       <h3>Accordion</h3>
       <details open>
-        <summary>How does it work?</summary>
-        <p>The library styles all HTML elements directly using semantic selectors. Just write standard HTML and it automatically looks great.</p>
+        <summary>What is Neubrutalism CSS?</summary>
+        <p>A classless-first CSS framework where you just write HTML and it looks great. No classes needed for basic styling.</p>
       </details>
+      
       <details>
-        <summary>Is it really classless?</summary>
-        <p>Yes! All basic styling uses element selectors. You never need classes for buttons, forms, tables, or any common element.</p>
+        <summary>How do I use it?</summary>
+        <p>Simply include the CSS file in your HTML and start writing standard HTML elements. Everything is automatically styled.</p>
       </details>
+      
       <details>
-        <summary>How do I enable dark mode?</summary>
-        <p>Add the <code>nb-dark</code> class to your <code>&lt;html&gt;</code> element, or use <code>data-theme="dark"</code>.</p>
+        <summary>Is it responsive?</summary>
+        <p>Yes! Tables scroll on mobile, images scale automatically, and all form elements are touch-friendly.</p>
       </details>
 
       <h3>Progress</h3>
-      <p><label>Project completion: 75%</label></p>
-      <progress value="75" max="100"></progress>
-
-      <h3>Figure</h3>
-      <figure>
-        <img src="https://picsum.photos/800/400" alt="Random sample image">
-        <figcaption>Images are responsive by default — they scale to fit their container</figcaption>
-      </figure>
+      <progress value="70" max="100">70%</progress>
 
     </section>
 
   </main>
 
   <footer>
-    <p><strong>Neubrutalism CSS</strong> — Beautiful. Responsive. Classless.</p>
-    <p>Write HTML. Works everywhere. Zero classes.</p>
+    <p><strong>Neubrutalism CSS</strong> — A classless-first CSS framework</p>
     <p>MIT License</p>
   </footer>
 
