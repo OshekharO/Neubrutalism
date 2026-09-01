@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="nb-auto-dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -466,24 +466,12 @@ greet("World");</code></pre>
 
   <script>
     function toggleTheme() {
-      var html = document.documentElement;
-      var isDark = html.classList.contains('nb-dark');
-      var isAuto = html.classList.contains('nb-auto-dark');
-      
-      if (isDark) {
-        html.classList.remove('nb-dark');
-        html.classList.add('nb-auto-dark');
-      } else if (isAuto) {
-        html.classList.remove('nb-auto-dark');
-        html.classList.add('nb-dark');
-      } else {
-        html.classList.add('nb-dark');
-      }
+      document.documentElement.classList.toggle('nb-dark');
     }
     
     function toggleNav() {
-      var menu = document.querySelector('.nb-navbar-menu');
-      menu.classList.toggle('nb-nav-open');
+      document.querySelector('.nb-navbar-menu').classList.toggle('nb-nav-open');
+      document.querySelector('.nb-navbar-toggle').classList.toggle('nb-nav-open');
     }
   </script>
 

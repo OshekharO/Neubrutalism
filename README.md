@@ -7,7 +7,7 @@ A minimal CSS framework inspired by [Milligram](https://github.com/milligram/mil
 - **Lightweight**: ~8KB minified, ~32KB unminified
 - **No dependencies**: Pure CSS, no JavaScript required
 - **Responsive**: Mobile-first design with flexible 12-column grid
-- **Dark mode**: Automatic (system preference) or manual toggle
+- **Dark mode**: Manual toggle via CSS class
 - **Customizable**: CSS custom properties for easy theming
 - **Accessible**: Focus-visible states, reduced motion support, screen reader utilities
 - **Semantic**: Works with plain HTML elements, optional utility classes
@@ -35,21 +35,16 @@ A minimal CSS framework inspired by [Milligram](https://github.com/milligram/mil
 
 ## Dark Mode
 
-### Automatic (System Preference)
-```html
-<html class="nb-auto-dark">
+### Toggle
+```javascript
+document.documentElement.classList.toggle('nb-dark');
 ```
 
-### Manual Toggle
+Or add the class directly:
 ```html
 <html class="nb-dark">
 <!-- or -->
 <html data-theme="dark">
-```
-
-### JavaScript Toggle
-```javascript
-document.documentElement.classList.toggle('nb-dark');
 ```
 
 ## Components

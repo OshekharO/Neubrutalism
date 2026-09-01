@@ -28,7 +28,7 @@ A minimal CSS framework inspired by Milligram, Pico.css, Skeleton, Chota, and Wa
 - **Lightweight**: ~8KB minified, ~27KB unminified
 - **No dependencies**: Pure CSS, no JavaScript required
 - **Responsive**: Mobile-first design with flexible grid
-- **Dark mode**: Automatic (system preference) or manual toggle
+- **Dark mode**: Manual toggle via CSS class
 - **Customizable**: CSS custom properties for easy theming
 - **Accessible**: Focus-visible states, reduced motion support
 - **Semantic**: Works with plain HTML elements
@@ -81,30 +81,16 @@ npm install neubrutalism-css
 
 ## Dark Mode
 
-### Automatic (System Preference)
-Add the `nb-auto-dark` class to your `<html>` tag:
-```html
-<html class="nb-auto-dark">
+### Toggle
+```javascript
+document.documentElement.classList.toggle('nb-dark');
 ```
 
-### Manual Toggle
-Add the `nb-dark` class or `data-theme="dark"` attribute:
+Or add the class directly:
 ```html
 <html class="nb-dark">
 <!-- or -->
 <html data-theme="dark">
-```
-
-### JavaScript Toggle
-```javascript
-// Enable dark mode
-document.documentElement.classList.add('nb-dark');
-
-// Disable dark mode
-document.documentElement.classList.remove('nb-dark');
-
-// Toggle
-document.documentElement.classList.toggle('nb-dark');
 ```
 
 ---
