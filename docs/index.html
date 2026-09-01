@@ -189,19 +189,27 @@
     }
     
     .docs-example-code {
-      background: var(--nb-color-bg-alt);
-      border-top: 1px solid var(--nb-color-border);
+      background: #1e293b;
       padding: 1rem 1.5rem;
       font-size: 0.875rem;
       line-height: 1.7;
       overflow-x: auto;
     }
     
+    .docs-example-code pre {
+      margin: 0;
+      padding: 0;
+      background: none;
+      border: none;
+    }
+    
     .docs-example-code code {
       background: none;
       border: none;
       padding: 0;
-      color: var(--nb-color-text);
+      color: #e2e8f0;
+      font-family: var(--nb-mono-font-family);
+      white-space: pre;
     }
     
     /* Callouts */
@@ -381,59 +389,41 @@
       <section id="introduction">
         <h1>Introduction</h1>
         <p class="docs-lead">
-          Neubrutalism CSS is a lightweight, classless-first CSS framework that makes your HTML look beautiful without any classes.
+          Neubrutalism CSS is a lightweight CSS framework that styles standard semantic HTML elements automatically - no classes needed for basic styling.
         </p>
         
         <div class="docs-callout">
-          <p><strong>Philosophy:</strong> Write standard semantic HTML. It automatically looks great. No classes needed for basic styling.</p>
+          <p><strong>Philosophy:</strong> Write standard HTML elements like <code>&lt;button&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;h1&gt;</code> - they're automatically styled. Use utility classes only for variations and layouts.</p>
         </div>
         
         <h2 id="quickstart">Quick Start</h2>
-        <p>Include the CSS file in your HTML and start writing:</p>
+        <p>Include the CSS file in your HTML and start writing standard HTML elements:</p>
         
         <div class="docs-example">
           <div class="docs-example-code">
-            <code>&lt;!DOCTYPE html&gt;
+            <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;My Website&lt;/title&gt;
-  &lt;link rel="stylesheet" href="neubrutalism.min.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;header&gt;
-    &lt;nav&gt;
-      &lt;strong&gt;My Brand&lt;/strong&gt;
-      &lt;a href="#"&gt;Home&lt;/a&gt;
-      &lt;a href="#"&gt;About&lt;/a&gt;
-    &lt;/nav&gt;
-  &lt;/header&gt;
-  &lt;main&gt;
-    &lt;h1&gt;Welcome&lt;/h1&gt;
-    &lt;p&gt;Your content here.&lt;/p&gt;
-    &lt;button&gt;Click Me&lt;/button&gt;
-  &lt;/main&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code>
-          </div>
-        </div>
-        
-        <h2 id="dark-mode">Dark Mode</h2>
-        <p>Enable dark mode by adding a single class:</p>
-        
-        <div class="docs-example">
-          <div class="docs-example-code">
-            <code>&lt;html class="nb-dark"&gt;
-&lt;!-- or --&gt;
-&lt;html data-theme="dark"&gt;</code>
-          </div>
-        </div>
-        
-        <p>Toggle dynamically with JavaScript:</p>
-        <div class="docs-example">
-          <div class="docs-example-code">
-             <code>document.documentElement.classList.toggle('nb-dark');</code>
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+    &lt;link rel="stylesheet" href="neubrutalism.min.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;nav&gt;
+        &lt;strong&gt;My Brand&lt;/strong&gt;
+        &lt;a href="#"&gt;Home&lt;/a&gt;
+        &lt;a href="#"&gt;About&lt;/a&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;h1&gt;Welcome&lt;/h1&gt;
+      &lt;p&gt;Your content here.&lt;/p&gt;
+      &lt;button&gt;Click Me&lt;/button&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -465,18 +455,18 @@
         <h3>Usage Example</h3>
         <div class="docs-example">
           <div class="docs-example-code">
-            <code>&lt;!DOCTYPE html&gt;
+            <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;My Website&lt;/title&gt;
-  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.min.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Hello, World!&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code>
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.min.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -491,10 +481,10 @@
         
         <div class="docs-example">
           <div class="docs-example-code">
-            <code>&lt;!DOCTYPE html&gt;
+            <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   ...
-&lt;/html&gt;</code>
+&lt;/html&gt;</code></pre>
           </div>
         </div>
         
@@ -503,7 +493,7 @@
         
         <div class="docs-example">
           <div class="docs-example-code">
-            <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>
+            <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
           </div>
         </div>
         
@@ -519,9 +509,30 @@
         
         <div class="docs-example">
           <div class="docs-example-code">
-            <code>&lt;html class="nb-dark"&gt;
+            <pre><code>&lt;html class="nb-dark"&gt;
 &lt;!-- or --&gt;
-&lt;html data-theme="dark"&gt;</code>
+&lt;html data-theme="dark"&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Dark Mode -->
+      <section id="dark-mode">
+        <h2>Dark Mode</h2>
+        <p>Enable dark mode by adding a single class:</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-code">
+            <pre><code>&lt;html class="nb-dark"&gt;
+&lt;!-- or --&gt;
+&lt;html data-theme="dark"&gt;</code></pre>
+          </div>
+        </div>
+        
+        <p>Toggle dynamically with JavaScript:</p>
+        <div class="docs-example">
+          <div class="docs-example-code">
+            <pre><code>document.documentElement.classList.toggle('nb-dark');</code></pre>
           </div>
         </div>
       </section>
@@ -538,9 +549,9 @@
             </div>
           </div>
           <div class="docs-example-code">
-            <code>&lt;div class="nb-container"&gt;
+            <pre><code>&lt;div class="nb-container"&gt;
   Your content here
-&lt;/div&gt;</code>
+&lt;/div&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -563,10 +574,10 @@
             </div>
           </div>
           <div class="docs-example-code">
-            <code>&lt;div class="nb-row"&gt;
+            <pre><code>&lt;div class="nb-row"&gt;
   &lt;div class="nb-col-6"&gt;...&lt;/div&gt;
   &lt;div class="nb-col-6"&gt;...&lt;/div&gt;
-&lt;/div&gt;</code>
+&lt;/div&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -627,11 +638,11 @@
             </div>
           </div>
           <div class="docs-example-code">
-            <code>&lt;button&gt;Default&lt;/button&gt;
+            <pre><code>&lt;button&gt;Default&lt;/button&gt;
 &lt;button class="nb-btn-outline"&gt;Outline&lt;/button&gt;
 &lt;button class="nb-btn-secondary"&gt;Secondary&lt;/button&gt;
 &lt;button class="nb-btn-success"&gt;Success&lt;/button&gt;
-&lt;button class="nb-btn-danger"&gt;Danger&lt;/button&gt;</code>
+&lt;button class="nb-btn-danger"&gt;Danger&lt;/button&gt;</code></pre>
           </div>
         </div>
         
@@ -700,7 +711,7 @@
             </div>
           </div>
           <div class="docs-example-code">
-            <code>&lt;div class="nb-card"&gt;
+            <pre><code>&lt;div class="nb-card"&gt;
   &lt;div class="nb-card-header"&gt;Header&lt;/div&gt;
   &lt;div class="nb-card-body"&gt;
     &lt;h3 class="nb-card-title"&gt;Title&lt;/h3&gt;
@@ -708,7 +719,7 @@
     &lt;button&gt;Action&lt;/button&gt;
   &lt;/div&gt;
   &lt;div class="nb-card-footer"&gt;Footer&lt;/div&gt;
-&lt;/div&gt;</code>
+&lt;/div&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -749,7 +760,7 @@
         <p>A responsive navbar that collapses to hamburger menu on mobile.</p>
         <div class="docs-example">
           <div class="docs-example-code">
-            <code>&lt;nav class="nb-navbar"&gt;
+            <pre><code>&lt;nav class="nb-navbar"&gt;
   &lt;a href="#" class="nb-navbar-brand"&gt;Brand&lt;/a&gt;
   &lt;button class="nb-navbar-toggle" onclick="toggleNav()"&gt;
     &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
@@ -760,7 +771,7 @@
       &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
-&lt;/nav&gt;</code>
+&lt;/nav&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -778,10 +789,10 @@
             </div>
           </div>
           <div class="docs-example-code">
-            <code>&lt;div class="nb-avatar nb-avatar-sm"&gt;SM&lt;/div&gt;
+            <pre><code>&lt;div class="nb-avatar nb-avatar-sm"&gt;SM&lt;/div&gt;
 &lt;div class="nb-avatar"&gt;JD&lt;/div&gt;
 &lt;div class="nb-avatar nb-avatar-lg"&gt;LG&lt;/div&gt;
-&lt;div class="nb-avatar nb-avatar-xl"&gt;XL&lt;/div&gt;</code>
+&lt;div class="nb-avatar nb-avatar-xl"&gt;XL&lt;/div&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -804,7 +815,7 @@
         <p>CSS-only modals using the <code>:target</code> pseudo-class.</p>
         <div class="docs-example">
           <div class="docs-example-code">
-            &lt;a href="#myModal" class="nb-btn"&gt;Open Modal&lt;/a&gt;
+            <pre><code>&lt;a href="#myModal" class="nb-btn"&gt;Open Modal&lt;/a&gt;
 
 &lt;div id="myModal" class="nb-modal"&gt;
   &lt;div class="nb-modal-dialog"&gt;
@@ -820,7 +831,8 @@
       &lt;button&gt;Confirm&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
         </div>
       </section>
       
@@ -831,13 +843,13 @@
         
         <div class="docs-example">
           <div class="docs-example-code">
-            <code>:root {
+            <pre><code>:root {
   --nb-color-primary: #6200ea;
   --nb-color-bg: #fafafa;
   --nb-color-text: #1a1a1a;
   --nb-border-radius: 0.75rem;
   --nb-font-family: 'Inter', sans-serif;
-}</code>
+}</code></pre>
           </div>
         </div>
         
