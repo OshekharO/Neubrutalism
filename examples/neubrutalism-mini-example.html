@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neubrutalism CSS - Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Neubrutalism CSS - Full Demo</title>
   <link rel="stylesheet" href="../neubrutalism.min.css">
 </head>
 <body>
@@ -13,19 +13,20 @@
       <strong>Neubrutalism CSS</strong>
       <div style="flex:1"></div>
       <a href="#typography">Typography</a>
+      <a href="#buttons">Buttons</a>
       <a href="#forms">Forms</a>
       <a href="#tables">Tables</a>
-      <a href="#components">Components</a>
-      <button onclick="document.documentElement.classList.toggle('nb-dark')">🌓 Toggle Dark</button>
+      <a href="#components">More</a>
+      <button onclick="document.documentElement.classList.toggle('nb-dark')" style="padding:0.5rem 1rem;font-size:0.875rem">🌓</button>
     </nav>
   </header>
 
   <main>
 
     <!-- Hero -->
-    <section>
-      <h1>Neubrutalism CSS</h1>
-      <p>A classless-first CSS framework. Write HTML, it looks great. No classes needed for basic styling.</p>
+    <section style="text-align:center;padding:var(--nb-space-2xl) 0">
+      <h1 style="max-width:none">Classless-First CSS Framework</h1>
+      <p style="max-width:500px;margin:0 auto;color:var(--nb-text-muted)">Write HTML. It looks beautiful. No classes needed. Fully responsive.</p>
     </section>
 
     <!-- Typography -->
@@ -39,45 +40,44 @@
       <h5>Heading 5</h5>
       <h6>Heading 6</h6>
       
-      <p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       
-      <p>Here's some <code>inline code</code> and a keyboard shortcut: <kbd>Ctrl</kbd> + <kbd>C</kbd></p>
+      <p>Inline <code>code</code> and keyboard <kbd>Ctrl</kbd> + <kbd>C</kbd></p>
       
       <blockquote>
-        <p>Design is not just what it looks like and feels like. Design is how it works.</p>
-        <cite>— Steve Jobs</cite>
+        <p>The best design is the simplest one that works.</p>
+        <cite>— Albert Einstein</cite>
       </blockquote>
       
-      <pre><code>function greet(name) {
-  console.log(`Hello, ${name}!`);
-  return true;
-}
+      <pre><code>const greet = (name) => {
+  return `Hello, ${name}!`;
+};
 
-greet("World");</code></pre>
+console.log(greet("World"));</code></pre>
 
       <h3>Lists</h3>
       <ul>
-        <li>Unordered item</li>
-        <li>Another item
+        <li>Clean and minimal</li>
+        <li>Easy to customize</li>
+        <li>Accessible by default
           <ul>
-            <li>Nested item</li>
-            <li>Another nested</li>
+            <li>Focus states</li>
+            <li>Reduced motion</li>
           </ul>
         </li>
-        <li>Last item</li>
       </ul>
 
       <ol>
-        <li>First step</li>
-        <li>Second step</li>
-        <li>Third step</li>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
       </ol>
 
       <dl>
-        <dt>Term 1</dt>
-        <dd>Description for term 1</dd>
-        <dt>Term 2</dt>
-        <dd>Description for term 2</dd>
+        <dt>Term</dt>
+        <dd>Definition of the term</dd>
+        <dt>Another term</dt>
+        <dd>Another definition</dd>
       </dl>
     </section>
 
@@ -85,14 +85,12 @@ greet("World");</code></pre>
     <section id="buttons">
       <h2>Buttons</h2>
       <p>
-        <button>Primary Button</button>
-        <input type="submit" value="Submit Input">
-        <input type="button" value="Input Button">
+        <button>Primary</button>
+        <input type="submit" value="Submit">
+        <input type="button" value="Button">
         <input type="reset" value="Reset">
       </p>
-      <p>
-        <button disabled>Disabled Button</button>
-      </p>
+      <p><button disabled>Disabled</button></p>
     </section>
 
     <!-- Forms -->
@@ -101,16 +99,22 @@ greet("World");</code></pre>
       
       <form>
         <fieldset>
-          <legend>Contact Form</legend>
+          <legend>User Registration</legend>
+          
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--nb-space-lg);margin-bottom:var(--nb-space-lg)">
+            <div>
+              <label for="firstname">First Name</label>
+              <input type="text" id="firstname" placeholder="John">
+            </div>
+            <div>
+              <label for="lastname">Last Name</label>
+              <input type="text" id="lastname" placeholder="Doe">
+            </div>
+          </div>
           
           <p>
-            <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="John Doe">
-          </p>
-          
-          <p>
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="john@example.com">
+            <label for="useremail">Email</label>
+            <input type="email" id="useremail" placeholder="john@example.com">
           </p>
           
           <p>
@@ -121,41 +125,38 @@ greet("World");</code></pre>
           <p>
             <label for="country">Country</label>
             <select id="country">
-              <option>Select a country...</option>
+              <option>Select...</option>
               <option>United States</option>
-              <option>Canada</option>
               <option>United Kingdom</option>
-              <option>Germany</option>
-              <option>France</option>
+              <option>Canada</option>
+              <option>Australia</option>
             </select>
           </p>
           
           <p>
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Write your message..."></textarea>
+            <label for="bio">Bio</label>
+            <textarea id="bio" placeholder="Tell us about yourself..."></textarea>
           </p>
           
           <p>
-            <label for="volume">Volume: 50%</label>
-            <input type="range" id="volume" min="0" max="100" value="50">
+            <label for="experience">Experience: 5 years</label>
+            <input type="range" id="experience" min="0" max="20" value="5">
           </p>
           
           <p>
-            <label>
-              <input type="checkbox" checked> I agree to the terms and conditions
-            </label>
+            <label><input type="checkbox" checked> Subscribe to newsletter</label>
           </p>
           
           <p>
-            <label>Preferred contact method:</label><br>
-            <label><input type="radio" name="contact" checked> Email</label><br>
-            <label><input type="radio" name="contact"> Phone</label><br>
-            <label><input type="radio" name="contact"> SMS</label>
+            <label>Role:</label><br>
+            <label><input type="radio" name="role" checked> Developer</label><br>
+            <label><input type="radio" name="role"> Designer</label><br>
+            <label><input type="radio" name="role"> Manager</label>
           </p>
           
           <p>
-            <button type="submit">Send Message</button>
-            <button type="reset">Clear Form</button>
+            <button type="submit">Create Account</button>
+            <button type="reset">Reset</button>
           </p>
         </fieldset>
       </form>
@@ -164,65 +165,77 @@ greet("World");</code></pre>
     <!-- Tables -->
     <section id="tables">
       <h2>Tables</h2>
-      <p>Tables are responsive by default — scroll horizontally on mobile.</p>
+      <p style="color:var(--nb-text-muted)">Tables scroll horizontally on small screens. Try resizing!</p>
       
       <table>
         <caption>Employee Directory</caption>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Department</th>
-            <th>Role</th>
+            <th>Position</th>
+            <th>Salary</th>
             <th>Status</th>
             <th>Start Date</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>John Doe</td>
-            <td>john@example.com</td>
+            <td>001</td>
+            <td>Alice Johnson</td>
+            <td>alice@company.com</td>
             <td>Engineering</td>
             <td>Senior Developer</td>
+            <td>$120,000</td>
             <td>Active</td>
-            <td>Jan 15, 2022</td>
+            <td>2022-01-15</td>
           </tr>
           <tr>
-            <td>Jane Smith</td>
-            <td>jane@example.com</td>
+            <td>002</td>
+            <td>Bob Smith</td>
+            <td>bob@company.com</td>
             <td>Design</td>
             <td>Lead Designer</td>
+            <td>$110,000</td>
             <td>Active</td>
-            <td>Mar 22, 2022</td>
+            <td>2022-03-22</td>
           </tr>
           <tr>
-            <td>Bob Johnson</td>
-            <td>bob@example.com</td>
-            <td>Marketing</td>
-            <td>Manager</td>
-            <td>Active</td>
-            <td>Jun 10, 2022</td>
+            <td>003</td>
+            <td>Carol White</td>
+            <td>carol@company.com</td>
+            <td>Product</td>
+            <td>Product Manager</td>
+            <td>$115,000</td>
+            <td>On Leave</td>
+            <td>2022-06-10</td>
           </tr>
           <tr>
-            <td>Alice Brown</td>
-            <td>alice@example.com</td>
+            <td>004</td>
+            <td>David Brown</td>
+            <td>david@company.com</td>
             <td>Engineering</td>
             <td>Junior Developer</td>
-            <td>On Leave</td>
-            <td>Sep 5, 2023</td>
+            <td>$80,000</td>
+            <td>Active</td>
+            <td>2023-09-05</td>
           </tr>
           <tr>
-            <td>Charlie Wilson</td>
-            <td>charlie@example.com</td>
-            <td>Sales</td>
-            <td>Representative</td>
+            <td>005</td>
+            <td>Eva Martinez</td>
+            <td>eva@company.com</td>
+            <td>Marketing</td>
+            <td>Marketing Lead</td>
+            <td>$105,000</td>
             <td>Active</td>
-            <td>Nov 18, 2023</td>
+            <td>2023-11-18</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="6">Showing 5 of 24 employees</td>
+            <td colspan="8">Showing 5 of 24 employees | Page 1 of 5</td>
           </tr>
         </tfoot>
       </table>
@@ -232,45 +245,44 @@ greet("World");</code></pre>
     <section id="components">
       <h2>Components</h2>
       
-      <h3>Accordion</h3>
+      <h3>Accordion / Details</h3>
       <details open>
-        <summary>What is Neubrutalism CSS?</summary>
-        <p>Neubrutalism CSS is a classless-first CSS framework. You write standard HTML elements and they're automatically styled. No classes needed for basic styling.</p>
+        <summary>What makes this different?</summary>
+        <p>Unlike Bootstrap or Tailwind, you don't need to memorize classes. Just write <code>&lt;button&gt;</code> and it's styled. Write <code>&lt;table&gt;</code> and it's responsive.</p>
       </details>
       
       <details>
-        <summary>How do I use it?</summary>
-        <p>Simply include the CSS file in your HTML and start writing standard HTML. Everything from headings to tables to forms is automatically styled.</p>
+        <summary>Can I customize it?</summary>
+        <p>Absolutely! Override CSS variables to change colors, fonts, spacing, and more. The library is designed to be easily customizable.</p>
       </details>
       
       <details>
-        <summary>Is it responsive?</summary>
-        <p>Yes! Tables scroll horizontally on mobile, images scale automatically, and all form elements are touch-friendly.</p>
-      </details>
-      
-      <details>
-        <summary>How do I enable dark mode?</summary>
-        <p>Add the <code>nb-dark</code> class to your <code>&lt;html&gt;</code> element, or use <code>data-theme="dark"</code>.</p>
+        <summary>Does it work with React/Vue/Angular?</summary>
+        <p>Yes! Since it's just CSS with element selectors, it works with any framework or no framework at all.</p>
       </details>
 
       <h3>Progress</h3>
-      <p>
-        <label>Project Progress</label>
-      </p>
-      <progress value="75" max="100">75%</progress>
+      <p><label>Tasks completed: 8 of 10</label></p>
+      <progress value="80" max="100"></progress>
 
       <h3>Figure with Caption</h3>
       <figure>
-        <img src="https://picsum.photos/600/300" alt="Sample image">
-        <figcaption>A sample image with automatic responsive sizing</figcaption>
+        <img src="https://picsum.photos/800/400?random=1" alt="Sample">
+        <figcaption>A responsive image with automatic caption styling</figcaption>
       </figure>
+
+      <h3>Aside / Sidebar</h3>
+      <aside>
+        <h4>💡 Pro Tip</h4>
+        <p>Combine this library with CSS Grid or Flexbox for layouts. The library handles component styling, you handle layout.</p>
+      </aside>
     </section>
 
   </main>
 
   <footer>
-    <p><strong>Neubrutalism CSS</strong> — A classless-first CSS framework</p>
-    <p>Write HTML. It looks great. No classes needed.</p>
+    <p><strong>Neubrutalism CSS</strong> — Beautiful. Responsive. Classless.</p>
+    <p>No classes. No complexity. Just HTML.</p>
     <p>MIT License</p>
   </footer>
 
