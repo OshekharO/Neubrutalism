@@ -3,33 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neubrutalism CSS - Demo</title>
+  <title>Neubrutalism CSS - Example</title>
   <link rel="stylesheet" href="../neubrutalism.min.css">
+  <style>
+    .example-section { margin-bottom: 3rem; padding: 2rem; border: 1px dashed var(--nb-color-border); border-radius: var(--nb-border-radius); }
+    .example-section h2 { margin-top: 0; }
+    .color-box { display: inline-block; width: 2rem; height: 2rem; border-radius: var(--nb-border-radius); border: 1px solid var(--nb-color-border); vertical-align: middle; margin-right: 0.5rem; }
+  </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <strong>Neubrutalism CSS</strong>
-      <div style="flex:1"></div>
-      <a href="#typography">Typography</a>
-      <a href="#forms">Forms</a>
-      <a href="#tables">Tables</a>
-      <a href="#components">Components</a>
-      <button onclick="document.documentElement.classList.toggle('nb-dark')">🌓 Toggle Dark</button>
-    </nav>
-  </header>
+  <!-- Navbar -->
+  <nav class="nb-navbar">
+    <a href="#" class="nb-navbar-brand">Neubrutalism CSS</a>
+    <button class="nb-navbar-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nb-navbar-menu">
+      <ul class="nb-navbar-nav">
+        <li><a href="#" class="nb-nav-active">Home</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#components">Components</a></li>
+      </ul>
+      <button class="nb-btn nb-btn-sm" onclick="toggleTheme()">Toggle Dark</button>
+    </div>
+  </nav>
 
-  <main>
+  <div class="nb-container" style="padding-top: 2rem;">
 
     <!-- Hero -->
-    <section>
+    <div class="text-center" style="padding: 3rem 0;">
       <h1>Neubrutalism CSS</h1>
-      <p>A classless-first CSS framework. Write HTML, it looks great. No classes needed for basic styling.</p>
-    </section>
+      <p class="text-large text-muted">A minimal CSS framework for building beautiful, responsive websites.</p>
+      <div class="nb-flex nb-justify-center" style="gap: 1rem; margin-top: 2rem;">
+        <a href="#get-started" class="nb-btn nb-btn-lg">Get Started</a>
+        <a href="#documentation" class="nb-btn nb-btn-outline nb-btn-lg">Documentation</a>
+      </div>
+    </div>
 
-    <!-- Typography -->
-    <section id="typography">
+    <!-- Typography Section -->
+    <div class="example-section" id="typography">
       <h2>Typography</h2>
       
       <h1>Heading 1</h1>
@@ -39,14 +56,19 @@
       <h5>Heading 5</h5>
       <h6>Heading 6</h6>
       
-      <p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>This is a <strong>paragraph</strong> with <a href="#">a link</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       
-      <p>Here's some <code>inline code</code> and a keyboard shortcut: <kbd>Ctrl</kbd> + <kbd>C</kbd></p>
+      <p class="text-muted">This is muted text using <code>.text-muted</code></p>
+      <p class="text-small">This is small text using <code>.text-small</code></p>
+      <p class="text-bold">This is bold text using <code>.text-bold</code></p>
+      <p class="text-uppercase">This is uppercase text using <code>.text-uppercase</code></p>
       
       <blockquote>
         <p>Design is not just what it looks like and feels like. Design is how it works.</p>
-        <cite>— Steve Jobs</cite>
+        <footer>— Steve Jobs</footer>
       </blockquote>
+      
+      <p>Use the <code>console.log()</code> function to print to the console. Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</p>
       
       <pre><code>function greet(name) {
   console.log(`Hello, ${name}!`);
@@ -54,225 +76,404 @@
 }
 
 greet("World");</code></pre>
+    </div>
 
-      <h3>Lists</h3>
-      <ul>
-        <li>Unordered item</li>
-        <li>Another item
-          <ul>
-            <li>Nested item</li>
-            <li>Another nested</li>
-          </ul>
-        </li>
-        <li>Last item</li>
-      </ul>
-
-      <ol>
-        <li>First step</li>
-        <li>Second step</li>
-        <li>Third step</li>
-      </ol>
-
-      <dl>
-        <dt>Term 1</dt>
-        <dd>Description for term 1</dd>
-        <dt>Term 2</dt>
-        <dd>Description for term 2</dd>
-      </dl>
-    </section>
-
-    <!-- Buttons -->
-    <section id="buttons">
+    <!-- Buttons Section -->
+    <div class="example-section" id="buttons">
       <h2>Buttons</h2>
-      <p>
-        <button>Primary Button</button>
-        <input type="submit" value="Submit Input">
-        <input type="button" value="Input Button">
-        <input type="reset" value="Reset">
-      </p>
-      <p>
-        <button disabled>Disabled Button</button>
-      </p>
-    </section>
+      
+      <h4>Default Buttons</h4>
+      <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
+        <button>Default</button>
+        <button class="nb-btn nb-btn-outline">Outline</button>
+        <button class="nb-btn nb-btn-secondary">Secondary</button>
+        <button class="nb-btn nb-btn-link">Link</button>
+      </div>
+      
+      <h4>Colored Buttons</h4>
+      <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
+        <button class="nb-btn nb-btn-success">Success</button>
+        <button class="nb-btn nb-btn-danger">Danger</button>
+      </div>
+      
+      <h4>Button Sizes</h4>
+      <div class="nb-flex nb-align-center nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
+        <button class="nb-btn nb-btn-sm">Small</button>
+        <button class="nb-btn">Default</button>
+        <button class="nb-btn nb-btn-lg">Large</button>
+      </div>
+      
+      <h4>Disabled Buttons</h4>
+      <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
+        <button disabled>Disabled</button>
+        <button class="nb-btn nb-btn-outline" disabled>Disabled Outline</button>
+      </div>
+      
+      <h4>Block Button</h4>
+      <button class="nb-btn nb-btn-block" style="margin-bottom: 1rem;">Block Button</button>
+      
+      <h4>Button Group</h4>
+      <div class="nb-btn-group">
+        <button class="nb-btn">Left</button>
+        <button class="nb-btn">Middle</button>
+        <button class="nb-btn">Right</button>
+      </div>
+    </div>
 
-    <!-- Forms -->
-    <section id="forms">
+    <!-- Forms Section -->
+    <div class="example-section" id="forms">
       <h2>Forms</h2>
       
-      <form>
-        <fieldset>
-          <legend>Contact Form</legend>
-          
-          <p>
-            <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="John Doe">
-          </p>
-          
-          <p>
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="john@example.com">
-          </p>
-          
-          <p>
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="••••••••">
-          </p>
-          
-          <p>
-            <label for="country">Country</label>
-            <select id="country">
-              <option>Select a country...</option>
-              <option>United States</option>
-              <option>Canada</option>
-              <option>United Kingdom</option>
-              <option>Germany</option>
-              <option>France</option>
-            </select>
-          </p>
-          
-          <p>
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Write your message..."></textarea>
-          </p>
-          
-          <p>
-            <label for="volume">Volume: 50%</label>
-            <input type="range" id="volume" min="0" max="100" value="50">
-          </p>
-          
-          <p>
-            <label>
-              <input type="checkbox" checked> I agree to the terms and conditions
-            </label>
-          </p>
-          
-          <p>
-            <label>Preferred contact method:</label><br>
-            <label><input type="radio" name="contact" checked> Email</label><br>
-            <label><input type="radio" name="contact"> Phone</label><br>
-            <label><input type="radio" name="contact"> SMS</label>
-          </p>
-          
-          <p>
-            <button type="submit">Send Message</button>
-            <button type="reset">Clear Form</button>
-          </p>
-        </fieldset>
-      </form>
-    </section>
+      <div class="nb-row">
+        <div class="nb-col-6">
+          <form>
+            <div class="nb-form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" placeholder="John Doe">
+            </div>
+            
+            <div class="nb-form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="john@example.com">
+              <p class="nb-form-hint">We'll never share your email.</p>
+            </div>
+            
+            <div class="nb-form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="••••••••">
+              <p class="nb-form-error">Password must be at least 8 characters.</p>
+            </div>
+            
+            <button type="submit" class="nb-btn">Submit</button>
+          </form>
+        </div>
+        
+        <div class="nb-col-6">
+          <form>
+            <div class="nb-form-group">
+              <label for="country">Country</label>
+              <select id="country">
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+                <option>Germany</option>
+                <option>France</option>
+              </select>
+            </div>
+            
+            <div class="nb-form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Write your message..."></textarea>
+            </div>
+            
+            <div class="nb-form-group">
+              <label for="volume">Volume</label>
+              <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+            
+            <div class="nb-form-group">
+              <div class="nb-check-wrapper">
+                <input type="checkbox" id="terms">
+                <label for="terms">I agree to the terms</label>
+              </div>
+            </div>
+            
+            <div class="nb-form-group">
+              <label>Preferred Contact</label>
+              <div class="nb-radio-wrapper">
+                <input type="radio" name="contact" id="contact-email">
+                <label for="contact-email">Email</label>
+              </div>
+              <div class="nb-radio-wrapper">
+                <input type="radio" name="contact" id="contact-phone">
+                <label for="contact-phone">Phone</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
-    <!-- Tables -->
-    <section id="tables">
+    <!-- Grid Section -->
+    <div class="example-section" id="grid">
+      <h2>Grid System</h2>
+      
+      <h4>Equal Columns</h4>
+      <div class="nb-row" style="margin-bottom: 1rem;">
+        <div class="nb-col"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">Col 1</div></div>
+        <div class="nb-col"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">Col 2</div></div>
+        <div class="nb-col"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">Col 3</div></div>
+      </div>
+      
+      <h4>Mixed Columns</h4>
+      <div class="nb-row" style="margin-bottom: 1rem;">
+        <div class="nb-col-4"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">4 cols</div></div>
+        <div class="nb-col-8"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">8 cols</div></div>
+      </div>
+      
+      <h4>12 Column Grid</h4>
+      <div class="nb-row" style="margin-bottom: 1rem;">
+        <div class="nb-col-6"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">6</div></div>
+        <div class="nb-col-3"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">3</div></div>
+        <div class="nb-col-3"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">3</div></div>
+      </div>
+      
+      <div class="nb-row">
+        <div class="nb-col-4"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">4</div></div>
+        <div class="nb-col-4"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">4</div></div>
+        <div class="nb-col-4"><div class="nb-p-2 nb-bg-light nb-rounded nb-text-center">4</div></div>
+      </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="example-section" id="cards">
+      <h2>Cards</h2>
+      
+      <div class="nb-row">
+        <div class="nb-col-4">
+          <div class="nb-card">
+            <div class="nb-card-body">
+              <h3 class="nb-card-title">Basic Card</h3>
+              <p class="nb-card-text">A simple card with body content.</p>
+              <button class="nb-btn nb-btn-sm">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="nb-col-4">
+          <div class="nb-card">
+            <div class="nb-card-header">Featured</div>
+            <div class="nb-card-body">
+              <h3 class="nb-card-title">Card with Header</h3>
+              <p class="nb-card-text">This card has a header section.</p>
+              <button class="nb-btn nb-btn-sm">Learn More</button>
+            </div>
+            <div class="nb-card-footer">Last updated 5 min ago</div>
+          </div>
+        </div>
+        
+        <div class="nb-col-4">
+          <div class="nb-card">
+            <div class="nb-card-body">
+              <h5 class="nb-card-subtitle">Category</h5>
+              <h3 class="nb-card-title">Card with Subtitle</h3>
+              <p class="nb-card-text">This card has a subtitle section.</p>
+              <a href="#" class="nb-btn nb-btn-sm nb-btn-outline">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tables Section -->
+    <div class="example-section" id="tables">
       <h2>Tables</h2>
-      <p>Tables are responsive by default — scroll horizontally on mobile.</p>
       
       <table>
-        <caption>Employee Directory</caption>
+        <caption>User List</caption>
         <thead>
           <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Department</th>
             <th>Role</th>
             <th>Status</th>
-            <th>Start Date</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>John Doe</td>
             <td>john@example.com</td>
-            <td>Engineering</td>
-            <td>Senior Developer</td>
-            <td>Active</td>
-            <td>Jan 15, 2022</td>
+            <td>Admin</td>
+            <td><span class="nb-badge nb-badge-success">Active</span></td>
           </tr>
           <tr>
             <td>Jane Smith</td>
             <td>jane@example.com</td>
-            <td>Design</td>
-            <td>Lead Designer</td>
-            <td>Active</td>
-            <td>Mar 22, 2022</td>
+            <td>Editor</td>
+            <td><span class="nb-badge nb-badge-success">Active</span></td>
           </tr>
           <tr>
             <td>Bob Johnson</td>
             <td>bob@example.com</td>
-            <td>Marketing</td>
-            <td>Manager</td>
-            <td>Active</td>
-            <td>Jun 10, 2022</td>
+            <td>User</td>
+            <td><span class="nb-badge nb-badge-warning">Pending</span></td>
           </tr>
           <tr>
             <td>Alice Brown</td>
             <td>alice@example.com</td>
-            <td>Engineering</td>
-            <td>Junior Developer</td>
-            <td>On Leave</td>
-            <td>Sep 5, 2023</td>
-          </tr>
-          <tr>
-            <td>Charlie Wilson</td>
-            <td>charlie@example.com</td>
-            <td>Sales</td>
-            <td>Representative</td>
-            <td>Active</td>
-            <td>Nov 18, 2023</td>
+            <td>User</td>
+            <td><span class="nb-badge nb-badge-danger">Inactive</span></td>
           </tr>
         </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="6">Showing 5 of 24 employees</td>
-          </tr>
-        </tfoot>
       </table>
-    </section>
+      
+      <h4>Striped Table</h4>
+      <table class="nb-table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Widget A</td><td>$10.00</td></tr>
+          <tr><td>2</td><td>Widget B</td><td>$20.00</td></tr>
+          <tr><td>3</td><td>Widget C</td><td>$30.00</td></tr>
+          <tr><td>4</td><td>Widget D</td><td>$40.00</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <!-- Components -->
-    <section id="components">
+    <!-- Components Section -->
+    <div class="example-section" id="components">
       <h2>Components</h2>
       
-      <h3>Accordion</h3>
+      <h4>Badges</h4>
+      <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1.5rem;">
+        <span class="nb-badge">Default</span>
+        <span class="nb-badge nb-badge-primary">Primary</span>
+        <span class="nb-badge nb-badge-success">Success</span>
+        <span class="nb-badge nb-badge-danger">Danger</span>
+        <span class="nb-badge nb-badge-warning">Warning</span>
+        <span class="nb-badge nb-badge-info">Info</span>
+      </div>
+      
+      <h4>Alerts</h4>
+      <div class="nb-alert nb-alert-info"><p><strong>Info:</strong> This is an informational alert.</p></div>
+      <div class="nb-alert nb-alert-success"><p><strong>Success:</strong> Your action was completed successfully.</p></div>
+      <div class="nb-alert nb-alert-warning"><p><strong>Warning:</strong> Please review this important notice.</p></div>
+      <div class="nb-alert nb-alert-danger"><p><strong>Error:</strong> Something went wrong. Please try again.</p></div>
+      
+      <h4>Breadcrumb</h4>
+      <ol class="nb-breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Category</a></li>
+        <li>Current Item</li>
+      </ol>
+      
+      <h4>Pagination</h4>
+      <ul class="nb-pagination">
+        <li class="nb-disabled"><span>&laquo;</span></li>
+        <li class="nb-active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+      </ul>
+      
+      <h4>Accordion</h4>
       <details open>
         <summary>What is Neubrutalism CSS?</summary>
-        <p>Neubrutalism CSS is a classless-first CSS framework. You write standard HTML elements and they're automatically styled. No classes needed for basic styling.</p>
+        <p>Neubrutalism CSS is a minimal, lightweight CSS framework designed for building beautiful, responsive websites without the bloat.</p>
       </details>
-      
       <details>
         <summary>How do I use it?</summary>
-        <p>Simply include the CSS file in your HTML and start writing standard HTML. Everything from headings to tables to forms is automatically styled.</p>
+        <p>Simply include the CSS file in your HTML and start using the classes. Check the documentation for examples.</p>
+      </details>
+      <details>
+        <summary>Is it compatible with other frameworks?</summary>
+        <p>Yes! Neubrutalism CSS is designed to be lightweight and non-intrusive, making it compatible with most other frameworks.</p>
       </details>
       
-      <details>
-        <summary>Is it responsive?</summary>
-        <p>Yes! Tables scroll horizontally on mobile, images scale automatically, and all form elements are touch-friendly.</p>
-      </details>
+      <h4>Progress Bars</h4>
+      <div class="nb-progress"><div class="nb-progress-bar" style="width: 25%"></div></div>
+      <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-success" style="width: 50%"></div></div>
+      <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-danger" style="width: 75%"></div></div>
       
-      <details>
-        <summary>How do I enable dark mode?</summary>
-        <p>Add the <code>nb-dark</code> class to your <code>&lt;html&gt;</code> element, or use <code>data-theme="dark"</code>.</p>
-      </details>
+      <h4>Spinners</h4>
+      <div class="nb-flex" style="gap: 1rem; align-items: center;">
+        <div class="nb-spinner nb-spinner-sm"></div>
+        <div class="nb-spinner"></div>
+        <div class="nb-spinner nb-spinner-lg"></div>
+      </div>
+      
+      <h4>Tooltip</h4>
+      <p>Hover over <span data-tooltip="This is a tooltip!">this text</span> to see a CSS-only tooltip.</p>
+      
+      <h4>Modal</h4>
+      <a href="#exampleModal" class="nb-btn">Open Modal</a>
+      
+      <div id="exampleModal" class="nb-modal">
+        <div class="nb-modal-dialog">
+          <div class="nb-modal-header">
+            <h3 class="nb-modal-title">Example Modal</h3>
+            <a href="#" class="nb-modal-close">&times;</a>
+          </div>
+          <div class="nb-modal-body">
+            <p>This is a CSS-only modal using the <code>:target</code> pseudo-class.</p>
+            <p>Click the X or press Escape to close.</p>
+          </div>
+          <div class="nb-modal-footer">
+            <a href="#" class="nb-btn nb-btn-secondary">Cancel</a>
+            <button class="nb-btn">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <h3>Progress</h3>
-      <p>
-        <label>Project Progress</label>
-      </p>
-      <progress value="75" max="100">75%</progress>
+    <!-- Lists Section -->
+    <div class="example-section" id="lists">
+      <h2>Lists</h2>
+      
+      <div class="nb-row">
+        <div class="nb-col-4">
+          <h4>Unordered List</h4>
+          <ul>
+            <li>Item one</li>
+            <li>Item two
+              <ul>
+                <li>Nested item</li>
+                <li>Nested item</li>
+              </ul>
+            </li>
+            <li>Item three</li>
+          </ul>
+        </div>
+        
+        <div class="nb-col-4">
+          <h4>Ordered List</h4>
+          <ol>
+            <li>First step</li>
+            <li>Second step</li>
+            <li>Third step</li>
+          </ol>
+        </div>
+        
+        <div class="nb-col-4">
+          <h4>Description List</h4>
+          <dl class="nb-dl-inline">
+            <dt>Name</dt>
+            <dd>John Doe</dd>
+            <dt>Email</dt>
+            <dd>john@example.com</dd>
+            <dt>Role</dt>
+            <dd>Administrator</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
 
-      <h3>Figure with Caption</h3>
-      <figure>
-        <img src="https://picsum.photos/600/300" alt="Sample image">
-        <figcaption>A sample image with automatic responsive sizing</figcaption>
-      </figure>
-    </section>
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 3rem 0; border-top: 1px solid var(--nb-color-border); margin-top: 2rem;">
+      <p class="text-muted">Built with Neubrutalism CSS</p>
+      <p class="text-small">MIT License</p>
+    </footer>
 
-  </main>
+  </div>
 
-  <footer>
-    <p><strong>Neubrutalism CSS</strong> — A classless-first CSS framework</p>
-    <p>Write HTML. It looks great. No classes needed.</p>
-    <p>MIT License</p>
-  </footer>
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('nb-dark');
+    }
+    
+    function toggleNav() {
+      document.querySelector('.nb-navbar-menu').classList.toggle('nb-nav-open');
+      document.querySelector('.nb-navbar-toggle').classList.toggle('nb-nav-open');
+    }
+  </script>
 
 </body>
 </html>

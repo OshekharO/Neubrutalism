@@ -3,255 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neubrutalism CSS - Plug & Play</title>
+  <title>Neubrutalism CSS - Minimal CSS Framework</title>
+  <meta name="description" content="A minimal CSS framework inspired by Milligram, Pico.css, Skeleton, Chota, and Water.css">
   <link rel="stylesheet" href="neubrutalism.min.css">
+  <style>
+    .hero { padding: 4rem 0; text-align: center; }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.25rem; color: var(--nb-color-text-muted); max-width: 600px; margin: 0 auto 2rem; }
+    .section { padding: 3rem 0; border-top: 1px solid var(--nb-color-border); }
+    .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .code-block { background: var(--nb-color-bg-alt); padding: 1rem; border-radius: var(--nb-border-radius); overflow-x: auto; }
+    .badge-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .color-swatch { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0.25rem; }
+    .color-box { width: 1.5rem; height: 1.5rem; border-radius: 4px; border: 1px solid var(--nb-color-border); }
+  </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <strong>Neubrutalism CSS</strong>
-      <div style="flex:1"></div>
-      <a href="#">Home</a>
-      <a href="#features">Features</a>
-      <a href="#demo">Demo</a>
-      <button onclick="document.documentElement.classList.toggle('nb-dark')">🌓</button>
-    </nav>
-  </header>
+  <!-- Navbar -->
+  <nav class="nb-navbar">
+    <a href="#" class="nb-navbar-brand">Neubrutalism CSS</a>
+    <button class="nb-navbar-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nb-navbar-menu">
+      <ul class="nb-navbar-nav">
+        <li><a href="#" class="nb-nav-active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#docs">Docs</a></li>
+      </ul>
+      <button class="nb-btn nb-btn-sm" onclick="toggleTheme()">
+        🌓 Toggle Dark
+      </button>
+    </div>
+  </nav>
 
-  <main>
-
-    <!-- Hero -->
-    <section>
+  <!-- Hero Section -->
+  <div class="nb-container">
+    <section class="hero">
       <h1>Neubrutalism CSS</h1>
-      <p>A classless-first CSS framework. Just write HTML — it automatically looks great. No classes to memorize, no complex layouts to learn.</p>
-      <p>
-        <a href="#demo"><button>See Demo</button></a>
-        <a href="docs/MINI-DOCUMENTATION.md"><button>Documentation</button></a>
-      </p>
+      <p>A minimal CSS framework for building beautiful, responsive websites. No bloat, no dependencies — just clean, semantic styling.</p>
+      <div class="nb-flex nb-justify-center" style="gap: 1rem;">
+        <a href="#docs" class="nb-btn nb-btn-lg">Get Started</a>
+        <a href="examples/neubrutalism-mini-example.html" class="nb-btn nb-btn-outline nb-btn-lg">View Demo</a>
+      </div>
     </section>
 
     <!-- Features -->
-    <section id="features">
-      <h2>Why Neubrutalism CSS?</h2>
-      
-      <article>
-        <h3>100% Classless</h3>
-        <p>Write standard HTML elements — headings, paragraphs, tables, forms — and they're automatically styled. No <code>class="btn btn-primary"</code> needed.</p>
-      </article>
-
-      <article>
-        <h3>Responsive by Default</h3>
-        <p>Tables scroll horizontally on mobile. Images scale automatically. Everything just works.</p>
-      </article>
-
-      <article>
-        <h3>Dark Mode</h3>
-        <p>Add a single class <code>nb-dark</code> or use <code>data-theme="dark"</code> to enable dark mode.</p>
-      </article>
-
-      <article>
-        <h3>Tiny Size</h3>
-        <p>Only ~11KB minified. No bloat, no dependencies, no JavaScript required.</p>
-      </article>
+    <section class="section" id="features">
+      <h2 class="text-center">Features</h2>
+      <div class="showcase-grid">
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">⚡ Lightweight</h3>
+            <p class="nb-card-text">Only ~8KB minified. No JavaScript required.</p>
+          </div>
+        </div>
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">Dark Mode</h3>
+            <p class="nb-card-text">Manual toggle with a single CSS class.</p>
+          </div>
+        </div>
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">📱 Responsive</h3>
+            <p class="nb-card-text">Mobile-first design with a flexible 12-column grid.</p>
+          </div>
+        </div>
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">🎨 Customizable</h3>
+            <p class="nb-card-text">Easy theming with CSS custom properties.</p>
+          </div>
+        </div>
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">♿ Accessible</h3>
+            <p class="nb-card-text">Focus states, reduced motion support, screen reader friendly.</p>
+          </div>
+        </div>
+        <div class="nb-card">
+          <div class="nb-card-body">
+            <h3 class="nb-card-title">🧩 Components</h3>
+            <p class="nb-card-text">25+ components and utilities ready to use.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Demo -->
-    <section id="demo">
-      <h2>Demo — Pure HTML, No Classes</h2>
-
-      <h3>Typography</h3>
-      <h1>Heading 1</h1>
-      <h2>Heading 2</h2>
-      <h3>Heading 3</h3>
-      <p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>. Lorem ipsum dolor sit amet.</p>
-      <p>Here's a <code>code snippet</code> and a keyboard shortcut: <kbd>Ctrl</kbd> + <kbd>S</kbd></p>
-
-      <h3>Blockquote</h3>
-      <blockquote>
-        <p>Good design is as little design as possible.</p>
-        <cite>— Dieter Rams</cite>
-      </blockquote>
-
-      <h3>Code Block</h3>
-      <pre><code>function hello() {
-  console.log("Hello, World!");
-  return true;
-}
-
-hello();</code></pre>
-
-      <h3>Buttons</h3>
-      <p>
-        <button>Primary Button</button>
-        <input type="submit" value="Submit Input">
-        <input type="button" value="Input Button">
-      </p>
-
-      <h3>Form Elements</h3>
-      <form>
-        <fieldset>
-          <legend>Sample Form</legend>
-          
-          <p>
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Enter your name">
-          </p>
-          
-          <p>
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email">
-          </p>
-          
-          <p>
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="••••••••">
-          </p>
-          
-          <p>
-            <label for="country">Country</label>
-            <select id="country">
-              <option>United States</option>
-              <option>Canada</option>
-              <option>United Kingdom</option>
-              <option>Germany</option>
-              <option>France</option>
-            </select>
-          </p>
-          
-          <p>
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Write your message..."></textarea>
-          </p>
-          
-          <p>
-            <label for="volume">Volume</label>
-            <input type="range" id="volume" min="0" max="100" value="50">
-          </p>
-          
-          <p>
-            <label>
-              <input type="checkbox" checked> I agree to the terms
-            </label>
-          </p>
-          
-          <p>
-            <label>Preferred contact:</label><br>
-            <label><input type="radio" name="contact" checked> Email</label>
-            <label><input type="radio" name="contact"> Phone</label>
-          </p>
-          
-          <p>
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-          </p>
-        </fieldset>
-      </form>
-
-      <h3>Table</h3>
-      <table>
-        <caption>User List</caption>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Joined</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>John Doe</td>
-            <td>john@example.com</td>
-            <td>Admin</td>
-            <td>Active</td>
-            <td>Jan 15, 2024</td>
-          </tr>
-          <tr>
-            <td>Jane Smith</td>
-            <td>jane@example.com</td>
-            <td>Editor</td>
-            <td>Active</td>
-            <td>Feb 22, 2024</td>
-          </tr>
-          <tr>
-            <td>Bob Johnson</td>
-            <td>bob@example.com</td>
-            <td>User</td>
-            <td>Pending</td>
-            <td>Mar 10, 2024</td>
-          </tr>
-          <tr>
-            <td>Alice Brown</td>
-            <td>alice@example.com</td>
-            <td>User</td>
-            <td>Inactive</td>
-            <td>Apr 5, 2024</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="5">Showing 4 of 12 users</td>
-          </tr>
-        </tfoot>
-      </table>
-
-      <h3>Lists</h3>
-      <ul>
-        <li>Unordered list item</li>
-        <li>Another item
-          <ul>
-            <li>Nested item</li>
-            <li>Another nested item</li>
-          </ul>
-        </li>
-        <li>Last item</li>
-      </ul>
-
-      <ol>
-        <li>First step</li>
-        <li>Second step</li>
-        <li>Third step</li>
-      </ol>
-
-      <h3>Description List</h3>
-      <dl>
-        <dt>Term 1</dt>
-        <dd>Description for term 1</dd>
-        <dt>Term 2</dt>
-        <dd>Description for term 2</dd>
-        <dt>Term 3</dt>
-        <dd>Description for term 3</dd>
-      </dl>
-
-      <h3>Accordion</h3>
-      <details open>
-        <summary>What is Neubrutalism CSS?</summary>
-        <p>A classless-first CSS framework where you just write HTML and it looks great. No classes needed for basic styling.</p>
-      </details>
+    <!-- Components Preview -->
+    <section class="section" id="components">
+      <h2 class="text-center">Components</h2>
       
-      <details>
-        <summary>How do I use it?</summary>
-        <p>Simply include the CSS file in your HTML and start writing standard HTML elements. Everything is automatically styled.</p>
-      </details>
-      
-      <details>
-        <summary>Is it responsive?</summary>
-        <p>Yes! Tables scroll on mobile, images scale automatically, and all form elements are touch-friendly.</p>
-      </details>
+      <h4>Buttons</h4>
+      <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1.5rem;">
+        <button>Primary</button>
+        <button class="nb-btn nb-btn-outline">Outline</button>
+        <button class="nb-btn nb-btn-success">Success</button>
+        <button class="nb-btn nb-btn-danger">Danger</button>
+        <button class="nb-btn nb-btn-link">Link</button>
+      </div>
 
-      <h3>Progress</h3>
-      <progress value="70" max="100">70%</progress>
+      <h4>Badges</h4>
+      <div class="badge-list" style="margin-bottom: 1.5rem;">
+        <span class="nb-badge">Default</span>
+        <span class="nb-badge nb-badge-primary">Primary</span>
+        <span class="nb-badge nb-badge-success">Success</span>
+        <span class="nb-badge nb-badge-danger">Danger</span>
+        <span class="nb-badge nb-badge-warning">Warning</span>
+        <span class="nb-badge nb-badge-info">Info</span>
+      </div>
 
+      <h4>Alerts</h4>
+      <div class="nb-alert nb-alert-info" style="margin-bottom: 0.5rem;"><p><strong>Info:</strong> This is an informational alert.</p></div>
+      <div class="nb-alert nb-alert-success" style="margin-bottom: 0.5rem;"><p><strong>Success:</strong> Your action was completed.</p></div>
+      <div class="nb-alert nb-alert-warning" style="margin-bottom: 0.5rem;"><p><strong>Warning:</strong> Please review this notice.</p></div>
+      <div class="nb-alert nb-alert-danger" style="margin-bottom: 1.5rem;"><p><strong>Error:</strong> Something went wrong.</p></div>
+
+      <h4>Form Elements</h4>
+      <div class="nb-row" style="margin-bottom: 1.5rem;">
+        <div class="nb-col-6">
+          <div class="nb-form-group">
+            <label for="demo-name">Name</label>
+            <input type="text" id="demo-name" placeholder="Enter your name">
+          </div>
+        </div>
+        <div class="nb-col-6">
+          <div class="nb-form-group">
+            <label for="demo-email">Email</label>
+            <input type="email" id="demo-email" placeholder="Enter your email">
+          </div>
+        </div>
+      </div>
+
+      <h4>Cards</h4>
+      <div class="nb-row" style="margin-bottom: 1.5rem;">
+        <div class="nb-col-4">
+          <div class="nb-card">
+            <div class="nb-card-body">
+              <h3 class="nb-card-title">Card Title</h3>
+              <p class="nb-card-text">A simple card component.</p>
+              <button class="nb-btn nb-btn-sm">Action</button>
+            </div>
+          </div>
+        </div>
+        <div class="nb-col-4">
+          <div class="nb-card">
+            <div class="nb-card-header">Header</div>
+            <div class="nb-card-body">
+              <h3 class="nb-card-title">With Header</h3>
+              <p class="nb-card-text">Card with header section.</p>
+            </div>
+            <div class="nb-card-footer">Footer</div>
+          </div>
+        </div>
+        <div class="nb-col-4">
+          <div class="nb-card">
+            <div class="nb-card-body">
+              <h5 class="nb-card-subtitle">Featured</h5>
+              <h3 class="nb-card-title">Card Subtitle</h3>
+              <p class="nb-card-text">Card with subtitle.</p>
+              <a href="#" class="nb-btn nb-btn-sm nb-btn-outline">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-  </main>
+    <!-- Documentation -->
+    <section class="section" id="docs">
+      <h2 class="text-center">Documentation</h2>
+      
+      <h4>Quick Start</h4>
+      <pre class="code-block"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My App&lt;/title&gt;
+  &lt;link rel="stylesheet" href="neubrutalism.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="nb-container"&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;button class="nb-btn"&gt;Click Me&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
 
-  <footer>
-    <p><strong>Neubrutalism CSS</strong> — A classless-first CSS framework</p>
-    <p>MIT License</p>
-  </footer>
+      <h4 style="margin-top: 2rem;">Customization</h4>
+      <pre class="code-block"><code>:root {
+  --nb-color-primary: #6200ea;
+  --nb-color-primary-hover: #3700b3;
+  --nb-border-radius: 0.5rem;
+  --nb-font-family: 'Inter', sans-serif;
+}</code></pre>
+
+      <div class="text-center" style="margin-top: 2rem;">
+        <a href="docs/MINI-DOCUMENTATION.md" class="nb-btn">Full Documentation</a>
+        <a href="examples/neubrutalism-mini-example.html" class="nb-btn nb-btn-outline">Live Demo</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center" style="padding: 3rem 0; border-top: 1px solid var(--nb-color-border); margin-top: 2rem;">
+      <p class="text-muted">Neubrutalism CSS — A minimal CSS framework</p>
+      <p class="text-small">MIT License</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('nb-dark');
+    }
+    
+    function toggleNav() {
+      document.querySelector('.nb-navbar-menu').classList.toggle('nb-nav-open');
+      document.querySelector('.nb-navbar-toggle').classList.toggle('nb-nav-open');
+    }
+  </script>
 
 </body>
 </html>
