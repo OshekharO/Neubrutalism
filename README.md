@@ -14,6 +14,12 @@ A minimal CSS framework inspired by [Milligram](https://github.com/milligram/mil
 
 ## Quick Start
 
+### CDN
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.min.css">
+```
+
+### Local
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -24,11 +30,9 @@ A minimal CSS framework inspired by [Milligram](https://github.com/milligram/mil
   <link rel="stylesheet" href="neubrutalism.min.css">
 </head>
 <body>
-  <div class="nb-container">
-    <h1>Hello, World!</h1>
-    <p>This is a minimal CSS framework.</p>
-    <button>Click Me</button>
-  </div>
+  <h1>Hello, World!</h1>
+  <p>This is a minimal CSS framework.</p>
+  <button>Click Me</button>
 </body>
 </html>
 ```

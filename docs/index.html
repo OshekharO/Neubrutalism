@@ -322,6 +322,8 @@
         <div class="docs-sidebar-title">Getting Started</div>
         <a href="#introduction" class="docs-sidebar-link active">Introduction</a>
         <a href="#quickstart" class="docs-sidebar-link">Quick Start</a>
+        <a href="#cdn" class="docs-sidebar-link">CDN Links</a>
+        <a href="#globals" class="docs-sidebar-link">Important Globals</a>
         <a href="#dark-mode" class="docs-sidebar-link">Dark Mode</a>
       </div>
       
@@ -431,7 +433,95 @@
         <p>Toggle dynamically with JavaScript:</p>
         <div class="docs-example">
           <div class="docs-example-code">
-            <code>document.documentElement.classList.toggle('nb-dark');</code>
+             <code>document.documentElement.classList.toggle('nb-dark');</code>
+          </div>
+        </div>
+      </section>
+      
+      <!-- CDN Links -->
+      <section id="cdn">
+        <h2>CDN Links</h2>
+        <p>Use our CDN to quickly include Neubrutalism CSS in your project. No download required.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Full CSS</td>
+              <td><code>https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.css</code></td>
+            </tr>
+            <tr>
+              <td>Minified CSS</td>
+              <td><code>https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.min.css</code></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>Usage Example</h3>
+        <div class="docs-example">
+          <div class="docs-example-code">
+            <code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Website&lt;/title&gt;
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OshekharO/Neubrutalism@main/neubrutalism.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Important Globals -->
+      <section id="globals">
+        <h2>Important Globals</h2>
+        <p>Neubrutalism CSS employs a handful of important global styles and settings, all geared towards normalization of cross-browser styles.</p>
+        
+        <h3>HTML5 Doctype</h3>
+        <p>Neubrutalism CSS requires the use of the HTML5 doctype. Without it, you may see incomplete styling.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-code">
+            <code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  ...
+&lt;/html&gt;</code>
+          </div>
+        </div>
+        
+        <h3>Viewport Meta Tag</h3>
+        <p>Neubrutalism CSS is developed mobile-first. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your <code>&lt;head&gt;</code>.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-code">
+            <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>
+          </div>
+        </div>
+        
+        <h3>Box Sizing</h3>
+        <p>CSS adjusts the default box-sizing for every element to <code>border-box</code>. This ensures that padding and borders don't affect the computed width of an element.</p>
+        
+        <div class="docs-callout">
+          <p><strong>Note:</strong> This setting is applied globally to all elements, making it easier to manage spacing and layouts.</p>
+        </div>
+        
+        <h3>Dark Mode</h3>
+        <p>For dark mode, add the <code>nb-dark</code> class or <code>data-theme="dark"</code> attribute to the <code>&lt;html&gt;</code> element:</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-code">
+            <code>&lt;html class="nb-dark"&gt;
+&lt;!-- or --&gt;
+&lt;html data-theme="dark"&gt;</code>
           </div>
         </div>
       </section>
