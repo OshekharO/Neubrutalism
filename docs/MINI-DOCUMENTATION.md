@@ -25,9 +25,9 @@ A minimal CSS framework inspired by Milligram, Pico.css, Skeleton, Chota, and Wa
 
 ## Features
 
-- **Lightweight**: ~8KB minified, ~27KB unminified
+- **Lightweight**: ~12KB minified, ~45KB unminified
 - **No dependencies**: Pure CSS, no JavaScript required
-- **Responsive**: Mobile-first design with flexible grid
+- **Responsive**: Mobile-first design with responsive tables, navbar, and grid
 - **Dark mode**: Manual toggle via CSS class
 - **Customizable**: CSS custom properties for easy theming
 - **Accessible**: Focus-visible states, reduced motion support
@@ -391,6 +391,31 @@ Columns stack automatically on mobile (< 577px).
 </table>
 ```
 
+### Responsive Table
+Wrap your table in a responsive container for horizontal scrolling on mobile:
+```html
+<div class="nb-table-responsive">
+  <table>
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+        <th>Column 4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Data 1</td>
+        <td>Data 2</td>
+        <td>Data 3</td>
+        <td>Data 4</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
 ---
 
 ## Navigation
@@ -686,6 +711,77 @@ The navbar is responsive. On mobile (< 768px), a hamburger menu appears. Click i
 ### Screen Reader Only
 ```html
 <span class="nb-sr-only">This text is only visible to screen readers.</span>
+```
+
+---
+
+## Additional Components
+
+### Avatars
+```html
+<div class="nb-avatar">JD</div>
+<div class="nb-avatar nb-avatar-sm">SM</div>
+<div class="nb-avatar nb-avatar-lg">LG</div>
+<div class="nb-avatar nb-avatar-xl">XL</div>
+
+<!-- With image -->
+<div class="nb-avatar">
+  <img src="user.jpg" alt="User">
+</div>
+
+<!-- Avatar Group -->
+<div class="nb-avatar-group">
+  <div class="nb-avatar">A</div>
+  <div class="nb-avatar">B</div>
+  <div class="nb-avatar">C</div>
+</div>
+```
+
+### Empty State
+```html
+<div class="nb-empty-state">
+  <div class="nb-empty-state-icon">📭</div>
+  <h3 class="nb-empty-state-title">No items found</h3>
+  <p class="nb-empty-state-text">Get started by creating your first item.</p>
+  <button class="nb-btn">Create Item</button>
+</div>
+```
+
+### Skeleton Loading
+```html
+<div class="nb-skeleton nb-skeleton-avatar"></div>
+<div class="nb-skeleton nb-skeleton-title"></div>
+<div class="nb-skeleton nb-skeleton-text"></div>
+<div class="nb-skeleton nb-skeleton-text"></div>
+<div class="nb-skeleton nb-skeleton-image"></div>
+```
+
+### Aspect Ratios
+```html
+<div class="nb-ratio nb-ratio-16x9">
+  <img src="image.jpg" alt="16:9 Image">
+</div>
+
+<div class="nb-ratio nb-ratio-4x3">
+  <img src="image.jpg" alt="4:3 Image">
+</div>
+
+<div class="nb-ratio nb-ratio-1x1">
+  <img src="image.jpg" alt="1:1 Image">
+</div>
+```
+
+### Divider with Text
+```html
+<div class="nb-divider">OR</div>
+```
+
+### Animations
+```html
+<div class="nb-animate-fade-in">Fade in</div>
+<div class="nb-animate-slide-up">Slide up</div>
+<div class="nb-animate-slide-down">Slide down</div>
+<div class="nb-animate-scale-in">Scale in</div>
 ```
 
 ---
