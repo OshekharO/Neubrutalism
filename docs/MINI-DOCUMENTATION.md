@@ -413,13 +413,29 @@ Columns stack automatically on mobile (< 577px).
 ```html
 <nav class="nb-navbar">
   <a href="#" class="nb-navbar-brand">Brand</a>
-  <ul class="nb-navbar-nav">
-    <li><a href="#" class="nb-nav-active">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
+  <button class="nb-navbar-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nb-navbar-menu">
+    <ul class="nb-navbar-nav">
+      <li><a href="#" class="nb-nav-active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <!-- Optional: elements on the right -->
+  </div>
 </nav>
+
+<script>
+  function toggleNav() {
+    document.querySelector('.nb-navbar-menu').classList.toggle('nb-nav-open');
+  }
+</script>
 ```
+
+The navbar is responsive. On mobile (< 768px), a hamburger menu appears. Click it to toggle the menu.
 
 ### Breadcrumb
 ```html

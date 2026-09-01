@@ -16,14 +16,21 @@
   <!-- Navbar -->
   <nav class="nb-navbar">
     <a href="#" class="nb-navbar-brand">Neubrutalism CSS</a>
-    <ul class="nb-navbar-nav">
-      <li><a href="#" class="nb-nav-active">Home</a></li>
-      <li><a href="#typography">Typography</a></li>
-      <li><a href="#buttons">Buttons</a></li>
-      <li><a href="#forms">Forms</a></li>
-      <li><a href="#components">Components</a></li>
-    </ul>
-    <button class="nb-btn nb-btn-sm" onclick="toggleTheme()">Toggle Dark</button>
+    <button class="nb-navbar-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nb-navbar-menu">
+      <ul class="nb-navbar-nav">
+        <li><a href="#" class="nb-nav-active">Home</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#components">Components</a></li>
+      </ul>
+      <button class="nb-btn nb-btn-sm" onclick="toggleTheme()">Toggle Dark</button>
+    </div>
   </nav>
 
   <div class="nb-container" style="padding-top: 2rem;">
@@ -460,13 +467,23 @@ greet("World");</code></pre>
   <script>
     function toggleTheme() {
       var html = document.documentElement;
-      if (html.classList.contains('nb-dark')) {
+      var isDark = html.classList.contains('nb-dark');
+      var isAuto = html.classList.contains('nb-auto-dark');
+      
+      if (isDark) {
         html.classList.remove('nb-dark');
         html.classList.add('nb-auto-dark');
-      } else {
+      } else if (isAuto) {
         html.classList.remove('nb-auto-dark');
         html.classList.add('nb-dark');
+      } else {
+        html.classList.add('nb-dark');
       }
+    }
+    
+    function toggleNav() {
+      var menu = document.querySelector('.nb-navbar-menu');
+      menu.classList.toggle('nb-nav-open');
     }
   </script>
 
