@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neubrutalism CSS - Minimal CSS Framework</title>
   <meta name="description" content="A minimal CSS framework inspired by Milligram, Pico.css, Skeleton, Chota, and Water.css">
-  <link rel="stylesheet" href="neubrutalism-mini.min.css">
+  <link rel="stylesheet" href="neubrutalism.min.css">
   <style>
     .hero { padding: 4rem 0; text-align: center; }
     .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
@@ -29,9 +29,9 @@
       <li><a href="#components">Components</a></li>
       <li><a href="#docs">Docs</a></li>
     </ul>
-    <button class="nb-btn nb-btn-sm" onclick="document.documentElement.classList.toggle('nb-dark')">
-      🌓 Toggle Dark
-    </button>
+  <button class="nb-btn nb-btn-sm" id="theme-toggle" onclick="toggleTheme()">
+    🌓 Toggle Dark
+  </button>
   </nav>
 
   <!-- Hero Section -->
@@ -178,7 +178,7 @@
   &lt;meta charset="UTF-8"&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
   &lt;title&gt;My App&lt;/title&gt;
-  &lt;link rel="stylesheet" href="neubrutalism-mini.min.css"&gt;
+  &lt;link rel="stylesheet" href="neubrutalism.min.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
   &lt;div class="nb-container"&gt;
@@ -208,6 +208,19 @@
       <p class="text-small">MIT License</p>
     </footer>
   </div>
+
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      if (html.classList.contains('nb-dark')) {
+        html.classList.remove('nb-dark');
+        html.classList.add('nb-auto-dark');
+      } else {
+        html.classList.remove('nb-auto-dark');
+        html.classList.add('nb-dark');
+      }
+    }
+  </script>
 
 </body>
 </html>

@@ -21,7 +21,7 @@ A minimal CSS framework inspired by [Milligram](https://github.com/milligram/mil
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neubrutalism CSS</title>
-  <link rel="stylesheet" href="neubrutalism-mini.min.css">
+  <link rel="stylesheet" href="neubrutalism.min.css">
 </head>
 <body>
   <div class="nb-container">

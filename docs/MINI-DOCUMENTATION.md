@@ -11,7 +11,7 @@ A minimal CSS framework inspired by Milligram, Pico.css, Skeleton, Chota, and Wa
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neubrutalism CSS</title>
-  <link rel="stylesheet" href="neubrutalism-mini.min.css">
+  <link rel="stylesheet" href="neubrutalism.min.css">
 </head>
 <body>
   <div class="nb-container">
@@ -64,12 +64,12 @@ A minimal CSS framework inspired by Milligram, Pico.css, Skeleton, Chota, and Wa
 
 ### CDN
 ```html
-<link rel="stylesheet" href="https://cdn.example.com/neubrutalism-mini.min.css">
+<link rel="stylesheet" href="https://cdn.example.com/neubrutalism.min.css">
 ```
 
 ### Local
 ```html
-<link rel="stylesheet" href="path/to/neubrutalism-mini.min.css">
+<link rel="stylesheet" href="path/to/neubrutalism.min.css">
 ```
 
 ### npm (hypothetical)

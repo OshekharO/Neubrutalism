@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neubrutalism CSS - Example</title>
-  <link rel="stylesheet" href="../neubrutalism-mini.min.css">
+  <link rel="stylesheet" href="../neubrutalism.min.css">
   <style>
     .example-section { margin-bottom: 3rem; padding: 2rem; border: 1px dashed var(--nb-color-border); border-radius: var(--nb-border-radius); }
     .example-section h2 { margin-top: 0; }
@@ -23,7 +23,7 @@
       <li><a href="#forms">Forms</a></li>
       <li><a href="#components">Components</a></li>
     </ul>
-    <button class="nb-btn nb-btn-sm" onclick="document.documentElement.classList.toggle('nb-dark')">Toggle Dark</button>
+    <button class="nb-btn nb-btn-sm" onclick="toggleTheme()">Toggle Dark</button>
   </nav>
 
   <div class="nb-container" style="padding-top: 2rem;">
@@ -456,6 +456,19 @@ greet("World");</code></pre>
     </footer>
 
   </div>
+
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      if (html.classList.contains('nb-dark')) {
+        html.classList.remove('nb-dark');
+        html.classList.add('nb-auto-dark');
+      } else {
+        html.classList.remove('nb-auto-dark');
+        html.classList.add('nb-dark');
+      }
+    }
+  </script>
 
 </body>
 </html>
