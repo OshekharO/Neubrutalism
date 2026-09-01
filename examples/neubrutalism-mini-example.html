@@ -66,9 +66,9 @@
   <div class="nb-container" style="padding-top: 2rem;">
 
     <!-- Hero -->
-    <div class="text-center" style="padding: 4rem 0;">
+    <div class="nb-text-center" style="padding: 4rem 0;">
       <h1>Neubrutalism CSS</h1>
-      <p class="text-large text-muted">A complete CSS framework with 35+ components. All styled automatically with semantic HTML.</p>
+      <p class="nb-text-large nb-text-muted">A complete CSS framework with 35+ components. All styled automatically with semantic HTML.</p>
       <div class="nb-flex nb-justify-center" style="gap: 1rem; margin-top: 2rem;">
         <a href="#typography" class="nb-btn nb-btn-lg">Explore Components</a>
         <a href="../docs/index.html" class="nb-btn nb-btn-outline nb-btn-lg">Documentation</a>
@@ -98,17 +98,18 @@
 
       <div class="demo-subsection">
         <h3>Text Utilities</h3>
-        <p class="text-muted">This is muted text using <code>.text-muted</code></p>
-        <p class="text-primary">This is primary text using <code>.text-primary</code></p>
-        <p class="text-success">This is success text using <code>.text-success</code></p>
-        <p class="text-danger">This is danger text using <code>.text-danger</code></p>
-        <p class="text-warning">This is warning text using <code>.text-warning</code></p>
-        <p class="text-small">This is small text using <code>.text-small</code></p>
-        <p class="text-large">This is large text using <code>.text-large</code></p>
-        <p class="text-bold">This is bold text using <code>.text-bold</code></p>
-        <p class="text-uppercase">This is uppercase text using <code>.text-uppercase</code></p>
-        <p class="text-center">This is centered text using <code>.text-center</code></p>
-        <p class="text-right">This is right-aligned text using <code>.text-right</code></p>
+        <p class="nb-text-muted">This is muted text using <code>.nb-text-muted</code></p>
+        <p class="nb-text-primary">This is primary text using <code>.nb-text-primary</code></p>
+        <p class="nb-text-success">This is success text using <code>.nb-text-success</code></p>
+        <p class="nb-text-danger">This is danger text using <code>.nb-text-danger</code></p>
+        <p class="nb-text-warning">This is warning text using <code>.nb-text-warning</code></p>
+        <p class="nb-text-small">This is small text using <code>.nb-text-small</code></p>
+        <p class="nb-text-large">This is large text using <code>.nb-text-large</code></p>
+        <p class="nb-text-bold">This is bold text using <code>.nb-text-bold</code></p>
+        <p class="nb-text-uppercase">This is uppercase text using <code>.nb-text-uppercase</code></p>
+        <p class="nb-text-center">This is centered text using <code>.nb-text-center</code></p>
+        <p class="nb-text-right">This is right-aligned text using <code>.nb-text-right</code></p>
+        <p class="nb-text-truncate" style="max-width:200px;border:1px solid var(--nb-color-border);padding:0.5rem">This is truncated text that will show ellipsis when too long</p>
       </div>
 
       <div class="demo-subsection">
@@ -632,19 +633,19 @@ greet("World");</code></pre>
             <div class="nb-ratio nb-ratio-1x1">
               <img src="https://picsum.photos/300/300?random=1" alt="1:1">
             </div>
-            <p class="text-center text-small">1:1</p>
+            <p class="nb-text-center nb-text-small">1:1</p>
           </div>
           <div class="nb-col-4">
             <div class="nb-ratio nb-ratio-4x3">
               <img src="https://picsum.photos/300/225?random=2" alt="4:3">
             </div>
-            <p class="text-center text-small">4:3</p>
+            <p class="nb-text-center nb-text-small">4:3</p>
           </div>
           <div class="nb-col-4">
             <div class="nb-ratio nb-ratio-16x9">
               <img src="https://picsum.photos/300/169?random=3" alt="16:9">
             </div>
-            <p class="text-center text-small">16:9</p>
+            <p class="nb-text-center nb-text-small">16:9</p>
           </div>
         </div>
       </div>
@@ -716,12 +717,105 @@ greet("World");</code></pre>
         <div class="nb-w-75 nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt);margin-bottom:0.5rem">.nb-w-75</div>
         <div class="nb-w-100 nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">.nb-w-100</div>
       </div>
+
+      <div class="demo-subsection">
+        <h3>Gap</h3>
+        <div class="nb-flex nb-gap-1 nb-flex-wrap" style="margin-bottom: 1rem;">
+          <div class="nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Gap 1</div>
+          <div class="nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Gap 1</div>
+          <div class="nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Gap 1</div>
+        </div>
+        <div class="nb-flex nb-gap-3 nb-flex-wrap" style="margin-bottom: 1rem;">
+          <div class="nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Gap 3</div>
+          <div class="nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Gap 3</div>
+          <div class="nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Gap 3</div>
+        </div>
+        <div class="nb-flex nb-gap-5 nb-flex-wrap">
+          <div class="nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Gap 5</div>
+          <div class="nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Gap 5</div>
+          <div class="nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Gap 5</div>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Cursor</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 1rem;">
+          <span class="nb-cursor-pointer nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Pointer</span>
+          <span class="nb-cursor-default nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Default</span>
+          <span class="nb-cursor-not-allowed nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Not Allowed</span>
+          <span class="nb-cursor-help nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Help</span>
+          <span class="nb-cursor-move nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Move</span>
+          <span class="nb-cursor-grab nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)">Grab</span>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Opacity</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 1rem; align-items: center;">
+          <div class="nb-p-3 nb-rounded nb-opacity-100" style="background:var(--nb-color-primary);color:white">100%</div>
+          <div class="nb-p-3 nb-rounded nb-opacity-75" style="background:var(--nb-color-primary);color:white">75%</div>
+          <div class="nb-p-3 nb-rounded nb-opacity-50" style="background:var(--nb-color-primary);color:white">50%</div>
+          <div class="nb-p-3 nb-rounded nb-opacity-25" style="background:var(--nb-color-primary);color:white">25%</div>
+          <div class="nb-p-3 nb-rounded nb-opacity-0" style="background:var(--nb-color-primary);color:white">0%</div>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Overflow</h3>
+        <div class="nb-overflow-auto nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt); height: 80px; width: 200px;">
+          This content is quite long and will overflow its container. The overflow-auto class adds a scrollbar when the content exceeds the container's height. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Animations</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 1rem;">
+          <div class="nb-p-3 nb-rounded nb-animate-fade-in" style="background:var(--nb-color-bg-alt)">Fade In</div>
+          <div class="nb-p-3 nb-rounded nb-animate-slide-up" style="background:var(--nb-color-bg-alt)">Slide Up</div>
+          <div class="nb-p-3 nb-rounded nb-animate-slide-down" style="background:var(--nb-color-bg-alt)">Slide Down</div>
+          <div class="nb-p-3 nb-rounded nb-animate-scale-in" style="background:var(--nb-color-bg-alt)">Scale In</div>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Text Colors</h3>
+        <p><span class="nb-text-muted">Muted</span> · <span class="nb-text-primary">Primary</span> · <span class="nb-text-success">Success</span> · <span class="nb-text-danger">Danger</span> · <span class="nb-text-warning">Warning</span></p>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Background Colors</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem;">
+          <div class="nb-p-2 nb-bg-primary nb-rounded">Primary</div>
+          <div class="nb-p-2 nb-bg-success nb-rounded">Success</div>
+          <div class="nb-p-2 nb-bg-danger nb-rounded">Danger</div>
+          <div class="nb-p-2 nb-bg-warning nb-rounded">Warning</div>
+          <div class="nb-p-2 nb-bg-light nb-rounded">Light</div>
+          <div class="nb-p-2 nb-bg-dark nb-rounded">Dark</div>
+          <div class="nb-p-2 nb-bg-white nb-rounded nb-border">White</div>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Positions</h3>
+        <div class="nb-position-relative" style="background:var(--nb-color-bg-alt);height:100px;border-radius:var(--nb-border-radius);padding:0.5rem">
+          <span class="nb-position-absolute nb-top-0 nb-start-0 nb-p-1 nb-rounded" style="background:var(--nb-color-primary);color:white">Top Left</span>
+          <span class="nb-position-absolute nb-top-0 nb-end-0 nb-p-1 nb-rounded" style="background:var(--nb-color-primary);color:white">Top Right</span>
+          <span class="nb-position-absolute nb-bottom-0 nb-start-0 nb-p-1 nb-rounded" style="background:var(--nb-color-primary);color:white">Bottom Left</span>
+          <span class="nb-position-absolute nb-bottom-0 nb-end-0 nb-p-1 nb-rounded" style="background:var(--nb-color-primary);color:white">Bottom Right</span>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>User Select</h3>
+        <p class="nb-user-select-none nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)"><strong>None:</strong> You cannot select this text</p>
+        <p class="nb-user-select-all nb-p-2 nb-rounded" style="background:var(--nb-color-bg-alt)"><strong>All:</strong> Click to select all text at once</p>
+      </div>
     </div>
 
     <!-- Footer -->
-    <footer style="text-align: center; padding: 3rem 0; border-top: 1px solid var(--nb-color-border); margin-top: 2rem;">
-      <p class="text-muted">Built with Neubrutalism CSS</p>
-      <p class="text-small">MIT License</p>
+    <footer class="nb-text-center" style="padding: 3rem 0; border-top: 1px solid var(--nb-color-border); margin-top: 2rem;">
+      <p class="nb-text-muted">Built with Neubrutalism CSS</p>
+      <p class="nb-text-small">MIT License</p>
     </footer>
 
   </div>

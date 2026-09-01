@@ -362,16 +362,33 @@
         <a href="#pagination" class="docs-sidebar-link">Pagination</a>
         <a href="#accordion" class="docs-sidebar-link">Accordion</a>
         <a href="#progress" class="docs-sidebar-link">Progress</a>
+        <a href="#spinners" class="docs-sidebar-link">Spinners</a>
+        <a href="#tooltips" class="docs-sidebar-link">Tooltips</a>
         <a href="#modals" class="docs-sidebar-link">Modals</a>
         <a href="#avatars" class="docs-sidebar-link">Avatars</a>
+        <a href="#empty-states" class="docs-sidebar-link">Empty States</a>
+        <a href="#skeleton" class="docs-sidebar-link">Skeleton</a>
+        <a href="#ratios" class="docs-sidebar-link">Aspect Ratios</a>
+        <a href="#animations" class="docs-sidebar-link">Animations</a>
+        <a href="#dividers" class="docs-sidebar-link">Dividers</a>
       </div>
       
       <div class="docs-sidebar-section">
         <div class="docs-sidebar-title">Utilities</div>
         <a href="#spacing" class="docs-sidebar-link">Spacing</a>
+        <a href="#gap" class="docs-sidebar-link">Gap</a>
         <a href="#borders" class="docs-sidebar-link">Borders</a>
         <a href="#shadows" class="docs-sidebar-link">Shadows</a>
         <a href="#colors" class="docs-sidebar-link">Colors</a>
+        <a href="#display" class="docs-sidebar-link">Display</a>
+        <a href="#flex" class="docs-sidebar-link">Flex</a>
+        <a href="#position" class="docs-sidebar-link">Position</a>
+        <a href="#sizing" class="docs-sidebar-link">Sizing</a>
+        <a href="#overflow" class="docs-sidebar-link">Overflow</a>
+        <a href="#cursor" class="docs-sidebar-link">Cursor</a>
+        <a href="#opacity" class="docs-sidebar-link">Opacity</a>
+        <a href="#zindex" class="docs-sidebar-link">Z-Index</a>
+        <a href="#user-select" class="docs-sidebar-link">User Select</a>
       </div>
       
       <div class="docs-sidebar-section">
@@ -596,16 +613,31 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td><code>.text-muted</code></td><td>Muted gray text</td></tr>
-            <tr><td><code>.text-primary</code></td><td>Primary color text</td></tr>
-            <tr><td><code>.text-success</code></td><td>Success green text</td></tr>
-            <tr><td><code>.text-danger</code></td><td>Danger red text</td></tr>
-            <tr><td><code>.text-small</code></td><td>Smaller text</td></tr>
-            <tr><td><code>.text-large</code></td><td>Larger text</td></tr>
-            <tr><td><code>.text-bold</code></td><td>Bold text</td></tr>
-            <tr><td><code>.text-center</code></td><td>Centered text</td></tr>
-            <tr><td><code>.text-right</code></td><td>Right-aligned text</td></tr>
-            <tr><td><code>.text-uppercase</code></td><td>Uppercase text</td></tr>
+            <tr><td><code>.nb-text-left</code></td><td>text-align: left</td></tr>
+            <tr><td><code>.nb-text-center</code></td><td>text-align: center</td></tr>
+            <tr><td><code>.nb-text-right</code></td><td>text-align: right</td></tr>
+            <tr><td><code>.nb-text-justify</code></td><td>text-align: justify</td></tr>
+            <tr><td><code>.nb-text-bold</code></td><td>font-weight: 700</td></tr>
+            <tr><td><code>.nb-text-semibold</code></td><td>font-weight: 600</td></tr>
+            <tr><td><code>.nb-text-normal</code></td><td>font-weight: 400</td></tr>
+            <tr><td><code>.nb-text-italic</code></td><td>font-style: italic</td></tr>
+            <tr><td><code>.nb-text-underline</code></td><td>text-decoration: underline</td></tr>
+            <tr><td><code>.nb-text-uppercase</code></td><td>text-transform: uppercase</td></tr>
+            <tr><td><code>.nb-text-lowercase</code></td><td>text-transform: lowercase</td></tr>
+            <tr><td><code>.nb-text-capitalize</code></td><td>text-transform: capitalize</td></tr>
+            <tr><td><code>.nb-text-muted</code></td><td>Muted gray text</td></tr>
+            <tr><td><code>.nb-text-primary</code></td><td>Primary color text</td></tr>
+            <tr><td><code>.nb-text-success</code></td><td>Success green text</td></tr>
+            <tr><td><code>.nb-text-danger</code></td><td>Danger red text</td></tr>
+            <tr><td><code>.nb-text-warning</code></td><td>Warning yellow text</td></tr>
+            <tr><td><code>.nb-text-small</code></td><td>Smaller text (0.8125rem)</td></tr>
+            <tr><td><code>.nb-text-large</code></td><td>Larger text (1.125rem)</td></tr>
+            <tr><td><code>.nb-text-truncate</code></td><td>Truncate with ellipsis</td></tr>
+            <tr><td><code>.nb-text-nowrap</code></td><td>No text wrapping</td></tr>
+            <tr><td><code>.nb-lh-1</code></td><td>Line height: 1</td></tr>
+            <tr><td><code>.nb-lh-sm</code></td><td>Line height: 1.25</td></tr>
+            <tr><td><code>.nb-lh-base</code></td><td>Line height: 1.6</td></tr>
+            <tr><td><code>.nb-lh-lg</code></td><td>Line height: 2</td></tr>
           </tbody>
         </table>
       </section>
@@ -677,9 +709,58 @@
               <div class="nb-check-wrapper">
                 <input type="checkbox" id="example-check">
                 <label for="example-check">I agree</label>
+               </div>
+             </div>
+             <button type="submit">Submit</button>
+           </div>
+         </div>
+
+        <h3>Checkboxes &amp; Radios</h3>
+        <p>Checkboxes and radios work with or without wrapper classes.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-form-group">
+              <label>Without wrapper (inline):</label>
+              <div>
+                <input type="checkbox" id="check1">
+                <label for="check1">Option 1</label>
+              </div>
+              <div>
+                <input type="checkbox" id="check2">
+                <label for="check2">Option 2</label>
               </div>
             </div>
-            <button type="submit">Submit</button>
+            <div class="nb-form-group">
+              <label>With wrapper (stacked):</label>
+              <div class="nb-check-wrapper">
+                <input type="checkbox" id="check3">
+                <label for="check3">Checkbox option</label>
+              </div>
+              <div class="nb-radio-wrapper">
+                <input type="radio" name="radio-example" id="radio1">
+                <label for="radio1">Radio option 1</label>
+              </div>
+              <div class="nb-radio-wrapper">
+                <input type="radio" name="radio-example" id="radio2">
+                <label for="radio2">Radio option 2</label>
+              </div>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;!-- Inline (no wrapper) --&gt;
+&lt;input type="checkbox" id="check1"&gt;
+&lt;label for="check1"&gt;Option 1&lt;/label&gt;
+
+&lt;!-- Stacked with wrapper --&gt;
+&lt;div class="nb-check-wrapper"&gt;
+  &lt;input type="checkbox" id="check3"&gt;
+  &lt;label for="check3"&gt;Checkbox option&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="nb-radio-wrapper"&gt;
+  &lt;input type="radio" name="radio-example" id="radio1"&gt;
+  &lt;label for="radio1"&gt;Radio option 1&lt;/label&gt;
+&lt;/div&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -819,16 +900,146 @@
       &lt;a href="#" class="nb-btn-secondary"&gt;Cancel&lt;/a&gt;
       &lt;button&gt;Confirm&lt;/button&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;</code></pre>
           </div>
         </div>
       </section>
       
-      <!-- Flex Utilities -->
-      <section id="flex">
-        <h2>Flex Utilities</h2>
-        <p>Quick flexbox utilities for common layouts.</p>
+      <!-- Spinners -->
+      <section id="spinners">
+        <h2>Spinners</h2>
+        <p>Loading spinners with different sizes.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex nb-align-center" style="gap:1rem">
+              <div class="nb-spinner nb-spinner-sm"></div>
+              <div class="nb-spinner"></div>
+              <div class="nb-spinner nb-spinner-lg"></div>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;div class="nb-spinner nb-spinner-sm"&gt;&lt;/div&gt;
+&lt;div class="nb-spinner"&gt;&lt;/div&gt;
+&lt;div class="nb-spinner nb-spinner-lg"&gt;&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Tooltips -->
+      <section id="tooltips">
+        <h2>Tooltips</h2>
+        <p>CSS-only tooltips using the <code>data-tooltip</code> attribute.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex nb-justify-center" style="gap:2rem;padding:2rem 0">
+              <span data-tooltip="Tooltip on top">Hover me</span>
+              <button data-tooltip="Button tooltip">Hover button</button>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;span data-tooltip="Tooltip text"&gt;Hover me&lt;/span&gt;
+&lt;button data-tooltip="Button tooltip"&gt;Hover button&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Empty States -->
+      <section id="empty-states">
+        <h2>Empty States</h2>
+        <p>Placeholder content for when there's no data to display.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-empty-state">
+              <div class="nb-empty-state-icon">📭</div>
+              <div class="nb-empty-state-title">No items found</div>
+              <div class="nb-empty-state-text">Get started by creating your first item.</div>
+              <button class="nb-mt-2">Create Item</button>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;div class="nb-empty-state"&gt;
+  &lt;div class="nb-empty-state-icon"&gt;📭&lt;/div&gt;
+  &lt;div class="nb-empty-state-title"&gt;No items found&lt;/div&gt;
+  &lt;div class="nb-empty-state-text"&gt;Get started by creating your first item.&lt;/div&gt;
+  &lt;button&gt;Create Item&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Skeleton Loading -->
+      <section id="skeleton">
+        <h2>Skeleton Loading</h2>
+        <p>Animated placeholder content while loading.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div style="max-width:300px">
+              <div class="nb-skeleton nb-skeleton-title"></div>
+              <div class="nb-skeleton nb-skeleton-text"></div>
+              <div class="nb-skeleton nb-skeleton-text"></div>
+              <div class="nb-skeleton nb-skeleton-text"></div>
+              <div class="nb-flex nb-gap-2 nb-mt-2">
+                <div class="nb-skeleton nb-skeleton-avatar"></div>
+                <div class="nb-flex-grow-1">
+                  <div class="nb-skeleton nb-skeleton-text"></div>
+                  <div class="nb-skeleton nb-skeleton-text" style="width:60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;div class="nb-skeleton nb-skeleton-title"&gt;&lt;/div&gt;
+&lt;div class="nb-skeleton nb-skeleton-text"&gt;&lt;/div&gt;
+&lt;div class="nb-skeleton nb-skeleton-text"&gt;&lt;/div&gt;
+&lt;div class="nb-skeleton nb-skeleton-avatar"&gt;&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Aspect Ratios -->
+      <section id="ratios">
+        <h2>Aspect Ratios</h2>
+        <p>Maintain consistent aspect ratios for media containers.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Ratio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-ratio-1x1</code></td><td>1:1 (Square)</td></tr>
+            <tr><td><code>.nb-ratio-4x3</code></td><td>4:3</td></tr>
+            <tr><td><code>.nb-ratio-16x9</code></td><td>16:9 (Widescreen)</td></tr>
+            <tr><td><code>.nb-ratio-21x9</code></td><td>21:9 (Ultrawide)</td></tr>
+            <tr><td><code>.nb-ratio-3x2</code></td><td>3:2</td></tr>
+          </tbody>
+        </table>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-ratio nb-ratio-16x9 nb-bg-light nb-border" style="max-width:300px">
+              <img src="https://picsum.photos/300/169" alt="16:9 image">
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;div class="nb-ratio nb-ratio-16x9"&gt;
+  &lt;img src="image.jpg" alt="Description"&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Animations -->
+      <section id="animations">
+        <h2>Animations</h2>
+        <p>Simple entrance animations (respects prefers-reduced-motion).</p>
         
         <table class="docs-table">
           <thead>
@@ -838,15 +1049,108 @@
             </tr>
           </thead>
           <tbody>
+            <tr><td><code>.nb-animate-fade-in</code></td><td>Fade in from transparent</td></tr>
+            <tr><td><code>.nb-animate-slide-up</code></td><td>Slide up while fading in</td></tr>
+            <tr><td><code>.nb-animate-slide-down</code></td><td>Slide down while fading in</td></tr>
+            <tr><td><code>.nb-animate-scale-in</code></td><td>Scale up while fading in</td></tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Dividers -->
+      <section id="dividers">
+        <h2>Dividers</h2>
+        <p>Horizontal dividers with optional text.</p>
+        
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <p>Content above</p>
+            <div class="nb-divider">OR</div>
+            <p>Content below</p>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;div class="nb-divider"&gt;OR&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Flex Utilities -->
+      <section id="flex">
+        <h2>Flex Utilities</h2>
+        <p>Quick flexbox utilities for common layouts.</p>
+        
+        <h3>Direction</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr><td><code>.nb-flex</code></td><td>display: flex</td></tr>
-            <tr><td><code>.nb-flex-wrap</code></td><td>flex-wrap: wrap</td></tr>
+            <tr><td><code>.nb-flex-row</code></td><td>flex-direction: row</td></tr>
+            <tr><td><code>.nb-flex-row-reverse</code></td><td>flex-direction: row-reverse</td></tr>
             <tr><td><code>.nb-flex-column</code></td><td>flex-direction: column</td></tr>
-            <tr><td><code>.nb-justify-between</code></td><td>justify-content: space-between</td></tr>
+            <tr><td><code>.nb-flex-column-reverse</code></td><td>flex-direction: column-reverse</td></tr>
+            <tr><td><code>.nb-flex-wrap</code></td><td>flex-wrap: wrap</td></tr>
+            <tr><td><code>.nb-flex-nowrap</code></td><td>flex-wrap: nowrap</td></tr>
+            <tr><td><code>.nb-flex-grow-0</code></td><td>flex-grow: 0</td></tr>
+            <tr><td><code>.nb-flex-grow-1</code></td><td>flex-grow: 1</td></tr>
+            <tr><td><code>.nb-flex-shrink-0</code></td><td>flex-shrink: 0</td></tr>
+            <tr><td><code>.nb-flex-shrink-1</code></td><td>flex-shrink: 1</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Justify Content</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-justify-start</code></td><td>justify-content: flex-start</td></tr>
             <tr><td><code>.nb-justify-center</code></td><td>justify-content: center</td></tr>
             <tr><td><code>.nb-justify-end</code></td><td>justify-content: flex-end</td></tr>
-            <tr><td><code>.nb-align-center</code></td><td>align-items: center</td></tr>
+            <tr><td><code>.nb-justify-between</code></td><td>justify-content: space-between</td></tr>
+            <tr><td><code>.nb-justify-around</code></td><td>justify-content: space-around</td></tr>
+            <tr><td><code>.nb-justify-evenly</code></td><td>justify-content: space-evenly</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Align Items</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-align-stretch</code></td><td>align-items: stretch</td></tr>
             <tr><td><code>.nb-align-start</code></td><td>align-items: flex-start</td></tr>
+            <tr><td><code>.nb-align-center</code></td><td>align-items: center</td></tr>
             <tr><td><code>.nb-align-end</code></td><td>align-items: flex-end</td></tr>
+            <tr><td><code>.nb-align-baseline</code></td><td>align-items: baseline</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Align Self</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-align-self-auto</code></td><td>align-self: auto</td></tr>
+            <tr><td><code>.nb-align-self-start</code></td><td>align-self: flex-start</td></tr>
+            <tr><td><code>.nb-align-self-center</code></td><td>align-self: center</td></tr>
+            <tr><td><code>.nb-align-self-end</code></td><td>align-self: flex-end</td></tr>
+            <tr><td><code>.nb-align-self-stretch</code></td><td>align-self: stretch</td></tr>
           </tbody>
         </table>
       </section>
@@ -1166,7 +1470,7 @@
         <h2>Colors</h2>
         <p>Apply colors to text and backgrounds.</p>
         
-        <h3>Text Colors</h3>
+         <h3>Text Colors</h3>
         <table class="docs-table">
           <thead>
             <tr>
@@ -1175,11 +1479,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td><code>.text-muted</code></td><td><span class="text-muted">Muted text</span></td></tr>
-            <tr><td><code>.text-primary</code></td><td><span class="text-primary">Primary text</span></td></tr>
-            <tr><td><code>.text-success</code></td><td><span class="text-success">Success text</span></td></tr>
-            <tr><td><code>.text-danger</code></td><td><span class="text-danger">Danger text</span></td></tr>
-            <tr><td><code>.text-warning</code></td><td><span class="text-warning">Warning text</span></td></tr>
+            <tr><td><code>.nb-text-muted</code></td><td><span class="nb-text-muted">Muted text</span></td></tr>
+            <tr><td><code>.nb-text-primary</code></td><td><span class="nb-text-primary">Primary text</span></td></tr>
+            <tr><td><code>.nb-text-success</code></td><td><span class="nb-text-success">Success text</span></td></tr>
+            <tr><td><code>.nb-text-danger</code></td><td><span class="nb-text-danger">Danger text</span></td></tr>
+            <tr><td><code>.nb-text-warning</code></td><td><span class="nb-text-warning">Warning text</span></td></tr>
           </tbody>
         </table>
         
@@ -1201,6 +1505,212 @@
           </tbody>
         </table>
       </section>
+      <!-- Gap Utilities -->
+      <section id="gap">
+        <h2>Gap Utilities</h2>
+        <p>Control spacing between flex or grid items.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-gap-0</code></td><td>gap: 0</td></tr>
+            <tr><td><code>.nb-gap-1</code></td><td>gap: 0.5rem</td></tr>
+            <tr><td><code>.nb-gap-2</code></td><td>gap: 1rem</td></tr>
+            <tr><td><code>.nb-gap-3</code></td><td>gap: 1.5rem</td></tr>
+            <tr><td><code>.nb-gap-4</code></td><td>gap: 2rem</td></tr>
+            <tr><td><code>.nb-gap-5</code></td><td>gap: 3rem</td></tr>
+            <tr><td><code>.nb-row-gap-1</code></td><td>row-gap: 0.5rem</td></tr>
+            <tr><td><code>.nb-row-gap-2</code></td><td>row-gap: 1rem</td></tr>
+            <tr><td><code>.nb-col-gap-1</code></td><td>column-gap: 0.5rem</td></tr>
+            <tr><td><code>.nb-col-gap-2</code></td><td>column-gap: 1rem</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Cursor Utilities -->
+      <section id="cursor">
+        <h2>Cursor Utilities</h2>
+        <p>Change cursor appearance.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-cursor-pointer</code></td><td>cursor: pointer</td></tr>
+            <tr><td><code>.nb-cursor-default</code></td><td>cursor: default</td></tr>
+            <tr><td><code>.nb-cursor-not-allowed</code></td><td>cursor: not-allowed</td></tr>
+            <tr><td><code>.nb-cursor-help</code></td><td>cursor: help</td></tr>
+            <tr><td><code>.nb-cursor-move</code></td><td>cursor: move</td></tr>
+            <tr><td><code>.nb-cursor-grab</code></td><td>cursor: grab</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Opacity Utilities -->
+      <section id="opacity">
+        <h2>Opacity Utilities</h2>
+        <p>Control element opacity.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-opacity-0</code></td><td>opacity: 0</td></tr>
+            <tr><td><code>.nb-opacity-25</code></td><td>opacity: 0.25</td></tr>
+            <tr><td><code>.nb-opacity-50</code></td><td>opacity: 0.5</td></tr>
+            <tr><td><code>.nb-opacity-75</code></td><td>opacity: 0.75</td></tr>
+            <tr><td><code>.nb-opacity-100</code></td><td>opacity: 1</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Z-Index Utilities -->
+      <section id="zindex">
+        <h2>Z-Index Utilities</h2>
+        <p>Control stacking order.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-z-0</code></td><td>z-index: 0</td></tr>
+            <tr><td><code>.nb-z-10</code></td><td>z-index: 10</td></tr>
+            <tr><td><code>.nb-z-20</code></td><td>z-index: 20</td></tr>
+            <tr><td><code>.nb-z-30</code></td><td>z-index: 30</td></tr>
+            <tr><td><code>.nb-z-50</code></td><td>z-index: 50</td></tr>
+            <tr><td><code>.nb-z-100</code></td><td>z-index: 100</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- User Select Utilities -->
+      <section id="user-select">
+        <h2>User Select Utilities</h2>
+        <p>Control text selection behavior.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-user-select-none</code></td><td>user-select: none</td></tr>
+            <tr><td><code>.nb-user-select-all</code></td><td>user-select: all</td></tr>
+            <tr><td><code>.nb-user-select-auto</code></td><td>user-select: auto</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Overflow Utilities -->
+      <section id="overflow">
+        <h2>Overflow Utilities</h2>
+        <p>Control overflow behavior.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-overflow-auto</code></td><td>overflow: auto</td></tr>
+            <tr><td><code>.nb-overflow-hidden</code></td><td>overflow: hidden</td></tr>
+            <tr><td><code>.nb-overflow-scroll</code></td><td>overflow: scroll</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Display Utilities -->
+      <section id="display">
+        <h2>Display Utilities</h2>
+        <p>Control display property.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-d-none</code></td><td>display: none</td></tr>
+            <tr><td><code>.nb-d-block</code></td><td>display: block</td></tr>
+            <tr><td><code>.nb-d-inline</code></td><td>display: inline</td></tr>
+            <tr><td><code>.nb-d-inline-block</code></td><td>display: inline-block</td></tr>
+            <tr><td><code>.nb-d-flex</code></td><td>display: flex</td></tr>
+            <tr><td><code>.nb-d-grid</code></td><td>display: grid</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Position Utilities -->
+      <section id="position">
+        <h2>Position Utilities</h2>
+        <p>Control positioning.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-position-relative</code></td><td>position: relative</td></tr>
+            <tr><td><code>.nb-position-absolute</code></td><td>position: absolute</td></tr>
+            <tr><td><code>.nb-position-fixed</code></td><td>position: fixed</td></tr>
+            <tr><td><code>.nb-position-sticky</code></td><td>position: sticky</td></tr>
+            <tr><td><code>.nb-top-0</code></td><td>top: 0</td></tr>
+            <tr><td><code>.nb-bottom-0</code></td><td>bottom: 0</td></tr>
+            <tr><td><code>.nb-start-0</code></td><td>left: 0</td></tr>
+            <tr><td><code>.nb-end-0</code></td><td>right: 0</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Width & Height Utilities -->
+      <section id="sizing">
+        <h2>Width &amp; Height Utilities</h2>
+        <p>Control element dimensions.</p>
+        
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-w-25</code></td><td>width: 25%</td></tr>
+            <tr><td><code>.nb-w-50</code></td><td>width: 50%</td></tr>
+            <tr><td><code>.nb-w-75</code></td><td>width: 75%</td></tr>
+            <tr><td><code>.nb-w-100</code></td><td>width: 100%</td></tr>
+            <tr><td><code>.nb-h-100</code></td><td>height: 100%</td></tr>
+            <tr><td><code>.nb-vh-100</code></td><td>height: 100vh</td></tr>
+          </tbody>
+        </table>
+      </section>
+
       <section id="variables">
         <h2>CSS Variables</h2>
         <p>Customize the theme by overriding CSS variables:</p>
