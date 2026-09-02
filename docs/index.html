@@ -601,7 +601,7 @@
       <!-- Typography -->
       <section id="typography">
         <h2>Typography</h2>
-        <p>All headings, paragraphs, and inline elements are automatically styled.</p>
+        <p>All headings, paragraphs, and inline elements are automatically styled with bold weights and tight spacing.</p>
         
         <div class="docs-example">
           <div class="docs-example-preview">
@@ -610,7 +610,32 @@
             <h3>Heading 3</h3>
             <p>A paragraph with <strong>bold</strong>, <em>italic</em>, and <a href="#">a link</a>.</p>
             <p>Use <code>code</code> inline and <kbd>Ctrl</kbd>+<kbd>S</kbd> for keyboard.</p>
-            <blockquote>A styled blockquote with a left border.</blockquote>
+            <blockquote>A styled blockquote with a left border and hard shadow.</blockquote>
+          </div>
+        </div>
+        
+        <h3>Display Headings</h3>
+        <p>For hero sections and prominent text.</p>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-display-1">Display 1</div>
+            <div class="nb-display-2">Display 2</div>
+            <div class="nb-display-3">Display 3</div>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;div class="nb-display-1"&gt;Display 1&lt;/div&gt;
+&lt;div class="nb-display-2"&gt;Display 2&lt;/div&gt;
+&lt;div class="nb-display-3"&gt;Display 3&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+        
+        <h3>Lead Text</h3>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <p class="nb-lead">This is a lead paragraph. It's larger and muted for introductory text.</p>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;p class="nb-lead"&gt;This is a lead paragraph.&lt;/p&gt;</code></pre>
           </div>
         </div>
         
@@ -655,7 +680,7 @@
       <!-- Buttons -->
       <section id="buttons">
         <h2>Buttons</h2>
-        <p>All button types are styled automatically. Use classes for variations.</p>
+        <p>All button types are styled automatically. Buttons feature hard offset shadows and playful hover effects. Use classes for variations.</p>
         
         <div class="docs-example">
           <div class="docs-example-preview">
@@ -663,8 +688,7 @@
               <button>Default</button>
               <button class="nb-btn-outline">Outline</button>
               <button class="nb-btn-secondary">Secondary</button>
-              <button class="nb-btn-success">Success</button>
-              <button class="nb-btn-danger">Danger</button>
+              <button class="nb-btn-ghost">Ghost</button>
               <button class="nb-btn-link">Link</button>
             </div>
           </div>
@@ -672,8 +696,46 @@
             <pre><code>&lt;button&gt;Default&lt;/button&gt;
 &lt;button class="nb-btn-outline"&gt;Outline&lt;/button&gt;
 &lt;button class="nb-btn-secondary"&gt;Secondary&lt;/button&gt;
-&lt;button class="nb-btn-success"&gt;Success&lt;/button&gt;
-&lt;button class="nb-btn-danger"&gt;Danger&lt;/button&gt;</code></pre>
+&lt;button class="nb-btn-ghost"&gt;Ghost&lt;/button&gt;
+&lt;button class="nb-btn-link"&gt;Link&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+        
+        <h3>Semantic Colors</h3>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex nb-flex-wrap" style="gap:0.5rem">
+              <button class="nb-btn-success">Success</button>
+              <button class="nb-btn-danger">Danger</button>
+              <button class="nb-btn-warning">Warning</button>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;button class="nb-btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="nb-btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="nb-btn-warning"&gt;Warning&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+        
+        <h3>Splatoon Colors</h3>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex nb-flex-wrap" style="gap:0.5rem">
+              <button class="nb-btn-yellow">Yellow</button>
+              <button class="nb-btn-blue">Blue</button>
+              <button class="nb-btn-purple">Purple</button>
+              <button class="nb-btn-green">Green</button>
+              <button class="nb-btn-orange">Orange</button>
+              <button class="nb-btn-pink">Pink</button>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;button class="nb-btn-yellow"&gt;Yellow&lt;/button&gt;
+&lt;button class="nb-btn-blue"&gt;Blue&lt;/button&gt;
+&lt;button class="nb-btn-purple"&gt;Purple&lt;/button&gt;
+&lt;button class="nb-btn-green"&gt;Green&lt;/button&gt;
+&lt;button class="nb-btn-orange"&gt;Orange&lt;/button&gt;
+&lt;button class="nb-btn-pink"&gt;Pink&lt;/button&gt;</code></pre>
           </div>
         </div>
         
@@ -684,7 +746,14 @@
               <button class="nb-btn-sm">Small</button>
               <button>Default</button>
               <button class="nb-btn-lg">Large</button>
+              <button class="nb-btn-xl">Extra Large</button>
             </div>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;button class="nb-btn-sm"&gt;Small&lt;/button&gt;
+&lt;button&gt;Default&lt;/button&gt;
+&lt;button class="nb-btn-lg"&gt;Large&lt;/button&gt;
+&lt;button class="nb-btn-xl"&gt;Extra Large&lt;/button&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -863,6 +932,7 @@
       <!-- Alerts -->
       <section id="alerts">
         <h2>Alerts</h2>
+        <p>Alerts feature hard offset shadows and colored borders for a paper-cutout effect.</p>
         <div class="docs-example">
           <div class="docs-example-preview">
             <div class="nb-alert nb-alert-info"><strong>Info:</strong> Informational message</div>
@@ -871,6 +941,36 @@
             <div class="nb-alert nb-alert-danger"><strong>Error:</strong> Something went wrong</div>
           </div>
         </div>
+        
+        <h3>Splatoon Colors</h3>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-alert nb-alert-yellow"><strong>Yellow:</strong> Neon yellow alert</div>
+            <div class="nb-alert nb-alert-blue"><strong>Blue:</strong> Ink blue alert</div>
+            <div class="nb-alert nb-alert-purple"><strong>Purple:</strong> Ink purple alert</div>
+            <div class="nb-alert nb-alert-green"><strong>Green:</strong> Ink green alert</div>
+          </div>
+        </div>
+        
+        <h3>Class Reference</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-alert-info</code></td><td>Blue</td></tr>
+            <tr><td><code>.nb-alert-success</code></td><td>Green</td></tr>
+            <tr><td><code>.nb-alert-warning</code></td><td>Orange</td></tr>
+            <tr><td><code>.nb-alert-danger</code></td><td>Red</td></tr>
+            <tr><td><code>.nb-alert-yellow</code></td><td>Yellow</td></tr>
+            <tr><td><code>.nb-alert-blue</code></td><td>Blue</td></tr>
+            <tr><td><code>.nb-alert-purple</code></td><td>Purple</td></tr>
+            <tr><td><code>.nb-alert-green</code></td><td>Green</td></tr>
+          </tbody>
+        </table>
       </section>
       
       <!-- Navbar -->
@@ -919,11 +1019,87 @@
       <!-- Progress -->
       <section id="progress">
         <h2>Progress Bars</h2>
+        <p>Progress bars feature a shimmer animation and hard borders.</p>
         <div class="docs-example">
           <div class="docs-example-preview">
             <div class="nb-progress"><div class="nb-progress-bar" style="width:25%"></div></div>
             <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-success" style="width:50%"></div></div>
             <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-danger" style="width:75%"></div></div>
+          </div>
+        </div>
+        
+        <h3>Splatoon Colors</h3>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-yellow" style="width:60%"></div></div>
+            <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-blue" style="width:40%"></div></div>
+            <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-purple" style="width:85%"></div></div>
+            <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-green" style="width:70%"></div></div>
+            <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-orange" style="width:55%"></div></div>
+            <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-pink" style="width:90%"></div></div>
+          </div>
+        </div>
+        
+        <h3>Sizes</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Height</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nb-progress-sm</code></td><td>0.5rem</td></tr>
+            <tr><td><code>.nb-progress</code></td><td>0.75rem (default)</td></tr>
+            <tr><td><code>.nb-progress-lg</code></td><td>1rem</td></tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Spinners -->
+      <section id="spinners">
+        <h2>Spinners</h2>
+        <p>Two-color spinners with Splatoon-inspired color variants.</p>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex nb-align-center" style="gap:1rem">
+              <div class="nb-spinner nb-spinner-sm"></div>
+              <div class="nb-spinner"></div>
+              <div class="nb-spinner nb-spinner-lg"></div>
+              <div class="nb-spinner nb-spinner-xl"></div>
+            </div>
+          </div>
+        </div>
+        
+        <h3>Splatoon Colors</h3>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex nb-align-center" style="gap:1rem">
+              <div class="nb-spinner nb-spinner-yellow"></div>
+              <div class="nb-spinner nb-spinner-blue"></div>
+              <div class="nb-spinner nb-spinner-purple"></div>
+              <div class="nb-spinner nb-spinner-green"></div>
+              <div class="nb-spinner nb-spinner-orange"></div>
+              <div class="nb-spinner nb-spinner-pink"></div>
+            </div>
+          </div>
+        </div>
+        
+        <h3>Loading Pulse</h3>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-loading-pulse">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="docs-example-code">
+            <pre><code>&lt;div class="nb-loading-pulse"&gt;
+  &lt;span&gt;&lt;/span&gt;
+  &lt;span&gt;&lt;/span&gt;
+  &lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -1486,14 +1662,28 @@
       <!-- Shadows -->
       <section id="shadows">
         <h2>Shadows</h2>
-        <p>Add depth with shadow utilities.</p>
+        <p>Add depth with shadow utilities. Choose between soft blur shadows or hard offset shadows for a paper-cutout effect.</p>
         
+        <h3>Soft Shadows</h3>
         <div class="docs-example">
           <div class="docs-example-preview">
             <div class="nb-flex nb-flex-wrap" style="gap:1rem">
               <div class="nb-p-3 nb-shadow-sm nb-rounded" style="background:var(--nb-color-bg);width:120px;text-align:center">Small</div>
               <div class="nb-p-3 nb-shadow nb-rounded" style="background:var(--nb-color-bg);width:120px;text-align:center">Medium</div>
               <div class="nb-p-3 nb-shadow-lg nb-rounded" style="background:var(--nb-color-bg);width:120px;text-align:center">Large</div>
+              <div class="nb-p-3 nb-shadow-xl nb-rounded" style="background:var(--nb-color-bg);width:120px;text-align:center">Extra Large</div>
+            </div>
+          </div>
+        </div>
+        
+        <h3>Hard Offset Shadows (Splatoon Style)</h3>
+        <div class="docs-example">
+          <div class="docs-example-preview">
+            <div class="nb-flex nb-flex-wrap" style="gap:1rem">
+              <div class="nb-p-3 nb-shadow-hard-sm nb-rounded" style="background:var(--nb-color-bg);width:120px;text-align:center">Small</div>
+              <div class="nb-p-3 nb-shadow-hard nb-rounded" style="background:var(--nb-color-bg);width:120px;text-align:center">Medium</div>
+              <div class="nb-p-3 nb-shadow-hard-lg nb-rounded" style="background:var(--nb-color-bg);width:120px;text-align:center">Large</div>
+              <div class="nb-p-3 nb-shadow-hard-xl nb-rounded" style="background:var(--nb-color-bg);width:120px;text-align:center">Extra Large</div>
             </div>
           </div>
         </div>
@@ -1506,9 +1696,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td><code>.nb-shadow-sm</code></td><td>Small shadow</td></tr>
-            <tr><td><code>.nb-shadow</code></td><td>Medium shadow</td></tr>
-            <tr><td><code>.nb-shadow-lg</code></td><td>Large shadow</td></tr>
+            <tr><td><code>.nb-shadow-sm</code></td><td>Small soft shadow</td></tr>
+            <tr><td><code>.nb-shadow</code></td><td>Medium soft shadow</td></tr>
+            <tr><td><code>.nb-shadow-lg</code></td><td>Large soft shadow</td></tr>
+            <tr><td><code>.nb-shadow-xl</code></td><td>Extra large soft shadow</td></tr>
+            <tr><td><code>.nb-shadow-hard-sm</code></td><td>2px 2px 0 hard offset</td></tr>
+            <tr><td><code>.nb-shadow-hard</code></td><td>4px 4px 0 hard offset</td></tr>
+            <tr><td><code>.nb-shadow-hard-lg</code></td><td>6px 6px 0 hard offset</td></tr>
+            <tr><td><code>.nb-shadow-hard-xl</code></td><td>8px 8px 0 hard offset</td></tr>
             <tr><td><code>.nb-shadow-none</code></td><td>Remove shadow</td></tr>
           </tbody>
         </table>
