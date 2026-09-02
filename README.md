@@ -1,6 +1,6 @@
 # Neubrutalism CSS
 
-A minimal CSS framework inspired by [Milligram](https://github.com/milligram/milligram), [Pico.css](https://github.com/picocss/pico), [Skeleton](https://github.com/dhg/Skeleton), [Chota](https://github.com/jenil/chota), [Water.css](https://github.com/kognise/water.css), and other minimal CSS libraries.
+A minimal CSS framework inspired by [Milligram](https://github.com/milligram/milligram), [Pico.css](https://github.com/picocss/pico), [Skeleton](https://github.com/dhg/Skeleton), [Chota](https://github.com/jenil/chota), [Water.css](https://github.com/kognise/water.css), and [Splatoon UI](https://github.com/YoungSx/splatoon-ui).
 
 **Write standard HTML elements - they're automatically styled. Use classes only for variations.**
 
@@ -8,12 +8,37 @@ A minimal CSS framework inspired by [Milligram](https://github.com/milligram/mil
 
 - **Semantic HTML First**: Standard elements like `<button>`, `<input>`, `<table>`, `<h1>`-`<h6>` are styled automatically
 - **Optional Classes**: Use classes only for variations (colors, sizes) and layouts (grid, spacing)
-- **Lightweight**: ~32KB minified, ~41KB unminified
+- **Lightweight**: ~50KB minified, ~65KB unminified
 - **No dependencies**: Pure CSS, no JavaScript required
 - **Responsive**: Mobile-first design with responsive tables, navbar, and grid
 - **Dark mode**: Manual toggle via CSS class
 - **Customizable**: CSS custom properties for easy theming
 - **Accessible**: Focus-visible states, reduced motion support, screen reader utilities
+- **Splatoon-Inspired Design**: Hard offset shadows, vibrant accent colors, playful interactions
+
+## Design Highlights
+
+### Vibrant Accent Colors
+Inspired by Splatoon's ink palette:
+- `#EAFF3D` - Neon Yellow
+- `#603BFF` - Ink Blue
+- `#AF50FF` - Ink Purple
+- `#6AF7CE` - Ink Green
+- `#FF9750` - Ink Orange
+- `#FF505E` - Ink Red
+
+### Hard Offset Shadows
+Create a paper-cutout effect with solid color shadows:
+```css
+/* Available shadow utilities */
+.nb-shadow-hard-sm  →  2px 2px 0 rgba(0,0,0,0.15)
+.nb-shadow-hard-md  →  4px 4px 0 rgba(0,0,0,0.15)
+.nb-shadow-hard-lg  →  6px 6px 0 rgba(0,0,0,0.15)
+.nb-shadow-hard-xl  →  8px 8px 0 rgba(0,0,0,0.15)
+```
+
+### Playful Interactions
+Buttons and cards have bouncy hover effects with shadow transitions.
 
 ## Quick Start
 

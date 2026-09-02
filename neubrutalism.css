@@ -17,6 +17,7 @@
    1. CSS Custom Properties (Variables)
    ================================ */
 :root {
+  /* Primary Colors - Vibrant Splatoon-inspired palette */
   --nb-color-primary: #1a73e8;
   --nb-color-primary-hover: #1557b0;
   --nb-color-primary-focus: rgba(26, 115, 232, 0.25);
@@ -25,19 +26,38 @@
   --nb-color-danger: #d93025;
   --nb-color-warning: #e37400;
   --nb-color-info: #1a73e8;
+  
+  /* Accent Colors - Additional vibrant options */
+  --nb-color-accent-yellow: #EAFF3D;
+  --nb-color-accent-blue: #603BFF;
+  --nb-color-accent-purple: #AF50FF;
+  --nb-color-accent-green: #6AF7CE;
+  --nb-color-accent-orange: #FF9750;
+  --nb-color-accent-red: #FF505E;
+  --nb-color-accent-pink: #FF69B4;
+  
+  /* Background Colors */
   --nb-color-bg: #ffffff;
   --nb-color-bg-alt: #f8f9fa;
   --nb-color-bg-inverse: #202124;
+  
+  /* Text Colors */
   --nb-color-text: #202124;
   --nb-color-text-muted: #5f6368;
   --nb-color-text-inverse: #ffffff;
   --nb-color-text-link: var(--nb-color-primary);
+  
+  /* Border Colors */
   --nb-color-border: #dadce0;
   --nb-color-border-strong: #bdc1c6;
+  
+  /* Typography */
   --nb-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --nb-mono-font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --nb-font-size: 16px;
   --nb-line-height: 1.6;
+  
+  /* Spacing */
   --nb-spacing-xs: 0.25rem;
   --nb-spacing-sm: 0.5rem;
   --nb-spacing-md: 1rem;
@@ -45,12 +65,31 @@
   --nb-spacing-xl: 2rem;
   --nb-spacing-2xl: 3rem;
   --nb-spacing-3xl: 4rem;
-  --nb-border-radius: 0.375rem;
-  --nb-border-width: 1px;
-  --nb-shadow-sm: 0 1px 2px rgba(60, 64, 67, 0.1);
-  --nb-shadow-md: 0 2px 6px rgba(60, 64, 67, 0.15);
-  --nb-shadow-lg: 0 4px 12px rgba(60, 64, 67, 0.2);
+  
+  /* Border & Radius */
+  --nb-border-radius: 0.5rem;
+  --nb-border-radius-sm: 0.25rem;
+  --nb-border-radius-lg: 0.75rem;
+  --nb-border-radius-xl: 1rem;
+  --nb-border-width: 2px;
+  
+  /* Shadows - Hard offset for paper-cutout effect + soft blur */
+  --nb-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --nb-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --nb-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --nb-shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
+  
+  /* Hard offset shadows (Splatoon style) */
+  --nb-shadow-hard-sm: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  --nb-shadow-hard-md: 4px 4px 0 rgba(0, 0, 0, 0.15);
+  --nb-shadow-hard-lg: 6px 6px 0 rgba(0, 0, 0, 0.15);
+  --nb-shadow-hard-xl: 8px 8px 0 rgba(0, 0, 0, 0.15);
+  
+  /* Transitions */
   --nb-transition: 0.15s ease-in-out;
+  --nb-transition-bounce: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Container */
   --nb-container-max-width: 1200px;
   --nb-container-padding: 1rem;
 }
@@ -60,20 +99,42 @@
    ================================ */
 [data-theme="dark"],
 .nb-dark {
+  /* Background Colors */
   --nb-color-bg: #202124;
   --nb-color-bg-alt: #292a2d;
   --nb-color-bg-inverse: #f8f9fa;
+  
+  /* Text Colors */
   --nb-color-text: #e8eaed;
   --nb-color-text-muted: #9aa0a6;
   --nb-color-text-inverse: #202124;
+  
+  /* Border Colors */
   --nb-color-border: #3c4043;
   --nb-color-border-strong: #5f6368;
+  
+  /* Primary Colors - Brighter for dark mode */
   --nb-color-primary: #8ab4f8;
   --nb-color-primary-hover: #aecbfa;
   --nb-color-primary-focus: rgba(138, 180, 248, 0.25);
   --nb-color-success: #81c995;
   --nb-color-danger: #f28b82;
   --nb-color-warning: #fdd663;
+  
+  /* Accent Colors - Keep vibrant in dark mode */
+  --nb-color-accent-yellow: #EAFF3D;
+  --nb-color-accent-blue: #9CA8FF;
+  --nb-color-accent-purple: #C89EFF;
+  --nb-color-accent-green: #6AF7CE;
+  --nb-color-accent-orange: #FFB070;
+  --nb-color-accent-red: #FF7070;
+  --nb-color-accent-pink: #FF85C8;
+  
+  /* Shadows - Hard offset with lighter color for dark mode */
+  --nb-shadow-hard-sm: 2px 2px 0 rgba(255, 255, 255, 0.1);
+  --nb-shadow-hard-md: 4px 4px 0 rgba(255, 255, 255, 0.1);
+  --nb-shadow-hard-lg: 6px 6px 0 rgba(255, 255, 255, 0.1);
+  --nb-shadow-hard-xl: 8px 8px 0 rgba(255, 255, 255, 0.1);
 }
 
 /* ================================
@@ -93,30 +154,66 @@ input, button, textarea, select { font: inherit; }
 }
 
 /* ================================
-   4. Typography
+   4. Typography - Splatoon Inspired
    ================================ */
-h1, h2, h3, h4, h5, h6 { margin-bottom: var(--nb-spacing-md); font-weight: 700; line-height: 1.25; color: var(--nb-color-text); }
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
+h1, h2, h3, h4, h5, h6 { 
+  margin-bottom: var(--nb-spacing-md); 
+  font-weight: 800; 
+  line-height: 1.2; 
+  color: var(--nb-color-text); 
+  letter-spacing: -0.02em;
+}
+h1 { font-size: 2.75rem; }
+h2 { font-size: 2.25rem; }
 h3 { font-size: 1.75rem; }
 h4 { font-size: 1.5rem; }
 h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; }
-p { margin-bottom: var(--nb-spacing-md); }
-a { color: var(--nb-color-text-link); text-decoration: none; }
-a:hover { text-decoration: underline; }
+p { margin-bottom: var(--nb-spacing-md); line-height: var(--nb-line-height); }
+a { color: var(--nb-color-text-link); text-decoration: none; transition: color var(--nb-transition); }
+a:hover { text-decoration: underline; color: var(--nb-color-primary-hover); }
 a:focus-visible { outline: 2px solid var(--nb-color-primary); outline-offset: 2px; border-radius: 2px; }
+
+/* Display Headings */
+.nb-display-1 { font-size: 4rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; }
+.nb-display-2 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; }
+.nb-display-3 { font-size: 3rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.025em; }
+
+/* Lead Text */
+.nb-lead { font-size: 1.25rem; font-weight: 400; line-height: 1.6; color: var(--nb-color-text-muted); }
 
 abbr[title] { text-decoration: underline dotted; cursor: help; text-decoration-skip-ink: none; }
 
-blockquote { margin: var(--nb-spacing-lg) 0; padding: var(--nb-spacing-md) var(--nb-spacing-lg); border-left: 4px solid var(--nb-color-primary); background-color: var(--nb-color-bg-alt); border-radius: 0 var(--nb-border-radius) var(--nb-border-radius) 0; }
+blockquote { 
+  margin: var(--nb-spacing-lg) 0; 
+  padding: var(--nb-spacing-md) var(--nb-spacing-lg); 
+  border-left: 6px solid var(--nb-color-primary); 
+  background-color: var(--nb-color-bg-alt); 
+  border-radius: 0 var(--nb-border-radius) var(--nb-border-radius) 0; 
+  box-shadow: var(--nb-shadow-hard-sm);
+}
 blockquote p:last-child { margin-bottom: 0; }
 blockquote footer, blockquote cite { display: block; margin-top: var(--nb-spacing-sm); font-size: 0.875rem; color: var(--nb-color-text-muted); font-style: normal; }
 
-code, kbd, samp { font-family: var(--nb-mono-font-family); font-size: 0.875em; padding: 0.125em 0.375em; background-color: var(--nb-color-bg-alt); border-radius: calc(var(--nb-border-radius) / 2); border: 1px solid var(--nb-color-border); }
-pre { margin: var(--nb-spacing-lg) 0; padding: var(--nb-spacing-md); overflow-x: auto; background-color: var(--nb-color-bg-alt); border: 1px solid var(--nb-color-border); border-radius: var(--nb-border-radius); }
+code, kbd, samp { 
+  font-family: var(--nb-mono-font-family); 
+  font-size: 0.875em; 
+  padding: 0.125em 0.375em; 
+  background-color: var(--nb-color-bg-alt); 
+  border-radius: var(--nb-border-radius-sm); 
+  border: 1px solid var(--nb-color-border); 
+}
+pre { 
+  margin: var(--nb-spacing-lg) 0; 
+  padding: var(--nb-spacing-md); 
+  overflow-x: auto; 
+  background-color: var(--nb-color-bg-alt); 
+  border: 2px solid var(--nb-color-border); 
+  border-radius: var(--nb-border-radius); 
+  box-shadow: var(--nb-shadow-hard-sm);
+}
 pre code { padding: 0; background: none; border: none; font-size: 0.875rem; line-height: 1.7; }
-kbd { border-bottom: 2px solid var(--nb-color-border-strong); font-size: 0.8125em; }
+kbd { border-bottom: 3px solid var(--nb-color-border-strong); font-size: 0.8125em; }
 
 /* ================================
    5. Layout - Container & Grid
@@ -175,44 +272,128 @@ kbd { border-bottom: 2px solid var(--nb-color-border-strong); font-size: 0.8125e
 .nb-py-3 { padding-top: var(--nb-spacing-lg); padding-bottom: var(--nb-spacing-lg); }
 
 /* ================================
-   6. Buttons
+   6. Buttons - Splatoon Inspired
    ================================ */
 button, .nb-btn, input[type="submit"], input[type="button"], input[type="reset"] {
   display: inline-flex; align-items: center; justify-content: center; gap: var(--nb-spacing-xs);
-  padding: 0.625rem 1.25rem; font-size: 0.9375rem; font-weight: 500; line-height: 1.5;
+  padding: 0.625rem 1.25rem; font-size: 0.9375rem; font-weight: 600; line-height: 1.5;
   color: var(--nb-color-text-inverse); background-color: var(--nb-color-primary);
-  border: var(--nb-border-width) solid var(--nb-color-primary); border-radius: var(--nb-border-radius);
+  border: var(--nb-border-width) solid var(--nb-color-primary); 
+  border-radius: var(--nb-border-radius);
+  box-shadow: var(--nb-shadow-hard-sm);
   cursor: pointer; transition: all var(--nb-transition); text-decoration: none; user-select: none; white-space: nowrap;
 }
 button:hover, .nb-btn:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
-  background-color: var(--nb-color-primary-hover); border-color: var(--nb-color-primary-hover); text-decoration: none;
+  background-color: var(--nb-color-primary-hover); 
+  border-color: var(--nb-color-primary-hover); 
+  text-decoration: none;
+  transform: translate(-1px, -1px);
+  box-shadow: var(--nb-shadow-hard-md);
+}
+button:active, .nb-btn:active, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
 }
 button:focus-visible, .nb-btn:focus-visible, input[type="submit"]:focus-visible, input[type="button"]:focus-visible, input[type="reset"]:focus-visible {
-  outline: none; box-shadow: 0 0 0 3px var(--nb-color-primary-focus);
+  outline: none; box-shadow: 0 0 0 3px var(--nb-color-primary-focus), var(--nb-shadow-hard-sm);
 }
 button:disabled, .nb-btn:disabled, input[type="submit"]:disabled, input[type="button"]:disabled, input[type="reset"]:disabled {
   opacity: 0.5; cursor: not-allowed; pointer-events: none;
+  box-shadow: none; transform: none;
 }
 
-.nb-btn-outline { color: var(--nb-color-primary); background-color: transparent; }
-.nb-btn-outline:hover { color: var(--nb-color-text-inverse); background-color: var(--nb-color-primary); }
-.nb-btn-secondary { color: var(--nb-color-text); background-color: var(--nb-color-bg-alt); border-color: var(--nb-color-border); }
-.nb-btn-secondary:hover { background-color: var(--nb-color-border); border-color: var(--nb-color-border-strong); }
-.nb-btn-success { background-color: var(--nb-color-success); border-color: var(--nb-color-success); }
-.nb-btn-success:hover { background-color: #0b7a43; border-color: #0b7a43; }
-.nb-btn-danger { background-color: var(--nb-color-danger); border-color: var(--nb-color-danger); }
-.nb-btn-danger:hover { background-color: #c5221f; border-color: #c5221f; }
-.nb-btn-link { color: var(--nb-color-text-link); background-color: transparent; border-color: transparent; }
-.nb-btn-link:hover { background-color: var(--nb-color-bg-alt); text-decoration: underline; }
+/* Button Variants */
+.nb-btn-outline { 
+  color: var(--nb-color-primary); 
+  background-color: transparent; 
+  border-color: var(--nb-color-primary);
+}
+.nb-btn-outline:hover { 
+  color: var(--nb-color-text-inverse); 
+  background-color: var(--nb-color-primary); 
+}
+.nb-btn-secondary { 
+  color: var(--nb-color-text); 
+  background-color: var(--nb-color-bg-alt); 
+  border-color: var(--nb-color-border);
+}
+.nb-btn-secondary:hover { 
+  background-color: var(--nb-color-border); 
+  border-color: var(--nb-color-border-strong); 
+}
+.nb-btn-success { 
+  background-color: var(--nb-color-success); 
+  border-color: var(--nb-color-success); 
+}
+.nb-btn-success:hover { 
+  background-color: #0b7a43; 
+  border-color: #0b7a43; 
+}
+.nb-btn-danger { 
+  background-color: var(--nb-color-danger); 
+  border-color: var(--nb-color-danger); 
+}
+.nb-btn-danger:hover { 
+  background-color: #c5221f; 
+  border-color: #c5221f; 
+}
+.nb-btn-warning {
+  background-color: var(--nb-color-warning);
+  border-color: var(--nb-color-warning);
+  color: #000;
+}
+.nb-btn-warning:hover {
+  background-color: #c46500;
+  border-color: #c46500;
+}
+.nb-btn-ghost {
+  color: var(--nb-color-text);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.nb-btn-ghost:hover {
+  background-color: var(--nb-color-bg-alt);
+  transform: none;
+}
+.nb-btn-link { 
+  color: var(--nb-color-text-link); 
+  background-color: transparent; 
+  border-color: transparent; 
+  box-shadow: none;
+}
+.nb-btn-link:hover { 
+  background-color: transparent; 
+  text-decoration: underline; 
+  transform: none; 
+}
+
+/* Button Sizes */
 .nb-btn-sm { padding: 0.375rem 0.75rem; font-size: 0.8125rem; }
-.nb-btn-lg { padding: 0.75rem 1.75rem; font-size: 1.0625rem; }
+.nb-btn-lg { padding: 0.875rem 2rem; font-size: 1.0625rem; }
+.nb-btn-xl { padding: 1rem 2.5rem; font-size: 1.125rem; }
 .nb-btn-block { display: flex; width: 100%; }
 
+/* Button Group */
 .nb-btn-group { display: inline-flex; }
-.nb-btn-group button, .nb-btn-group .nb-btn { border-radius: 0; }
+.nb-btn-group button, .nb-btn-group .nb-btn { border-radius: 0; box-shadow: none; }
 .nb-btn-group button:first-child, .nb-btn-group .nb-btn:first-child { border-radius: var(--nb-border-radius) 0 0 var(--nb-border-radius); }
 .nb-btn-group button:last-child, .nb-btn-group .nb-btn:last-child { border-radius: 0 var(--nb-border-radius) var(--nb-border-radius) 0; }
 .nb-btn-group button:not(:last-child) { border-right: none; }
+
+/* Color Variants using Accent Colors */
+.nb-btn-yellow { background-color: var(--nb-color-accent-yellow); border-color: var(--nb-color-accent-yellow); color: #000; }
+.nb-btn-yellow:hover { background-color: #D4E835; border-color: #D4E835; }
+.nb-btn-blue { background-color: var(--nb-color-accent-blue); border-color: var(--nb-color-accent-blue); }
+.nb-btn-blue:hover { background-color: #4B2FCC; border-color: #4B2FCC; }
+.nb-btn-purple { background-color: var(--nb-color-accent-purple); border-color: var(--nb-color-accent-purple); }
+.nb-btn-purple:hover { background-color: #9B3CE8; border-color: #9B3CE8; }
+.nb-btn-green { background-color: var(--nb-color-accent-green); border-color: var(--nb-color-accent-green); color: #000; }
+.nb-btn-green:hover { background-color: #55E0BB; border-color: #55E0BB; }
+.nb-btn-orange { background-color: var(--nb-color-accent-orange); border-color: var(--nb-color-accent-orange); color: #000; }
+.nb-btn-orange:hover { background-color: #E8853D; border-color: #E8853D; }
+.nb-btn-pink { background-color: var(--nb-color-accent-pink); border-color: var(--nb-color-accent-pink); }
+.nb-btn-pink:hover { background-color: #E8559E; border-color: #E8559E; }
 
 /* ================================
    7. Forms
@@ -418,38 +599,213 @@ tfoot td { padding: var(--nb-spacing-sm) var(--nb-spacing-md); font-weight: 600;
 .nb-pagination .nb-disabled span { opacity: 0.5; cursor: not-allowed; }
 
 /* ================================
-   10. Cards
+   10. Cards - Splatoon Inspired
    ================================ */
-.nb-card { background-color: var(--nb-color-bg); border: var(--nb-border-width) solid var(--nb-color-border); border-radius: var(--nb-border-radius); box-shadow: var(--nb-shadow-sm); overflow: hidden; transition: box-shadow var(--nb-transition); }
-.nb-card:hover { box-shadow: var(--nb-shadow-md); }
+.nb-card { 
+  background-color: var(--nb-color-bg); 
+  border: var(--nb-border-width) solid var(--nb-color-border); 
+  border-radius: var(--nb-border-radius); 
+  box-shadow: var(--nb-shadow-hard-sm); 
+  overflow: hidden; 
+  transition: all var(--nb-transition); 
+}
+.nb-card:hover { 
+  box-shadow: var(--nb-shadow-hard-md); 
+  transform: translate(-2px, -2px); 
+}
+.nb-card:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
 .nb-card-img { width: 100%; display: block; }
 .nb-card-body { padding: var(--nb-spacing-lg); }
-.nb-card-title { font-size: 1.25rem; font-weight: 600; margin-bottom: var(--nb-spacing-sm); }
+.nb-card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: var(--nb-spacing-sm); }
 .nb-card-subtitle { font-size: 0.875rem; color: var(--nb-color-text-muted); margin-bottom: var(--nb-spacing-sm); }
 .nb-card-text { margin-bottom: var(--nb-spacing-md); }
 .nb-card-text:last-child { margin-bottom: 0; }
-.nb-card-header { padding: var(--nb-spacing-md) var(--nb-spacing-lg); border-bottom: var(--nb-border-width) solid var(--nb-color-border); background-color: var(--nb-color-bg-alt); font-weight: 600; }
-.nb-card-footer { padding: var(--nb-spacing-md) var(--nb-spacing-lg); border-top: var(--nb-border-width) solid var(--nb-color-border); background-color: var(--nb-color-bg-alt); }
+.nb-card-header { 
+  padding: var(--nb-spacing-md) var(--nb-spacing-lg); 
+  border-bottom: var(--nb-border-width) solid var(--nb-color-border); 
+  background-color: var(--nb-color-bg-alt); 
+  font-weight: 700; 
+}
+.nb-card-footer { 
+  padding: var(--nb-spacing-md) var(--nb-spacing-lg); 
+  border-top: var(--nb-border-width) solid var(--nb-color-border); 
+  background-color: var(--nb-color-bg-alt); 
+}
+
+/* Card Variants - Splatoon Inspired */
+.nb-card-rugged {
+  background-color: var(--nb-color-bg);
+  border: 3px solid var(--nb-color-border-strong);
+  border-radius: var(--nb-border-radius-lg);
+  box-shadow: var(--nb-shadow-hard-md);
+  transform: rotate(-0.5deg);
+  position: relative;
+}
+.nb-card-rugged::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  right: 20px;
+  height: 16px;
+  background: var(--nb-color-bg-alt);
+  border: 2px solid var(--nb-color-border);
+  border-radius: 4px;
+  transform: rotate(1deg);
+}
+.nb-card-rugged:hover {
+  transform: rotate(0deg) translate(-2px, -2px);
+  box-shadow: var(--nb-shadow-hard-lg);
+}
+
+.nb-card-paper {
+  background-color: var(--nb-color-bg);
+  border: 2px solid var(--nb-color-border);
+  border-radius: 0;
+  box-shadow: var(--nb-shadow-hard-md);
+  position: relative;
+  clip-path: polygon(0% 2%, 3% 0%, 100% 1%, 98% 100%, 2% 98%);
+}
+.nb-card-paper:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--nb-shadow-hard-lg);
+}
+
+.nb-card-tape {
+  background-color: var(--nb-color-bg);
+  border: none;
+  border-radius: var(--nb-border-radius);
+  box-shadow: var(--nb-shadow-md);
+  position: relative;
+}
+.nb-card-tape::before,
+.nb-card-tape::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  width: 80px;
+  height: 24px;
+  background: var(--nb-color-accent-yellow);
+  opacity: 0.9;
+  border-radius: 2px;
+}
+.nb-card-tape::before {
+  left: 10%;
+  transform: rotate(-3deg);
+}
+.nb-card-tape::after {
+  right: 10%;
+  transform: rotate(2deg);
+}
+
+/* Card Color Themes */
+.nb-card-yellow { border-color: var(--nb-color-accent-yellow); }
+.nb-card-yellow .nb-card-header { background-color: var(--nb-color-accent-yellow); color: #000; }
+.nb-card-blue { border-color: var(--nb-color-accent-blue); }
+.nb-card-blue .nb-card-header { background-color: var(--nb-color-accent-blue); color: #fff; }
+.nb-card-purple { border-color: var(--nb-color-accent-purple); }
+.nb-card-purple .nb-card-header { background-color: var(--nb-color-accent-purple); color: #fff; }
+.nb-card-green { border-color: var(--nb-color-accent-green); }
+.nb-card-green .nb-card-header { background-color: var(--nb-color-accent-green); color: #000; }
+.nb-card-orange { border-color: var(--nb-color-accent-orange); }
+.nb-card-orange .nb-card-header { background-color: var(--nb-color-accent-orange); color: #000; }
+.nb-card-pink { border-color: var(--nb-color-accent-pink); }
+.nb-card-pink .nb-card-header { background-color: var(--nb-color-accent-pink); color: #fff; }
 
 /* ================================
-   11. Tags / Badges
+   11. Tags / Badges - Splatoon Inspired
    ================================ */
-.nb-badge { display: inline-flex; align-items: center; padding: 0.125rem 0.5rem; font-size: 0.75rem; font-weight: 600; line-height: 1.5; border-radius: 999px; background-color: var(--nb-color-bg-alt); color: var(--nb-color-text); border: var(--nb-border-width) solid var(--nb-color-border); }
+.nb-badge { 
+  display: inline-flex; 
+  align-items: center; 
+  padding: 0.25rem 0.625rem; 
+  font-size: 0.75rem; 
+  font-weight: 700; 
+  line-height: 1.5; 
+  border-radius: var(--nb-border-radius-sm); 
+  background-color: var(--nb-color-bg-alt); 
+  color: var(--nb-color-text); 
+  border: var(--nb-border-width) solid var(--nb-color-border);
+  box-shadow: var(--nb-shadow-hard-sm);
+  transform: rotate(-1deg);
+}
 .nb-badge-primary { background-color: var(--nb-color-primary); border-color: var(--nb-color-primary); color: var(--nb-color-text-inverse); }
 .nb-badge-success { background-color: var(--nb-color-success); border-color: var(--nb-color-success); color: var(--nb-color-text-inverse); }
 .nb-badge-danger { background-color: var(--nb-color-danger); border-color: var(--nb-color-danger); color: var(--nb-color-text-inverse); }
 .nb-badge-warning { background-color: var(--nb-color-warning); border-color: var(--nb-color-warning); color: #000; }
 .nb-badge-info { background-color: var(--nb-color-info); border-color: var(--nb-color-info); color: var(--nb-color-text-inverse); }
 
+/* Badge Color Variants */
+.nb-badge-yellow { background-color: var(--nb-color-accent-yellow); border-color: var(--nb-color-accent-yellow); color: #000; }
+.nb-badge-blue { background-color: var(--nb-color-accent-blue); border-color: var(--nb-color-accent-blue); color: #fff; }
+.nb-badge-purple { background-color: var(--nb-color-accent-purple); border-color: var(--nb-color-accent-purple); color: #fff; }
+.nb-badge-green { background-color: var(--nb-color-accent-green); border-color: var(--nb-color-accent-green); color: #000; }
+.nb-badge-orange { background-color: var(--nb-color-accent-orange); border-color: var(--nb-color-accent-orange); color: #000; }
+.nb-badge-pink { background-color: var(--nb-color-accent-pink); border-color: var(--nb-color-accent-pink); color: #fff; }
+
+/* Badge Sizes */
+.nb-badge-sm { padding: 0.125rem 0.375rem; font-size: 0.625rem; }
+.nb-badge-lg { padding: 0.375rem 0.875rem; font-size: 0.875rem; }
+
 /* ================================
-   12. Alerts
+   12. Alerts - Splatoon Inspired
    ================================ */
-.nb-alert { padding: var(--nb-spacing-md) var(--nb-spacing-lg); margin-bottom: var(--nb-spacing-md); border-radius: var(--nb-border-radius); border-left: 4px solid transparent; font-size: 0.9375rem; }
+.nb-alert { 
+  padding: var(--nb-spacing-md) var(--nb-spacing-lg); 
+  margin-bottom: var(--nb-spacing-md); 
+  border-radius: var(--nb-border-radius); 
+  border: var(--nb-border-width) solid transparent;
+  border-left: 6px solid transparent; 
+  font-size: 0.9375rem; 
+  box-shadow: var(--nb-shadow-hard-sm);
+  position: relative;
+}
 .nb-alert p:last-child { margin-bottom: 0; }
-.nb-alert-info { background-color: rgba(26, 115, 232, 0.08); border-left-color: var(--nb-color-info); color: var(--nb-color-info); }
-.nb-alert-success { background-color: rgba(13, 144, 79, 0.08); border-left-color: var(--nb-color-success); color: var(--nb-color-success); }
-.nb-alert-warning { background-color: rgba(227, 116, 0, 0.08); border-left-color: var(--nb-color-warning); color: var(--nb-color-warning); }
-.nb-alert-danger { background-color: rgba(217, 48, 37, 0.08); border-left-color: var(--nb-color-danger); color: var(--nb-color-danger); }
+.nb-alert-info { 
+  background-color: rgba(26, 115, 232, 0.1); 
+  border-left-color: var(--nb-color-info); 
+  border-color: rgba(26, 115, 232, 0.2);
+}
+.nb-alert-success { 
+  background-color: rgba(13, 144, 79, 0.1); 
+  border-left-color: var(--nb-color-success); 
+  border-color: rgba(13, 144, 79, 0.2);
+}
+.nb-alert-warning { 
+  background-color: rgba(227, 116, 0, 0.1); 
+  border-left-color: var(--nb-color-warning); 
+  border-color: rgba(227, 116, 0, 0.2);
+}
+.nb-alert-danger { 
+  background-color: rgba(217, 48, 37, 0.1); 
+  border-left-color: var(--nb-color-danger); 
+  border-color: rgba(217, 48, 37, 0.2);
+}
+
+/* Alert Variants */
+.nb-alert-yellow {
+  background-color: rgba(234, 255, 61, 0.15);
+  border-left-color: var(--nb-color-accent-yellow);
+  border-color: rgba(234, 255, 61, 0.3);
+}
+.nb-alert-blue {
+  background-color: rgba(96, 59, 255, 0.1);
+  border-left-color: var(--nb-color-accent-blue);
+  border-color: rgba(96, 59, 255, 0.2);
+}
+.nb-alert-purple {
+  background-color: rgba(175, 80, 255, 0.1);
+  border-left-color: var(--nb-color-accent-purple);
+  border-color: rgba(175, 80, 255, 0.2);
+}
+.nb-alert-green {
+  background-color: rgba(106, 247, 206, 0.15);
+  border-left-color: var(--nb-color-accent-green);
+  border-color: rgba(106, 247, 206, 0.3);
+}
 
 /* ================================
    13. Lists & Description Lists
@@ -479,46 +835,210 @@ details[open] summary { border-bottom: var(--nb-border-width) solid var(--nb-col
 details > *:not(summary) { padding: var(--nb-spacing-md) var(--nb-spacing-lg); }
 
 /* ================================
-   16. Progress Bar
+   16. Progress Bar - Splatoon Inspired
    ================================ */
-.nb-progress { width: 100%; height: 0.5rem; background-color: var(--nb-color-bg-alt); border-radius: 999px; overflow: hidden; margin: var(--nb-spacing-sm) 0; }
-.nb-progress-bar { height: 100%; background-color: var(--nb-color-primary); border-radius: 999px; transition: width var(--nb-transition); }
+.nb-progress { 
+  width: 100%; 
+  height: 0.75rem; 
+  background-color: var(--nb-color-bg-alt); 
+  border-radius: 999px; 
+  overflow: hidden; 
+  margin: var(--nb-spacing-sm) 0; 
+  border: var(--nb-border-width) solid var(--nb-color-border);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.nb-progress-bar { 
+  height: 100%; 
+  background-color: var(--nb-color-primary); 
+  border-radius: 999px; 
+  transition: width var(--nb-transition); 
+  position: relative;
+}
+.nb-progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  animation: shimmer 2s infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
 .nb-progress-bar-success { background-color: var(--nb-color-success); }
 .nb-progress-bar-danger { background-color: var(--nb-color-danger); }
 .nb-progress-bar-warning { background-color: var(--nb-color-warning); }
+.nb-progress-bar-info { background-color: var(--nb-color-info); }
+
+/* Progress Bar Sizes */
+.nb-progress-sm { height: 0.5rem; }
+.nb-progress-lg { height: 1rem; }
+
+/* Progress Bar Variants */
+.nb-progress-bar-yellow { background-color: var(--nb-color-accent-yellow); }
+.nb-progress-bar-blue { background-color: var(--nb-color-accent-blue); }
+.nb-progress-bar-purple { background-color: var(--nb-color-accent-purple); }
+.nb-progress-bar-green { background-color: var(--nb-color-accent-green); }
+.nb-progress-bar-orange { background-color: var(--nb-color-accent-orange); }
+.nb-progress-bar-pink { background-color: var(--nb-color-accent-pink); }
 
 /* ================================
-   17. Spinner / Loading
+   17. Spinner / Loading - Splatoon Inspired
    ================================ */
-.nb-spinner { display: inline-block; width: 1.5rem; height: 1.5rem; border: 0.1875rem solid var(--nb-color-border); border-top-color: var(--nb-color-primary); border-radius: 50%; animation: nb-spin 0.6s linear infinite; }
+.nb-spinner { 
+  display: inline-block; 
+  width: 1.5rem; 
+  height: 1.5rem; 
+  border: 0.25rem solid var(--nb-color-border); 
+  border-top-color: var(--nb-color-primary); 
+  border-right-color: var(--nb-color-accent-yellow);
+  border-radius: 50%; 
+  animation: nb-spin 0.8s linear infinite; 
+}
 .nb-spinner-sm { width: 1rem; height: 1rem; border-width: 0.125rem; }
-.nb-spinner-lg { width: 2.5rem; height: 2.5rem; border-width: 0.25rem; }
+.nb-spinner-lg { width: 2.5rem; height: 2.5rem; border-width: 0.375rem; }
+.nb-spinner-xl { width: 3.5rem; height: 3.5rem; border-width: 0.5rem; }
+
+/* Spinner Variants */
+.nb-spinner-primary { border-top-color: var(--nb-color-primary); border-right-color: var(--nb-color-accent-yellow); }
+.nb-spinner-yellow { border-top-color: var(--nb-color-accent-yellow); border-right-color: var(--nb-color-accent-orange); }
+.nb-spinner-blue { border-top-color: var(--nb-color-accent-blue); border-right-color: var(--nb-color-accent-purple); }
+.nb-spinner-purple { border-top-color: var(--nb-color-accent-purple); border-right-color: var(--nb-color-accent-pink); }
+.nb-spinner-green { border-top-color: var(--nb-color-accent-green); border-right-color: var(--nb-color-accent-yellow); }
+.nb-spinner-orange { border-top-color: var(--nb-color-accent-orange); border-right-color: var(--nb-color-accent-red); }
+.nb-spinner-pink { border-top-color: var(--nb-color-accent-pink); border-right-color: var(--nb-color-accent-purple); }
+
 @keyframes nb-spin { to { transform: rotate(360deg); } }
 
+/* Loading Pulse - Splatoon Style */
+.nb-loading-pulse {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+.nb-loading-pulse span {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--nb-color-primary);
+  border-radius: 50%;
+  animation: nb-pulse 1.4s ease-in-out infinite;
+}
+.nb-loading-pulse span:nth-child(1) { animation-delay: 0s; }
+.nb-loading-pulse span:nth-child(2) { animation-delay: 0.2s; }
+.nb-loading-pulse span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes nb-pulse {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
 /* ================================
-   18. Tooltip (CSS-only)
+   18. Tooltip (CSS-only) - Splatoon Inspired
    ================================ */
 [data-tooltip] { position: relative; cursor: help; }
-[data-tooltip]::before, [data-tooltip]::after { position: absolute; opacity: 0; pointer-events: none; transition: opacity var(--nb-transition), transform var(--nb-transition); z-index: 1000; }
-[data-tooltip]::before { content: attr(data-tooltip); bottom: 100%; left: 50%; transform: translateX(-50%) translateY(0.25rem); padding: var(--nb-spacing-xs) var(--nb-spacing-sm); font-size: 0.75rem; color: var(--nb-color-text-inverse); background-color: var(--nb-color-bg-inverse); border-radius: calc(var(--nb-border-radius) / 2); white-space: nowrap; max-width: 15rem; overflow: hidden; text-overflow: ellipsis; }
-[data-tooltip]::after { content: ""; bottom: 100%; left: 50%; transform: translateX(-50%) translateY(0.25rem); border: 4px solid transparent; border-top-color: var(--nb-color-bg-inverse); margin-bottom: -4px; }
+[data-tooltip]::before, [data-tooltip]::after { position: absolute; opacity: 0; pointer-events: none; transition: all var(--nb-transition); z-index: 1000; }
+[data-tooltip]::before { 
+  content: attr(data-tooltip); 
+  bottom: 100%; 
+  left: 50%; 
+  transform: translateX(-50%) translateY(0.5rem); 
+  padding: var(--nb-spacing-xs) var(--nb-spacing-sm); 
+  font-size: 0.75rem; 
+  font-weight: 600;
+  color: var(--nb-color-text-inverse); 
+  background-color: var(--nb-color-bg-inverse); 
+  border-radius: var(--nb-border-radius-sm); 
+  border: 2px solid var(--nb-color-border-strong);
+  box-shadow: var(--nb-shadow-hard-sm);
+  white-space: nowrap; 
+  max-width: 15rem; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+[data-tooltip]::after { 
+  content: ""; 
+  bottom: 100%; 
+  left: 50%; 
+  transform: translateX(-50%) translateY(0.5rem); 
+  border: 5px solid transparent; 
+  border-top-color: var(--nb-color-bg-inverse); 
+  margin-bottom: -5px; 
+}
 [data-tooltip]:hover::before, [data-tooltip]:hover::after { opacity: 1; }
 [data-tooltip]:hover::before { transform: translateX(-50%) translateY(-0.25rem); }
 [data-tooltip]:hover::after { transform: translateX(-50%) translateY(-0.25rem); }
 
 /* ================================
-   19. Modal (using :target)
+   19. Modal (using :target) - Splatoon Inspired
    ================================ */
-.nb-modal { position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity var(--nb-transition), visibility var(--nb-transition); padding: var(--nb-spacing-md); }
+.nb-modal { 
+  position: fixed; 
+  inset: 0; 
+  background-color: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(4px);
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  z-index: 1000; 
+  opacity: 0; 
+  visibility: hidden; 
+  transition: all var(--nb-transition); 
+  padding: var(--nb-spacing-md); 
+}
 .nb-modal:target { opacity: 1; visibility: visible; }
-.nb-modal-dialog { background-color: var(--nb-color-bg); border-radius: var(--nb-border-radius); box-shadow: var(--nb-shadow-lg); max-width: 32rem; width: 100%; max-height: 80vh; overflow-y: auto; transform: translateY(1rem); transition: transform var(--nb-transition); }
-.nb-modal:target .nb-modal-dialog { transform: translateY(0); }
-.nb-modal-header { display: flex; align-items: center; justify-content: space-between; padding: var(--nb-spacing-md) var(--nb-spacing-lg); border-bottom: var(--nb-border-width) solid var(--nb-color-border); }
-.nb-modal-title { font-size: 1.125rem; font-weight: 600; }
-.nb-modal-close { background: none; border: none; padding: var(--nb-spacing-xs); cursor: pointer; font-size: 1.5rem; line-height: 1; color: var(--nb-color-text-muted); border-radius: var(--nb-border-radius); }
-.nb-modal-close:hover { background-color: var(--nb-color-bg-alt); color: var(--nb-color-text); }
+.nb-modal-dialog { 
+  background-color: var(--nb-color-bg); 
+  border-radius: var(--nb-border-radius-lg); 
+  border: 3px solid var(--nb-color-border-strong);
+  box-shadow: var(--nb-shadow-hard-lg); 
+  max-width: 32rem; 
+  width: 100%; 
+  max-height: 80vh; 
+  overflow-y: auto; 
+  transform: translateY(1rem) rotate(-0.5deg); 
+  transition: transform var(--nb-transition-bounce); 
+}
+.nb-modal:target .nb-modal-dialog { transform: translateY(0) rotate(0deg); }
+.nb-modal-header { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: var(--nb-spacing-md) var(--nb-spacing-lg); 
+  border-bottom: var(--nb-border-width) solid var(--nb-color-border); 
+  background-color: var(--nb-color-bg-alt);
+  border-radius: var(--nb-border-radius-lg) var(--nb-border-radius-lg) 0 0;
+}
+.nb-modal-title { font-size: 1.25rem; font-weight: 700; }
+.nb-modal-close { 
+  background: none; 
+  border: 2px solid var(--nb-color-border); 
+  padding: var(--nb-spacing-xs); 
+  cursor: pointer; 
+  font-size: 1.5rem; 
+  line-height: 1; 
+  color: var(--nb-color-text-muted); 
+  border-radius: var(--nb-border-radius-sm);
+  box-shadow: var(--nb-shadow-hard-sm);
+  transition: all var(--nb-transition);
+}
+.nb-modal-close:hover { 
+  background-color: var(--nb-color-danger); 
+  border-color: var(--nb-color-danger);
+  color: var(--nb-color-text-inverse);
+  transform: translate(-1px, -1px);
+  box-shadow: var(--nb-shadow-hard-md);
+}
 .nb-modal-body { padding: var(--nb-spacing-lg); }
-.nb-modal-footer { padding: var(--nb-spacing-md) var(--nb-spacing-lg); border-top: var(--nb-border-width) solid var(--nb-color-border); display: flex; justify-content: flex-end; gap: var(--nb-spacing-sm); }
+.nb-modal-footer { 
+  padding: var(--nb-spacing-md) var(--nb-spacing-lg); 
+  border-top: var(--nb-border-width) solid var(--nb-color-border); 
+  display: flex; 
+  justify-content: flex-end; 
+  gap: var(--nb-spacing-sm); 
+  background-color: var(--nb-color-bg-alt);
+  border-radius: 0 0 var(--nb-border-radius-lg) var(--nb-border-radius-lg);
+}
 
 /* ================================
    20. Display & Visibility Utilities
@@ -570,7 +1090,15 @@ details > *:not(summary) { padding: var(--nb-spacing-md) var(--nb-spacing-lg); }
 .nb-shadow-sm { box-shadow: var(--nb-shadow-sm) !important; }
 .nb-shadow { box-shadow: var(--nb-shadow-md) !important; }
 .nb-shadow-lg { box-shadow: var(--nb-shadow-lg) !important; }
+.nb-shadow-xl { box-shadow: var(--nb-shadow-xl) !important; }
 .nb-shadow-none { box-shadow: none !important; }
+
+/* Hard Offset Shadows (Splatoon Style) */
+.nb-shadow-hard-sm { box-shadow: var(--nb-shadow-hard-sm) !important; }
+.nb-shadow-hard { box-shadow: var(--nb-shadow-hard-md) !important; }
+.nb-shadow-hard-md { box-shadow: var(--nb-shadow-hard-md) !important; }
+.nb-shadow-hard-lg { box-shadow: var(--nb-shadow-hard-lg) !important; }
+.nb-shadow-hard-xl { box-shadow: var(--nb-shadow-hard-xl) !important; }
 
 /* ================================
    25. Overflow Utilities
@@ -1024,6 +1552,14 @@ pre:hover .nb-copy-btn {
   h5 { font-size: 1.125rem; }
   h6 { font-size: 1rem; }
   
+  /* Responsive display headings */
+  .nb-display-1 { font-size: 2.5rem; }
+  .nb-display-2 { font-size: 2.25rem; }
+  .nb-display-3 { font-size: 2rem; }
+  
+  /* Responsive lead text */
+  .nb-lead { font-size: 1.125rem; }
+  
   /* Prevent long code from overflowing */
   pre, code {
     white-space: pre-wrap;
@@ -1031,12 +1567,17 @@ pre:hover .nb-copy-btn {
     overflow-wrap: break-word;
   }
   
-  /* Ensure tables scroll on mobile (only without responsive wrapper */
+  /* Ensure tables scroll on mobile (only without responsive wrapper) */
   table:not(.nb-table-responsive table) {
     display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Reduce hard shadows on mobile for better performance */
+  .nb-card, .nb-btn, button, .nb-btn, .nb-badge, .nb-alert, .nb-modal-dialog {
+    box-shadow: var(--nb-shadow-sm);
   }
 }
 

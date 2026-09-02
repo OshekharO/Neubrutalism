@@ -179,6 +179,7 @@ greet("World");</code></pre>
           <button>Default</button>
           <button class="nb-btn-outline">Outline</button>
           <button class="nb-btn-secondary">Secondary</button>
+          <button class="nb-btn-ghost">Ghost</button>
           <button class="nb-btn-link">Link</button>
         </div>
       </div>
@@ -188,6 +189,19 @@ greet("World");</code></pre>
         <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
           <button class="nb-btn-success">Success</button>
           <button class="nb-btn-danger">Danger</button>
+          <button class="nb-btn-warning">Warning</button>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Splatoon Colors</h3>
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
+          <button class="nb-btn-yellow">Yellow</button>
+          <button class="nb-btn-blue">Blue</button>
+          <button class="nb-btn-purple">Purple</button>
+          <button class="nb-btn-green">Green</button>
+          <button class="nb-btn-orange">Orange</button>
+          <button class="nb-btn-pink">Pink</button>
         </div>
       </div>
 
@@ -197,6 +211,7 @@ greet("World");</code></pre>
           <button class="nb-btn-sm">Small</button>
           <button>Default</button>
           <button class="nb-btn-lg">Large</button>
+          <button class="nb-btn-xl">Extra Large</button>
         </div>
       </div>
 
@@ -341,36 +356,73 @@ greet("World");</code></pre>
     <div class="demo-section" id="cards">
       <h2>Cards</h2>
       
-      <div class="nb-row">
+      <div class="nb-row" style="margin-bottom: 1.5rem;">
         <div class="nb-col-4">
           <div class="nb-card">
             <div class="nb-card-body">
               <h3 class="nb-card-title">Basic Card</h3>
-              <p class="nb-card-text">A simple card with body content.</p>
+              <p class="nb-card-text">A simple card with body content and hard offset shadow.</p>
               <button class="nb-btn-sm">Learn More</button>
             </div>
           </div>
         </div>
         
         <div class="nb-col-4">
-          <div class="nb-card">
+          <div class="nb-card nb-card-yellow">
             <div class="nb-card-header">Featured</div>
             <div class="nb-card-body">
               <h3 class="nb-card-title">Card with Header</h3>
-              <p class="nb-card-text">This card has a header section.</p>
-              <button class="nb-btn-sm">Learn More</button>
+              <p class="nb-card-text">This card has a colored header section.</p>
+              <button class="nb-btn-sm nb-btn-yellow">Learn More</button>
             </div>
             <div class="nb-card-footer">Last updated 5 min ago</div>
           </div>
         </div>
         
         <div class="nb-col-4">
-          <div class="nb-card">
+          <div class="nb-card nb-card-blue">
             <div class="nb-card-body">
               <h5 class="nb-card-subtitle">Category</h5>
-              <h3 class="nb-card-title">Card with Subtitle</h3>
-              <p class="nb-card-text">This card has a subtitle section.</p>
-              <a href="#" class="nb-btn-sm nb-btn-outline">View Details</a>
+              <h3 class="nb-card-title">Blue Theme</h3>
+              <p class="nb-card-text">Cards can have different color themes.</p>
+              <a href="#" class="nb-btn-sm nb-btn-blue">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Splatoon Card Variants</h3>
+      <div class="nb-row">
+        <div class="nb-col-3">
+          <div class="nb-card nb-card-rugged">
+            <div class="nb-card-body">
+              <h4 class="nb-card-title">Rugged Card</h4>
+              <p class="nb-card-text">With tape decoration and slight rotation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="nb-col-3">
+          <div class="nb-card nb-card-paper nb-card-purple">
+            <div class="nb-card-body">
+              <h4 class="nb-card-title">Paper Card</h4>
+              <p class="nb-card-text">Torn paper edge effect with clip-path.</p>
+            </div>
+          </div>
+        </div>
+        <div class="nb-col-3">
+          <div class="nb-card nb-card-tape nb-card-green">
+            <div class="nb-card-body">
+              <h4 class="nb-card-title">Tape Card</h4>
+              <p class="nb-card-text">With decorative tape strips on top.</p>
+            </div>
+          </div>
+        </div>
+        <div class="nb-col-3">
+          <div class="nb-card nb-card-orange">
+            <div class="nb-card-header">Orange Theme</div>
+            <div class="nb-card-body">
+              <h4 class="nb-card-title">Color Card</h4>
+              <p class="nb-card-text">Vibrant accent color theming.</p>
             </div>
           </div>
         </div>
@@ -495,13 +547,22 @@ greet("World");</code></pre>
 
       <div class="demo-subsection">
         <h3>Badges</h3>
-        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem;">
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem; margin-bottom: 1rem;">
           <span class="nb-badge">Default</span>
           <span class="nb-badge nb-badge-primary">Primary</span>
           <span class="nb-badge nb-badge-success">Success</span>
           <span class="nb-badge nb-badge-danger">Danger</span>
           <span class="nb-badge nb-badge-warning">Warning</span>
           <span class="nb-badge nb-badge-info">Info</span>
+        </div>
+        <h4>Splatoon Colors</h4>
+        <div class="nb-flex nb-flex-wrap" style="gap: 0.5rem;">
+          <span class="nb-badge nb-badge-yellow">Yellow</span>
+          <span class="nb-badge nb-badge-blue">Blue</span>
+          <span class="nb-badge nb-badge-purple">Purple</span>
+          <span class="nb-badge nb-badge-green">Green</span>
+          <span class="nb-badge nb-badge-orange">Orange</span>
+          <span class="nb-badge nb-badge-pink">Pink</span>
         </div>
       </div>
 
@@ -557,14 +618,36 @@ greet("World");</code></pre>
         <div class="nb-progress"><div class="nb-progress-bar" style="width: 25%"></div></div>
         <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-success" style="width: 50%"></div></div>
         <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-danger" style="width: 75%"></div></div>
+        <div class="nb-progress nb-progress-lg"><div class="nb-progress-bar nb-progress-bar-yellow" style="width: 60%"></div></div>
+        <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-blue" style="width: 40%"></div></div>
+        <div class="nb-progress"><div class="nb-progress-bar nb-progress-bar-purple" style="width: 85%"></div></div>
       </div>
 
       <div class="demo-subsection">
         <h3>Spinners</h3>
-        <div class="nb-flex" style="gap: 1rem; align-items: center;">
+        <div class="nb-flex" style="gap: 1rem; align-items: center; margin-bottom: 1rem;">
           <div class="nb-spinner nb-spinner-sm"></div>
           <div class="nb-spinner"></div>
           <div class="nb-spinner nb-spinner-lg"></div>
+          <div class="nb-spinner nb-spinner-xl"></div>
+        </div>
+        <h4>Splatoon Colors</h4>
+        <div class="nb-flex" style="gap: 1rem; align-items: center;">
+          <div class="nb-spinner nb-spinner-yellow"></div>
+          <div class="nb-spinner nb-spinner-blue"></div>
+          <div class="nb-spinner nb-spinner-purple"></div>
+          <div class="nb-spinner nb-spinner-green"></div>
+          <div class="nb-spinner nb-spinner-orange"></div>
+          <div class="nb-spinner nb-spinner-pink"></div>
+        </div>
+      </div>
+
+      <div class="demo-subsection">
+        <h3>Loading Pulse</h3>
+        <div class="nb-loading-pulse">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
 
