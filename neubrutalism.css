@@ -107,21 +107,6 @@ a { color: var(--nb-color-text-link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible { outline: 2px solid var(--nb-color-primary); outline-offset: 2px; border-radius: 2px; }
 
-.text-muted { color: var(--nb-color-text-muted); }
-.text-primary { color: var(--nb-color-primary); }
-.text-success { color: var(--nb-color-success); }
-.text-danger { color: var(--nb-color-danger); }
-.text-warning { color: var(--nb-color-warning); }
-.text-small { font-size: 0.875rem; }
-.text-large { font-size: 1.25rem; }
-.text-bold { font-weight: 700; }
-.text-normal { font-weight: 400; }
-.text-italic { font-style: italic; }
-.text-uppercase { text-transform: uppercase; letter-spacing: 0.05em; }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.text-left { text-align: left; }
-
 abbr[title] { text-decoration: underline dotted; cursor: help; text-decoration-skip-ink: none; }
 
 blockquote { margin: var(--nb-spacing-lg) 0; padding: var(--nb-spacing-md) var(--nb-spacing-lg); border-left: 4px solid var(--nb-color-primary); background-color: var(--nb-color-bg-alt); border-radius: 0 var(--nb-border-radius) var(--nb-border-radius) 0; }
@@ -789,7 +774,7 @@ pre:hover .nb-copy-btn {
 }
 
 /* ================================
-   44. Animations
+   34. Animations
    ================================ */
 @media (prefers-reduced-motion: no-preference) {
   * {
@@ -1031,6 +1016,14 @@ pre:hover .nb-copy-btn {
    44. Mobile Responsive Helpers
    ================================ */
 @media (max-width: 768px) {
+  /* Responsive heading sizes */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+  h5 { font-size: 1.125rem; }
+  h6 { font-size: 1rem; }
+  
   /* Prevent long code from overflowing */
   pre, code {
     white-space: pre-wrap;
@@ -1038,18 +1031,12 @@ pre:hover .nb-copy-btn {
     overflow-wrap: break-word;
   }
   
-  /* Ensure tables scroll on mobile */
-  table {
+  /* Ensure tables scroll on mobile (only without responsive wrapper */
+  table:not(.nb-table-responsive table) {
     display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-  }
-  
-  /* Make sure images don't overflow */
-  img {
-    max-width: 100%;
-    height: auto;
   }
 }
 
