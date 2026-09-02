@@ -194,6 +194,7 @@
       font-size: 0.875rem;
       line-height: 1.7;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
     
     .docs-example-code pre {
@@ -210,6 +211,7 @@
       color: #e2e8f0;
       font-family: var(--nb-mono-font-family);
       white-space: pre;
+      word-break: break-all;
     }
     
     /* Callouts */
@@ -235,6 +237,14 @@
       border-collapse: collapse;
       margin: 1.5rem 0;
       font-size: 0.875rem;
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .docs-table code {
+      word-break: break-all;
+      white-space: normal;
     }
     
     .docs-table th,

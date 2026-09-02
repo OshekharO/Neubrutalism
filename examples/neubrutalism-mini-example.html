@@ -69,7 +69,7 @@
     <div class="nb-text-center" style="padding: 4rem 0;">
       <h1>Neubrutalism CSS</h1>
       <p class="nb-text-large nb-text-muted">A complete CSS framework with 35+ components. All styled automatically with semantic HTML.</p>
-      <div class="nb-flex nb-justify-center" style="gap: 1rem; margin-top: 2rem;">
+      <div class="nb-flex nb-justify-center nb-flex-wrap" style="gap: 1rem; margin-top: 2rem;">
         <a href="#typography" class="nb-btn nb-btn-lg">Explore Components</a>
         <a href="../docs/index.html" class="nb-btn nb-btn-outline nb-btn-lg">Documentation</a>
       </div>
@@ -383,78 +383,84 @@ greet("World");</code></pre>
       
       <div class="demo-subsection">
         <h3>Basic Table</h3>
-        <table>
-          <caption>User List</caption>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>John Doe</td>
-              <td>john@example.com</td>
-              <td>Admin</td>
-              <td><span class="nb-badge nb-badge-success">Active</span></td>
-            </tr>
-            <tr>
-              <td>Jane Smith</td>
-              <td>jane@example.com</td>
-              <td>Editor</td>
-              <td><span class="nb-badge nb-badge-success">Active</span></td>
-            </tr>
-            <tr>
-              <td>Bob Johnson</td>
-              <td>bob@example.com</td>
-              <td>User</td>
-              <td><span class="nb-badge nb-badge-warning">Pending</span></td>
-            </tr>
-            <tr>
-              <td>Alice Brown</td>
-              <td>alice@example.com</td>
-              <td>User</td>
-              <td><span class="nb-badge nb-badge-danger">Inactive</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="nb-table-responsive">
+          <table>
+            <caption>User List</caption>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Doe</td>
+                <td>john@example.com</td>
+                <td>Admin</td>
+                <td><span class="nb-badge nb-badge-success">Active</span></td>
+              </tr>
+              <tr>
+                <td>Jane Smith</td>
+                <td>jane@example.com</td>
+                <td>Editor</td>
+                <td><span class="nb-badge nb-badge-success">Active</span></td>
+              </tr>
+              <tr>
+                <td>Bob Johnson</td>
+                <td>bob@example.com</td>
+                <td>User</td>
+                <td><span class="nb-badge nb-badge-warning">Pending</span></td>
+              </tr>
+              <tr>
+                <td>Alice Brown</td>
+                <td>alice@example.com</td>
+                <td>User</td>
+                <td><span class="nb-badge nb-badge-danger">Inactive</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="demo-subsection">
         <h3>Striped Table</h3>
-        <table class="nb-table-striped">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Item</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>Widget A</td><td>$10.00</td></tr>
-            <tr><td>2</td><td>Widget B</td><td>$20.00</td></tr>
-            <tr><td>3</td><td>Widget C</td><td>$30.00</td></tr>
-            <tr><td>4</td><td>Widget D</td><td>$40.00</td></tr>
-          </tbody>
-        </table>
+        <div class="nb-table-responsive">
+          <table class="nb-table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Item</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Widget A</td><td>$10.00</td></tr>
+              <tr><td>2</td><td>Widget B</td><td>$20.00</td></tr>
+              <tr><td>3</td><td>Widget C</td><td>$30.00</td></tr>
+              <tr><td>4</td><td>Widget D</td><td>$40.00</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="demo-subsection">
         <h3>Bordered Table</h3>
-        <table class="nb-table-bordered">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Alice</td><td>95</td></tr>
-            <tr><td>Bob</td><td>87</td></tr>
-          </tbody>
-        </table>
+        <div class="nb-table-responsive">
+          <table class="nb-table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Alice</td><td>95</td></tr>
+              <tr><td>Bob</td><td>87</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="demo-subsection">

@@ -1028,6 +1028,32 @@ pre:hover .nb-copy-btn {
 .nb-divider::after { margin-left: var(--nb-spacing-md); }
 
 /* ================================
+   44. Mobile Responsive Helpers
+   ================================ */
+@media (max-width: 768px) {
+  /* Prevent long code from overflowing */
+  pre, code {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Ensure tables scroll on mobile */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Make sure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ================================
    45. Print Styles
    ================================ */
 @media print {
