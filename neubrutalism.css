@@ -285,7 +285,7 @@ a.nb-btn-green, a.nb-btn-orange, a.nb-btn-pink {
   border: var(--nb-border-width) solid var(--nb-color-primary); 
   border-radius: var(--nb-border-radius);
   box-shadow: var(--nb-shadow-hard-sm);
-  cursor: pointer; transition: all var(--nb-transition); text-decoration: none; user-select: none; white-space: nowrap;
+  cursor: pointer; transition: color var(--nb-transition), background-color var(--nb-transition), border-color var(--nb-transition), box-shadow var(--nb-transition), transform var(--nb-transition); text-decoration: none; user-select: none; white-space: nowrap;
 }
 button:hover, .nb-btn:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover,
 a.nb-btn:hover, a.nb-btn-sm:hover, a.nb-btn-lg:hover, a.nb-btn-xl:hover,
@@ -561,7 +561,7 @@ tfoot td { padding: var(--nb-spacing-sm) var(--nb-spacing-md); font-weight: 600;
   border-radius: var(--nb-border-radius);
   cursor: pointer;
   padding: 0;
-  transition: all var(--nb-transition);
+  transition: background-color var(--nb-transition), border-color var(--nb-transition);
   position: relative;
 }
 .nb-navbar-toggle:hover {
@@ -574,7 +574,7 @@ tfoot td { padding: var(--nb-spacing-sm) var(--nb-spacing-md); font-weight: 600;
   height: 2px;
   background-color: var(--nb-color-text);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease, bottom 0.3s ease, background-color 0.3s ease;
   position: absolute;
 }
 .nb-navbar-toggle span:nth-child(1) { transform: translateY(-6px); }
@@ -624,7 +624,7 @@ tfoot td { padding: var(--nb-spacing-sm) var(--nb-spacing-md); font-weight: 600;
 .nb-breadcrumb li:last-child { color: var(--nb-color-text-muted); }
 
 .nb-pagination { display: inline-flex; align-items: center; gap: var(--nb-spacing-xs); list-style: none; padding: 0; margin: 0; }
-.nb-pagination a, .nb-pagination span { display: flex; align-items: center; justify-content: center; min-width: 2.25rem; height: 2.25rem; padding: 0 var(--nb-spacing-sm); font-size: 0.875rem; border-radius: var(--nb-border-radius); color: var(--nb-color-text); border: var(--nb-border-width) solid var(--nb-color-border); transition: all var(--nb-transition); }
+.nb-pagination a, .nb-pagination span { display: flex; align-items: center; justify-content: center; min-width: 2.25rem; height: 2.25rem; padding: 0 var(--nb-spacing-sm); font-size: 0.875rem; border-radius: var(--nb-border-radius); color: var(--nb-color-text); border: var(--nb-border-width) solid var(--nb-color-border); transition: color var(--nb-transition), background-color var(--nb-transition), border-color var(--nb-transition), transform var(--nb-transition), box-shadow var(--nb-transition); }
 .nb-pagination a:hover { background-color: var(--nb-color-bg-alt); text-decoration: none; border-color: var(--nb-color-border-strong); }
 .nb-pagination .nb-active a { background-color: var(--nb-color-primary); border-color: var(--nb-color-primary); color: var(--nb-color-text-inverse); }
 .nb-pagination .nb-disabled span { opacity: 0.5; cursor: not-allowed; }
@@ -638,7 +638,7 @@ tfoot td { padding: var(--nb-spacing-sm) var(--nb-spacing-md); font-weight: 600;
   border-radius: var(--nb-border-radius); 
   box-shadow: var(--nb-shadow-hard-sm); 
   overflow: hidden; 
-  transition: all var(--nb-transition); 
+  transition: transform var(--nb-transition), box-shadow var(--nb-transition), background-color var(--nb-transition), border-color var(--nb-transition);
 }
 .nb-card:hover { 
   box-shadow: var(--nb-shadow-hard-md); 
@@ -894,6 +894,7 @@ details > *:not(summary) { padding: var(--nb-spacing-md) var(--nb-spacing-lg); }
   bottom: 0;
   background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
   animation: shimmer 2s infinite;
+  will-change: transform;
 }
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
@@ -928,6 +929,7 @@ details > *:not(summary) { padding: var(--nb-spacing-md) var(--nb-spacing-lg); }
   border-right-color: var(--nb-color-accent-yellow);
   border-radius: 50%; 
   animation: nb-spin 0.8s linear infinite; 
+  will-change: transform;
 }
 .nb-spinner-sm { width: 1rem; height: 1rem; border-width: 0.125rem; }
 .nb-spinner-lg { width: 2.5rem; height: 2.5rem; border-width: 0.375rem; }
@@ -955,6 +957,7 @@ details > *:not(summary) { padding: var(--nb-spacing-md) var(--nb-spacing-lg); }
   background-color: var(--nb-color-primary);
   border-radius: 50%;
   animation: nb-pulse 1.4s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 .nb-loading-pulse span:nth-child(1) { animation-delay: 0s; }
 .nb-loading-pulse span:nth-child(2) { animation-delay: 0.2s; }
@@ -968,7 +971,7 @@ details > *:not(summary) { padding: var(--nb-spacing-md) var(--nb-spacing-lg); }
    18. Tooltip (CSS-only) - Splatoon Inspired
    ================================ */
 [data-tooltip] { position: relative; cursor: help; }
-[data-tooltip]::before, [data-tooltip]::after { position: absolute; opacity: 0; pointer-events: none; transition: all var(--nb-transition); z-index: 1000; }
+[data-tooltip]::before, [data-tooltip]::after { position: absolute; opacity: 0; pointer-events: none; transition: opacity var(--nb-transition), transform var(--nb-transition); z-index: 1000; }
 [data-tooltip]::before { 
   content: attr(data-tooltip); 
   bottom: 100%; 
@@ -1014,7 +1017,7 @@ details > *:not(summary) { padding: var(--nb-spacing-md) var(--nb-spacing-lg); }
   z-index: 1000; 
   opacity: 0; 
   visibility: hidden; 
-  transition: all var(--nb-transition); 
+  transition: opacity var(--nb-transition), visibility var(--nb-transition);
   padding: var(--nb-spacing-md); 
 }
 .nb-modal:target { opacity: 1; visibility: visible; }
@@ -1051,7 +1054,7 @@ details > *:not(summary) { padding: var(--nb-spacing-md) var(--nb-spacing-lg); }
   color: var(--nb-color-text-muted); 
   border-radius: var(--nb-border-radius-sm);
   box-shadow: var(--nb-shadow-hard-sm);
-  transition: all var(--nb-transition);
+  transition: background-color var(--nb-transition), border-color var(--nb-transition), color var(--nb-transition), transform var(--nb-transition), box-shadow var(--nb-transition);
 }
 .nb-modal-close:hover { 
   background-color: var(--nb-color-danger); 
@@ -1231,6 +1234,7 @@ details > *:not(summary) { padding: var(--nb-spacing-md) var(--nb-spacing-lg); }
   background: linear-gradient(90deg, var(--nb-color-bg-alt) 25%, var(--nb-color-border) 50%, var(--nb-color-bg-alt) 75%);
   background-size: 200% 100%;
   animation: nb-skeleton-loading 1.5s infinite;
+  will-change: background-position;
   border-radius: var(--nb-border-radius);
 }
 .nb-skeleton-text {
