@@ -1,0 +1,3 @@
+## 2025-05-10 - Compositor Layer Promotion & CSS Animation Performance
+**Learning:** Adding `transform: translateZ(0)` when `will-change: transform` is already present on animated CSS elements provides no performance benefit, as modern browser engines already promote elements with `will-change: transform` to dedicated compositor layers. Furthermore, `@keyframes` animating `transform` override initial static `transform` values.
+**Action:** Always inspect existing layer promotion properties (`will-change`) and keyframe definitions before adding hardware acceleration hints. Avoid redundant layer hints when `will-change` is already configured.
