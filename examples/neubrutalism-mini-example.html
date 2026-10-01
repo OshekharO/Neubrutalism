@@ -916,8 +916,10 @@ greet("World");</code></pre>
     }
     
     function toggleNav() {
-      document.querySelector('.nb-navbar-menu').classList.toggle('nb-nav-open');
-      document.querySelector('.nb-navbar-toggle').classList.toggle('nb-nav-open');
+      const menu = document.querySelector('.nb-navbar-menu');
+      const toggle = document.querySelector('.nb-navbar-toggle');
+      if (menu) menu.classList.toggle('nb-nav-open');
+      if (toggle) toggle.classList.toggle('nb-nav-open');
     }
   </script>
 

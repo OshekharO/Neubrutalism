@@ -2005,6 +2005,13 @@
     function toggleTheme() {
       document.documentElement.classList.toggle('nb-dark');
     }
+
+    function toggleNav() {
+      const menu = document.querySelector('.nb-navbar-menu');
+      const toggle = document.querySelector('.nb-navbar-toggle');
+      if (menu) menu.classList.toggle('nb-nav-open');
+      if (toggle) toggle.classList.toggle('nb-nav-open');
+    }
     
     // Active sidebar link
     const links = document.querySelectorAll('.docs-sidebar-link');
