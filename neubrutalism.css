@@ -274,11 +274,8 @@ kbd { border-bottom: 3px solid var(--nb-color-border-strong); font-size: 0.8125e
 /* ================================
    6. Buttons - Splatoon Inspired
    ================================ */
-/* Base button styles - apply to button element, input buttons, and anchor tags */
-button, .nb-btn, input[type="submit"], input[type="button"], input[type="reset"], a.nb-btn, a.nb-btn-sm, a.nb-btn-lg, a.nb-btn-xl,
-a.nb-btn-outline, a.nb-btn-secondary, a.nb-btn-success, a.nb-btn-danger, a.nb-btn-warning,
-a.nb-btn-ghost, a.nb-btn-link, a.nb-btn-yellow, a.nb-btn-blue, a.nb-btn-purple,
-a.nb-btn-green, a.nb-btn-orange, a.nb-btn-pink {
+/* Base button styles - apply to button elements, input buttons, and .nb-btn elements/links */
+button, .nb-btn, input[type="submit"], input[type="button"], input[type="reset"] {
   display: inline-flex; align-items: center; justify-content: center; gap: var(--nb-spacing-xs);
   padding: 0.625rem 1.25rem; font-size: 0.9375rem; font-weight: 600; line-height: 1.5;
   color: var(--nb-color-text-inverse); background-color: var(--nb-color-primary);
@@ -287,37 +284,21 @@ a.nb-btn-green, a.nb-btn-orange, a.nb-btn-pink {
   box-shadow: var(--nb-shadow-hard-sm);
   cursor: pointer; transition: color var(--nb-transition), background-color var(--nb-transition), border-color var(--nb-transition), box-shadow var(--nb-transition), transform var(--nb-transition); text-decoration: none; user-select: none; white-space: nowrap;
 }
-button:hover, .nb-btn:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover,
-a.nb-btn:hover, a.nb-btn-sm:hover, a.nb-btn-lg:hover, a.nb-btn-xl:hover,
-a.nb-btn-outline:hover, a.nb-btn-secondary:hover, a.nb-btn-success:hover, a.nb-btn-danger:hover, a.nb-btn-warning:hover,
-a.nb-btn-ghost:hover, a.nb-btn-link:hover, a.nb-btn-yellow:hover, a.nb-btn-blue:hover, a.nb-btn-purple:hover,
-a.nb-btn-green:hover, a.nb-btn-orange:hover, a.nb-btn-pink:hover {
+button:hover, .nb-btn:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
   background-color: var(--nb-color-primary-hover); 
   border-color: var(--nb-color-primary-hover); 
   text-decoration: none;
   transform: translate(-1px, -1px);
   box-shadow: var(--nb-shadow-hard-md);
 }
-button:active, .nb-btn:active, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active,
-a.nb-btn:active, a.nb-btn-sm:active, a.nb-btn-lg:active, a.nb-btn-xl:active,
-a.nb-btn-outline:active, a.nb-btn-secondary:active, a.nb-btn-success:active, a.nb-btn-danger:active, a.nb-btn-warning:active,
-a.nb-btn-ghost:active, a.nb-btn-link:active, a.nb-btn-yellow:active, a.nb-btn-blue:active, a.nb-btn-purple:active,
-a.nb-btn-green:active, a.nb-btn-orange:active, a.nb-btn-pink:active {
+button:active, .nb-btn:active, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active {
   transform: translate(1px, 1px);
   box-shadow: none;
 }
-button:focus-visible, .nb-btn:focus-visible, input[type="submit"]:focus-visible, input[type="button"]:focus-visible, input[type="reset"]:focus-visible,
-a.nb-btn:focus-visible, a.nb-btn-sm:focus-visible, a.nb-btn-lg:focus-visible, a.nb-btn-xl:focus-visible,
-a.nb-btn-outline:focus-visible, a.nb-btn-secondary:focus-visible, a.nb-btn-success:focus-visible, a.nb-btn-danger:focus-visible, a.nb-btn-warning:focus-visible,
-a.nb-btn-ghost:focus-visible, a.nb-btn-link:focus-visible, a.nb-btn-yellow:focus-visible, a.nb-btn-blue:focus-visible, a.nb-btn-purple:focus-visible,
-a.nb-btn-green:focus-visible, a.nb-btn-orange:focus-visible, a.nb-btn-pink:focus-visible {
+button:focus-visible, .nb-btn:focus-visible, input[type="submit"]:focus-visible, input[type="button"]:focus-visible, input[type="reset"]:focus-visible {
   outline: none; box-shadow: 0 0 0 3px var(--nb-color-primary-focus), var(--nb-shadow-hard-sm);
 }
-button:disabled, .nb-btn:disabled, input[type="submit"]:disabled, input[type="button"]:disabled, input[type="reset"]:disabled,
-a.nb-btn:disabled, a.nb-btn-sm:disabled, a.nb-btn-lg:disabled, a.nb-btn-xl:disabled,
-a.nb-btn-outline:disabled, a.nb-btn-secondary:disabled, a.nb-btn-success:disabled, a.nb-btn-danger:disabled, a.nb-btn-warning:disabled,
-a.nb-btn-ghost:disabled, a.nb-btn-link:disabled, a.nb-btn-yellow:disabled, a.nb-btn-blue:disabled, a.nb-btn-purple:disabled,
-a.nb-btn-green:disabled, a.nb-btn-orange:disabled, a.nb-btn-pink:disabled {
+button:disabled, .nb-btn:disabled, input[type="submit"]:disabled, input[type="button"]:disabled, input[type="reset"]:disabled {
   opacity: 0.5; cursor: not-allowed; pointer-events: none;
   box-shadow: none; transform: none;
 }
@@ -1585,7 +1566,6 @@ pre:hover .nb-copy-btn {
   h3 { font-size: 1.5rem; }
   h4 { font-size: 1.25rem; }
   h5 { font-size: 1.125rem; }
-  h6 { font-size: 1rem; }
   
   /* Responsive display headings */
   .nb-display-1 { font-size: 2.5rem; }
@@ -1611,7 +1591,7 @@ pre:hover .nb-copy-btn {
   }
   
   /* Reduce hard shadows on mobile for better performance */
-  .nb-card, .nb-btn, button, .nb-btn, .nb-badge, .nb-alert, .nb-modal-dialog {
+  .nb-card, .nb-btn, button, .nb-badge, .nb-alert, .nb-modal-dialog {
     box-shadow: var(--nb-shadow-sm);
   }
 }
@@ -1626,7 +1606,6 @@ pre:hover .nb-copy-btn {
   h3 { font-size: 1.625rem; }
   h4 { font-size: 1.375rem; }
   h5 { font-size: 1.125rem; }
-  h6 { font-size: 1rem; }
   
   /* Responsive display headings */
   .nb-display-1 { font-size: 3rem; }
